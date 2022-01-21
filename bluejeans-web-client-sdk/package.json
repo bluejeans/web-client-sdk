@@ -1,0 +1,23 @@
+{
+  "name": "@bluejeans/web-client-sdk",
+  "version": "1.0.0",
+  "description": "BlueJeans Web Client SDK",
+  "main": "./dist/BJNWebClientSDK.js",
+  "typings": "./dist/types/BJNWebClientSDK.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bluejeans/web-client-sdk.git"
+  },
+  "keywords": [
+    "WebClientSDK",
+    "BlueJeansWebClientSDK",
+    "BlueJeans"
+  ],
+  "dependencies": {
+    "react": "16.8.0",
+    "react-dom": "16.8.0",
+    "styled-components": "3.4.5"
+  },
+  "author": "BlueJeans",
+  "license": "ISC"
+}

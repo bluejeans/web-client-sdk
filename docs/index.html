@@ -1,0 +1,457 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@bluejeans/web-client-sdk</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<ul class="results-priority" style="display:none">
+					</ul>
+					<a href="index.html" class="title">@bluejeans/web-client-sdk</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+			</ul>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-3 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Modules</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/bjnwebclientsdk.html">BJNWebClientSDK</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_audiodeviceservice.html">services/AudioDeviceService</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_contentshareservice.html">services/ContentShareService</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_loggingservice.html">services/LoggingService</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_meetingservice.html">services/MeetingService</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_participantservice.html">services/ParticipantService</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_permissionservice.html">services/PermissionService</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_privatechatservice.html">services/PrivateChatService</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_publicchatservice.html">services/PublicChatService</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/services_videodeviceservice.html">services/VideoDeviceService</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<div class="col-7 offset-3 col-content">
+			<h1>@bluejeans/web-client-sdk</h1>
+			<div class="tsd-panel tsd-typography">
+				<a href="#bluejeans-web-client-sdk" id="bluejeans-web-client-sdk" style="color: inherit; text-decoration: none;">
+					<h1>BlueJeans Web Client SDK</h1>
+				</a>
+				<p>The BlueJeans Web Client Software Development Kit (SDK) enables embedding BlueJeans Video and Audio capabilities into web apps. BJNWebClientSDK is a single object that encapsulates all the API’s related to establishing a BlueJeans Video and Audio connection.</p>
+				<p>The design of the SDK emphasizes <strong>simplicity</strong>. Developers can quickly integrate BlueJeans video into their applications.</p>
+				<a href="#features" id="features" style="color: inherit; text-decoration: none;">
+					<h2>Features</h2>
+				</a>
+				<ul>
+					<li>Join, End Meeting</li>
+					<li>Audio and Video Permission handling</li>
+					<li>Self Video</li>
+					<li>Remote Video, Remote Video states</li>
+					<li>Content receive</li>
+					<li>Audio and Video self mute</li>
+					<li>Audio device enumeration, Selection</li>
+					<li>Video device enumeration, Selection</li>
+					<li>Video Layout switch</li>
+					<li>Participant list</li>
+					<li>Participant properties: Audio mute state, Video mute state, is Self, Name and Unique Identifier</li>
+					<li>Self Participant</li>
+					<li>Content/Screen Share</li>
+					<li>Log Upload</li>
+					<li>Public and Private meeting Chat</li>
+					<li>Meeting Information (Title, Hostname, Meeting Id)</li>
+					<li>Video tile background customization options</li>
+				</ul>
+				<p> <strong>Not to be confused with:</strong></p>
+				<ul>
+					<li><strong>BlueJeans WebRTC Embed SDK</strong>: This is an alternate SDK that allows the end user to embed the entire BlueJeans WebRTC Client. As such, this SDK provides an entire user interface, meaning the end user has to write much less code. However, it is also much less customizable. See <a href="https://bluejeans.github.io/webrtc-embed-sdk/docs/index.html">https://bluejeans.github.io/webrtc-embed-sdk/docs/index.html</a></li>
+				</ul>
+				<a href="#how-does-it-work" id="how-does-it-work" style="color: inherit; text-decoration: none;">
+					<h2>How does it work?</h2>
+				</a>
+				<p>Two steps to experience BlueJeans meetings using the web client SDK. They are as below :</p>
+				<a href="#generate-a-meeting-id-" id="generate-a-meeting-id-" style="color: inherit; text-decoration: none;">
+					<h3>Generate a meeting ID :</h3>
+				</a>
+				<p>As a pre requisite to using the BlueJeans Web Client SDK to join meetings, you need to have a BlueJeans meeting ID. If you do not have a meeting ID then you can create one using a meeting schedule option using a BlueJeans account as below</p>
+				<ul>
+					<li>Sign up for a BlueJeans Account either by opting in for a <a href="https://www.bluejeans.com/free-video-conferencing-trial">trial</a> or a <a href="https://store.bluejeans.com/">paid mode</a></li>
+					<li>Once an account is created, you can schedule a meeting either by using the account or through <a href="https://bluejeans.github.io/api-rest-howto/schedule.html">direct API</a> calls. In order to enable API calls on your account, please reach out to <a href="https://support.bluejeans.com/s/contactsupport">support team</a>.</li>
+				</ul>
+				<a href="#integrate-the-bluejeans-web-client-sdk" id="integrate-the-bluejeans-web-client-sdk" style="color: inherit; text-decoration: none;">
+					<h3>Integrate the BlueJeans Web Client SDK</h3>
+				</a>
+				<p>Integrate the SDK by using the following guidelines and use SDK APIs to join a meeting with the meeting ID generated.</p>
+				<a href="#integration-steps" id="integration-steps" style="color: inherit; text-decoration: none;">
+					<h2>Integration Steps</h2>
+				</a>
+				<a href="#1-installation-via-package-manager" id="1-installation-via-package-manager" style="color: inherit; text-decoration: none;">
+					<h3>1. Installation via Package Manager</h3>
+				</a>
+				<p>To add <code>@bluejeans/web-client-sdk</code> as a dependency to your <code>package.json</code> file</p>
+				<pre><code class="language-shell"><span style="color: #000000">npm i @bluejeans/web-client-sdk</span>
+</code></pre>
+				<p>Note: if you are using <a href="https://styled-components.com/docs/basics#motivation">styled-components</a> as a dependency in your package, please use version <code>3.*.*</code> . However recommended version is <code>3.4.5</code></p>
+				<a href="#using-the-sdk" id="using-the-sdk" style="color: inherit; text-decoration: none;">
+					<h4>Using the SDK</h4>
+				</a>
+				<p>import the <code>BJNWebClientSDK</code> in your project using</p>
+				<pre><code class="language-javascript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">BJNWebClientSDK</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@bluejeans/web-client-sdk&#039;</span><span style="color: #000000">;</span>
+</code></pre>
+				<p>and to create a new instance of the SDK</p>
+				<pre><code class="language-javascript"><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">webClientSDK</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">BJNWebClientSDK</span><span style="color: #000000">();</span>
+</code></pre>
+				<p><em>Note: Only one instance of BJNWebClientSDK can be present in app at a time. Creating multiple instances may cause unexpected errors.</em></p>
+				<a href="#2-alternative-installation-instruction-via-script-tag" id="2-alternative-installation-instruction-via-script-tag" style="color: inherit; text-decoration: none;">
+					<h3>2. Alternative installation instruction via script tag</h3>
+				</a>
+				<p> BJNWebClientSDK has dependency on <a href="https://styled-components.com/docs/basics#motivation">styled-components</a> which internally has dependency on ReactJs. Please refer this <a href="https://styled-components.com/docs/basics#installation">article</a> to get more info.</p>
+				<p> Hence this style of usage of <em>BJNWebClientSDK</em> requires the styled-components CDN bundles, react &amp; related modules (before BJNWebClientSDK.js script)</p>
+				<pre><code class="language-html"><span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">crossorigin</span><span style="color: #000000FF"> </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;https://unpkg.com/react@16.12.0/umd/react.production.min.js&quot;</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
+<span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">crossorigin</span><span style="color: #000000FF"> </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;https://unpkg.com/react-dom@16.12.0/umd/react-dom.production.min.js&quot;</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
+<span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">crossorigin</span><span style="color: #000000FF"> </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;https://unpkg.com/react-is@16.12.0/umd/react-is.production.min.js&quot;</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
+<span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">crossorigin</span><span style="color: #000000FF"> </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;https://unpkg.com/styled-components@3.4.5/dist/styled-components.js&quot;</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
+<span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">crossorigin</span><span style="color: #000000FF"> </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;https://unpkg.com/@bluejeans/web-client-sdk@1.0.0/dist/BJNWebClientSDK.js&quot;</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
+</code></pre>
+				<a href="#using-the-sdk-1" id="using-the-sdk-1" style="color: inherit; text-decoration: none;">
+					<h4>Using the SDK</h4>
+				</a>
+				<p>Create a new instance of the SDK using</p>
+				<pre><code class="language-javascript"><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">webClientSDK</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #001080">BJNWebClientSDK</span><span style="color: #000000">.</span><span style="color: #795E26">BJNWebClientSDK</span><span style="color: #000000">();</span>
+</code></pre>
+				<a href="#api-architecture" id="api-architecture" style="color: inherit; text-decoration: none;">
+					<h2>API Architecture</h2>
+				</a>
+				<p>APIs are grouped into relevant services as shown in the architecture diagram. All the service objects are available all the time after SDK instantiation, however all services are not active at all the time.
+				When inactive, APIs of the services will be null or undefined</p>
+				<img width="870" alt="BJNWebClientSDKArch" src="https://bluejeans-non-embed-sdk.s3.us-west-2.amazonaws.com/web-client-sdk/assets/SDK-API-Structure.png">
+				<a href="#list-of-services-" id="list-of-services-" style="color: inherit; text-decoration: none;">
+					<h3>List of services :</h3>
+				</a>
+				<a href="#1-globally-active-services" id="1-globally-active-services" style="color: inherit; text-decoration: none;">
+					<h4>1. Globally active services</h4>
+				</a>
+				<p>These services are available as soon as we initialize the SDK, and are available throughout out-of-meeting &amp; in-meeting.</p>
+				<p> Eg:  MeetingService, VideoDeviceService, AudioDeviceService, LoggingService and PermissionService.</p>
+				<a href="#2-inmeeting-active-services" id="2-inmeeting-active-services" style="color: inherit; text-decoration: none;">
+					<h4>2. InMeeting active services</h4>
+				</a>
+				<p>Unlike <a href="#globally-active-services">Globally active services</a>, InMeeting services get activated when <em>ConnectionState</em> transitions to <em>CONNECTED</em> and get inactivated
+				when meeting ends by the transition of connection state to <em>DISCONNECTED</em></p>
+				<p> Eg: ContentShareService, ParticipantsService, PublicChatService, PrivateChatService</p>
+				<a href="#join-meeting" id="join-meeting" style="color: inherit; text-decoration: none;">
+					<h2>Join Meeting</h2>
+				</a>
+				<a href="#steps-to-join-meeting" id="steps-to-join-meeting" style="color: inherit; text-decoration: none;">
+					<h4>Steps to join meeting</h4>
+				</a>
+				<ul>
+					<li>Use meeting service and call joinMeeting API to join a meeting</li>
+					<li>Observe the Join API result by checking the connectionState on meetingService</li>
+				</ul>
+				<a href="#sample-code-for-joinmeeting" id="sample-code-for-joinmeeting" style="color: inherit; text-decoration: none;">
+					<h3>Sample code for joinMeeting</h3>
+				</a>
+				<p>To join a meeting</p>
+				<pre><code class="language-javascript"><span style="color: #001080">webClientSDK</span><span style="color: #000000">.</span><span style="color: #001080">meetingService</span><span style="color: #000000">.</span><span style="color: #795E26">joinMeeting</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;&lt;Meeting_ID&gt;&quot;</span><span style="color: #000000">,</span><span style="color: #A31515">&quot;&lt;PASSCODE&gt;&quot;</span><span style="color: #000000">, </span><span style="color: #A31515">&quot;&lt;DISPLAY_NAME&gt;&quot;</span><span style="color: #000000">).</span><span style="color: #795E26">then</span><span style="color: #000000">(() </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">   </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;Success&quot;</span><span style="color: #000000">);</span>
+<span style="color: #000000">},(</span><span style="color: #001080">error</span><span style="color: #000000">)</span><span style="color: #0000FF">=&gt;</span><span style="color: #000000">{</span>
+<span style="color: #000000">   </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">error</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;Meeting join failed with error: &quot;</span><span style="color: #000000">, </span><span style="color: #267F99">JSON</span><span style="color: #000000">.</span><span style="color: #795E26">stringify</span><span style="color: #000000">(</span><span style="color: #001080">error</span><span style="color: #000000">));</span>
+<span style="color: #000000">})</span>
+</code></pre>
+				<p><em>Note: The BJNWebClientSDK ties its session to the meeting ID given here. Also, since there can&#39;t be more than one instance of the SDK in the same webapp, if the meeting join fails for some reason or you would like to join another meeting after leaving the first one, you would need a page reload</em></p>
+				<a href="#adding-video-views" id="adding-video-views" style="color: inherit; text-decoration: none;">
+					<h2>Adding Video Views</h2>
+				</a>
+				<p>Video views for Local video, Content video and Remote video can be added to your webpage as follows</p>
+				<p>Pass a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video">video element</a> for each of the following:</p>
+				<ul>
+					<li>Local Video - The preview video for your self</li>
+					<li>Remote Content Video - The video for the screen share from other participants</li>
+				</ul>
+				<p>Now, attach these videos to the SDK</p>
+				<pre><code class="language-javascript"><span style="color: #001080">webClientSDK</span><span style="color: #000000">.</span><span style="color: #001080">meetingService</span><span style="color: #000000">.</span><span style="color: #795E26">attachLocalVideo</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;&lt;localVideoElement&gt;&quot;</span><span style="color: #000000">);</span>
+
+<span style="color: #001080">webClientSDK</span><span style="color: #000000">.</span><span style="color: #001080">meetingService</span><span style="color: #000000">.</span><span style="color: #795E26">attachRemoteContent</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;&lt;contentvideoElement&gt;&quot;</span><span style="color: #000000">);</span>
+</code></pre>
+				<p>Pass a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div">div element</a> for :</p>
+				<ul>
+					<li>Remote Video - The video coming in from other participants and for receiving Video Share</li>
+				</ul>
+				<pre><code class="language-javascript"><span style="color: #001080">webClientSDK</span><span style="color: #000000">.</span><span style="color: #001080">meetingService</span><span style="color: #000000">.</span><span style="color: #795E26">attachRemoteVideo</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;&lt;remotevideoDivElement&gt;&quot;</span><span style="color: #000000">);</span>
+</code></pre>
+				<a href="#leave-meeting" id="leave-meeting" style="color: inherit; text-decoration: none;">
+					<h2>Leave Meeting</h2>
+				</a>
+				<p>Disconnect from the meeting using <code>endMeeting</code> method in MeetingService.</p>
+				<pre><code class="language-javascript"><span style="color: #001080">webClientSDK</span><span style="color: #000000">.</span><span style="color: #001080">meetingService</span><span style="color: #000000">.</span><span style="color: #795E26">endMeeting</span><span style="color: #000000">()</span>
+</code></pre>
+				<p>Note: when <code>meetingService.connectionState</code> changes to <em>DISCONNECTED</em> state, then it can be safely assumed, participant has left the meeting.</p>
+				<a href="#observing-properties" id="observing-properties" style="color: inherit; text-decoration: none;">
+					<h2>Observing Properties</h2>
+				</a>
+				<p>Each service which has observable properties also exposes an observe API/function. <em>observe</em> allows observing changes to properties. Provide the property which you are interested in and a callback. Whenever the property value changes, you will be notified via the callback. Please note, <em>observe</em> doesn&#39;t allow observing changes to methods mentioned in the services.</p>
+				<p><strong>Note:</strong>
+				As mentioned in API Architecture section, InMeeting services get activated when <em>ConnectionState</em> transitions to <em>CONNECTED</em>. Please register all callbacks for inMeeting Services after connection state becomes connected to get accurate information</p>
+				<pre><code class="language-javascript"><span style="color: #001080">webClientSDK</span><span style="color: #000000">.</span><span style="color: #001080">meetingService</span><span style="color: #000000">.</span><span style="color: #795E26">observe</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;connectionState&quot;</span><span style="color: #000000">, </span><span style="color: #0000FF">function</span><span style="color: #000000">() {</span>
+<span style="color: #000000">   </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">info</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;Connection state is changed to : &quot;</span><span style="color: #000000">, </span><span style="color: #001080">webClientSDK</span><span style="color: #000000">.</span><span style="color: #001080">meetingService</span><span style="color: #000000">.</span><span style="color: #001080">connectionState</span><span style="color: #000000">)</span>
+<span style="color: #000000">});</span>
+</code></pre>
+				<a href="#logging" id="logging" style="color: inherit; text-decoration: none;">
+					<h2>Logging</h2>
+				</a>
+				<p>You can set log level for the SDK by using <code>setLoggingMode</code> method in LoggingService to one of the logging mode mentioned in docs.</p>
+				<pre><code class="language-javascript"><span style="color: #001080">webClientSDK</span><span style="color: #000000">.</span><span style="color: #001080">loggingService</span><span style="color: #000000">.</span><span style="color: #795E26">setLoggingMode</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;&lt;LoggingMode&gt;&quot;</span><span style="color: #000000">);</span>
+</code></pre>
+				<a href="#upload-logs" id="upload-logs" style="color: inherit; text-decoration: none;">
+					<h3>Upload logs</h3>
+				</a>
+				<p>Logs can be uploaded while reporting an issue using <code>uploadLog</code> method in LoggingService</p>
+				<pre><code class="language-javascript"><span style="color: #001080">webClientSDK</span><span style="color: #000000">.</span><span style="color: #001080">loggingService</span><span style="color: #000000">.</span><span style="color: #795E26">uploadLog</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;&lt;Comments/Issue description&gt;&quot;</span><span style="color: #000000">,</span><span style="color: #A31515">&quot;&lt;emailId&gt;&quot;</span><span style="color: #000000">);</span>
+</code></pre>
+				<p>Note:
+				While initializing sdk in <a href="#sdk-customizations">SDK customizations</a> with <code>saveLogsToLocalStorage: false</code>. Logs will not be stored in local storage. Beacause of this, <em>Upload logs</em> functionality will not work.  </p>
+				<a href="#participant-self-av-mute" id="participant-self-av-mute" style="color: inherit; text-decoration: none;">
+					<h2>Participant self a/v mute</h2>
+				</a>
+				<p>Use <code>setAudioMuted</code> method in MeetingService to mute/unmute self audio and</p>
+				<p><code>setVideoMuted</code> method in MeetingService to mute/umnute self video</p>
+				<pre><code class="language-javascript"><span style="color: #001080">webClientSDK</span><span style="color: #000000">.</span><span style="color: #001080">meetingService</span><span style="color: #000000">.</span><span style="color: #795E26">setAudioMuted</span><span style="color: #000000">(</span><span style="color: #0000FF">false</span><span style="color: #000000">) </span><span style="color: #008000">//to unmute your audio</span>
+<span style="color: #001080">webClientSDK</span><span style="color: #000000">.</span><span style="color: #001080">meetingService</span><span style="color: #000000">.</span><span style="color: #795E26">setAudioMuted</span><span style="color: #000000">(</span><span style="color: #0000FF">true</span><span style="color: #000000">) </span><span style="color: #008000">//to mute your audio</span>
+</code></pre>
+				<a href="#select-devices" id="select-devices" style="color: inherit; text-decoration: none;">
+					<h2>Select devices</h2>
+				</a>
+				<p>The webrtc SDK will use your default devices out of the box. If you want to choose which camera/speaker/mic to use. You can see the list of available devices by calling <code>videoDeviceService.availableCameras</code>, <code>audioDeviceService.availableMicrophones</code> or <code>audioDeviceService.availableSpeakers</code> and then use <code>videoDeviceService.selectCamera()</code>, <code>audioDeviceService.selectMicrophone()</code> or <code>audioDeviceService.selectSpeaker()</code> to choose camera, mic and speaker devices respectively.</p>
+				<p>Note: Most browsers expose the list of devices available only when the user has given audio/video permissions. So please ensure you have called either permissionService.requestAllPermissions or meetingService.joinMeeting before attempting to change devices</p>
+				<pre><code class="language-javascript"><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">availableCameras</span><span style="color: #000000"> = </span><span style="color: #001080">webClientSDK</span><span style="color: #000000">.</span><span style="color: #001080">videoDeviceService</span><span style="color: #000000">.</span><span style="color: #001080">availableCameras</span><span style="color: #000000">;</span>
+<span style="color: #001080">webClientSDK</span><span style="color: #000000">.</span><span style="color: #001080">videoDeviceService</span><span style="color: #000000">.</span><span style="color: #795E26">selectCamera</span><span style="color: #000000">(</span><span style="color: #001080">availableCameras</span><span style="color: #000000">[</span><span style="color: #098658">1</span><span style="color: #000000">]);</span>
+</code></pre>
+				<p>Additional Note:
+					Sometimes browser/OS restrict speaker/microphone selection.
+				Please ensure you have called either <code>AudioDeviceService.isSpeakerSelectionAllowed</code> or <code>AudioDeviceService.isMicrophoneSelectionAllowed</code> before doing speaker/microphone selection.</p>
+				<a href="#microphone-selection" id="microphone-selection" style="color: inherit; text-decoration: none;">
+					<h3>Microphone Selection</h3>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #AF00DB">if</span><span style="color: #000000">(</span><span style="color: #001080">webClientSDK</span><span style="color: #000000">.</span><span style="color: #001080">audioDeviceService</span><span style="color: #000000">.</span><span style="color: #001080">isMicrophoneSelectionAllowed</span><span style="color: #000000">) {</span>
+<span style="color: #000000">   </span><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">availableMicrophones</span><span style="color: #000000"> = </span><span style="color: #001080">webClientSDK</span><span style="color: #000000">.</span><span style="color: #001080">audioDeviceService</span><span style="color: #000000">.</span><span style="color: #001080">availableMicrophones</span>
+<span style="color: #000000">   </span><span style="color: #001080">webClientSDK</span><span style="color: #000000">.</span><span style="color: #001080">audioDeviceService</span><span style="color: #000000">.</span><span style="color: #795E26">selectMicrophone</span><span style="color: #000000">(</span><span style="color: #001080">availableMicrophones</span><span style="color: #000000">[</span><span style="color: #098658">0</span><span style="color: #000000">])</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<a href="#speaker-selection" id="speaker-selection" style="color: inherit; text-decoration: none;">
+					<h3>Speaker Selection</h3>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #AF00DB">if</span><span style="color: #000000">(</span><span style="color: #001080">webClientSDK</span><span style="color: #000000">.</span><span style="color: #001080">audioDeviceService</span><span style="color: #000000">.</span><span style="color: #001080">isSpeakerSelectionAllowed</span><span style="color: #000000">) {</span>
+<span style="color: #000000">   </span><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">availableSpeakers</span><span style="color: #000000"> = </span><span style="color: #001080">webClientSDK</span><span style="color: #000000">.</span><span style="color: #001080">audioDeviceService</span><span style="color: #000000">.</span><span style="color: #001080">availableSpeakers</span>
+<span style="color: #000000">   </span><span style="color: #001080">webClientSDK</span><span style="color: #000000">.</span><span style="color: #001080">audioDeviceService</span><span style="color: #000000">.</span><span style="color: #795E26">selectSpeaker</span><span style="color: #000000">(</span><span style="color: #001080">availableSpeakers</span><span style="color: #000000">[</span><span style="color: #098658">0</span><span style="color: #000000">])</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<a href="#initiate-screen-share" id="initiate-screen-share" style="color: inherit; text-decoration: none;">
+					<h2>Initiate Screen Share</h2>
+				</a>
+				<p>Initiate screen share by using <code>startContentShare</code> method in ContentShareService</p>
+				<pre><code class="language-javascript"><span style="color: #AF00DB">if</span><span style="color: #000000">(</span><span style="color: #001080">webClientSDK</span><span style="color: #000000">.</span><span style="color: #001080">contentShareService</span><span style="color: #000000">.</span><span style="color: #001080">isContentShareSupported</span><span style="color: #000000">) {</span>
+<span style="color: #000000">   </span><span style="color: #001080">webClientSDK</span><span style="color: #000000">.</span><span style="color: #001080">contentShareService</span><span style="color: #000000">.</span><span style="color: #795E26">startContentShare</span><span style="color: #000000">();</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<a href="#list-of-participants" id="list-of-participants" style="color: inherit; text-decoration: none;">
+					<h2>List of participants</h2>
+				</a>
+				<p>To get a list of participants in a meeting, use <code>participantService.participants</code> property. It returns an array of <code>participant</code>.</p>
+				<a href="#change-layouts" id="change-layouts" style="color: inherit; text-decoration: none;">
+					<h2>Change Layouts</h2>
+				</a>
+				<p>To change your current video layout, call <code>meetingService.setVideoLayout()</code> function with one of <code>VideoLayout</code> mentioned in docs.</p>
+				<a href="#chat-services" id="chat-services" style="color: inherit; text-decoration: none;">
+					<h2>Chat Services</h2>
+				</a>
+				<p>From sdk we have exposed PublicChatService &amp; PrivateChatService</p>
+				<a href="#1-publicchatservice" id="1-publicchatservice" style="color: inherit; text-decoration: none;">
+					<h3>1. PublicChatService</h3>
+				</a>
+				<p>Helps in sending messages to all participants in a meeting. These messages will be visible to all participant.</p>
+				<p><strong>Send:</strong> a new public chat message using sendMessage in PublicChatService</p>
+				<pre><code class="language-javascript"><span style="color: #001080">webClientSDK</span><span style="color: #000000">.</span><span style="color: #001080">meetingService</span><span style="color: #000000">.</span><span style="color: #001080">publicChatService</span><span style="color: #000000">.</span><span style="color: #795E26">sendMessage</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;Hello World public&quot;</span><span style="color: #000000">);</span>
+</code></pre>
+				<p><strong>Receive:</strong> You can get the entire list of messages in a meeting (including new messages) by observing chatHistroy.</p>
+				<pre><code class="language-javascript"><span style="color: #001080">webClientSDK</span><span style="color: #000000">.</span><span style="color: #001080">meetingService</span><span style="color: #000000">.</span><span style="color: #001080">publicChatService</span><span style="color: #000000">.</span><span style="color: #795E26">observe</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;chatHistory&quot;</span><span style="color: #000000">, </span><span style="color: #0000FF">function</span><span style="color: #000000">() {</span>
+<span style="color: #000000">        </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">info</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;public chatHistory : &quot;</span><span style="color: #000000">, </span><span style="color: #001080">webClientSDK</span><span style="color: #000000">.</span><span style="color: #001080">meetingService</span><span style="color: #000000">.</span><span style="color: #001080">publicChatService</span><span style="color: #000000">.</span><span style="color: #001080">chatHistory</span><span style="color: #000000">)</span>
+<span style="color: #000000">});</span>
+</code></pre>
+				<p>Users can also subscribe to <code>newMessage</code> event in PublicChatStoreEvents to get new messages.</p>
+				<a href="#2-privatechatservice" id="2-privatechatservice" style="color: inherit; text-decoration: none;">
+					<h3>2. PrivateChatService</h3>
+				</a>
+				<p>Helps in sending messages to individual private messages to selected participant. These messages will be visible to only selected participant.</p>
+				<p><strong>Send</strong> a new private chat message using sendMessage in PrivateChatService</p>
+				<pre><code class="language-javascript"><span style="color: #001080">webClientSDK</span><span style="color: #000000">.</span><span style="color: #001080">meetingService</span><span style="color: #000000">.</span><span style="color: #001080">privateChatService</span><span style="color: #000000">.</span><span style="color: #795E26">sendMessage</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;Hello participant&quot;</span><span style="color: #000000">, </span><span style="color: #A31515">&quot;&lt;participantGuid: string&gt;&quot;</span><span style="color: #000000">);</span>
+</code></pre>
+				<p><strong>Receive</strong> You can get the entire list of messages in a meeting (including new messages) by observing chatHistoryByParticipant. This would give a map of participants and your direct message history with them.</p>
+				<pre><code class="language-javascript"><span style="color: #001080">webClientSDK</span><span style="color: #000000">.</span><span style="color: #001080">meetingService</span><span style="color: #000000">.</span><span style="color: #001080">privateChatService</span><span style="color: #000000">.</span><span style="color: #795E26">observe</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;chatHistory&quot;</span><span style="color: #000000">, </span><span style="color: #0000FF">function</span><span style="color: #000000">() {</span>
+<span style="color: #000000">        </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">info</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;private chatHistory updated: &quot;</span><span style="color: #000000">, </span><span style="color: #001080">webClientSDK</span><span style="color: #000000">.</span><span style="color: #001080">meetingService</span><span style="color: #000000">.</span><span style="color: #001080">privateChatService</span><span style="color: #000000">.</span><span style="color: #001080">chatHistoryByParticipant</span><span style="color: #000000">);</span>
+<span style="color: #000000">});</span>
+</code></pre>
+				<p>Users can also subscribe to <code>newMessage</code> event in PrivateChatStoreEvents  to get new messages.</p>
+				<a href="#sdk-customizations" id="sdk-customizations" style="color: inherit; text-decoration: none;">
+					<h2>SDK customizations</h2>
+				</a>
+				<p>Using <code>BlueJeansSDKInitParams</code> one can customize the SDK experience by setting</p>
+				<a href="#1--customize-background-colour" id="1--customize-background-colour" style="color: inherit; text-decoration: none;">
+					<h3>1.  Customize background colour</h3>
+				</a>
+				<p>Options listed in customizationParams will help customize different background colours</p>
+				<pre><code class="language-javascript"><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">webClientSDK</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">BJNWebClientSDK</span><span style="color: #000000">({</span>
+<span style="color: #000000">    </span><span style="color: #001080">customizationParams:</span><span style="color: #000000">{</span>
+<span style="color: #000000">        </span><span style="color: #001080">audioTileColor:</span><span style="color: #A31515">&quot;red&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #001080">containerColorOfAllTiles:</span><span style="color: #A31515">&quot;blue&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #001080">videoTileBackgroundColor:</span><span style="color: #A31515">&quot;green&quot;</span>
+<span style="color: #000000">    }</span>
+<span style="color: #000000">})</span>
+</code></pre>
+				<a href="#2-configure-logging" id="2-configure-logging" style="color: inherit; text-decoration: none;">
+					<h3>2. Configure logging</h3>
+				</a>
+				<p>This initial parameter saveLogsToLocalStorage will help customers configure logs saved to local storage</p>
+				<pre><code class="language-javascript"><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">webClientSDK</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">BJNWebClientSDK</span><span style="color: #000000">({</span>
+<span style="color: #000000">    </span><span style="color: #001080">saveLogsToLocalStorage:</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span>
+<span style="color: #000000">})</span>
+</code></pre>
+				<p>Note : Default value of saveLogsToLocalStorage is true.
+				Once set to false, logs will not be saved to local storage, and also can not be uploaded. Also refer <a href="#upload-logs">Upload-logs</a> section.</p>
+				<a href="#remote-video" id="remote-video" style="color: inherit; text-decoration: none;">
+					<h2>Remote Video</h2>
+				</a>
+				<p>Remote Video refers to the video coming in from other participants.
+					When a participant joins a meeting with other participants already in it.
+				There will multiple tiles/boxes which will contain other participants.</p>
+				<img width="870" alt="BJNWebClientSDKArch" src="https://bluejeans-non-embed-sdk.s3.us-west-2.amazonaws.com/web-client-sdk/assets/gallery.png">
+				<p>Each tile has some features attached to it:</p>
+				<ol>
+					<li>If video is not on for participant, their initials will be displayed.</li>
+					<li>Initials will correspond to name displayed in the strip at the bottom of the box.</li>
+					<li>Bottom strip in each tile will also contain audio mute state indicator.</li>
+					<li>It will also contain a network indicator bar, indicating how strong is the network of the participant currently in a call.</li>
+					<li>The colour of the tile can be configured as already explained <a href="#sdk-customizations">SDK customizations</a></li>
+				</ol>
+				<a href="#running-video-on-firefox" id="running-video-on-firefox" style="color: inherit; text-decoration: none;">
+					<h2>Running video on FireFox</h2>
+				</a>
+				<p>On other browsers we support layout of remote video as described <a href="#remote-video">above</a>.
+				However on firefox, we support remote video as following:</p>
+				<ol>
+					<li>Video tile will only be shown for participants who have their video on.</li>
+					<li>Consequently layout changes can be made, when there are multiple participants with video on.</li>
+					<li>If all participants have their video turned off, we will show a custom no-video screen.</li>
+				</ol>
+				<a href="#a-note-on-development-environment" id="a-note-on-development-environment" style="color: inherit; text-decoration: none;">
+					<h2>A note on development environment</h2>
+				</a>
+				<p>The Web Client SDK makes use of WebRTC APIs exposed by the browsers to get streams from Camera and Microphone. Due to security concerns, most browsers do not expose the WebRTC APIs in an http page. We recommend you use https while developing locally as well. Most modern build tools like webpack (through webpack dev server) support https out of the box.</p>
+				<a href="#sdk-sample-application" id="sdk-sample-application" style="color: inherit; text-decoration: none;">
+					<h2>SDK Sample Application</h2>
+				</a>
+				<p>We have bundled two sample apps in this repo. One for package manager and another for Vanilla Js setup. It showcases the integration of BlueJeans SDK for permission flow and joins the flow. They have got a basic UI functionality.</p>
+				<a href="#tracking-amp-analytics" id="tracking-amp-analytics" style="color: inherit; text-decoration: none;">
+					<h2>Tracking &amp; Analytics</h2>
+				</a>
+				<p>BlueJeans collects data from app clients who integrate with SDK to join BlueJeans meetings like device information (ID, OS, etc.), coarse location (based on IP address), and usage data.</p>
+				<a href="#contributing" id="contributing" style="color: inherit; text-decoration: none;">
+					<h2>Contributing</h2>
+				</a>
+				<p>The BJNWebClientSDK is closed source and proprietary. As a result, we cannot accept pull requests. However, we enthusiastically welcome feedback on how to make our SDK better. If you think you have found a bug, or have an improvement or feature request, please file a GitHub issue or reach out to our support team at <a href="https://support.bluejeans.com/s/contactsupport">https://support.bluejeans.com/s/contactsupport</a> and we will get back to you. Thanks in advance for your help!</p>
+				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
+					<h2>License</h2>
+				</a>
+				<p>Copyright © 2022 BlueJeans Network. All usage of the SDK is subject to the Developer Agreement that can be found in <a href="https://github.com/bluejeans/web-client-sdk">our repository</a> as License file. Download the agreement and send an email to <a href="mailto:api-sdk@bluejeans.com">api-sdk@bluejeans.com</a> with a signed version of this agreement. Before any commercial or public facing usage of this SDK.</p>
+				<a href="#legal-requirements" id="legal-requirements" style="color: inherit; text-decoration: none;">
+					<h2>Legal Requirements</h2>
+				</a>
+				<p>Use of this SDK is subject to our <a href="https://www.bluejeans.com/terms-and-conditions-may-2020">Terms &amp; Conditions</a> and <a href="https://www.bluejeans.com/privacy-policy">Privacy Policy</a>.</p>
+			</div>
+			<!--{&quot;options&quot;:&quot;/Users/yash.gogia/workspace/BJN/external-webrtc-sdk/bluejeans-webrtc-sdk&quot;,&quot;tsconfig&quot;:&quot;/Users/yash.gogia/workspace/BJN/external-webrtc-sdk/bluejeans-webrtc-sdk&quot;,&quot;entryPoints&quot;:[&quot;./src/BJNWebClientSDK.ts&quot;,&quot;./src/services/&quot;],&quot;exclude&quot;:[&quot;src/services/Analytics.ts&quot;],&quot;externalPattern&quot;:[&quot;**/node_modules/**&quot;],&quot;excludeExternals&quot;:false,&quot;excludeNotDocumented&quot;:false,&quot;excludeInternal&quot;:true,&quot;excludePrivate&quot;:true,&quot;excludeProtected&quot;:false,&quot;disableSources&quot;:false,&quot;disableAliases&quot;:false,&quot;includes&quot;:&quot;&quot;,&quot;media&quot;:&quot;&quot;,&quot;watch&quot;:false,&quot;preserveWatchOutput&quot;:false,&quot;emit&quot;:false,&quot;out&quot;:&quot;&quot;,&quot;json&quot;:&quot;&quot;,&quot;pretty&quot;:true,&quot;theme&quot;:&quot;./node_modules/typedoc-neo-theme/bin/default&quot;,&quot;highlightTheme&quot;:&quot;light-plus&quot;,&quot;name&quot;:&quot;&quot;,&quot;includeVersion&quot;:false,&quot;excludeTags&quot;:[],&quot;readme&quot;:&quot;&quot;,&quot;defaultCategory&quot;:&quot;Other&quot;,&quot;categoryOrder&quot;:[],&quot;categorizeByGroup&quot;:true,&quot;gitRevision&quot;:&quot;&quot;,&quot;gitRemote&quot;:&quot;origin&quot;,&quot;gaID&quot;:&quot;&quot;,&quot;gaSite&quot;:&quot;auto&quot;,&quot;hideGenerator&quot;:false,&quot;toc&quot;:[],&quot;disableOutputCheck&quot;:false,&quot;help&quot;:false,&quot;version&quot;:false,&quot;showConfig&quot;:false,&quot;plugin&quot;:[],&quot;logger&quot;:&quot;console&quot;,&quot;logLevel&quot;:1,&quot;listInvalidSymbolLinks&quot;:false}-->
+		</div>
+		<div class="col-2 col-menu secondary-menu">
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
