@@ -115,6 +115,11 @@ when meeting ends by the transition of connection state to _DISCONNECTED_
 
  Eg: ContentShareService, ParticipantsService, PublicChatService, PrivateChatService
 
+## SDK Documentation
+
+Detailed documentation of SDK functions is available [here]( https://bluejeans.github.io/web-client-sdk).
+
+
 ## Join Meeting
 
 #### Steps to join meeting
