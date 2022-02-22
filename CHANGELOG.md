@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file
 
+## Version 1.0.1
+
+### Fixed
+- Meetings not working on Chrome v100 (and some Chrome Dev, Beta and Canary instances due to [Force Chrome major version to 100](https://developer.chrome.com/blog/force-major-version-to-100/))
+
 ## Version 1.0.0
 
 ### Added
@@ -26,5 +31,5 @@ All notable changes to this project will be documented in this file
 
 ### Changed
 
-1. Format of JoinError codes has been changed to capitalized snake case (Eg : NETWORK_ERROR has been changed to NetworkError)
-2. attachRemoteVideo now requires a div tag to be passed to it instead of a video tag
+- Format of JoinError codes has been changed to capitalized snake case (Eg : NETWORK_ERROR has been changed to NetworkError)
+- attachRemoteVideo now requires a div tag to be passed to it instead of a video tag

@@ -82,7 +82,7 @@ let webClientSDK = new BJNWebClientSDK();
 <script crossorigin src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-is@16.12.0/umd/react-is.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/styled-components@3.4.5/dist/styled-components.js"></script>
-<script crossorigin src="https://unpkg.com/@bluejeans/web-client-sdk@1.0.0/dist/BJNWebClientSDK.js"></script>
+<script crossorigin src="https://unpkg.com/@bluejeans/web-client-sdk@latest/dist/BJNWebClientSDK.js"></script>
  ```
 
 #### Using the SDK
