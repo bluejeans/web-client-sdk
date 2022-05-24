@@ -88,6 +88,9 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/services_meetingservice.html">services/MeetingService</a>
 					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/services_moderatorcontrolsservice.html">services/ModeratorControlsService</a>
+					</li>
 					<li class="current tsd-kind-module">
 						<a href="../modules/services_participantservice.html">services/ParticipantService</a>
 					</li>
@@ -122,8 +125,10 @@
 						<section class="tsd-index-section ">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="services_participantservice.participantservice.html#activespeaker" class="tsd-kind-icon">active<wbr>Speaker</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="services_participantservice.participantservice.html#participants" class="tsd-kind-icon">participants</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="services_participantservice.participantservice.html#selfparticipant" class="tsd-kind-icon">self<wbr>Participant</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="services_participantservice.participantservice.html#spotlightedparticipant" class="tsd-kind-icon">spotlighted<wbr>Participant</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -138,6 +143,29 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Accessors</h2>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="activespeaker" class="tsd-anchor"></a>
+					<h3>active<wbr>Speaker</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> activeSpeaker<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/bjnwebclientsdk.participant.html" class="tsd-signature-type">Participant</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in services/ParticipantService.ts:113</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+								<div class="lead">
+									<p>It returns the currently active speaker as a Participant object.
+									It returns null if no current active speaker is active in the current meeting.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/bjnwebclientsdk.participant.html" class="tsd-signature-type">Participant</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="participants" class="tsd-anchor"></a>
 					<h3>participants</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
@@ -147,7 +175,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in services/ParticipantService.ts:20</li>
+									<li>Defined in services/ParticipantService.ts:21</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
@@ -170,13 +198,36 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in services/ParticipantService.ts:34</li>
+									<li>Defined in services/ParticipantService.ts:35</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
 								<div class="lead">
 									<p>selfParticipant, property provides the information of your own participant.
 									Refer to <a href="../interfaces/bjnwebclientsdk.participant.html">Participant</a>, for the attributes structure of a participant.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/bjnwebclientsdk.participant.html" class="tsd-signature-type">Participant</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="spotlightedparticipant" class="tsd-anchor"></a>
+					<h3>spotlighted<wbr>Participant</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> spotlightedParticipant<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/bjnwebclientsdk.participant.html" class="tsd-signature-type">Participant</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in services/ParticipantService.ts:98</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+								<div class="lead">
+									<p>It returns participant object of the spotlighted participant.
+									It returns null if no participant is spotlighted in the current meeting.</p>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/bjnwebclientsdk.participant.html" class="tsd-signature-type">Participant</a></h4>
@@ -190,13 +241,13 @@
 					<a name="observe" class="tsd-anchor"></a>
 					<h3>observe</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">observe<span class="tsd-signature-symbol">(</span>property<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"observe"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"participants"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"selfParticipant"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"toParticipant"</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">observe<span class="tsd-signature-symbol">(</span>property<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"observe"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"participants"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"selfParticipant"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"toParticipant"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"spotlightedParticipant"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"activeSpeaker"</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in services/ParticipantService.ts:74</li>
+									<li>Defined in services/ParticipantService.ts:83</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
@@ -217,7 +268,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>property: <span class="tsd-signature-type">"observe"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"participants"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"selfParticipant"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"toParticipant"</span></h5>
+									<h5>property: <span class="tsd-signature-type">"observe"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"participants"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"selfParticipant"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"toParticipant"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"spotlightedParticipant"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"activeSpeaker"</span></h5>
 									<div class="tsd-comment tsd-typography tsd-comment-text">
 										<p>The name of the property to observe for changes.</p>
 									</div>
@@ -246,7 +297,7 @@
 					</ul>
 				</section>
 			</section>
-			<!--{&quot;options&quot;:&quot;/Users/yash.gogia/workspace/BJN/external-webrtc-sdk/bluejeans-webrtc-sdk&quot;,&quot;tsconfig&quot;:&quot;/Users/yash.gogia/workspace/BJN/external-webrtc-sdk/bluejeans-webrtc-sdk&quot;,&quot;entryPoints&quot;:[&quot;./src/BJNWebClientSDK.ts&quot;,&quot;./src/services/&quot;],&quot;exclude&quot;:[&quot;src/services/Analytics.ts&quot;],&quot;externalPattern&quot;:[&quot;**/node_modules/**&quot;],&quot;excludeExternals&quot;:false,&quot;excludeNotDocumented&quot;:false,&quot;excludeInternal&quot;:true,&quot;excludePrivate&quot;:true,&quot;excludeProtected&quot;:false,&quot;disableSources&quot;:false,&quot;disableAliases&quot;:false,&quot;includes&quot;:&quot;&quot;,&quot;media&quot;:&quot;&quot;,&quot;watch&quot;:false,&quot;preserveWatchOutput&quot;:false,&quot;emit&quot;:false,&quot;out&quot;:&quot;&quot;,&quot;json&quot;:&quot;&quot;,&quot;pretty&quot;:true,&quot;theme&quot;:&quot;./node_modules/typedoc-neo-theme/bin/default&quot;,&quot;highlightTheme&quot;:&quot;light-plus&quot;,&quot;name&quot;:&quot;&quot;,&quot;includeVersion&quot;:false,&quot;excludeTags&quot;:[],&quot;readme&quot;:&quot;&quot;,&quot;defaultCategory&quot;:&quot;Other&quot;,&quot;categoryOrder&quot;:[],&quot;categorizeByGroup&quot;:true,&quot;gitRevision&quot;:&quot;&quot;,&quot;gitRemote&quot;:&quot;origin&quot;,&quot;gaID&quot;:&quot;&quot;,&quot;gaSite&quot;:&quot;auto&quot;,&quot;hideGenerator&quot;:false,&quot;toc&quot;:[],&quot;disableOutputCheck&quot;:false,&quot;help&quot;:false,&quot;version&quot;:false,&quot;showConfig&quot;:false,&quot;plugin&quot;:[],&quot;logger&quot;:&quot;console&quot;,&quot;logLevel&quot;:1,&quot;listInvalidSymbolLinks&quot;:false}-->
+			<!--{&quot;options&quot;:&quot;/Users/yash.gogia/workspace/BJN/external-webrtc-sdk/bluejeans-webrtc-sdk&quot;,&quot;tsconfig&quot;:&quot;/Users/yash.gogia/workspace/BJN/external-webrtc-sdk/bluejeans-webrtc-sdk&quot;,&quot;entryPoints&quot;:[&quot;./src/BJNWebClientSDK.ts&quot;,&quot;./src/services/&quot;],&quot;exclude&quot;:[&quot;src/services/Analytics.ts&quot;,&quot;src/services/ClosedCaptioningService.ts&quot;],&quot;externalPattern&quot;:[&quot;**/node_modules/**&quot;],&quot;excludeExternals&quot;:false,&quot;excludeNotDocumented&quot;:false,&quot;excludeInternal&quot;:true,&quot;excludePrivate&quot;:true,&quot;excludeProtected&quot;:false,&quot;disableSources&quot;:false,&quot;disableAliases&quot;:false,&quot;includes&quot;:&quot;&quot;,&quot;media&quot;:&quot;&quot;,&quot;watch&quot;:false,&quot;preserveWatchOutput&quot;:false,&quot;emit&quot;:false,&quot;out&quot;:&quot;&quot;,&quot;json&quot;:&quot;&quot;,&quot;pretty&quot;:true,&quot;theme&quot;:&quot;./node_modules/typedoc-neo-theme/bin/default&quot;,&quot;highlightTheme&quot;:&quot;light-plus&quot;,&quot;name&quot;:&quot;&quot;,&quot;includeVersion&quot;:false,&quot;excludeTags&quot;:[],&quot;readme&quot;:&quot;&quot;,&quot;defaultCategory&quot;:&quot;Other&quot;,&quot;categoryOrder&quot;:[],&quot;categorizeByGroup&quot;:true,&quot;gitRevision&quot;:&quot;&quot;,&quot;gitRemote&quot;:&quot;origin&quot;,&quot;gaID&quot;:&quot;&quot;,&quot;gaSite&quot;:&quot;auto&quot;,&quot;hideGenerator&quot;:false,&quot;toc&quot;:[],&quot;disableOutputCheck&quot;:false,&quot;help&quot;:false,&quot;version&quot;:false,&quot;showConfig&quot;:false,&quot;plugin&quot;:[],&quot;logger&quot;:&quot;console&quot;,&quot;logLevel&quot;:1,&quot;listInvalidSymbolLinks&quot;:false}-->
 		</div>
 		<div class="col-2 col-menu secondary-menu">
 			<nav class="tsd-navigation secondary menu-sticky">
@@ -257,10 +308,16 @@
 						<a href="services_participantservice.participantservice.html" class="tsd-kind-icon">Participant<wbr>Service</a>
 						<ul>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="services_participantservice.participantservice.html#activespeaker" class="tsd-kind-icon">active<wbr>Speaker</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="services_participantservice.participantservice.html#participants" class="tsd-kind-icon">participants</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="services_participantservice.participantservice.html#selfparticipant" class="tsd-kind-icon">self<wbr>Participant</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="services_participantservice.participantservice.html#spotlightedparticipant" class="tsd-kind-icon">spotlighted<wbr>Participant</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="services_participantservice.participantservice.html#observe" class="tsd-kind-icon">observe</a>

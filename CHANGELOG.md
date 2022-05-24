@@ -1,6 +1,22 @@
 # Changelog
 
 All notable changes to this project will be documented in this file
+## Version 1.1.0
+
+### Added
+
+- ModeratorControlsService
+  - Meetings recording
+  - Mute/UnMute Audio/Video of other participants / all participants
+  - Remove a participant from the meeting
+  - End meeting for all immediately or after a certain delay
+  - Spotlight a video participant
+
+
+### Removed
+
+- **BREAKING** Removed Connection state `DISCONNECTED` from MeetingService
+  - Since you can now rejoin meetings, Connection state goes to `IDLE` once meeting ends. Please refer to the connection state flow chart in our README.md
 
 ## Version 1.0.1
 

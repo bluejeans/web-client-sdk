@@ -12,4 +12,5 @@ export default class AutoplayHandler implements AutoplayHandlerIntf {
     checkIfMedaiNodeIsPaused(mediaNode: HTMLMediaElement): boolean;
     needFireFoxAutoplayHandling(mediaElement: HTMLMediaElement): boolean;
     needChromiumAutoplayHandling(mediaElement: HTMLMediaElement): boolean;
+    registerDocumentClickListenerForIVR(shouldPlayIVR: boolean, playSilentPrompt: () => void): void;
 }

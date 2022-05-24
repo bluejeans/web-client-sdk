@@ -1,5 +1,5 @@
 import React from "react";
-import { ImCross } from "react-icons/Im";
+import { ImCross } from "react-icons/im";
 import Managers from "../../../stores/Managers";
 import InfoBarViewModel from "./InfoBarViewModel";
 

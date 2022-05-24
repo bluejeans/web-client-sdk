@@ -7,7 +7,7 @@ import PreMeetingView from './PreMeetingView';
 import MeetingView from "./MeetingView"
 import JoiningView from "./JoiningView"
 import AppViewModel from './AppViewModel';
-import { LocalVideoHolder, RemoteContentHolder, VideoHolder, VideoMessage, BuildInfo, Container } from "./styles/Common";
+import { LocalVideoHolder, SharedScreenHolder,  RemoteContentHolder, VideoHolder, VideoMessage, BuildInfo, Container } from "./styles/Common";
 
 declare const
     __SDK_PACKAGE_VERSION__: string
@@ -42,10 +42,10 @@ export default class SampleApp extends Component<Props> {
             case AppState.PRE_MEETING:
                 return this.viewModel.joiningStarted ? <JoiningView/> : <PreMeetingView managers={ this.props.managers }/>
             case AppState.IN_MEETING:
+            case AppState.POST_MEETING:
                 return <MeetingView  managers={ this.props.managers } />
         }
     }
-
     render() {
 
         return (
@@ -55,11 +55,13 @@ export default class SampleApp extends Component<Props> {
                     <div className= "remoteVideo" ref={this.remoteVideoElement}></div>
                     <LocalVideoHolder>
                         <video ref={this.localVideoElement}></video>
-                    </LocalVideoHolder>
+                    </LocalVideoHolder>                                      
+                </VideoHolder>
+                <SharedScreenHolder show={ this.viewModel.showRemoteContent }>  
                     <RemoteContentHolder show= { this.viewModel.showRemoteContent }>
                         <video ref={this.remoteContentElement}></video>
-                    </RemoteContentHolder>                                        
-                </VideoHolder>
+                    </RemoteContentHolder>                                   
+                </SharedScreenHolder>
                 { this.viewToShow }
                 <BuildInfo>{`version : webrtc SDK - ${__SDK_PACKAGE_VERSION__} `}</BuildInfo>
             </Container>

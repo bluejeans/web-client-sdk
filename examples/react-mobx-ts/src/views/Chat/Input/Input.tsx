@@ -2,7 +2,7 @@ import React from "react";
 import { observer } from "mobx-react";
 import { InputContainer } from "./Input.Styled";
 import InputViewModel from "./InputViewModel";
-import { IoMdSend } from "react-icons/Io";
+import { IoMdSend } from "react-icons/io";
 import Managers from "../../../stores/Managers";
 
 interface InputProps {

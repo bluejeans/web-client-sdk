@@ -54,3 +54,8 @@ export declare enum DeviceTypes {
     IPHONE = "iphone",
     ANDROID = "android"
 }
+export declare enum FeatureConstants {
+    SAFARI_UNIFIED_PLAN = "safari_unified_plan",
+    SAFARI_SCREEN_SHARE = "safari_screen_share"
+}
+export declare const ivrResourceBasePath = "https://swdl.bluejeans.com/websdk/web-client-sdk/assets/media";

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_mod_mute_video</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="AZUL-92_Side-Panel---Moderator-individual-Mute" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-271.000000, -310.000000)">
+            <g id="ic_mod_mute_video" transform="translate(271.000000, 309.000000)">
+                <rect id="Rectangle-3" fill="#F0F4F9" opacity="0" x="0" y="0.306874938" width="24" height="24"></rect>
+                <g id="Group-10" transform="translate(3.000000, 4.500000)">
+                    <path d="M4.39510435,3.29193235 L6.37396607,5.29032586 L3,5.29032586 L3,11.2855064 L10,11.2855064 L10,8.95214952 L12,10.9718899 L12,11.2858911 C12,12.3893609 11.0998238,13.2838999 10.007983,13.2838999 L2.99201702,13.2838999 C1.8918564,13.2838999 1,12.3971794 1,11.2858911 L1,5.28994115 C1,4.18647136 1.90017617,3.29193235 2.99201702,3.29193235 L4.39510435,3.29193235 Z M7.42236215,3.29193235 L10.007983,3.29193235 C11.1081436,3.29193235 12,4.17865282 12,5.28994115 L12,7.8695702 L10,5.8695702 L10,5.29032586 L9.42075566,5.29032586 L7.42236215,3.29193235 Z M16.4947228,12.364293 L13,8.8695702 L13,6.28952261 L15.3960948,4.493895 C16.2819072,3.83006936 17,4.17865282 17,5.28994115 L17,11.2858911 C17,11.8604985 16.8060899,12.233137 16.4947228,12.364293 Z" id="OFF-Camera-Icon-Small" fill="#8692A0"></path>
+                    <g id="Group" fill="#FE3A68">
+                        <rect id="Rectangle" transform="translate(8.154963, 8.254939) rotate(-45.000000) translate(-8.154963, -8.254939) " x="7.1549635" y="-1.99506092" width="2" height="20.5"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

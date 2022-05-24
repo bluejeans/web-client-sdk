@@ -8,4 +8,6 @@ export declare class ParticipantService {
     get selfParticipant(): Participant | null;
     toParticipant(participant: CoreParticipant): Participant;
     observe(property: keyof ParticipantService, callback: () => void): void;
+    get spotlightedParticipant(): Participant | null;
+    get activeSpeaker(): Participant | null;
 }

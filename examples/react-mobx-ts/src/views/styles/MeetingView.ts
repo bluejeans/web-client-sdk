@@ -5,6 +5,8 @@ let video_on = require("../../../assets/icons/video_on_1.svg").default;
 let video_off = require("../../../assets/icons/video_off_1.svg").default;
 let audio_on = require("../../../assets/icons/audio_on_1.svg").default;
 let audio_off = require("../../../assets/icons/audio_off_1.svg").default;
+let video_off_remote = require("../../../assets/icons/video_off_remote.svg").default;
+let audio_off_remote = require("../../../assets/icons/audio_off_remote.svg").default;
 let moderator_badge = require("../../../assets/icons/moderator_star.svg").default;
 let share = require("../../../assets/icons/share.svg").default;
 
@@ -182,6 +184,15 @@ export const AudioIcon = styled<any,any>("div")`
     vertical-align: middle;
     background: url(${props => props.isMuted ? audio_off : audio_on}) no-repeat center;
 `
+export const AudioIconRemote = styled<any,any>("div")`
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 350px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url(${props => props.isMuted ? audio_off_remote : audio_on}) no-repeat center;
+`
 
 export const VideoIcon = styled<any,any>("div")`
     width: 24px;
@@ -191,6 +202,15 @@ export const VideoIcon = styled<any,any>("div")`
     display: inline-block;
     vertical-align: middle;
     background: url(${props => props.isMuted ? video_off : video_on}) no-repeat center;
+`
+export const VideoIconRemote = styled<any,any>("div")`
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 300px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url(${props => props.isMuted ? video_off_remote : video_on}) no-repeat center;
 `
 
 export const SpeakerLabel = styled<any, any>("div")`

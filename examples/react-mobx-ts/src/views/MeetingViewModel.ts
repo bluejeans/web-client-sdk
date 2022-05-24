@@ -64,7 +64,7 @@ export default class MeetingViewModel {
             case ConnectionState.RECONNECTING:
                 meetingStatus = "Reconnecting to Meeting";
                 break;
-            case ConnectionState.DISCONNECTED:
+            case ConnectionState.IDLE:
                 meetingStatus = "Disconnected from Meeting";
                 break;
         }
@@ -144,7 +144,7 @@ export default class MeetingViewModel {
     }
 
     @computed get isDisconnected() : boolean {
-        return (this.webrtcSDK.meetingService.connectionState === ConnectionState.DISCONNECTED);
+        return (this.webrtcSDK.meetingService.connectionState === ConnectionState.IDLE);
     }
 
     @computed get isScreenShareSupported() : boolean {
@@ -201,7 +201,7 @@ export default class MeetingViewModel {
 
     @action.bound onLeaveMeetingBtnClick() : void {
         if(this.isDisconnected) {
-            this.appManager.reload();
+            this.appManager.redirectToHomePage();
         } else {
             this.appManager.setSelfTriggeredLeaveMeeting(true);
             this.appManager.leaveMeeting();

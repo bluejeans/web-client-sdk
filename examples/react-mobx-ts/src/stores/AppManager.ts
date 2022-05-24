@@ -1,4 +1,4 @@
-import { computed, action, observable } from "mobx";
+import { computed, action, observable, reaction } from "mobx";
 import {
   BJNWebClientSDK,
   ConnectionState,
@@ -8,6 +8,7 @@ import {
 export enum AppState {
   PRE_MEETING = "PreMeeting",
   IN_MEETING = "InMeeting",
+  POST_MEETING = "PostMeeting"
 }
 
 export interface JoinProps {
@@ -20,20 +21,36 @@ export default class AppManager {
   private webrtcSDK: BJNWebClientSDK;
 
   @observable joinProps: JoinProps;
-  @observable isJoiningMeeting: boolean;
+  @observable isJoiningMeeting: boolean; // used for intermediate joining transition screen
   @observable meetingJoinError: string = "";
   @observable sdkInitializationFailed: boolean = false;
-  @observable canTryJoining: boolean = true;
+  @observable canTryJoining: boolean = true; // used for enabling disabling join button
   @observable selfTriggeredLeaveMeeting: boolean = false;
   @observable showChatPanel: boolean = false;
+  @observable disconnectedAfterMeeting :boolean = false;
 
   constructor(webrtcSDK: BJNWebClientSDK) {
     this.webrtcSDK = webrtcSDK;
     this.joinMeetingWithParams();
+
+    reaction(() => this.webrtcSDK.meetingService.connectionState === ConnectionState.IDLE, () => {
+      if (this.isJoiningMeeting) { // this indicates meeting join has been initiated, and now if connection state is idle, it indicates endMeeting
+        this.disconnectedAfterMeeting = true;
+      }
+    });
+  }
+
+  @action redirectToHomePage(): void{
+    this.setJoiningMeeting(false);
+    this.setCanTryJoining(true);
+    this.disconnectedAfterMeeting = false; // resetting the flag that was set true after disconnecting from meeting
   }
 
   @computed get appState(): AppState {
-    if (
+    if (this.disconnectedAfterMeeting) {
+      return AppState.POST_MEETING
+    }
+    else if (
       this.webrtcSDK.meetingService.connectionState === ConnectionState.IDLE ||
       !this.isJoiningMeeting
     ) {
@@ -134,14 +151,13 @@ export default class AppManager {
   }
 
   @action.bound rejoin(): void {
-    let queryParam =
-      "meetingID=" +
-      this.joinProps.meetingID +
-      "&&passcode=" +
-      this.joinProps.passcode +
-      "&&joinName=" +
-      this.joinProps.joinName;
-    window.location.href = window.location.href + "?" + queryParam;
+    this.redirectToHomePage()
+    const { meetingID, passcode, joinName } = this.joinProps;
+    this.joinMeeting({
+      meetingID: meetingID,
+      passcode: passcode,
+      joinName: joinName,
+    });
   }
 
   leaveMeeting(): Promise<any> {

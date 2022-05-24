@@ -31,10 +31,12 @@ import {
   ErrorMessage,
   LogUploadMessage,
   UploadLogButtonDisabled,
+  VideoIconRemote,
+  AudioIconRemote
 } from "./styles/MeetingView";
 import { Participant } from "@bluejeans/web-client-sdk";
-import { BsFillChatDotsFill } from "react-icons/Bs";
-import { MdExpandLess, MdExpandMore } from "react-icons/Md";
+import { BsFillChatDotsFill } from "react-icons/bs";
+import { MdExpandLess, MdExpandMore } from "react-icons/md";
 import ChatPanel from "./Chat/ChatPanel";
 
 interface Props {
@@ -366,6 +368,7 @@ export default class MeetingView extends Component<Props> {
   renderParticipant(participant: Participant, n): JSX.Element {
     const participantName =
       participant.name + `${participant.isSelf ? "(me)" : ""}`;
+      const localRemoteData = JSON.parse(JSON.stringify(participant));
     return (
       <ParticipantListItem index={n.toString()} key={n.toString()}>
         {participant.isModerator && <ModeratorBadge />}
@@ -373,6 +376,10 @@ export default class MeetingView extends Component<Props> {
           {participantName}
         </ParticipantName>
         {participant.isSharing && <SharingBadge />}
+        {localRemoteData.videoMuteType.remoteMuted ? 
+          <VideoIconRemote
+          isMuted={localRemoteData.videoMuteType.remoteMuted}
+          /> :
         <VideoIcon
           isMuted={
             participant.isVideoMuted !== undefined
@@ -380,6 +387,11 @@ export default class MeetingView extends Component<Props> {
               : true
           }
         />
+       }
+       {localRemoteData.audioMuteType.remoteMuted ? 
+          <AudioIconRemote
+          isMuted={localRemoteData.audioMuteType.remoteMuted}
+          /> :
         <AudioIcon
           isMuted={
             participant.isAudioMuted !== undefined
@@ -387,6 +399,7 @@ export default class MeetingView extends Component<Props> {
               : true
           }
         />
+        }
       </ParticipantListItem>
     );
   }

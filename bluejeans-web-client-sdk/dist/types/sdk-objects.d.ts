@@ -18,12 +18,15 @@ export declare enum VideoState {
     INACTIVE_NEEDS_MODERATOR = "INACTIVE_NEEDS_MODERATOR",
     INACTIVE_DISCONNECTED = "INACTIVE_DISCONNECTED"
 }
+export declare enum RecordingState {
+    STARTED = "started",
+    STOPPED = "stopped"
+}
 export declare enum ConnectionState {
     IDLE = "IDLE",
     VALIDATING = "VALIDATING",
     CONNECTING = "CONNECTING",
     CONNECTED = "CONNECTED",
-    DISCONNECTED = "DISCONNECTED",
     RECONNECTING = "RECONNECTING"
 }
 export declare enum ContentShareState {
@@ -36,6 +39,14 @@ export interface Participant {
     isSelf: boolean;
     isModerator: boolean;
     isVideoMuted: boolean;
+    audioMuteType: {
+        localMuted: boolean;
+        remoteMuted: boolean;
+    };
+    videoMuteType: {
+        localMuted: boolean;
+        remoteMuted: boolean;
+    };
     isAudioMuted: boolean;
     isSharing: boolean;
     participantGuid: string;
@@ -54,7 +65,6 @@ export declare enum JoinError {
     LoginRequired = "LoginRequired",
     RestrictedMeeting = "RestrictedMeeting",
     InvalidMeetingIDOrPasscode = "InvalidMeetingIDOrPasscode",
-    TechnicalError = "TechnicalError",
     TryAgainLater = "TryAgainLater",
     InternalError = "InternalError"
 }
@@ -96,4 +106,14 @@ export interface CustomizationParams {
 export interface BlueJeansSDKInitParams {
     customizationParams?: CustomizationParams;
     saveLogsToLocalStorage?: boolean;
+    playIVRs?: boolean;
+}
+export declare enum ClosedCaptioningState {
+    CONNECTING = "Connecting",
+    CONNECTED = "Connected",
+    DISCONNECTED = "Disconnected"
+}
+export interface Error {
+    reason: string;
+    error: object | boolean;
 }

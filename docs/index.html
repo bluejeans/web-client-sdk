@@ -83,6 +83,9 @@
 						<a href="modules/services_meetingservice.html">services/MeetingService</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="modules/services_moderatorcontrolsservice.html">services/ModeratorControlsService</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="modules/services_participantservice.html">services/ParticipantService</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -129,6 +132,7 @@
 					<li>Public and Private meeting Chat</li>
 					<li>Meeting Information (Title, Hostname, Meeting Id)</li>
 					<li>Video tile background customization options</li>
+					<li>Moderator Controls</li>
 				</ul>
 				<p> <strong>Not to be confused with:</strong></p>
 				<ul>
@@ -179,7 +183,7 @@
 <span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">crossorigin</span><span style="color: #000000FF"> </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;https://unpkg.com/react-dom@16.12.0/umd/react-dom.production.min.js&quot;</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
 <span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">crossorigin</span><span style="color: #000000FF"> </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;https://unpkg.com/react-is@16.12.0/umd/react-is.production.min.js&quot;</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
 <span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">crossorigin</span><span style="color: #000000FF"> </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;https://unpkg.com/styled-components@3.4.5/dist/styled-components.js&quot;</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
-<span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">crossorigin</span><span style="color: #000000FF"> </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;https://unpkg.com/@bluejeans/web-client-sdk@1.0.0/dist/BJNWebClientSDK.js&quot;</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
+<span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">crossorigin</span><span style="color: #000000FF"> </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;https://unpkg.com/@bluejeans/web-client-sdk/dist/BJNWebClientSDK.js&quot;</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
 </code></pre>
 				<a href="#using-the-sdk-1" id="using-the-sdk-1" style="color: inherit; text-decoration: none;">
 					<h4>Using the SDK</h4>
@@ -205,8 +209,8 @@
 					<h4>2. InMeeting active services</h4>
 				</a>
 				<p>Unlike <a href="#globally-active-services">Globally active services</a>, InMeeting services get activated when <em>ConnectionState</em> transitions to <em>CONNECTED</em> and get inactivated
-				when meeting ends by the transition of connection state to <em>DISCONNECTED</em></p>
-				<p> Eg: ContentShareService, ParticipantsService, PublicChatService, PrivateChatService</p>
+				when meeting ends by the transition of connection state to <em>IDLE</em></p>
+				<p> Eg: ContentShareService, ParticipantsService, PublicChatService, PrivateChatService, ModeratorControlsService</p>
 				<a href="#join-meeting" id="join-meeting" style="color: inherit; text-decoration: none;">
 					<h2>Join Meeting</h2>
 				</a>
@@ -217,10 +221,18 @@
 					<li>Use meeting service and call joinMeeting API to join a meeting</li>
 					<li>Observe the Join API result by checking the connectionState on meetingService</li>
 				</ul>
-				<a href="#sample-code-for-joinmeeting" id="sample-code-for-joinmeeting" style="color: inherit; text-decoration: none;">
-					<h3>Sample code for joinMeeting</h3>
-				</a>
-				<p>To join a meeting</p>
+				<p><strong>Following are the states which can be observed by subscribing to connectionState :</strong></p>
+				<ol>
+					<li><code>IDLE</code> - is a state which determines that a meeting is not in progress.</li>
+					<li><code>VALIDATING</code> - meeting credentials are being validated </li>
+					<li><code>CONNECTING</code> - is a state which determines that meeting credentials were successfully authenticated and you are about to join the meeting.</li>
+					<li><code>RECONNECTING</code> - this state is produced when a network glitch occurs </li>
+					<li><code>CONNECTED</code> - this state determines that you are finally into the meeting. </li>
+				</ol>
+				<p>Below is a diagram depicting the meeting state transitions:</p>
+				<img width="870" alt="BJNWebClientSDKArch" src="https://bluejeans-non-embed-sdk.s3.us-west-2.amazonaws.com/web-client-sdk/assets/sdk-connection-states-transition.png">
+				### Sample code for joinMeeting
+				To join a meeting
 				<pre><code class="language-javascript"><span style="color: #001080">webClientSDK</span><span style="color: #000000">.</span><span style="color: #001080">meetingService</span><span style="color: #000000">.</span><span style="color: #795E26">joinMeeting</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;&lt;Meeting_ID&gt;&quot;</span><span style="color: #000000">,</span><span style="color: #A31515">&quot;&lt;PASSCODE&gt;&quot;</span><span style="color: #000000">, </span><span style="color: #A31515">&quot;&lt;DISPLAY_NAME&gt;&quot;</span><span style="color: #000000">).</span><span style="color: #795E26">then</span><span style="color: #000000">(() </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
 <span style="color: #000000">   </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;Success&quot;</span><span style="color: #000000">);</span>
 <span style="color: #000000">},(</span><span style="color: #001080">error</span><span style="color: #000000">)</span><span style="color: #0000FF">=&gt;</span><span style="color: #000000">{</span>
@@ -254,7 +266,7 @@
 				<p>Disconnect from the meeting using <code>endMeeting</code> method in MeetingService.</p>
 				<pre><code class="language-javascript"><span style="color: #001080">webClientSDK</span><span style="color: #000000">.</span><span style="color: #001080">meetingService</span><span style="color: #000000">.</span><span style="color: #795E26">endMeeting</span><span style="color: #000000">()</span>
 </code></pre>
-				<p>Note: when <code>meetingService.connectionState</code> changes to <em>DISCONNECTED</em> state, then it can be safely assumed, participant has left the meeting.</p>
+				<p>Note: when <code>meetingService.connectionState</code> changes to <em>IDLE</em> state, then it can be safely assumed, participant has left the meeting.</p>
 				<a href="#observing-properties" id="observing-properties" style="color: inherit; text-decoration: none;">
 					<h2>Observing Properties</h2>
 				</a>
@@ -418,7 +430,7 @@
 				<a href="#sdk-sample-application" id="sdk-sample-application" style="color: inherit; text-decoration: none;">
 					<h2>SDK Sample Application</h2>
 				</a>
-				<p>We have bundled two sample apps in this repo. One for package manager and another for Vanilla Js setup. It showcases the integration of BlueJeans SDK for permission flow and joins the flow. They have got a basic UI functionality.</p>
+				<p>We have bundled two sample apps in  <a href="https://github.com/bluejeans/web-client-sdk">this repo</a>. One for package manager and another for Vanilla Js setup. It showcases the integration of BlueJeans SDK for permission flow and joins the flow. They have got a basic UI functionality.</p>
 				<a href="#tracking-amp-analytics" id="tracking-amp-analytics" style="color: inherit; text-decoration: none;">
 					<h2>Tracking &amp; Analytics</h2>
 				</a>
@@ -436,7 +448,7 @@
 				</a>
 				<p>Use of this SDK is subject to our <a href="https://www.bluejeans.com/terms-and-conditions-may-2020">Terms &amp; Conditions</a> and <a href="https://www.bluejeans.com/privacy-policy">Privacy Policy</a>.</p>
 			</div>
-			<!--{&quot;options&quot;:&quot;/Users/yash.gogia/workspace/BJN/external-webrtc-sdk/bluejeans-webrtc-sdk&quot;,&quot;tsconfig&quot;:&quot;/Users/yash.gogia/workspace/BJN/external-webrtc-sdk/bluejeans-webrtc-sdk&quot;,&quot;entryPoints&quot;:[&quot;./src/BJNWebClientSDK.ts&quot;,&quot;./src/services/&quot;],&quot;exclude&quot;:[&quot;src/services/Analytics.ts&quot;],&quot;externalPattern&quot;:[&quot;**/node_modules/**&quot;],&quot;excludeExternals&quot;:false,&quot;excludeNotDocumented&quot;:false,&quot;excludeInternal&quot;:true,&quot;excludePrivate&quot;:true,&quot;excludeProtected&quot;:false,&quot;disableSources&quot;:false,&quot;disableAliases&quot;:false,&quot;includes&quot;:&quot;&quot;,&quot;media&quot;:&quot;&quot;,&quot;watch&quot;:false,&quot;preserveWatchOutput&quot;:false,&quot;emit&quot;:false,&quot;out&quot;:&quot;&quot;,&quot;json&quot;:&quot;&quot;,&quot;pretty&quot;:true,&quot;theme&quot;:&quot;./node_modules/typedoc-neo-theme/bin/default&quot;,&quot;highlightTheme&quot;:&quot;light-plus&quot;,&quot;name&quot;:&quot;&quot;,&quot;includeVersion&quot;:false,&quot;excludeTags&quot;:[],&quot;readme&quot;:&quot;&quot;,&quot;defaultCategory&quot;:&quot;Other&quot;,&quot;categoryOrder&quot;:[],&quot;categorizeByGroup&quot;:true,&quot;gitRevision&quot;:&quot;&quot;,&quot;gitRemote&quot;:&quot;origin&quot;,&quot;gaID&quot;:&quot;&quot;,&quot;gaSite&quot;:&quot;auto&quot;,&quot;hideGenerator&quot;:false,&quot;toc&quot;:[],&quot;disableOutputCheck&quot;:false,&quot;help&quot;:false,&quot;version&quot;:false,&quot;showConfig&quot;:false,&quot;plugin&quot;:[],&quot;logger&quot;:&quot;console&quot;,&quot;logLevel&quot;:1,&quot;listInvalidSymbolLinks&quot;:false}-->
+			<!--{&quot;options&quot;:&quot;/Users/yash.gogia/workspace/BJN/external-webrtc-sdk/bluejeans-webrtc-sdk&quot;,&quot;tsconfig&quot;:&quot;/Users/yash.gogia/workspace/BJN/external-webrtc-sdk/bluejeans-webrtc-sdk&quot;,&quot;entryPoints&quot;:[&quot;./src/BJNWebClientSDK.ts&quot;,&quot;./src/services/&quot;],&quot;exclude&quot;:[&quot;src/services/Analytics.ts&quot;,&quot;src/services/ClosedCaptioningService.ts&quot;],&quot;externalPattern&quot;:[&quot;**/node_modules/**&quot;],&quot;excludeExternals&quot;:false,&quot;excludeNotDocumented&quot;:false,&quot;excludeInternal&quot;:true,&quot;excludePrivate&quot;:true,&quot;excludeProtected&quot;:false,&quot;disableSources&quot;:false,&quot;disableAliases&quot;:false,&quot;includes&quot;:&quot;&quot;,&quot;media&quot;:&quot;&quot;,&quot;watch&quot;:false,&quot;preserveWatchOutput&quot;:false,&quot;emit&quot;:false,&quot;out&quot;:&quot;&quot;,&quot;json&quot;:&quot;&quot;,&quot;pretty&quot;:true,&quot;theme&quot;:&quot;./node_modules/typedoc-neo-theme/bin/default&quot;,&quot;highlightTheme&quot;:&quot;light-plus&quot;,&quot;name&quot;:&quot;&quot;,&quot;includeVersion&quot;:false,&quot;excludeTags&quot;:[],&quot;readme&quot;:&quot;&quot;,&quot;defaultCategory&quot;:&quot;Other&quot;,&quot;categoryOrder&quot;:[],&quot;categorizeByGroup&quot;:true,&quot;gitRevision&quot;:&quot;&quot;,&quot;gitRemote&quot;:&quot;origin&quot;,&quot;gaID&quot;:&quot;&quot;,&quot;gaSite&quot;:&quot;auto&quot;,&quot;hideGenerator&quot;:false,&quot;toc&quot;:[],&quot;disableOutputCheck&quot;:false,&quot;help&quot;:false,&quot;version&quot;:false,&quot;showConfig&quot;:false,&quot;plugin&quot;:[],&quot;logger&quot;:&quot;console&quot;,&quot;logLevel&quot;:1,&quot;listInvalidSymbolLinks&quot;:false}-->
 		</div>
 		<div class="col-2 col-menu secondary-menu">
 			<nav class="tsd-navigation secondary menu-sticky">

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>VideoLayout | @bluejeans/web-client-sdk</title>
+	<title>RecordingState | @bluejeans/web-client-sdk</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -59,7 +59,7 @@
 					<a href="../modules/bjnwebclientsdk.html">BJNWebClientSDK</a>
 				</li>
 				<li>
-					<a href="bjnwebclientsdk.videolayout.html">VideoLayout</a>
+					<a href="bjnwebclientsdk.recordingstate.html">RecordingState</a>
 				</li>
 			</ul>
 		</div>
@@ -110,17 +110,15 @@
 			</nav>
 		</div>
 		<div class="col-7 offset-3 col-content">
-			<h1>Enumeration VideoLayout</h1>
+			<h1>Enumeration RecordingState</h1>
 			<section class="tsd-panel-group tsd-index-group">
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
 							<h3>Enumeration members</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="bjnwebclientsdk.videolayout.html#filmstrip" class="tsd-kind-icon">FILMSTRIP</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="bjnwebclientsdk.videolayout.html#gallery" class="tsd-kind-icon">GALLERY</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="bjnwebclientsdk.videolayout.html#people" class="tsd-kind-icon">PEOPLE</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="bjnwebclientsdk.videolayout.html#speaker" class="tsd-kind-icon">SPEAKER</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="bjnwebclientsdk.recordingstate.html#started" class="tsd-kind-icon">STARTED</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="bjnwebclientsdk.recordingstate.html#stopped" class="tsd-kind-icon">STOPPED</a></li>
 							</ul>
 						</section>
 					</div>
@@ -129,62 +127,32 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Enumeration members</h2>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="filmstrip" class="tsd-anchor"></a>
-					<h3>FILMSTRIP</h3>
-					<div class="tsd-signature tsd-kind-icon">FILMSTRIP<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;FILMSTRIP&quot;</span></div>
+					<a name="started" class="tsd-anchor"></a>
+					<h3>STARTED</h3>
+					<div class="tsd-signature tsd-kind-icon">STARTED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;started&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in sdk-objects.ts:17</li>
+							<li>Defined in sdk-objects.ts:71</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
 						<div class="lead">
-							<p>Up to the 5 most recent speakers are show, arranged in a horizontal filmstrip</p>
+							<p>Recording is in progress for current meeting</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="gallery" class="tsd-anchor"></a>
-					<h3>GALLERY</h3>
-					<div class="tsd-signature tsd-kind-icon">GALLERY<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;GALLERY&quot;</span></div>
+					<a name="stopped" class="tsd-anchor"></a>
+					<h3>STOPPED</h3>
+					<div class="tsd-signature tsd-kind-icon">STOPPED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;stopped&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in sdk-objects.ts:13</li>
+							<li>Defined in sdk-objects.ts:75</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
 						<div class="lead">
-							<p>Up to the 9 most recent speakers are shown, arranged in a grid layout of equal sizes.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="people" class="tsd-anchor"></a>
-					<h3>PEOPLE</h3>
-					<div class="tsd-signature tsd-kind-icon">PEOPLE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;PEOPLE&quot;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in sdk-objects.ts:9</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
-						<div class="lead">
-							<p>The most recent speaker is shown as a larger video. A filmstrip of the next (up to) 5 most recent speakers is shown at the bottom.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="speaker" class="tsd-anchor"></a>
-					<h3>SPEAKER</h3>
-					<div class="tsd-signature tsd-kind-icon">SPEAKER<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;SPEAKER&quot;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in sdk-objects.ts:5</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
-						<div class="lead">
-							<p> Only the most recent speaker is shown, taking up the whole video stream.</p>
+							<p>Recording is stopped for current meeting</p>
 						</div>
 					</div>
 				</section>
@@ -212,30 +180,24 @@
 					<li class=" tsd-kind-enum tsd-parent-kind-module root">
 						<a href="bjnwebclientsdk.permissionerror.html" class="tsd-kind-icon">Permission<wbr>Error</a>
 					</li>
-					<li class=" tsd-kind-enum tsd-parent-kind-module root">
-						<a href="bjnwebclientsdk.recordingstate.html" class="tsd-kind-icon">Recording<wbr>State</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-enum tsd-parent-kind-module root">
-						<a href="bjnwebclientsdk.videolayout.html" class="tsd-kind-icon">Video<wbr>Layout</a>
+						<a href="bjnwebclientsdk.recordingstate.html" class="tsd-kind-icon">Recording<wbr>State</a>
 						<ul>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="bjnwebclientsdk.videolayout.html#filmstrip" class="tsd-kind-icon">FILMSTRIP</a>
+								<a href="bjnwebclientsdk.recordingstate.html#started" class="tsd-kind-icon">STARTED</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="bjnwebclientsdk.videolayout.html#gallery" class="tsd-kind-icon">GALLERY</a>
-							</li>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="bjnwebclientsdk.videolayout.html#people" class="tsd-kind-icon">PEOPLE</a>
-							</li>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="bjnwebclientsdk.videolayout.html#speaker" class="tsd-kind-icon">SPEAKER</a>
+								<a href="bjnwebclientsdk.recordingstate.html#stopped" class="tsd-kind-icon">STOPPED</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="bjnwebclientsdk.videolayout.html" class="tsd-kind-icon">Video<wbr>Layout</a>
+					</li>
 					<li class=" tsd-kind-enum tsd-parent-kind-module root">
 						<a href="bjnwebclientsdk.videostate.html" class="tsd-kind-icon">Video<wbr>State</a>
 					</li>

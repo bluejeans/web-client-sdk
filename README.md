@@ -23,6 +23,7 @@ The design of the SDK emphasizes **simplicity**. Developers can quickly integrat
 - Public and Private meeting Chat
 - Meeting Information (Title, Hostname, Meeting Id)
 - Video tile background customization options
+- Moderator Controls
 
  **Not to be confused with:**
 
@@ -82,7 +83,7 @@ let webClientSDK = new BJNWebClientSDK();
 <script crossorigin src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-is@16.12.0/umd/react-is.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/styled-components@3.4.5/dist/styled-components.js"></script>
-<script crossorigin src="https://unpkg.com/@bluejeans/web-client-sdk@latest/dist/BJNWebClientSDK.js"></script>
+<script crossorigin src="https://unpkg.com/@bluejeans/web-client-sdk/dist/BJNWebClientSDK.js"></script>
  ```
 
 #### Using the SDK
@@ -111,14 +112,9 @@ These services are available as soon as we initialize the SDK, and are available
 #### 2. InMeeting active services
 
 Unlike [Globally active services](#globally-active-services), InMeeting services get activated when _ConnectionState_ transitions to _CONNECTED_ and get inactivated
-when meeting ends by the transition of connection state to _DISCONNECTED_
+when meeting ends by the transition of connection state to _IDLE_
 
- Eg: ContentShareService, ParticipantsService, PublicChatService, PrivateChatService
-
-## SDK Documentation
-
-Detailed documentation of SDK functions is available [here]( https://bluejeans.github.io/web-client-sdk).
-
+ Eg: ContentShareService, ParticipantsService, PublicChatService, PrivateChatService, ModeratorControlsService
 
 ## Join Meeting
 
@@ -127,6 +123,16 @@ Detailed documentation of SDK functions is available [here]( https://bluejeans.g
 - Use meeting service and call joinMeeting API to join a meeting
 - Observe the Join API result by checking the connectionState on meetingService
 
+**Following are the states which can be observed by subscribing to connectionState :**
+1. `IDLE` - is a state which determines that a meeting is not in progress.
+2. `VALIDATING` - meeting credentials are being validated 
+3. `CONNECTING` - is a state which determines that meeting credentials were successfully authenticated and you are about to join the meeting.
+4. `RECONNECTING` - this state is produced when a network glitch occurs 
+5. `CONNECTED` - this state determines that you are finally into the meeting. 
+
+Below is a diagram depicting the meeting state transitions:
+
+<img width="870" alt="BJNWebClientSDKArch" src="https://bluejeans-non-embed-sdk.s3.us-west-2.amazonaws.com/web-client-sdk/assets/sdk-connection-states-transition.png">
 ### Sample code for joinMeeting
 To join a meeting
 
@@ -173,7 +179,7 @@ Disconnect from the meeting using `endMeeting` method in MeetingService.
 webClientSDK.meetingService.endMeeting()
 ```
 
-Note: when `meetingService.connectionState` changes to _DISCONNECTED_ state, then it can be safely assumed, participant has left the meeting.
+Note: when `meetingService.connectionState` changes to _IDLE_ state, then it can be safely assumed, participant has left the meeting.
 
 ## Observing Properties
 
@@ -375,7 +381,7 @@ The Web Client SDK makes use of WebRTC APIs exposed by the browsers to get strea
 
 ## SDK Sample Application
 
-We have bundled two sample apps in this repo. One for package manager and another for Vanilla Js setup. It showcases the integration of BlueJeans SDK for permission flow and joins the flow. They have got a basic UI functionality.
+We have bundled two sample apps in  [this repo](https://github.com/bluejeans/web-client-sdk). One for package manager and another for Vanilla Js setup. It showcases the integration of BlueJeans SDK for permission flow and joins the flow. They have got a basic UI functionality.
 
 ## Tracking & Analytics
 

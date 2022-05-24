@@ -1,6 +1,6 @@
 {
   "name": "@bluejeans/web-client-sdk",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "BlueJeans Web Client SDK",
   "main": "./dist/BJNWebClientSDK.js",
   "typings": "./dist/types/BJNWebClientSDK.d.ts",
@@ -19,5 +19,5 @@
     "styled-components": "3.4.5"
   },
   "author": "BlueJeans",
-  "license": "ISC"
+  "license": "proprietary/commercial"
 }

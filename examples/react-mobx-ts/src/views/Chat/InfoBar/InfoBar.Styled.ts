@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import { ImCross } from "react-icons/Im";
-
 
 export const InfoBarMain = styled.div`
   display: flex;

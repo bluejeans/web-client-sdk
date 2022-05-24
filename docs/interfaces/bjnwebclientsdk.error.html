@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>VideoLayout | @bluejeans/web-client-sdk</title>
+	<title>Error | @bluejeans/web-client-sdk</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -59,7 +59,7 @@
 					<a href="../modules/bjnwebclientsdk.html">BJNWebClientSDK</a>
 				</li>
 				<li>
-					<a href="bjnwebclientsdk.videolayout.html">VideoLayout</a>
+					<a href="bjnwebclientsdk.error.html">Error</a>
 				</li>
 			</ul>
 		</div>
@@ -110,81 +110,57 @@
 			</nav>
 		</div>
 		<div class="col-7 offset-3 col-content">
-			<h1>Enumeration VideoLayout</h1>
+			<h1>Interface Error</h1>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">Error</span>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Enumeration members</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="bjnwebclientsdk.videolayout.html#filmstrip" class="tsd-kind-icon">FILMSTRIP</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="bjnwebclientsdk.videolayout.html#gallery" class="tsd-kind-icon">GALLERY</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="bjnwebclientsdk.videolayout.html#people" class="tsd-kind-icon">PEOPLE</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="bjnwebclientsdk.videolayout.html#speaker" class="tsd-kind-icon">SPEAKER</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="bjnwebclientsdk.error.html#error" class="tsd-kind-icon">error</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="bjnwebclientsdk.error.html#reason" class="tsd-kind-icon">reason</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Enumeration members</h2>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="filmstrip" class="tsd-anchor"></a>
-					<h3>FILMSTRIP</h3>
-					<div class="tsd-signature tsd-kind-icon">FILMSTRIP<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;FILMSTRIP&quot;</span></div>
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="error" class="tsd-anchor"></a>
+					<h3>error</h3>
+					<div class="tsd-signature tsd-kind-icon">error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in sdk-objects.ts:17</li>
+							<li>Defined in sdk-objects.ts:379</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
 						<div class="lead">
-							<p>Up to the 5 most recent speakers are show, arranged in a horizontal filmstrip</p>
+							<p>Returns an error object when available else returns false. Use the false value as a flag and check the reason returned.</p>
 						</div>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="gallery" class="tsd-anchor"></a>
-					<h3>GALLERY</h3>
-					<div class="tsd-signature tsd-kind-icon">GALLERY<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;GALLERY&quot;</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="reason" class="tsd-anchor"></a>
+					<h3>reason</h3>
+					<div class="tsd-signature tsd-kind-icon">reason<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in sdk-objects.ts:13</li>
+							<li>Defined in sdk-objects.ts:375</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
 						<div class="lead">
-							<p>Up to the 9 most recent speakers are shown, arranged in a grid layout of equal sizes.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="people" class="tsd-anchor"></a>
-					<h3>PEOPLE</h3>
-					<div class="tsd-signature tsd-kind-icon">PEOPLE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;PEOPLE&quot;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in sdk-objects.ts:9</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
-						<div class="lead">
-							<p>The most recent speaker is shown as a larger video. A filmstrip of the next (up to) 5 most recent speakers is shown at the bottom.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="speaker" class="tsd-anchor"></a>
-					<h3>SPEAKER</h3>
-					<div class="tsd-signature tsd-kind-icon">SPEAKER<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;SPEAKER&quot;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in sdk-objects.ts:5</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
-						<div class="lead">
-							<p> Only the most recent speaker is shown, taking up the whole video stream.</p>
+							<p>Description of the error when an API fails.</p>
 						</div>
 					</div>
 				</section>
@@ -195,76 +171,70 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-enum tsd-parent-kind-module root">
-						<a href="bjnwebclientsdk.connectionstate.html" class="tsd-kind-icon">Connection<wbr>State</a>
+						<a href="../enums/bjnwebclientsdk.connectionstate.html" class="tsd-kind-icon">Connection<wbr>State</a>
 					</li>
 					<li class=" tsd-kind-enum tsd-parent-kind-module root">
-						<a href="bjnwebclientsdk.contentsharestate.html" class="tsd-kind-icon">Content<wbr>Share<wbr>State</a>
+						<a href="../enums/bjnwebclientsdk.contentsharestate.html" class="tsd-kind-icon">Content<wbr>Share<wbr>State</a>
 					</li>
 					<li class=" tsd-kind-enum tsd-parent-kind-module root">
-						<a href="bjnwebclientsdk.joinerror.html" class="tsd-kind-icon">Join<wbr>Error</a>
+						<a href="../enums/bjnwebclientsdk.joinerror.html" class="tsd-kind-icon">Join<wbr>Error</a>
 					</li>
 					<li class=" tsd-kind-enum tsd-parent-kind-module root">
-						<a href="bjnwebclientsdk.loguploadresult.html" class="tsd-kind-icon">Log<wbr>Upload<wbr>Result</a>
+						<a href="../enums/bjnwebclientsdk.loguploadresult.html" class="tsd-kind-icon">Log<wbr>Upload<wbr>Result</a>
 					</li>
 					<li class=" tsd-kind-enum tsd-parent-kind-module root">
-						<a href="bjnwebclientsdk.loggingmode.html" class="tsd-kind-icon">Logging<wbr>Mode</a>
+						<a href="../enums/bjnwebclientsdk.loggingmode.html" class="tsd-kind-icon">Logging<wbr>Mode</a>
 					</li>
 					<li class=" tsd-kind-enum tsd-parent-kind-module root">
-						<a href="bjnwebclientsdk.permissionerror.html" class="tsd-kind-icon">Permission<wbr>Error</a>
+						<a href="../enums/bjnwebclientsdk.permissionerror.html" class="tsd-kind-icon">Permission<wbr>Error</a>
 					</li>
 					<li class=" tsd-kind-enum tsd-parent-kind-module root">
-						<a href="bjnwebclientsdk.recordingstate.html" class="tsd-kind-icon">Recording<wbr>State</a>
+						<a href="../enums/bjnwebclientsdk.recordingstate.html" class="tsd-kind-icon">Recording<wbr>State</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-enum tsd-parent-kind-module root">
-						<a href="bjnwebclientsdk.videolayout.html" class="tsd-kind-icon">Video<wbr>Layout</a>
-						<ul>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="bjnwebclientsdk.videolayout.html#filmstrip" class="tsd-kind-icon">FILMSTRIP</a>
-							</li>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="bjnwebclientsdk.videolayout.html#gallery" class="tsd-kind-icon">GALLERY</a>
-							</li>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="bjnwebclientsdk.videolayout.html#people" class="tsd-kind-icon">PEOPLE</a>
-							</li>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="bjnwebclientsdk.videolayout.html#speaker" class="tsd-kind-icon">SPEAKER</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-enum tsd-parent-kind-module root">
-						<a href="bjnwebclientsdk.videostate.html" class="tsd-kind-icon">Video<wbr>State</a>
+						<a href="../enums/bjnwebclientsdk.videolayout.html" class="tsd-kind-icon">Video<wbr>Layout</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/bjnwebclientsdk.videostate.html" class="tsd-kind-icon">Video<wbr>State</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module root">
 						<a href="../classes/bjnwebclientsdk.bjnwebclientsdk-1.html" class="tsd-kind-icon">BJNWeb<wbr>ClientSDK</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module root">
-						<a href="../interfaces/bjnwebclientsdk.audiovideodevice.html" class="tsd-kind-icon">Audio<wbr>Video<wbr>Device</a>
+						<a href="bjnwebclientsdk.audiovideodevice.html" class="tsd-kind-icon">Audio<wbr>Video<wbr>Device</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module root">
-						<a href="../interfaces/bjnwebclientsdk.bluejeanssdkinitparams.html" class="tsd-kind-icon">Blue<wbr>JeansSDKInit<wbr>Params</a>
+						<a href="bjnwebclientsdk.bluejeanssdkinitparams.html" class="tsd-kind-icon">Blue<wbr>JeansSDKInit<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module root">
-						<a href="../interfaces/bjnwebclientsdk.chatmessage.html" class="tsd-kind-icon">Chat<wbr>Message</a>
+						<a href="bjnwebclientsdk.chatmessage.html" class="tsd-kind-icon">Chat<wbr>Message</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module root">
-						<a href="../interfaces/bjnwebclientsdk.customizationparams.html" class="tsd-kind-icon">Customization<wbr>Params</a>
+						<a href="bjnwebclientsdk.customizationparams.html" class="tsd-kind-icon">Customization<wbr>Params</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-module root">
+						<a href="bjnwebclientsdk.error.html" class="tsd-kind-icon">Error</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="bjnwebclientsdk.error.html#error" class="tsd-kind-icon">error</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="bjnwebclientsdk.error.html#reason" class="tsd-kind-icon">reason</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="bjnwebclientsdk.errorinfo.html" class="tsd-kind-icon">Error<wbr>Info</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module root">
-						<a href="../interfaces/bjnwebclientsdk.error.html" class="tsd-kind-icon">Error</a>
+						<a href="bjnwebclientsdk.meetinginformation.html" class="tsd-kind-icon">Meeting<wbr>Information</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module root">
-						<a href="../interfaces/bjnwebclientsdk.errorinfo.html" class="tsd-kind-icon">Error<wbr>Info</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module root">
-						<a href="../interfaces/bjnwebclientsdk.meetinginformation.html" class="tsd-kind-icon">Meeting<wbr>Information</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module root">
-						<a href="../interfaces/bjnwebclientsdk.participant.html" class="tsd-kind-icon">Participant</a>
+						<a href="bjnwebclientsdk.participant.html" class="tsd-kind-icon">Participant</a>
 					</li>
 				</ul>
 			</nav>

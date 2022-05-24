@@ -28,7 +28,7 @@ export default class AppViewModel {
     @computed get videoMessage () : string {
         if (this.webrtcSDK.meetingService.contentService.receivingContentShare) {
             return ""
-        } else if (this.webrtcSDK.meetingService.connectionState == ConnectionState.CONNECTING || this.webrtcSDK.meetingService.connectionState == ConnectionState.IDLE) {
+        } else if (this.webrtcSDK.meetingService.connectionState == ConnectionState.CONNECTING) {
             return "Connecting...";
         } else if (this.webrtcSDK.meetingService.connectionState == ConnectionState.RECONNECTING) {
             return "Reconnecting...";
@@ -36,6 +36,8 @@ export default class AppViewModel {
             return "Waiting for the moderator"
         } else if (this.webrtcSDK.meetingService.videoState == VideoState.INACTIVE_ONLY_PARTICIPANT) {
             return "Please wait while others join"
+        } else if (this.webrtcSDK.meetingService.connectionState == ConnectionState.IDLE){
+            return "Disconnected from meeting"
         } else {
             return ""
         }

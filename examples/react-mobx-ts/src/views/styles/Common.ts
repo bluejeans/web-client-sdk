@@ -72,6 +72,36 @@ export const VideoHolder = styled<any, any>("div")`
     }
 `
 
+export const SharedScreenHolder = styled<any, any>("div")`
+    width: 60%;
+    padding-top: 33.75%; // 9/16 * 60%
+    position: absolute;
+    display: ${props => props.show ? "inline-block" : "none"};
+    top: 538px;
+    right: 20px;
+    background-color: rgb(149, 216, 252);
+
+    .video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        }
+        
+    @media only screen and (max-width: 768px) {
+        width: 100vw;
+        height: 38vh;
+        right: 8px;
+        top: 441px;
+        padding-top:00px;
+        position:relative;
+    }
+    @media only screen and (min-width: 1400px) {
+       top: 633px;
+    }
+`
 export const VideoMessage = styled<any,any>("div")`
     width: 100%;
     text-align: center;
@@ -104,8 +134,8 @@ export const RemoteContentHolder = styled<any, any>("div")`
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 40%;
-    padding-top: 22.5%; // 9/16 * .40
+    width: 100%;
+    padding-top: 52.5%; // 9/16 * .40
     display: ${props => props.show ? "inline-block" : "none"};
     z-index: 2;
 
