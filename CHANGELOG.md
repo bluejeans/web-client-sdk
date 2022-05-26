@@ -1,7 +1,8 @@
 # Changelog
 
 All notable changes to this project will be documented in this file
-## Version 1.1.0
+
+## Version 1.1.1
 
 ### Added
 
@@ -18,6 +19,8 @@ All notable changes to this project will be documented in this file
 - **BREAKING** Removed Connection state `DISCONNECTED` from MeetingService
   - Since you can now rejoin meetings, Connection state goes to `IDLE` once meeting ends. Please refer to the connection state flow chart in our README.md
 
+## Version 1.1.0
+-  Unpublished
 ## Version 1.0.1
 
 ### Fixed

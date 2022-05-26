@@ -1,4 +1,5 @@
 # Known limitations
+
 ## Chrome
 
 ### macOS
@@ -23,7 +24,7 @@ Attaching  sample erroneous output  of  `availableMicrophones` & `selectedMicrop
 <summary>Black screen when sharing entire screen from Chrome 96 on Fedora using Wayland</summary>
 <p>
 
-Please find more details in this [bugzilla link](https://bugzilla.redhat.com/show_bug.cgi?id=1392072). Individual App/tab sharing works with Wayland. You would need to switch to XOrg to share entire screen.
+Please find more details in this [bugzilla link](https://bugzilla.redhat.com/show_bug.cgi?id=1392072). Individual App/tab sharing works with Wayland. You would need to switch to X11 to share entire screen.
 <hr/>
 </p>
 </details>
@@ -99,3 +100,37 @@ More details can be found in this [Bugzilla Issue](https://bugzilla.mozilla.org/
 </p>
 </details>
 
+<details>
+<summary>IVR locale played only in English, regardless of the browser's default language setting</summary>
+<p>
+
+The IVR locale is played only in English, regardless of the language selected in the browser. Also, it cannot be disabled via the `BlueJeansSDKInitParams` configuration. This issue should be fixed in an upcoming release.
+<hr/>
+</p>
+</details>
+
+## WebView
+
+### Android
+
+<details>
+<summary>Meeting audio may not be muted while answering an incoming PSTN call</summary>
+<p>
+
+If you answer an incoming PSTN call during a meeting, you may hear the meeting audio and the PSTN audio at the same time.
+<hr/>
+</p>
+</details>
+
+### iOS
+<details>
+<summary>No microphone access while the app goes background in iOS </summary>
+<p>
+
+App looses microphone access once the app goes in background.
+
+More details can be found in this [WebKit issue](https://bugs.webkit.org/show_bug.cgi?id=233419)
+
+<hr/>
+</p>
+</details>
