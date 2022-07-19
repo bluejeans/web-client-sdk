@@ -7,6 +7,7 @@ import { SDKLogger } from "../logger";
 import { PublicChatService } from './PublicChatService';
 import { PrivateChatService } from './PrivateChatService';
 import { ModeratorControlsService } from "./ModeratorControlsService";
+import { ClosedCaptioningService } from "./ClosedCaptioningService";
 export declare const ZINC_MODE_ATTRIBUTE = "data-bjn-zinc-mode";
 export declare class MeetingService {
     private permissionService;
@@ -17,6 +18,7 @@ export declare class MeetingService {
     publicChatService: PublicChatService;
     privateChatService: PrivateChatService;
     moderatorControlsService: ModeratorControlsService;
+    closedCaptioningService: ClosedCaptioningService;
     connectionState: ConnectionState;
     private cluster;
     private analytics;

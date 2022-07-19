@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { observer } from "mobx-react";
 import Managers from "../stores/Managers";
 import MeetingViewModel from "./MeetingViewModel";
+import AppViewModel from './AppViewModel';
 import {
   MeetingControlContainer,
   MeetingDetailsTable,
@@ -46,10 +47,14 @@ interface Props {
 @observer
 export default class MeetingView extends Component<Props> {
   private viewModel: MeetingViewModel;
+  private appViewModel: AppViewModel;
+
 
   constructor(props: Props) {
     super(props);
     this.viewModel = new MeetingViewModel(props.managers);
+    this.appViewModel = new AppViewModel(props.managers);
+
   }
 
   private get colonSeparator(): JSX.Element {
@@ -62,7 +67,7 @@ export default class MeetingView extends Component<Props> {
     const MicrophoneSelectionUnsupportedText =
       "Microphone selection is not supported on this browser.";
     return (
-      <MeetingControlContainer>
+      <MeetingControlContainer show={this.appViewModel.showRemoteContent} chatShow= {this.viewModel.showChatPanel}>
         {this.viewModel.showChatPanel ? (
           <ChatPanel managers={this.props.managers} />
         ) : (

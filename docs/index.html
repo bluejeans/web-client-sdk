@@ -74,6 +74,9 @@
 						<a href="modules/services_audiodeviceservice.html">services/AudioDeviceService</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="modules/services_closedcaptioningservice.html">services/ClosedCaptioningService</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="modules/services_contentshareservice.html">services/ContentShareService</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -183,7 +186,7 @@
 <span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">crossorigin</span><span style="color: #000000FF"> </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;https://unpkg.com/react-dom@16.12.0/umd/react-dom.production.min.js&quot;</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
 <span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">crossorigin</span><span style="color: #000000FF"> </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;https://unpkg.com/react-is@16.12.0/umd/react-is.production.min.js&quot;</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
 <span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">crossorigin</span><span style="color: #000000FF"> </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;https://unpkg.com/styled-components@3.4.5/dist/styled-components.js&quot;</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
-<span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">crossorigin</span><span style="color: #000000FF"> </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;https://unpkg.com/@bluejeans/web-client-sdk/dist/BJNWebClientSDK.js&quot;</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
+<span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">crossorigin</span><span style="color: #000000FF"> </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;https://unpkg.com/@bluejeans/web-client-sdk@latest/dist/BJNWebClientSDK.js&quot;</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
 </code></pre>
 				<a href="#using-the-sdk-1" id="using-the-sdk-1" style="color: inherit; text-decoration: none;">
 					<h4>Using the SDK</h4>
@@ -196,7 +199,7 @@
 				</a>
 				<p>APIs are grouped into relevant services as shown in the architecture diagram. All the service objects are available all the time after SDK instantiation, however all services are not active at all the time.
 				When inactive, APIs of the services will be null or undefined</p>
-				<img width="870" alt="BJNWebClientSDKArch" src="https://bluejeans-non-embed-sdk.s3.us-west-2.amazonaws.com/web-client-sdk/assets/SDK-API-Structure.png">
+				<img width="870" alt="BJNWebClientSDKArch"  src="https://swdl.bluejeans.com/websdk/web-client-sdk/assets/architecture/v1.2.0.png">
 				<a href="#list-of-services-" id="list-of-services-" style="color: inherit; text-decoration: none;">
 					<h3>List of services :</h3>
 				</a>
@@ -211,6 +214,10 @@
 				<p>Unlike <a href="#globally-active-services">Globally active services</a>, InMeeting services get activated when <em>ConnectionState</em> transitions to <em>CONNECTED</em> and get inactivated
 				when meeting ends by the transition of connection state to <em>IDLE</em></p>
 				<p> Eg: ContentShareService, ParticipantsService, PublicChatService, PrivateChatService, ModeratorControlsService</p>
+				<a href="#sdk-documentation" id="sdk-documentation" style="color: inherit; text-decoration: none;">
+					<h2>SDK Documentation</h2>
+				</a>
+				<p>Detailed documentation of SDK functions is available <a href="https://bluejeans.github.io/web-client-sdk">here</a>.</p>
 				<a href="#join-meeting" id="join-meeting" style="color: inherit; text-decoration: none;">
 					<h2>Join Meeting</h2>
 				</a>
@@ -230,7 +237,7 @@
 					<li><code>CONNECTED</code> - this state determines that you are finally into the meeting. </li>
 				</ol>
 				<p>Below is a diagram depicting the meeting state transitions:</p>
-				<img width="870" alt="BJNWebClientSDKArch" src="https://bluejeans-non-embed-sdk.s3.us-west-2.amazonaws.com/web-client-sdk/assets/sdk-connection-states-transition.png">
+				<img width="870" alt="ConnectionState" src="https://swdl.bluejeans.com/websdk/web-client-sdk/assets/sdk-connection-states-transition.png">
 				### Sample code for joinMeeting
 				To join a meeting
 				<pre><code class="language-javascript"><span style="color: #001080">webClientSDK</span><span style="color: #000000">.</span><span style="color: #001080">meetingService</span><span style="color: #000000">.</span><span style="color: #795E26">joinMeeting</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;&lt;Meeting_ID&gt;&quot;</span><span style="color: #000000">,</span><span style="color: #A31515">&quot;&lt;PASSCODE&gt;&quot;</span><span style="color: #000000">, </span><span style="color: #A31515">&quot;&lt;DISPLAY_NAME&gt;&quot;</span><span style="color: #000000">).</span><span style="color: #795E26">then</span><span style="color: #000000">(() </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
@@ -372,6 +379,27 @@
 <span style="color: #000000">});</span>
 </code></pre>
 				<p>Users can also subscribe to <code>newMessage</code> event in PrivateChatStoreEvents  to get new messages.</p>
+				<a href="#closedcaptioningservice" id="closedcaptioningservice" style="color: inherit; text-decoration: none;">
+					<h2>ClosedCaptioningService</h2>
+				</a>
+				<p>Closed Captioning is the ability to provide text for the words spoken in meetings. BlueJeans is providing means for the meeting participant to turn-on or turn-off Closed Captioning while in the meeting. Please note that Closed Captioning setting should be enabled on your meeting. As of now, only english language is supported.</p>
+				<a href="#api-" id="api-" style="color: inherit; text-decoration: none;">
+					<h4>API :</h4>
+				</a>
+				<ul>
+					<li><code>startClosedCaptioning()</code></li>
+					<li><code>stopClosedCaptioning()</code></li>
+				</ul>
+				<a href="#observables-with-closed-captioning-feature-" id="observables-with-closed-captioning-feature-" style="color: inherit; text-decoration: none;">
+					<h4>Observables with Closed Captioning feature :</h4>
+				</a>
+				<ul>
+					<li><code>isClosedCaptioningAvailable</code> provides availability of the closed captioning feature. Feature can be enabled or disabled at the scheduling options or the meeting feature associated with the account.</li>
+					<li><code>closedCaptionText</code> provides closed captioning text.</li>
+					<li><code>closedCaptioningState</code> provides the current state of closed captioning, can be started or stopped or null (when not in meeting)</li>
+					<li><code>isClosedCaptioningOn</code>  checks if closed captioning is active in a meeting which has closed captioning capability</li>
+				</ul>
+				<p>Detailed documentation of ClosedCaptioningService functions is available <a href="https://bluejeans.github.io/web-client-sdk">here</a></p>
 				<a href="#sdk-customizations" id="sdk-customizations" style="color: inherit; text-decoration: none;">
 					<h2>SDK customizations</h2>
 				</a>
@@ -404,7 +432,7 @@
 				<p>Remote Video refers to the video coming in from other participants.
 					When a participant joins a meeting with other participants already in it.
 				There will multiple tiles/boxes which will contain other participants.</p>
-				<img width="870" alt="BJNWebClientSDKArch" src="https://bluejeans-non-embed-sdk.s3.us-west-2.amazonaws.com/web-client-sdk/assets/gallery.png">
+				<img width="870" alt="GalleryView" src="https://swdl.bluejeans.com/websdk/web-client-sdk/assets/gallery.png">
 				<p>Each tile has some features attached to it:</p>
 				<ol>
 					<li>If video is not on for participant, their initials will be displayed.</li>
@@ -448,7 +476,7 @@
 				</a>
 				<p>Use of this SDK is subject to our <a href="https://www.bluejeans.com/terms-and-conditions-may-2020">Terms &amp; Conditions</a> and <a href="https://www.bluejeans.com/privacy-policy">Privacy Policy</a>.</p>
 			</div>
-			<!--{&quot;options&quot;:&quot;/Users/yash.gogia/workspace/BJN/external-webrtc-sdk/bluejeans-webrtc-sdk&quot;,&quot;tsconfig&quot;:&quot;/Users/yash.gogia/workspace/BJN/external-webrtc-sdk/bluejeans-webrtc-sdk&quot;,&quot;entryPoints&quot;:[&quot;./src/BJNWebClientSDK.ts&quot;,&quot;./src/services/&quot;],&quot;exclude&quot;:[&quot;src/services/Analytics.ts&quot;,&quot;src/services/ClosedCaptioningService.ts&quot;],&quot;externalPattern&quot;:[&quot;**/node_modules/**&quot;],&quot;excludeExternals&quot;:false,&quot;excludeNotDocumented&quot;:false,&quot;excludeInternal&quot;:true,&quot;excludePrivate&quot;:true,&quot;excludeProtected&quot;:false,&quot;disableSources&quot;:false,&quot;disableAliases&quot;:false,&quot;includes&quot;:&quot;&quot;,&quot;media&quot;:&quot;&quot;,&quot;watch&quot;:false,&quot;preserveWatchOutput&quot;:false,&quot;emit&quot;:false,&quot;out&quot;:&quot;&quot;,&quot;json&quot;:&quot;&quot;,&quot;pretty&quot;:true,&quot;theme&quot;:&quot;./node_modules/typedoc-neo-theme/bin/default&quot;,&quot;highlightTheme&quot;:&quot;light-plus&quot;,&quot;name&quot;:&quot;&quot;,&quot;includeVersion&quot;:false,&quot;excludeTags&quot;:[],&quot;readme&quot;:&quot;&quot;,&quot;defaultCategory&quot;:&quot;Other&quot;,&quot;categoryOrder&quot;:[],&quot;categorizeByGroup&quot;:true,&quot;gitRevision&quot;:&quot;&quot;,&quot;gitRemote&quot;:&quot;origin&quot;,&quot;gaID&quot;:&quot;&quot;,&quot;gaSite&quot;:&quot;auto&quot;,&quot;hideGenerator&quot;:false,&quot;toc&quot;:[],&quot;disableOutputCheck&quot;:false,&quot;help&quot;:false,&quot;version&quot;:false,&quot;showConfig&quot;:false,&quot;plugin&quot;:[],&quot;logger&quot;:&quot;console&quot;,&quot;logLevel&quot;:1,&quot;listInvalidSymbolLinks&quot;:false}-->
+			<!--{&quot;options&quot;:&quot;/home/denimuser/workspace/workspace/WMC_WebRTCDeveloperSDK_1.2.0&quot;,&quot;tsconfig&quot;:&quot;/home/denimuser/workspace/workspace/WMC_WebRTCDeveloperSDK_1.2.0&quot;,&quot;entryPoints&quot;:[&quot;./src/BJNWebClientSDK.ts&quot;,&quot;./src/services/&quot;],&quot;exclude&quot;:[&quot;src/services/Analytics.ts&quot;],&quot;externalPattern&quot;:[&quot;**/node_modules/**&quot;],&quot;excludeExternals&quot;:false,&quot;excludeNotDocumented&quot;:false,&quot;excludeInternal&quot;:true,&quot;excludePrivate&quot;:true,&quot;excludeProtected&quot;:false,&quot;disableSources&quot;:false,&quot;disableAliases&quot;:false,&quot;includes&quot;:&quot;&quot;,&quot;media&quot;:&quot;&quot;,&quot;watch&quot;:false,&quot;preserveWatchOutput&quot;:false,&quot;emit&quot;:false,&quot;out&quot;:&quot;&quot;,&quot;json&quot;:&quot;&quot;,&quot;pretty&quot;:true,&quot;theme&quot;:&quot;./node_modules/typedoc-neo-theme/bin/default&quot;,&quot;highlightTheme&quot;:&quot;light-plus&quot;,&quot;name&quot;:&quot;&quot;,&quot;includeVersion&quot;:false,&quot;excludeTags&quot;:[],&quot;readme&quot;:&quot;&quot;,&quot;defaultCategory&quot;:&quot;Other&quot;,&quot;categoryOrder&quot;:[],&quot;categorizeByGroup&quot;:true,&quot;gitRevision&quot;:&quot;&quot;,&quot;gitRemote&quot;:&quot;origin&quot;,&quot;gaID&quot;:&quot;&quot;,&quot;gaSite&quot;:&quot;auto&quot;,&quot;hideGenerator&quot;:false,&quot;toc&quot;:[],&quot;disableOutputCheck&quot;:false,&quot;help&quot;:false,&quot;version&quot;:false,&quot;showConfig&quot;:false,&quot;plugin&quot;:[],&quot;logger&quot;:&quot;console&quot;,&quot;logLevel&quot;:1,&quot;listInvalidSymbolLinks&quot;:false}-->
 		</div>
 		<div class="col-2 col-menu secondary-menu">
 			<nav class="tsd-navigation secondary menu-sticky">

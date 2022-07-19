@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ContentShareService | @bluejeans/web-client-sdk</title>
+	<title>ClosedCaptioningService | @bluejeans/web-client-sdk</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="../modules/services_contentshareservice.html">services/ContentShareService</a>
+					<a href="../modules/services_closedcaptioningservice.html">services/ClosedCaptioningService</a>
 				</li>
 				<li>
-					<a href="services_contentshareservice.contentshareservice.html">ContentShareService</a>
+					<a href="services_closedcaptioningservice.closedcaptioningservice.html">ClosedCaptioningService</a>
 				</li>
 			</ul>
 		</div>
@@ -79,10 +79,10 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/services_audiodeviceservice.html">services/AudioDeviceService</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="../modules/services_closedcaptioningservice.html">services/ClosedCaptioningService</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="../modules/services_contentshareservice.html">services/ContentShareService</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -113,12 +113,12 @@
 			</nav>
 		</div>
 		<div class="col-7 offset-3 col-content">
-			<h1>Class ContentShareService</h1>
+			<h1>Class ClosedCaptioningService</h1>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">ContentShareService</span>
+						<span class="target">ClosedCaptioningService</span>
 					</li>
 				</ul>
 			</section>
@@ -128,17 +128,18 @@
 						<section class="tsd-index-section ">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="services_contentshareservice.contentshareservice.html#contentsharestate" class="tsd-kind-icon">content<wbr>Share<wbr>State</a></li>
-								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="services_contentshareservice.contentshareservice.html#iscontentsharesupported" class="tsd-kind-icon">is<wbr>Content<wbr>Share<wbr>Supported</a></li>
-								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="services_contentshareservice.contentshareservice.html#receivingcontentshare" class="tsd-kind-icon">receiving<wbr>Content<wbr>Share</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="services_closedcaptioningservice.closedcaptioningservice.html#closedcaptiontext" class="tsd-kind-icon">closed<wbr>Caption<wbr>Text</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="services_closedcaptioningservice.closedcaptioningservice.html#closedcaptioningstate" class="tsd-kind-icon">closed<wbr>Captioning<wbr>State</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="services_closedcaptioningservice.closedcaptioningservice.html#isclosedcaptioningavailable" class="tsd-kind-icon">is<wbr>Closed<wbr>Captioning<wbr>Available</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="services_closedcaptioningservice.closedcaptioningservice.html#isclosedcaptioningon" class="tsd-kind-icon">is<wbr>Closed<wbr>Captioning<wbr>On</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_contentshareservice.contentshareservice.html#observe" class="tsd-kind-icon">observe</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_contentshareservice.contentshareservice.html#startcontentshare" class="tsd-kind-icon">start<wbr>Content<wbr>Share</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_contentshareservice.contentshareservice.html#stopcontentshare" class="tsd-kind-icon">stop<wbr>Content<wbr>Share</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_closedcaptioningservice.closedcaptioningservice.html#observe" class="tsd-kind-icon">observe</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_closedcaptioningservice.closedcaptioningservice.html#startclosedcaptioning" class="tsd-kind-icon">start<wbr>Closed<wbr>Captioning</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_closedcaptioningservice.closedcaptioningservice.html#stopclosedcaptioning" class="tsd-kind-icon">stop<wbr>Closed<wbr>Captioning</a></li>
 							</ul>
 						</section>
 					</div>
@@ -147,51 +148,65 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Accessors</h2>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
-					<a name="contentsharestate" class="tsd-anchor"></a>
-					<h3>content<wbr>Share<wbr>State</h3>
+					<a name="closedcaptiontext" class="tsd-anchor"></a>
+					<h3>closed<wbr>Caption<wbr>Text</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> contentShareState<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/bjnwebclientsdk.contentsharestate.html" class="tsd-signature-type">ContentShareState</a></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> closedCaptionText<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in services/ContentShareService.ts:36</li>
+									<li>Defined in services/ClosedCaptioningService.ts:132</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
 								<div class="lead">
-									<p>contentShareState, state of whether you are sharing content in a meeting.
-										This value will be &quot;started&quot;, if this endpoint is sending content, &quot;stopped&quot; if you are not and &quot;cancelled&quot; when we requested screen share but the user cancelled it
-										from the native content share dialog.
-									To get &quot;cancelled&quot; state, we need to observe the change in value of contentShareState, as this immediately changes to &quot;stopped&quot;.</p>
+									<p>Provides the caption text when closed captioning is active in a meeting.</p>
 								</div>
 							</div>
-							<h4 class="tsd-returns-title">Returns <a href="../enums/bjnwebclientsdk.contentsharestate.html" class="tsd-signature-type">ContentShareState</a></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
-					<a name="iscontentsharesupported" class="tsd-anchor"></a>
-					<h3>is<wbr>Content<wbr>Share<wbr>Supported</h3>
+					<a name="closedcaptioningstate" class="tsd-anchor"></a>
+					<h3>closed<wbr>Captioning<wbr>State</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> isContentShareSupported<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> closedCaptioningState<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/bjnwebclientsdk.closedcaptioningstate.html" class="tsd-signature-type">ClosedCaptioningState</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in services/ContentShareService.ts:55</li>
+									<li>Defined in services/ClosedCaptioningService.ts:143</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
 								<div class="lead">
-									<p>isContentShareSupported, boolean property which returns true when the current endpoint can share their screen.
-									Returns false when either</p>
-									<ol>
-										<li>your browser/OS does not support screen share (For eg: Safari on Desktop below 15.0 or any Mobile browser) OR</li>
-										<li>if the moderator in the meeting has disabled screen share for others (and you are not a moderator)</li>
-									</ol>
+									<p>Provides the state of closed caption service in a meeting.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../enums/bjnwebclientsdk.closedcaptioningstate.html" class="tsd-signature-type">ClosedCaptioningState</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="isclosedcaptioningavailable" class="tsd-anchor"></a>
+					<h3>is<wbr>Closed<wbr>Captioning<wbr>Available</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> isClosedCaptioningAvailable<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in services/ClosedCaptioningService.ts:125</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+								<div class="lead">
+									<p>Returns if closed captioning can be used in a meeting.</p>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -199,22 +214,21 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
-					<a name="receivingcontentshare" class="tsd-anchor"></a>
-					<h3>receiving<wbr>Content<wbr>Share</h3>
+					<a name="isclosedcaptioningon" class="tsd-anchor"></a>
+					<h3>is<wbr>Closed<wbr>Captioning<wbr>On</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> receivingContentShare<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> isClosedCaptioningOn<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in services/ContentShareService.ts:20</li>
+									<li>Defined in services/ClosedCaptioningService.ts:118</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
 								<div class="lead">
-									<p>receivingContentShare, boolean property provides the state of the content receive.
-									This value will be <code>true</code>, if this endpoint is receiving the content and If there is no content being received, this value will be <code>false</code></p>
+									<p>Returns if closed captioning is active in a meeting which has closed captioning capability.</p>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -228,13 +242,13 @@
 					<a name="observe" class="tsd-anchor"></a>
 					<h3>observe</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">observe<span class="tsd-signature-symbol">(</span>property<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"observe"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"receivingContentShare"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"contentShareState"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"isContentShareSupported"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"startContentShare"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"stopContentShare"</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">observe<span class="tsd-signature-symbol">(</span>property<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"observe"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"startClosedCaptioning"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"stopClosedCaptioning"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"isClosedCaptioningOn"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"isClosedCaptioningAvailable"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"closedCaptionText"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"closedCaptioningState"</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in services/ContentShareService.ts:111</li>
+									<li>Defined in services/ClosedCaptioningService.ts:177</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
@@ -246,8 +260,8 @@
 								<p>Usage:</p>
 								</div><div class="tsd-comment tsd-typography tsd-comment-tags">
 								<dl class="tsd-comment-tags"><dt>example</dt>
-									<dd><pre><code class="language-typescript"><span style="color: #001080">sdk</span><span style="color: #000000">.</span><span style="color: #001080">meetingService</span><span style="color: #000000">.</span><span style="color: #001080">contentShareService</span><span style="color: #000000">.</span><span style="color: #795E26">observe</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;connectionState&quot;</span><span style="color: #000000">, </span><span style="color: #0000FF">function</span><span style="color: #000000">() {</span>
-<span style="color: #000000">     </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">info</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;Connection state is changed to : &quot;</span><span style="color: #000000">, </span><span style="color: #001080">sdk</span><span style="color: #000000">.</span><span style="color: #001080">meetingService</span><span style="color: #000000">.</span><span style="color: #001080">contentShareService</span><span style="color: #000000">.</span><span style="color: #001080">connectionState</span><span style="color: #000000">)</span>
+									<dd><pre><code class="language-typescript"><span style="color: #001080">sdk</span><span style="color: #000000">.</span><span style="color: #001080">meetingService</span><span style="color: #000000">.</span><span style="color: #001080">closedCaptioningService</span><span style="color: #000000">.</span><span style="color: #795E26">observe</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;closedCaptioningState&quot;</span><span style="color: #000000">, </span><span style="color: #0000FF">function</span><span style="color: #000000">() {</span>
+<span style="color: #000000">     </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">info</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;closedCaptioningState changed to : &quot;</span><span style="color: #000000">, </span><span style="color: #001080">sdk</span><span style="color: #000000">.</span><span style="color: #001080">meetingService</span><span style="color: #000000">.</span><span style="color: #001080">closedCaptioningService</span><span style="color: #000000">.</span><span style="color: #001080">closedCaptioningState</span><span style="color: #000000">)</span>
 <span style="color: #000000">});</span>
 </code></pre>
 								</dd></dl>
@@ -255,7 +269,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>property: <span class="tsd-signature-type">"observe"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"receivingContentShare"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"contentShareState"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"isContentShareSupported"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"startContentShare"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"stopContentShare"</span></h5>
+									<h5>property: <span class="tsd-signature-type">"observe"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"startClosedCaptioning"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"stopClosedCaptioning"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"isClosedCaptioningOn"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"isClosedCaptioningAvailable"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"closedCaptionText"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"closedCaptioningState"</span></h5>
 									<div class="tsd-comment tsd-typography tsd-comment-text">
 										<p>The name of the property to observe for changes.</p>
 									</div>
@@ -284,48 +298,48 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="startcontentshare" class="tsd-anchor"></a>
-					<h3>start<wbr>Content<wbr>Share</h3>
+					<a name="startclosedcaptioning" class="tsd-anchor"></a>
+					<h3>start<wbr>Closed<wbr>Captioning</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">start<wbr>Content<wbr>Share<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">start<wbr>Closed<wbr>Captioning<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/services_closedcaptioningservice.startccresponse.html" class="tsd-signature-type">StartCCResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in services/ContentShareService.ts:75</li>
+									<li>Defined in services/ClosedCaptioningService.ts:36</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
 								<div class="lead">
-									<p>To start sharing the content from the meeting
-										Technical limitation : Not Supported for safari or Mobile browsers.
-									Please call <a href="services_contentshareservice.contentshareservice.html#iscontentsharesupported">isContentShareSupported</a> to check if screen share is possible before calling this function</p>
+									<p>Starts closed captioning if it is enabled in the meeting scheduling
+										options and also the associated meeting feature is enabled.
+									Caption texts can then be observed through the closedCaptionText property.</p>
 								</div>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/services_closedcaptioningservice.startccresponse.html" class="tsd-signature-type">StartCCResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="stopcontentshare" class="tsd-anchor"></a>
-					<h3>stop<wbr>Content<wbr>Share</h3>
+					<a name="stopclosedcaptioning" class="tsd-anchor"></a>
+					<h3>stop<wbr>Closed<wbr>Captioning</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">stop<wbr>Content<wbr>Share<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">stop<wbr>Closed<wbr>Captioning<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/services_closedcaptioningservice.stopccresponse.html" class="tsd-signature-type">StopCCResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in services/ContentShareService.ts:89</li>
+									<li>Defined in services/ClosedCaptioningService.ts:82</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
 								<div class="lead">
-									<p>To stop an active content sharing in the meeting</p>
+									<p>Stops the ongoing closed captioning.</p>
 								</div>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/services_closedcaptioningservice.stopccresponse.html" class="tsd-signature-type">StopCCResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -335,33 +349,48 @@
 		<div class="col-2 col-menu secondary-menu">
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/services_closedcaptioningservice.startccresponsecode.html" class="tsd-kind-icon">StartCCResponse<wbr>Code</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module root">
+						<a href="../enums/services_closedcaptioningservice.stopccresponsecode.html" class="tsd-kind-icon">StopCCResponse<wbr>Code</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-module root">
-						<a href="services_contentshareservice.contentshareservice.html" class="tsd-kind-icon">Content<wbr>Share<wbr>Service</a>
+						<a href="services_closedcaptioningservice.closedcaptioningservice.html" class="tsd-kind-icon">Closed<wbr>Captioning<wbr>Service</a>
 						<ul>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
-								<a href="services_contentshareservice.contentshareservice.html#contentsharestate" class="tsd-kind-icon">content<wbr>Share<wbr>State</a>
+								<a href="services_closedcaptioningservice.closedcaptioningservice.html#closedcaptiontext" class="tsd-kind-icon">closed<wbr>Caption<wbr>Text</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
-								<a href="services_contentshareservice.contentshareservice.html#iscontentsharesupported" class="tsd-kind-icon">is<wbr>Content<wbr>Share<wbr>Supported</a>
+								<a href="services_closedcaptioningservice.closedcaptioningservice.html#closedcaptioningstate" class="tsd-kind-icon">closed<wbr>Captioning<wbr>State</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
-								<a href="services_contentshareservice.contentshareservice.html#receivingcontentshare" class="tsd-kind-icon">receiving<wbr>Content<wbr>Share</a>
+								<a href="services_closedcaptioningservice.closedcaptioningservice.html#isclosedcaptioningavailable" class="tsd-kind-icon">is<wbr>Closed<wbr>Captioning<wbr>Available</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="services_closedcaptioningservice.closedcaptioningservice.html#isclosedcaptioningon" class="tsd-kind-icon">is<wbr>Closed<wbr>Captioning<wbr>On</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="services_contentshareservice.contentshareservice.html#observe" class="tsd-kind-icon">observe</a>
+								<a href="services_closedcaptioningservice.closedcaptioningservice.html#observe" class="tsd-kind-icon">observe</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="services_contentshareservice.contentshareservice.html#startcontentshare" class="tsd-kind-icon">start<wbr>Content<wbr>Share</a>
+								<a href="services_closedcaptioningservice.closedcaptioningservice.html#startclosedcaptioning" class="tsd-kind-icon">start<wbr>Closed<wbr>Captioning</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="services_contentshareservice.contentshareservice.html#stopcontentshare" class="tsd-kind-icon">stop<wbr>Content<wbr>Share</a>
+								<a href="services_closedcaptioningservice.closedcaptioningservice.html#stopclosedcaptioning" class="tsd-kind-icon">stop<wbr>Closed<wbr>Captioning</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/services_closedcaptioningservice.startccresponse.html" class="tsd-kind-icon">StartCCResponse</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module root">
+						<a href="../interfaces/services_closedcaptioningservice.stopccresponse.html" class="tsd-kind-icon">StopCCResponse</a>
+					</li>
 				</ul>
 			</nav>
 		</div>

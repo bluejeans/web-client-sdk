@@ -1,16 +1,28 @@
-import { computed } from "mobx";
+import { action, computed, observable, reaction } from "mobx";
 import Managers from "../stores/Managers";
 import AppManager, { AppState } from "../stores/AppManager";
 import { BJNWebClientSDK, ConnectionState, VideoState, VideoLayout } from '@bluejeans/web-client-sdk';
 
+const CC_DISPLAY_CHAR_LIMIT : number = 250;
+export enum ClosedCaptioningState {
+    CONNECTING = "Connecting",
+    CONNECTED = "Connected",
+    DISCONNECTED = "Disconnected"
+}
 export default class AppViewModel {
 
     private appManager : AppManager;
     private webrtcSDK : BJNWebClientSDK;
+    @observable private hasLoadingTranscriptShown : boolean;
+
 
     constructor(managers : Managers) {
         this.appManager = managers.appManager;
         this.webrtcSDK = managers.webrtcSDK;
+
+        reaction(() => this.webrtcSDK.meetingService.closedCaptioningService.closedCaptioningState, (closedCaptioningState:ClosedCaptioningState) => {
+            this.setLoadingMessageState(closedCaptioningState);
+        })
     }
 
     @computed get appState() : AppState {
@@ -57,6 +69,33 @@ export default class AppViewModel {
 
     attachRemoteContent(videoElement: HTMLVideoElement) {
         this.webrtcSDK.meetingService.attachRemoteContent(videoElement);
+    }
+
+
+  @computed get showCaptionText() : boolean {
+    return this.webrtcSDK.meetingService.closedCaptioningService.isClosedCaptioningAvailable  && this.captionText?.length > 0;
+}
+
+  @action private setLoadingMessageState(closedCaptioningState) : void {
+    if(closedCaptioningState === ClosedCaptioningState.CONNECTING) {
+        this.hasLoadingTranscriptShown = false;
+        setTimeout(action(() => {
+            this.hasLoadingTranscriptShown = true
+        }), 4000)
+    } else {
+        this.hasLoadingTranscriptShown = true;
+    }
+}
+
+    @computed get captionText(): string {
+        let messageToUI;
+        if ((this.webrtcSDK.meetingService.closedCaptioningService.closedCaptioningState === ClosedCaptioningState.CONNECTING) && !this.hasLoadingTranscriptShown) {
+            return messageToUI = "loading";
+        } else {
+            // Trimming the string to the max length, which we can display in the screen.
+            messageToUI = this.webrtcSDK.meetingService.closedCaptioningService.closedCaptionText;
+            return messageToUI?.length > CC_DISPLAY_CHAR_LIMIT ? `${messageToUI.slice(0, CC_DISPLAY_CHAR_LIMIT)}...` : messageToUI
+        }
     }
 
 }

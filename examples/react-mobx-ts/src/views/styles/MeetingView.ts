@@ -10,10 +10,22 @@ let audio_off_remote = require("../../../assets/icons/audio_off_remote.svg").def
 let moderator_badge = require("../../../assets/icons/moderator_star.svg").default;
 let share = require("../../../assets/icons/share.svg").default;
 
-export const MeetingControlContainer = styled.div`
+export const MeetingControlContainer = styled<any, any>("div")`
     width: 400px;
     margin-top: 80px;
     margin-left: 30px;
+
+    @media(max-width: 1100px) {
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+        margin: auto;
+        margin-top: ${props => props.show ? props.chatShow ? "-22vh" : "14vh" : "55vh"}; 
+    }    
+    @media(max-height: 750px) {
+        margin-top: ${props => props.show ? props.chatShow ? "0vh" : "16vh" : "3vh"}; 
+    }
+     
 
     @media only screen and (max-width: 768px) {
         display: flex;
@@ -21,7 +33,7 @@ export const MeetingControlContainer = styled.div`
         justify-self: center;
         width: auto;
         margin: 0px;
-        margin-top: 55vh;
+        margin-top: ${props => props.show ? props.chatShow ? "-35vh" : "3vh" : "55vh"}; 
     }
 `
 

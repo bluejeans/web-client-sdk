@@ -37,11 +37,11 @@ export const LogUploadMsg = styled.p`
     text-align: center;
 `
 export const VideoHolder = styled<any, any>("div")`
-    width: 60%;
-    padding-top: 33.75%; // 9/16 * 60%
+    width: 53%;
+    padding-top: 29.75%; // 9/16 * 60%
     position: absolute;
     display: ${props => props.show ? "inline-block" : "none"};
-    top: 50px;
+    top: 0px;
     right: 20px;
     background-color: black;
 
@@ -62,22 +62,28 @@ export const VideoHolder = styled<any, any>("div")`
             background-color: black;
         }
     }
-
+    @media only screen and (max-width: 1100px) {
+        width: 100vw;
+        height: 43vh;
+        right: -8px;
+        top: 0px;
+        padding-top:0px;
+    }
     @media only screen and (max-width: 768px) {
         width: 100vw;
-        height: 50vh;
-        right: 0px;
+        height: 43vh;
+        right: -8px;
         top: 0px;
         padding-top:0px;
     }
 `
 
 export const SharedScreenHolder = styled<any, any>("div")`
-    width: 60%;
-    padding-top: 33.75%; // 9/16 * 60%
+    width: 53%;
+    padding-top: 0.75%; // 9/16 * 60%
     position: absolute;
     display: ${props => props.show ? "inline-block" : "none"};
-    top: 538px;
+    top: 437px;
     right: 20px;
     background-color: rgb(149, 216, 252);
 
@@ -88,18 +94,28 @@ export const SharedScreenHolder = styled<any, any>("div")`
         width: 100%;
         height: 100%;
         background-color: black;
+        clear:both;
         }
+
+    @media only screen and (max-width: 1100px) {
+        width: 100vw;
+        height: 43vh;
+        right: 0px;
+        top: 426px;
+        padding-top:00px;
+        position:relative;
+    }    
         
     @media only screen and (max-width: 768px) {
         width: 100vw;
-        height: 38vh;
-        right: 8px;
-        top: 441px;
+        height: 43vh;
+        right: 0px;
+        top: 426px;
         padding-top:00px;
         position:relative;
     }
     @media only screen and (min-width: 1400px) {
-       top: 633px;
+       top: 515px;
     }
 `
 export const VideoMessage = styled<any,any>("div")`
@@ -131,11 +147,11 @@ export const LocalVideoHolder = styled.div`
 `;
 
 export const RemoteContentHolder = styled<any, any>("div")`
-    position: absolute;
+    position: relative;
     bottom: 0;
     left: 0;
     width: 100%;
-    padding-top: 52.5%; // 9/16 * .40
+    padding-top: 64.5%; // 9/16 * .40
     display: ${props => props.show ? "inline-block" : "none"};
     z-index: 2;
 
@@ -175,6 +191,10 @@ export const BuildInfo = styled.div`
     font-size: 14px;
     color: rgb(149, 216, 252);
 
+    @media only screen and (max-width: 1100px) {
+        position: initial;
+        transform: none;
+    }
 
     @media only screen and (max-width: 768px) {
         position: initial;
@@ -183,11 +203,34 @@ export const BuildInfo = styled.div`
 `
 
 export const Container = styled.div`
+@media only screen and (max-width: 1100px) {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-rows: 1fr 1fr 2fr;
+    grid-gap: 10px;
+}
     @media only screen and (max-width: 768px) {
         display: grid;
-        width: 100vw;
-        height: 100vh;
-        grid-template-rows: 1fr 1fr;
+        width: 100%;
+        height: 100%;
+        grid-template-rows: 1fr 1fr 2fr; 
         grid-gap: 10px;
     }
+`
+
+export const CaptionTextContainer:any = styled.div`
+    position: absolute;
+    z-index: 10;
+    bottom: 45px;
+    width: fit-content;
+    max-width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: left;
+`;
+export const CaptionTextSpan:any = styled.span`
+    background-color: black;
+    color: white;
+    font-size: 16px;    
 `

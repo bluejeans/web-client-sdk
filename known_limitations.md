@@ -57,13 +57,11 @@ After joining a meeting from ios Safari, mostly when a headset is connected. Int
 </details>
 
 <details>
-<summary>Own voice echoing for other participants when Safari endpoint is present in the meeting while using audio jack</summary>
+<summary>iOS15.5: The webpage gets reloaded when returning to the meeting from an application that uses audio/video</summary>
 <p>
 
-This issue causes other participants in the meeting to hear their own voice echoing.
-This issue is seen when safari endpoint uses external wired microphone with audio jack.
-Removing the plugged-in wired 3.5 mm headset fixes the issue.
-<hr>
+If you switch your Safari meeting to an application that uses audio/video and keep the webpage in background for longer than 30 seconds, the page reloads.
+<hr/>
 </p>
 </details>
 
@@ -96,15 +94,6 @@ Safari on iOS version 15, sometimes routes audio to the earpiece and not the spe
 <p>
 
 More details can be found in this [Bugzilla Issue](https://bugzilla.mozilla.org/show_bug.cgi?id=1694304)
-<hr/>
-</p>
-</details>
-
-<details>
-<summary>IVR locale played only in English, regardless of the browser's default language setting</summary>
-<p>
-
-The IVR locale is played only in English, regardless of the language selected in the browser. Also, it cannot be disabled via the `BlueJeansSDKInitParams` configuration. This issue should be fixed in an upcoming release.
 <hr/>
 </p>
 </details>

@@ -83,7 +83,7 @@ let webClientSDK = new BJNWebClientSDK();
 <script crossorigin src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-is@16.12.0/umd/react-is.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/styled-components@3.4.5/dist/styled-components.js"></script>
-<script crossorigin src="https://unpkg.com/@bluejeans/web-client-sdk/dist/BJNWebClientSDK.js"></script>
+<script crossorigin src="https://unpkg.com/@bluejeans/web-client-sdk@latest/dist/BJNWebClientSDK.js"></script>
  ```
 
 #### Using the SDK
@@ -99,7 +99,7 @@ var webClientSDK = new BJNWebClientSDK.BJNWebClientSDK();
 APIs are grouped into relevant services as shown in the architecture diagram. All the service objects are available all the time after SDK instantiation, however all services are not active at all the time.
 When inactive, APIs of the services will be null or undefined
 
-<img width="870" alt="BJNWebClientSDKArch" src="https://bluejeans-non-embed-sdk.s3.us-west-2.amazonaws.com/web-client-sdk/assets/SDK-API-Structure.png">
+<img width="870" alt="BJNWebClientSDKArch"  src="https://swdl.bluejeans.com/websdk/web-client-sdk/assets/architecture/v1.2.0.png">
 
 ### List of services :
 
@@ -119,7 +119,6 @@ when meeting ends by the transition of connection state to _IDLE_
 ## SDK Documentation
 
 Detailed documentation of SDK functions is available [here]( https://bluejeans.github.io/web-client-sdk).
-
 ## Join Meeting
 
 #### Steps to join meeting
@@ -136,7 +135,7 @@ Detailed documentation of SDK functions is available [here]( https://bluejeans.g
 
 Below is a diagram depicting the meeting state transitions:
 
-<img width="870" alt="BJNWebClientSDKArch" src="https://bluejeans-non-embed-sdk.s3.us-west-2.amazonaws.com/web-client-sdk/assets/sdk-connection-states-transition.png">
+<img width="870" alt="ConnectionState" src="https://swdl.bluejeans.com/websdk/web-client-sdk/assets/sdk-connection-states-transition.png">
 ### Sample code for joinMeeting
 To join a meeting
 
@@ -323,6 +322,25 @@ webClientSDK.meetingService.privateChatService.observe("chatHistory", function()
 
 Users can also subscribe to `newMessage` event in PrivateChatStoreEvents  to get new messages.
 
+
+## ClosedCaptioningService
+Closed Captioning is the ability to provide text for the words spoken in meetings. BlueJeans is providing means for the meeting participant to turn-on or turn-off Closed Captioning while in the meeting. Please note that Closed Captioning setting should be enabled on your meeting. As of now, only english language is supported.
+
+#### API :
+
+- `startClosedCaptioning()`
+- `stopClosedCaptioning()`
+
+#### Observables with Closed Captioning feature :
+
+- `isClosedCaptioningAvailable` provides availability of the closed captioning feature. Feature can be enabled or disabled at the scheduling options or the meeting feature associated with the account.
+- `closedCaptionText` provides closed captioning text.
+- `closedCaptioningState` provides the current state of closed captioning, can be started or stopped or null (when not in meeting)
+- `isClosedCaptioningOn`  checks if closed captioning is active in a meeting which has closed captioning capability
+
+Detailed documentation of ClosedCaptioningService functions is available [here]( https://bluejeans.github.io/web-client-sdk)
+
+
 ## SDK customizations
 
 Using `BlueJeansSDKInitParams` one can customize the SDK experience by setting
@@ -360,7 +378,7 @@ Remote Video refers to the video coming in from other participants.
 When a participant joins a meeting with other participants already in it.
 There will multiple tiles/boxes which will contain other participants.
 
-<img width="870" alt="BJNWebClientSDKArch" src="https://bluejeans-non-embed-sdk.s3.us-west-2.amazonaws.com/web-client-sdk/assets/gallery.png">
+<img width="870" alt="GalleryView" src="https://swdl.bluejeans.com/websdk/web-client-sdk/assets/gallery.png">
 
 Each tile has some features attached to it:
 

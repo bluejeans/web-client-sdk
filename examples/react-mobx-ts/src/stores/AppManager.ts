@@ -29,16 +29,21 @@ export default class AppManager {
   @observable showChatPanel: boolean = false;
   @observable disconnectedAfterMeeting :boolean = false;
 
+
+
   constructor(webrtcSDK: BJNWebClientSDK) {
     this.webrtcSDK = webrtcSDK;
     this.joinMeetingWithParams();
+
 
     reaction(() => this.webrtcSDK.meetingService.connectionState === ConnectionState.IDLE, () => {
       if (this.isJoiningMeeting) { // this indicates meeting join has been initiated, and now if connection state is idle, it indicates endMeeting
         this.disconnectedAfterMeeting = true;
       }
     });
+    
   }
+
 
   @action redirectToHomePage(): void{
     this.setJoiningMeeting(false);
@@ -177,5 +182,7 @@ export default class AppManager {
   @action subscribeToNewChatMessages(){
     this.webrtcSDK.meetingService.privateChatService.events.newMessage.subscribe((message)=>{console.log("[chat] private message",message)})
     this.webrtcSDK.meetingService.publicChatService.events.newMessage.subscribe((message)=>{console.log("[chat] public message",message)})
-}
+  }
+
+
 }

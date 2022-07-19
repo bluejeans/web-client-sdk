@@ -1,6 +1,7 @@
 export declare enum AnalyticsEvents {
     jsError = "jsError",
-    joinedMeeting = "joinedMeeting"
+    joinedMeeting = "joinedMeeting",
+    closedCaptioning = "closedCaptioning"
 }
 export default class Analytics {
     private tracked;

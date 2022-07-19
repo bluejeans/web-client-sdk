@@ -7,7 +7,7 @@ import PreMeetingView from './PreMeetingView';
 import MeetingView from "./MeetingView"
 import JoiningView from "./JoiningView"
 import AppViewModel from './AppViewModel';
-import { LocalVideoHolder, SharedScreenHolder,  RemoteContentHolder, VideoHolder, VideoMessage, BuildInfo, Container } from "./styles/Common";
+import { LocalVideoHolder, SharedScreenHolder,  RemoteContentHolder, VideoHolder, VideoMessage, BuildInfo, Container, CaptionTextContainer, CaptionTextSpan } from "./styles/Common";
 
 declare const
     __SDK_PACKAGE_VERSION__: string
@@ -55,7 +55,10 @@ export default class SampleApp extends Component<Props> {
                     <div className= "remoteVideo" ref={this.remoteVideoElement}></div>
                     <LocalVideoHolder>
                         <video ref={this.localVideoElement}></video>
-                    </LocalVideoHolder>                                      
+                    </LocalVideoHolder>   
+                    <CaptionTextContainer>
+                        <CaptionTextSpan>{this.viewModel.captionText}</CaptionTextSpan>
+                    </CaptionTextContainer>                                   
                 </VideoHolder>
                 <SharedScreenHolder show={ this.viewModel.showRemoteContent }>  
                     <RemoteContentHolder show= { this.viewModel.showRemoteContent }>
