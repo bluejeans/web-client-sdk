@@ -89,6 +89,9 @@
 						<a href="modules/services_moderatorcontrolsservice.html">services/ModeratorControlsService</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="modules/services_moderatorwaitingroomservice.html">services/ModeratorWaitingRoomService</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="modules/services_participantservice.html">services/ParticipantService</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -136,6 +139,7 @@
 					<li>Meeting Information (Title, Hostname, Meeting Id)</li>
 					<li>Video tile background customization options</li>
 					<li>Moderator Controls</li>
+					<li>Waiting Room Support</li>
 				</ul>
 				<p> <strong>Not to be confused with:</strong></p>
 				<ul>
@@ -199,7 +203,7 @@
 				</a>
 				<p>APIs are grouped into relevant services as shown in the architecture diagram. All the service objects are available all the time after SDK instantiation, however all services are not active at all the time.
 				When inactive, APIs of the services will be null or undefined</p>
-				<img width="870" alt="BJNWebClientSDKArch"  src="https://swdl.bluejeans.com/websdk/web-client-sdk/assets/architecture/v1.2.0.png">
+				<img width="870" alt="BJNWebClientSDKArch"  src="https://swdl.bluejeans.com/websdk/web-client-sdk/assets/1.3.0/architecture.png">
 				<a href="#list-of-services-" id="list-of-services-" style="color: inherit; text-decoration: none;">
 					<h3>List of services :</h3>
 				</a>
@@ -214,6 +218,10 @@
 				<p>Unlike <a href="#globally-active-services">Globally active services</a>, InMeeting services get activated when <em>ConnectionState</em> transitions to <em>CONNECTED</em> and get inactivated
 				when meeting ends by the transition of connection state to <em>IDLE</em></p>
 				<p> Eg: ContentShareService, ParticipantsService, PublicChatService, PrivateChatService, ModeratorControlsService</p>
+				<a href="#3-conditionally-active-services" id="3-conditionally-active-services" style="color: inherit; text-decoration: none;">
+					<h4>3. Conditionally active services</h4>
+				</a>
+				<p>Eg: ModeratorWaitingRoomService is null initially and will get initialized only if the user is a moderator</p>
 				<a href="#sdk-documentation" id="sdk-documentation" style="color: inherit; text-decoration: none;">
 					<h2>SDK Documentation</h2>
 				</a>
@@ -232,12 +240,13 @@
 				<ol>
 					<li><code>IDLE</code> - is a state which determines that a meeting is not in progress.</li>
 					<li><code>VALIDATING</code> - meeting credentials are being validated </li>
+					<li><code>WAITINGROOM</code> - is a state which determines that the you are in waiting room awaiting moderator&#39;s approval to join the meeting</li>
 					<li><code>CONNECTING</code> - is a state which determines that meeting credentials were successfully authenticated and you are about to join the meeting.</li>
 					<li><code>RECONNECTING</code> - this state is produced when a network glitch occurs </li>
 					<li><code>CONNECTED</code> - this state determines that you are finally into the meeting. </li>
 				</ol>
 				<p>Below is a diagram depicting the meeting state transitions:</p>
-				<img width="870" alt="ConnectionState" src="https://swdl.bluejeans.com/websdk/web-client-sdk/assets/sdk-connection-states-transition.png">
+				<img width="870" alt="ConnectionState" src="https://swdl.bluejeans.com/websdk/web-client-sdk/assets/1.3.0/sdk-connection-states-transition.png">
 				### Sample code for joinMeeting
 				To join a meeting
 				<pre><code class="language-javascript"><span style="color: #001080">webClientSDK</span><span style="color: #000000">.</span><span style="color: #001080">meetingService</span><span style="color: #000000">.</span><span style="color: #795E26">joinMeeting</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;&lt;Meeting_ID&gt;&quot;</span><span style="color: #000000">,</span><span style="color: #A31515">&quot;&lt;PASSCODE&gt;&quot;</span><span style="color: #000000">, </span><span style="color: #A31515">&quot;&lt;DISPLAY_NAME&gt;&quot;</span><span style="color: #000000">).</span><span style="color: #795E26">then</span><span style="color: #000000">(() </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
@@ -442,7 +451,7 @@
 					<li>The colour of the tile can be configured as already explained <a href="#sdk-customizations">SDK customizations</a></li>
 				</ol>
 				<a href="#running-video-on-firefox" id="running-video-on-firefox" style="color: inherit; text-decoration: none;">
-					<h2>Running video on FireFox</h2>
+					<h2>Running video on Firefox</h2>
 				</a>
 				<p>On other browsers we support layout of remote video as described <a href="#remote-video">above</a>.
 				However on firefox, we support remote video as following:</p>
@@ -476,7 +485,7 @@
 				</a>
 				<p>Use of this SDK is subject to our <a href="https://www.bluejeans.com/terms-and-conditions-may-2020">Terms &amp; Conditions</a> and <a href="https://www.bluejeans.com/privacy-policy">Privacy Policy</a>.</p>
 			</div>
-			<!--{&quot;options&quot;:&quot;/home/denimuser/workspace/workspace/WMC_WebRTCDeveloperSDK_1.2.0&quot;,&quot;tsconfig&quot;:&quot;/home/denimuser/workspace/workspace/WMC_WebRTCDeveloperSDK_1.2.0&quot;,&quot;entryPoints&quot;:[&quot;./src/BJNWebClientSDK.ts&quot;,&quot;./src/services/&quot;],&quot;exclude&quot;:[&quot;src/services/Analytics.ts&quot;],&quot;externalPattern&quot;:[&quot;**/node_modules/**&quot;],&quot;excludeExternals&quot;:false,&quot;excludeNotDocumented&quot;:false,&quot;excludeInternal&quot;:true,&quot;excludePrivate&quot;:true,&quot;excludeProtected&quot;:false,&quot;disableSources&quot;:false,&quot;disableAliases&quot;:false,&quot;includes&quot;:&quot;&quot;,&quot;media&quot;:&quot;&quot;,&quot;watch&quot;:false,&quot;preserveWatchOutput&quot;:false,&quot;emit&quot;:false,&quot;out&quot;:&quot;&quot;,&quot;json&quot;:&quot;&quot;,&quot;pretty&quot;:true,&quot;theme&quot;:&quot;./node_modules/typedoc-neo-theme/bin/default&quot;,&quot;highlightTheme&quot;:&quot;light-plus&quot;,&quot;name&quot;:&quot;&quot;,&quot;includeVersion&quot;:false,&quot;excludeTags&quot;:[],&quot;readme&quot;:&quot;&quot;,&quot;defaultCategory&quot;:&quot;Other&quot;,&quot;categoryOrder&quot;:[],&quot;categorizeByGroup&quot;:true,&quot;gitRevision&quot;:&quot;&quot;,&quot;gitRemote&quot;:&quot;origin&quot;,&quot;gaID&quot;:&quot;&quot;,&quot;gaSite&quot;:&quot;auto&quot;,&quot;hideGenerator&quot;:false,&quot;toc&quot;:[],&quot;disableOutputCheck&quot;:false,&quot;help&quot;:false,&quot;version&quot;:false,&quot;showConfig&quot;:false,&quot;plugin&quot;:[],&quot;logger&quot;:&quot;console&quot;,&quot;logLevel&quot;:1,&quot;listInvalidSymbolLinks&quot;:false}-->
+			<!--{&quot;options&quot;:&quot;/Users/yash.gogia/workspace/BJN/external-webrtc-sdk/bluejeans-webrtc-sdk&quot;,&quot;tsconfig&quot;:&quot;/Users/yash.gogia/workspace/BJN/external-webrtc-sdk/bluejeans-webrtc-sdk&quot;,&quot;entryPoints&quot;:[&quot;./src/BJNWebClientSDK.ts&quot;,&quot;./src/services/&quot;],&quot;exclude&quot;:[&quot;src/services/Analytics.ts&quot;],&quot;externalPattern&quot;:[&quot;**/node_modules/**&quot;],&quot;excludeExternals&quot;:false,&quot;excludeNotDocumented&quot;:false,&quot;excludeInternal&quot;:true,&quot;excludePrivate&quot;:true,&quot;excludeProtected&quot;:false,&quot;disableSources&quot;:false,&quot;disableAliases&quot;:false,&quot;includes&quot;:&quot;&quot;,&quot;media&quot;:&quot;&quot;,&quot;watch&quot;:false,&quot;preserveWatchOutput&quot;:false,&quot;emit&quot;:false,&quot;out&quot;:&quot;&quot;,&quot;json&quot;:&quot;&quot;,&quot;pretty&quot;:true,&quot;theme&quot;:&quot;./node_modules/typedoc-neo-theme/bin/default&quot;,&quot;highlightTheme&quot;:&quot;light-plus&quot;,&quot;name&quot;:&quot;&quot;,&quot;includeVersion&quot;:false,&quot;excludeTags&quot;:[],&quot;readme&quot;:&quot;&quot;,&quot;defaultCategory&quot;:&quot;Other&quot;,&quot;categoryOrder&quot;:[],&quot;categorizeByGroup&quot;:true,&quot;gitRevision&quot;:&quot;&quot;,&quot;gitRemote&quot;:&quot;origin&quot;,&quot;gaID&quot;:&quot;&quot;,&quot;gaSite&quot;:&quot;auto&quot;,&quot;hideGenerator&quot;:false,&quot;toc&quot;:[],&quot;disableOutputCheck&quot;:false,&quot;help&quot;:false,&quot;version&quot;:false,&quot;showConfig&quot;:false,&quot;plugin&quot;:[],&quot;logger&quot;:&quot;console&quot;,&quot;logLevel&quot;:1,&quot;listInvalidSymbolLinks&quot;:false}-->
 		</div>
 		<div class="col-2 col-menu secondary-menu">
 			<nav class="tsd-navigation secondary menu-sticky">

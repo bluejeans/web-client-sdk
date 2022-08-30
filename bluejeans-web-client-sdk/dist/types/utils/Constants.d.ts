@@ -57,6 +57,7 @@ export declare enum DeviceTypes {
 export declare enum FeatureConstants {
     SAFARI_UNIFIED_PLAN = "safari_unified_plan",
     SAFARI_SCREEN_SHARE = "safari_screen_share",
-    BROWSER_AUTOMATIC_CC = "browser_automatic_cc"
+    BROWSER_AUTOMATIC_CC = "browser_automatic_cc",
+    WEB_CLIENT_SDK_CDL = "web_client_sdk_cdl"
 }
 export declare const ivrResourceBasePath = "https://swdl.bluejeans.com/websdk/web-client-sdk/assets/media";

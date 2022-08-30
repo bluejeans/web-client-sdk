@@ -1,7 +1,16 @@
 export declare enum AnalyticsEvents {
     jsError = "jsError",
     joinedMeeting = "joinedMeeting",
-    closedCaptioning = "closedCaptioning"
+    closedCaptioning = "closedCaptioning",
+    wrEnabledInMeeting = "wrEnabledInMeeting",
+    wrParticipantApproved = "wrParticipantApproved",
+    wrParticipantDenied = "wrParticipantDenied",
+    wrApprovedAll = "wrApprovedAll",
+    wrDeniedAll = "wrDeniedAll",
+    wrParticipantDemoted = "wrParticipantDemoted",
+    wrRequestDenied = "wrRequestDenied",
+    wrRequestApproved = "wrRequestApproved",
+    wrLandedOnWaitingRoom = "wrLandedOnWaitingRoom"
 }
 export default class Analytics {
     private tracked;

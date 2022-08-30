@@ -27,7 +27,8 @@ export declare enum ConnectionState {
     VALIDATING = "VALIDATING",
     CONNECTING = "CONNECTING",
     CONNECTED = "CONNECTED",
-    RECONNECTING = "RECONNECTING"
+    RECONNECTING = "RECONNECTING",
+    WAITINGROOM = "WAITINGROOM"
 }
 export declare enum ContentShareState {
     STARTED = "started",
@@ -116,4 +117,20 @@ export declare enum ClosedCaptioningState {
 export interface Error {
     reason: string;
     error: object | boolean;
+}
+export interface LoggerIntf {
+    log(tag: unknown, value: unknown): void;
+    log(value: unknown): void;
+    verbose(tag: unknown, value: unknown): void;
+    verbose(value: unknown): void;
+    debug(tag: unknown, value: unknown): void;
+    debug(value: unknown): void;
+    info(tag: unknown, value: unknown): void;
+    info(value: unknown): void;
+    warn(tag: unknown, value: unknown): void;
+    warn(value: unknown): void;
+    error(tag: unknown, value: unknown): void;
+    error(value: unknown): void;
+    flushLocalStorageLogs?(): void;
+    addLogsToLocalStorage?(): void;
 }

@@ -3,6 +3,8 @@ import { observer } from "mobx-react";
 import Managers from "../stores/Managers";
 import MeetingViewModel from "./MeetingViewModel";
 import AppViewModel from './AppViewModel';
+import { ToggleSlider }  from "react-toggle-slider";
+
 import {
   MeetingControlContainer,
   MeetingDetailsTable,
@@ -33,7 +35,22 @@ import {
   LogUploadMessage,
   UploadLogButtonDisabled,
   VideoIconRemote,
-  AudioIconRemote
+  AudioIconRemote,
+  WrRosterOptions,
+  WaitingRoomList,
+  WaitingRoomSelected,
+  RosterList,
+  RosterSelected,
+  WaitingRoomListItem,
+  WrParticipantName,
+  WrParticipantControl,
+  WrRejectParticipant,
+  WrApprovedParticipant,
+  WrHeading,
+  WrApprovedAll,
+  WrRejectAll,
+  WrParticipentList
+  
 } from "./styles/MeetingView";
 import { Participant } from "@bluejeans/web-client-sdk";
 import { BsFillChatDotsFill } from "react-icons/bs";
@@ -49,12 +66,10 @@ export default class MeetingView extends Component<Props> {
   private viewModel: MeetingViewModel;
   private appViewModel: AppViewModel;
 
-
   constructor(props: Props) {
     super(props);
     this.viewModel = new MeetingViewModel(props.managers);
     this.appViewModel = new AppViewModel(props.managers);
-
   }
 
   private get colonSeparator(): JSX.Element {
@@ -67,7 +82,10 @@ export default class MeetingView extends Component<Props> {
     const MicrophoneSelectionUnsupportedText =
       "Microphone selection is not supported on this browser.";
     return (
-      <MeetingControlContainer show={this.appViewModel.showRemoteContent} chatShow= {this.viewModel.showChatPanel}>
+      <MeetingControlContainer
+        show={this.appViewModel.showRemoteContent}
+        chatShow={this.viewModel.showChatPanel}
+      >
         {this.viewModel.showChatPanel ? (
           <ChatPanel managers={this.props.managers} />
         ) : (
@@ -304,8 +322,50 @@ export default class MeetingView extends Component<Props> {
           )}
         </MeetingRoster>
         <MeetingRoster>
-          <RosterHeader>Roster</RosterHeader>
-          <ParticipantList>{this.renderRoster()}</ParticipantList>
+          <WrRosterOptions>
+            {this.renderRosterOption()}
+            {this.renderWaitingRoomOption()}
+          </WrRosterOptions>
+          {this.viewModel.showWaitingRoom ? (
+            <>
+              <WrParticipentList>
+                <WaitingRoomListItem>
+                  <WrHeading>Waiting Room</WrHeading>
+                  <WrParticipantControl>
+                    <ToggleSlider
+                      active={this.viewModel.isWaitingRoomEnabled}
+                      onToggle={(state) => {
+                        this.viewModel.toggleWaitingRoom(state);
+                      }}
+                    />
+                  </WrParticipantControl>
+                </WaitingRoomListItem>
+                {this.renderWrParticipantOption()}
+                {this.viewModel.WrParticipants.length > 1 ? (
+                  <WaitingRoomListItem>
+                    <WrApprovedAll
+                      onClick={() => {
+                        this.viewModel.admitAll();
+                      }}
+                    >
+                      {" "}
+                      ADMIT ALL
+                    </WrApprovedAll>
+                    <WrRejectAll
+                      onClick={() => {
+                        this.viewModel.denyAll();
+                      }}
+                    >
+                      {" "}
+                      DENY ALL
+                    </WrRejectAll>
+                  </WaitingRoomListItem>
+                ) : null}
+              </WrParticipentList>
+            </>
+          ) : (
+            <ParticipantList>{this.renderRoster()}</ParticipantList>
+          )}
         </MeetingRoster>
         <LeaveControlButton
           onClick={this.viewModel.onLeaveMeetingBtnClick}
@@ -373,7 +433,7 @@ export default class MeetingView extends Component<Props> {
   renderParticipant(participant: Participant, n): JSX.Element {
     const participantName =
       participant.name + `${participant.isSelf ? "(me)" : ""}`;
-      const localRemoteData = JSON.parse(JSON.stringify(participant));
+    const localRemoteData = JSON.parse(JSON.stringify(participant));
     return (
       <ParticipantListItem index={n.toString()} key={n.toString()}>
         {participant.isModerator && <ModeratorBadge />}
@@ -381,31 +441,82 @@ export default class MeetingView extends Component<Props> {
           {participantName}
         </ParticipantName>
         {participant.isSharing && <SharingBadge />}
-        {localRemoteData.videoMuteType.remoteMuted ? 
+        {localRemoteData.videoMuteType.remoteMuted ? (
           <VideoIconRemote
-          isMuted={localRemoteData.videoMuteType.remoteMuted}
-          /> :
-        <VideoIcon
-          isMuted={
-            participant.isVideoMuted !== undefined
-              ? participant.isVideoMuted
-              : true
-          }
-        />
-       }
-       {localRemoteData.audioMuteType.remoteMuted ? 
+            isMuted={localRemoteData.videoMuteType.remoteMuted}
+          />
+        ) : (
+          <VideoIcon
+            isMuted={
+              participant.isVideoMuted !== undefined
+                ? participant.isVideoMuted
+                : true
+            }
+          />
+        )}
+        {localRemoteData.audioMuteType.remoteMuted ? (
           <AudioIconRemote
-          isMuted={localRemoteData.audioMuteType.remoteMuted}
-          /> :
-        <AudioIcon
-          isMuted={
-            participant.isAudioMuted !== undefined
-              ? participant.isAudioMuted
-              : true
-          }
-        />
-        }
+            isMuted={localRemoteData.audioMuteType.remoteMuted}
+          />
+        ) : (
+          <AudioIcon
+            isMuted={
+              participant.isAudioMuted !== undefined
+                ? participant.isAudioMuted
+                : true
+            }
+          />
+        )}
       </ParticipantListItem>
+    );
+  }
+  renderRosterOption(): JSX.Element {
+    return !this.viewModel.showWaitingRoom ? (
+      <RosterSelected onClick={() => this.viewModel.setWaitingRoom(false)}>
+        Roster
+      </RosterSelected>
+    ) : (
+      <RosterList onClick={() => this.viewModel.setWaitingRoom(false)}>
+        Roster
+      </RosterList>
+    );
+  }
+
+  renderWaitingRoomOption(): JSX.Element {
+    return this.viewModel.showWaitingRoom ? (
+      <WaitingRoomSelected disabled={!this.viewModel.isWaitingRoomCapable} >
+        Waiting Room
+      </WaitingRoomSelected>
+    ) : (
+      <WaitingRoomList disabled={!this.viewModel.isWaitingRoomCapable} onClick={() => this.viewModel.setWaitingRoom(true)}>
+        Waiting Room
+      </WaitingRoomList>
+    );
+  }
+  renderWrParticipantOption(): JSX.Element {
+    let WrParticipants = this.viewModel.WrParticipants;
+    return (
+      <>
+        {WrParticipants?.map((participant, n) => {
+          {
+            return this.renderWrParticipant(participant, n);
+          }
+        })}
+      </>
+    );
+  }
+
+  renderWrParticipant(participant, n): JSX.Element {
+    const participantName = participant.name;
+    return (
+      <WaitingRoomListItem index={n.toString()} key={n.toString()}>
+        {participant.isModerator && <ModeratorBadge />}
+        <WrParticipantName title={participantName}>
+          {participantName}
+        </WrParticipantName>
+        <WrApprovedParticipant onClick={()=>{this.viewModel.admitParticipant(participant)}}> ADMIT </WrApprovedParticipant>
+        <WrRejectParticipant onClick={()=>{this.viewModel.denyParticipant(participant)}}> DENY </WrRejectParticipant>
+      </WaitingRoomListItem>
     );
   }
 }

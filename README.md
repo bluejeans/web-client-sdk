@@ -24,6 +24,7 @@ The design of the SDK emphasizes **simplicity**. Developers can quickly integrat
 - Meeting Information (Title, Hostname, Meeting Id)
 - Video tile background customization options
 - Moderator Controls
+- Waiting Room Support
 
  **Not to be confused with:**
 
@@ -99,7 +100,7 @@ var webClientSDK = new BJNWebClientSDK.BJNWebClientSDK();
 APIs are grouped into relevant services as shown in the architecture diagram. All the service objects are available all the time after SDK instantiation, however all services are not active at all the time.
 When inactive, APIs of the services will be null or undefined
 
-<img width="870" alt="BJNWebClientSDKArch"  src="https://swdl.bluejeans.com/websdk/web-client-sdk/assets/architecture/v1.2.0.png">
+<img width="870" alt="BJNWebClientSDKArch"  src="https://swdl.bluejeans.com/websdk/web-client-sdk/assets/1.3.0/architecture.png">
 
 ### List of services :
 
@@ -116,6 +117,10 @@ when meeting ends by the transition of connection state to _IDLE_
 
  Eg: ContentShareService, ParticipantsService, PublicChatService, PrivateChatService, ModeratorControlsService
 
+#### 3. Conditionally active services
+
+Eg: ModeratorWaitingRoomService is null initially and will get initialized only if the user is a moderator
+
 ## SDK Documentation
 
 Detailed documentation of SDK functions is available [here]( https://bluejeans.github.io/web-client-sdk).
@@ -129,13 +134,14 @@ Detailed documentation of SDK functions is available [here]( https://bluejeans.g
 **Following are the states which can be observed by subscribing to connectionState :**
 1. `IDLE` - is a state which determines that a meeting is not in progress.
 2. `VALIDATING` - meeting credentials are being validated 
-3. `CONNECTING` - is a state which determines that meeting credentials were successfully authenticated and you are about to join the meeting.
-4. `RECONNECTING` - this state is produced when a network glitch occurs 
-5. `CONNECTED` - this state determines that you are finally into the meeting. 
+3. `WAITINGROOM` - is a state which determines that the you are in waiting room awaiting moderator's approval to join the meeting
+4. `CONNECTING` - is a state which determines that meeting credentials were successfully authenticated and you are about to join the meeting.
+5. `RECONNECTING` - this state is produced when a network glitch occurs 
+6. `CONNECTED` - this state determines that you are finally into the meeting. 
 
 Below is a diagram depicting the meeting state transitions:
 
-<img width="870" alt="ConnectionState" src="https://swdl.bluejeans.com/websdk/web-client-sdk/assets/sdk-connection-states-transition.png">
+<img width="870" alt="ConnectionState" src="https://swdl.bluejeans.com/websdk/web-client-sdk/assets/1.3.0/sdk-connection-states-transition.png">
 ### Sample code for joinMeeting
 To join a meeting
 
@@ -388,7 +394,7 @@ Each tile has some features attached to it:
 4. It will also contain a network indicator bar, indicating how strong is the network of the participant currently in a call.
 5. The colour of the tile can be configured as already explained [SDK customizations](#sdk-customizations)
 
-## Running video on FireFox
+## Running video on Firefox
 
 On other browsers we support layout of remote video as described [above](#remote-video).
 However on firefox, we support remote video as following:

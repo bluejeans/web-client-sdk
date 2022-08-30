@@ -1,6 +1,6 @@
 {
     "name": "@bluejeans/bjn-meeting-experience",
-    "version": "1.2.0",
+    "version": "1.3.0",
     "description": "BlueJeans JS Meeting client - WebRTC",
     "homepage": "https://bluejeans.com",
     "scripts": {
@@ -13,13 +13,14 @@
         "node": ">=8.10.0"
     },
     "dependencies": {
-        "@bluejeans/web-client-sdk": "1.2.0",
+        "@bluejeans/web-client-sdk": "1.3.0",
         "mobx": "4.5.2",
         "mobx-react": "6.1.4",
         "react": "16.8.0",
         "react-dom": "16.8.0",
         "react-emoji": "^0.5.0",
         "react-icons": "^4.2.0",
+        "react-toggle-slider": "^0.4.0",
         "styled-components": "3.4.5",
         "url-loader": "^4.1.1"
     },

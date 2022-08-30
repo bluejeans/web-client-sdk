@@ -1,4 +1,3 @@
-import { StreamType } from "@bluejeans/bjn-core-webrtc";
 import { SDKLogger } from "./logger";
 import AutoplayHandler from "./utils/AutoplayHandler";
 export declare const STREAM_TYPE_ATTRIBUTE = "data-bjn-stream-type";

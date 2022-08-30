@@ -1,4 +1,3 @@
-import { ClientInfo } from "@bluejeans/bjn-core-webrtc";
 import { OSTypes, OSNames, BrowserNames, BrowserTypes, DeviceTypes } from "./Constants";
 declare global {
     interface Window {
@@ -54,7 +53,6 @@ declare class Environments {
     get isLinuxEnvironment(): boolean;
     get versionString(): string;
     get browserVersion(): string;
-    get clientInfo(): ClientInfo;
     get isMobileDevice(): boolean;
 }
 export default Environments;

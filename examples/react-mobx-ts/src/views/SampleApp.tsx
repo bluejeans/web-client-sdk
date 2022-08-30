@@ -4,6 +4,7 @@ import { computed } from 'mobx';
 import Managers from '../stores/Managers';
 import { AppState } from '../stores/AppManager';
 import PreMeetingView from './PreMeetingView';
+import WaitingRoom from './WaitingRoom'
 import MeetingView from "./MeetingView"
 import JoiningView from "./JoiningView"
 import AppViewModel from './AppViewModel';
@@ -41,6 +42,8 @@ export default class SampleApp extends Component<Props> {
         switch(this.viewModel.appState) {
             case AppState.PRE_MEETING:
                 return this.viewModel.joiningStarted ? <JoiningView/> : <PreMeetingView managers={ this.props.managers }/>
+            case AppState.WAITING_ROOM:
+                return <WaitingRoom managers={ this.props.managers }/>
             case AppState.IN_MEETING:
             case AppState.POST_MEETING:
                 return <MeetingView  managers={ this.props.managers } />

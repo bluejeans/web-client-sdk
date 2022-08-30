@@ -34,7 +34,7 @@ export default class AppViewModel {
     }
 
     @computed get showMeetingVideo () : boolean {
-        return this.joiningStarted;
+        return this.joiningStarted && this.webrtcSDK.meetingService.connectionState !== ConnectionState.WAITINGROOM;
     }
 
     @computed get videoMessage () : string {

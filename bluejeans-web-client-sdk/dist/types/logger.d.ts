@@ -1,5 +1,4 @@
-import { LoggerIntf } from '@bluejeans/bjn-core-webrtc';
-import { LoggingMode, BlueJeansSDKInitParams } from './sdk-objects';
+import { LoggingMode, BlueJeansSDKInitParams, LoggerIntf } from './sdk-objects';
 export declare class SDKLogger implements LoggerIntf {
     private winstonLogger;
     private browserType;

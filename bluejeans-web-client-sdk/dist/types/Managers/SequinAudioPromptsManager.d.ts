@@ -1,4 +1,3 @@
-import { BaseStore } from "@bluejeans/bjn-core-webrtc";
 import { MeetingService } from "../services/MeetingService";
 import AutoPlayHandler from "../utils/AutoplayHandler";
 import { SDKLogger } from "../logger";

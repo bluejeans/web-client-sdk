@@ -1,9 +1,16 @@
 import { action, computed, observable } from "mobx";
 import Managers from "../stores/Managers";
 import AppManager from "../stores/AppManager";
-import { AudioVideoDevice, BJNWebClientSDK, ConnectionState, VideoLayout, Participant, ContentShareState } from '@bluejeans/web-client-sdk';
+import { AudioVideoDevice, BJNWebClientSDK, ConnectionState, VideoLayout, Participant, ContentShareState, Error } from '@bluejeans/web-client-sdk';
 import ChatUIManager from "../stores/ChatUIManager";
-import { emailRegex } from "../Utils/Constants"
+import { emailRegex } from "../Utils/Constants";
+
+export interface WaitingRoomParticipant {
+    id: string;
+    name: string;
+}
+
+
 
 export default class MeetingViewModel {
 
@@ -44,8 +51,24 @@ export default class MeetingViewModel {
         return this.webrtcSDK.meetingService.participantService.participants ? this.webrtcSDK.meetingService.participantService.participants.length : 1;
     }
 
-    @computed get participants() : Participant[] {
+    @computed get participants() : Participant[] {        
         return this.webrtcSDK.meetingService.participantService.participants;
+    }
+
+    @computed get WrParticipants(): WaitingRoomParticipant[]  {
+        //@ts-ignore
+        if (this.webrtcSDK.meetingService.moderatorWaitingRoomService?.waitingRoomParticipants?.length) {
+            return <WaitingRoomParticipant[]>this.webrtcSDK.meetingService.moderatorWaitingRoomService.waitingRoomParticipants;
+        }
+        return [];
+    }
+
+    @computed get isWaitingRoomEnabled() : boolean {
+        return this.webrtcSDK.meetingService.participantService?.selfParticipant?.isModerator && this.webrtcSDK.meetingService.moderatorWaitingRoomService?.isWaitingRoomEnabled;
+    }
+
+    @computed get isWaitingRoomCapable() : boolean {
+        return this.webrtcSDK.meetingService.participantService?.selfParticipant?.isModerator && this.webrtcSDK.meetingService.moderatorWaitingRoomService?.isWaitingRoomCapable;
     }
 
     @computed get sharingScreen() : boolean {
@@ -173,6 +196,22 @@ export default class MeetingViewModel {
     @action.bound toggleAudioState() : void {
         this.webrtcSDK.meetingService.setAudioMuted(!this.webrtcSDK.meetingService.audioMuted)
     }
+    @action.bound toggleWaitingRoom(enable:boolean) : void {
+        this.webrtcSDK.meetingService.moderatorWaitingRoomService.setWaitingRoomEnabled(enable).then().catch();
+    }
+
+    @action.bound admitParticipant(participant) : void {
+        this.webrtcSDK.meetingService.moderatorWaitingRoomService.admitParticipant(participant);
+    }
+    @action.bound denyParticipant(participant) : void {
+        this.webrtcSDK.meetingService.moderatorWaitingRoomService.denyParticipant(participant);
+    }
+    @action.bound admitAll() : void {
+        this.webrtcSDK.meetingService.moderatorWaitingRoomService.admitAll();
+    }
+    @action.bound denyAll() : void {
+        this.webrtcSDK.meetingService.moderatorWaitingRoomService.denyAll();
+    }
 
     @action.bound toggleScreenShare() : void {
         if(this.webrtcSDK.meetingService.contentService.contentShareState == ContentShareState.STARTED ) {
@@ -258,5 +297,15 @@ export default class MeetingViewModel {
     @action setShowChatPanel(value : boolean) {
         this.appManager.setShowChatPanel(value);
     }
+
+    @computed get showWaitingRoom() : boolean {
+        return this.appManager.showWaitingRoom;
+    }
+    
+    @action setWaitingRoom(value : boolean) {
+        this.appManager.setWaitingRoom(value);
+    }
+
+
 
 }

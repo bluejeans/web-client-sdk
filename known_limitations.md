@@ -87,17 +87,6 @@ Safari on iOS version 15, sometimes routes audio to the earpiece and not the spe
 </p>
 </details>
 
-## Firefox
-
-<details>
-<summary>Camera light not turning off on Window's Firefox</summary>
-<p>
-
-More details can be found in this [Bugzilla Issue](https://bugzilla.mozilla.org/show_bug.cgi?id=1694304)
-<hr/>
-</p>
-</details>
-
 ## WebView
 
 ### Android

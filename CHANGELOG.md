@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file
 
+## Version 1.3.0
+
+### Added
+
+- Support for Waiting Room
 ## Version 1.2.0
 
 ### Added

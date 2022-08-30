@@ -8,7 +8,8 @@ import {
 export enum AppState {
   PRE_MEETING = "PreMeeting",
   IN_MEETING = "InMeeting",
-  POST_MEETING = "PostMeeting"
+  POST_MEETING = "PostMeeting",
+  WAITING_ROOM = "WaitingRoom"
 }
 
 export interface JoinProps {
@@ -28,6 +29,7 @@ export default class AppManager {
   @observable selfTriggeredLeaveMeeting: boolean = false;
   @observable showChatPanel: boolean = false;
   @observable disconnectedAfterMeeting :boolean = false;
+  @observable showWaitingRoom: boolean = false;
 
 
 
@@ -52,6 +54,9 @@ export default class AppManager {
   }
 
   @computed get appState(): AppState {
+    if(this.webrtcSDK.meetingService.connectionState === ConnectionState.WAITINGROOM){
+      return AppState.WAITING_ROOM;
+    }
     if (this.disconnectedAfterMeeting) {
       return AppState.POST_MEETING
     }
@@ -60,7 +65,8 @@ export default class AppManager {
       !this.isJoiningMeeting
     ) {
       return AppState.PRE_MEETING;
-    } else {
+    } 
+    else {
       return AppState.IN_MEETING;
     }
   }
@@ -87,6 +93,9 @@ export default class AppManager {
 
   @action setShowChatPanel(value : boolean) : void {
     this.showChatPanel = value;
+  }
+  @action setWaitingRoom(value : boolean) : void {
+    this.showWaitingRoom = value;
   }
 
   reload(): void {

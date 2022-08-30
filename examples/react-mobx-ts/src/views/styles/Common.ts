@@ -105,6 +105,9 @@ export const SharedScreenHolder = styled<any, any>("div")`
         padding-top:00px;
         position:relative;
     }    
+    @media(min-height: 300px) and (max-height: 700px) and (max-width: 1100px) {
+        top: 300px;        
+    }
         
     @media only screen and (max-width: 768px) {
         width: 100vw;

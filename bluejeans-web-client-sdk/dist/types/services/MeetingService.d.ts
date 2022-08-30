@@ -8,6 +8,7 @@ import { PublicChatService } from './PublicChatService';
 import { PrivateChatService } from './PrivateChatService';
 import { ModeratorControlsService } from "./ModeratorControlsService";
 import { ClosedCaptioningService } from "./ClosedCaptioningService";
+import { ModeratorWaitingRoomService } from "./ModeratorWaitingRoomService";
 export declare const ZINC_MODE_ATTRIBUTE = "data-bjn-zinc-mode";
 export declare class MeetingService {
     private permissionService;
@@ -19,6 +20,7 @@ export declare class MeetingService {
     privateChatService: PrivateChatService;
     moderatorControlsService: ModeratorControlsService;
     closedCaptioningService: ClosedCaptioningService;
+    moderatorWaitingRoomService: ModeratorWaitingRoomService;
     connectionState: ConnectionState;
     private cluster;
     private analytics;
@@ -30,6 +32,10 @@ export declare class MeetingService {
     private autoplayHandler;
     private sequinAudioPromptsManager;
     private browserType;
+    private tempLocalVideoMuteState;
+    private tempLocalAudioMuteState;
+    private showVideoDebugStats;
+    private maxNumberOfStreams;
     constructor(permissionService: PermissionService, analytics: Analytics, sdkLogger: SDKLogger, initParams: BlueJeansSDKInitParams);
     private handleAutoPlayforMediaNodes;
     private setConnectionState;
@@ -42,7 +48,9 @@ export declare class MeetingService {
     attachRemoteVideo(remoteVideoElement: HTMLDivElement): void;
     private initSequinLayouts;
     private resetAppOnMeetingEnd;
+    resetTempAudioVideoStates(): void;
     private disconnectMedia;
+    private setShowVideoDebugStats;
     attachRemoteContent(videoElement: HTMLElement): void;
     get selfVideoPreviewEnabled(): boolean;
     setSelfVideoPreviewEnabled(enable: boolean): void;
@@ -60,8 +68,10 @@ export declare class MeetingService {
     get videoLayout(): VideoLayout | null;
     get meetingInformation(): MeetingInformation;
     get showVideoLayout(): boolean;
-    endMeeting(ejectAndEnd?: boolean): Promise<any>;
+    endMeeting(): Promise<any>;
     observe(property: keyof MeetingService, callback: () => void): void;
     private onMeetingJoined;
     get recordingState(): RecordingState;
+    private trackWRParticipantApproved;
+    private trackWRParticipantDenied;
 }

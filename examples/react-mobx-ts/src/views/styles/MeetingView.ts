@@ -21,11 +21,14 @@ export const MeetingControlContainer = styled<any, any>("div")`
         justify-self: center;
         margin: auto;
         margin-top: ${props => props.show ? props.chatShow ? "-22vh" : "14vh" : "55vh"}; 
-    }    
+    } 
     @media(max-height: 750px) {
         margin-top: ${props => props.show ? props.chatShow ? "0vh" : "16vh" : "3vh"}; 
     }
-     
+
+    @media(min-height: 300px) and (max-width: 1100px) {
+        margin-top: ${props => props.show ? props.chatShow ? "0vh" : "16vh" : "50vh"}; 
+    }
 
     @media only screen and (max-width: 768px) {
         display: flex;
@@ -33,7 +36,7 @@ export const MeetingControlContainer = styled<any, any>("div")`
         justify-self: center;
         width: auto;
         margin: 0px;
-        margin-top: ${props => props.show ? props.chatShow ? "-35vh" : "3vh" : "55vh"}; 
+        margin-top: ${props => props.show ? props.chatShow ? "0vh"  : "4vh" : "55vh"}; 
     }
 `
 
@@ -254,4 +257,156 @@ export const BadgeLabel=styled.div`
     color: white;
  }
 
-`;
+`
+
+export const WrRosterOptions = styled.div`
+  background-color: #fff;
+  text-align: center;
+  padding: 8px 0px;
+`
+
+export const RosterList = styled.button`
+  display : inline-block;
+  width:40%;
+  height:25px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  font-size: 13px;
+  background-color:#dcdcde;
+  color:gray;
+  outline:none;
+  border:none
+`
+export const WrParticipentList = styled.div`
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+`
+export const WaitingRoomList = styled.button`
+  display : inline-block;
+  width:40%;
+  height:25px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  font-size: 13px;
+  background-color:#dcdcde;
+  color:gray;
+  outline:none;
+  border: none;
+`
+
+export const RosterSelected = styled.button`
+  display : inline-block;
+  width:40%;
+  height:25px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  font-size: 13px;
+  background-color:#33a6e8;
+  color:white;
+  outline:none;
+  border:none
+`
+
+export const WaitingRoomSelected = styled.button`
+  display : inline-block;
+  width:40%;
+  height:25px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  font-size: 13px;
+  background-color:#33a6e8;
+  color:white;
+  outline:none;
+  border: none;
+`
+
+export const WaitingRoomListItem= styled<any,any>("div")`
+    width: 100%;
+    height: 30px;
+`
+
+export const WrParticipantName = styled.div`
+    position: absolute;
+    left: 70px;
+    display: inline-block;
+    max-width: 200px;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: gray;
+`
+export const WrHeading = styled.div`
+    position: absolute;
+    left: 70px;
+    display: inline-block;
+    max-width: 200px;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 900;
+    font-size: 19px;
+`
+
+export const WrParticipantControl = styled.div`
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 300px;
+    display: inline-block;
+    vertical-align: middle;
+`
+export const WrRejectParticipant = styled.button`
+    width: 50px;
+    height: 24px;
+    position: absolute;
+    left: 270px;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: rgb(86, 98, 113);
+    color: white; 
+    border-radius: 8px;
+    border: none;
+`
+export const WrApprovedParticipant = styled.button`
+    width: 50px;
+    height: 24px;
+    position: absolute;
+    left: 330px;
+    display: inline-block;
+    vertical-align: middle;
+    background-color:  rgb(48, 202, 119);
+    color: white;
+    border-radius: 8px;
+    border: none
+`
+
+export const WrRejectAll = styled.button`
+    width: 100px;
+    height: 27px;
+    position: absolute;
+    left: 90px;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: rgb(86, 98, 113);
+    color: white; 
+    border-radius: 8px;
+    border: none;
+`
+export const WrApprovedAll= styled.button`
+    width: 100px;
+    height: 27px;
+    position: absolute;
+    left: 200px;
+    display: inline-block;
+    vertical-align: middle;
+    background-color:  rgb(48, 202, 119);
+    color: white;
+    border-radius: 8px;
+    border: none
+`
+;

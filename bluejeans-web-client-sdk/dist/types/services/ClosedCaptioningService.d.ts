@@ -1,4 +1,3 @@
-export * from '../types/ClosedCaptioningService';
 import { ClosedCaptioningState } from "../sdk-objects";
 import { SDKLogger } from "../logger";
 import Analytics from './Analytics';

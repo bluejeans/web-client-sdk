@@ -1,4 +1,3 @@
-import { MeetingError } from '@bluejeans/bjn-core-webrtc';
 import { JoinError, PermissionError } from './sdk-objects';
 export interface ErrorInfo {
     code: JoinError | PermissionError;
