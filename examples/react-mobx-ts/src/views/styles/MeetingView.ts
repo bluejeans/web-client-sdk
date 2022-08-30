@@ -410,3 +410,7 @@ export const WrApprovedAll= styled.button`
     border: none
 `
 ;
+export const CheckBox= styled.input`
+    width: 20px;
+    height: 20px;
+`

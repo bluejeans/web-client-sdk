@@ -3,7 +3,6 @@ import { observer } from "mobx-react";
 import Managers from "../stores/Managers";
 import MeetingViewModel from "./MeetingViewModel";
 import AppViewModel from './AppViewModel';
-import { ToggleSlider }  from "react-toggle-slider";
 
 import {
   MeetingControlContainer,
@@ -49,7 +48,8 @@ import {
   WrHeading,
   WrApprovedAll,
   WrRejectAll,
-  WrParticipentList
+  WrParticipentList,
+  CheckBox
   
 } from "./styles/MeetingView";
 import { Participant } from "@bluejeans/web-client-sdk";
@@ -332,12 +332,7 @@ export default class MeetingView extends Component<Props> {
                 <WaitingRoomListItem>
                   <WrHeading>Waiting Room</WrHeading>
                   <WrParticipantControl>
-                    <ToggleSlider
-                      active={this.viewModel.isWaitingRoomEnabled}
-                      onToggle={(state) => {
-                        this.viewModel.toggleWaitingRoom(state);
-                      }}
-                    />
+                  <CheckBox type="checkbox" checked={this.viewModel.isWaitingRoomEnabled} onChange={this.viewModel.toggleWaitingRoom}/>
                   </WrParticipantControl>
                 </WaitingRoomListItem>
                 {this.renderWrParticipantOption()}

@@ -196,8 +196,8 @@ export default class MeetingViewModel {
     @action.bound toggleAudioState() : void {
         this.webrtcSDK.meetingService.setAudioMuted(!this.webrtcSDK.meetingService.audioMuted)
     }
-    @action.bound toggleWaitingRoom(enable:boolean) : void {
-        this.webrtcSDK.meetingService.moderatorWaitingRoomService.setWaitingRoomEnabled(enable).then().catch();
+    @action.bound toggleWaitingRoom() : void {
+        this.webrtcSDK.meetingService.moderatorWaitingRoomService.setWaitingRoomEnabled(!this.isWaitingRoomEnabled).then().catch();
     }
 
     @action.bound admitParticipant(participant) : void {
