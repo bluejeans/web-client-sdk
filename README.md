@@ -425,4 +425,4 @@ Copyright © 2022 BlueJeans Network. All usage of the SDK is subject to the Deve
 
 ## Legal Requirements
 
-Use of this SDK is subject to our [Terms & Conditions](https://www.bluejeans.com/terms-and-conditions-may-2020) and [Privacy Policy](https://www.bluejeans.com/privacy-policy).
+Use of this SDK is subject to our [Terms & Conditions](https://www.bluejeans.com/legal/terms-of-service) and [Privacy Policy](https://www.bluejeans.com/privacy-policy).
