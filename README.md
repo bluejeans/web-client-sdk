@@ -28,7 +28,10 @@ The design of the SDK emphasizes **simplicity**. Developers can quickly integrat
 
 ## New Features
 - 720p Video Capture
-
+- **BREAKING CHANGE (v1.4.0)** : [InMeeting services](https://docs.bluejeans.com/Web_Client_SDK/Architecture.htm) will be active only when connenction state transitions to `CONNECTED` state.
+   - These services are initialised conditionally based on connection state.
+   - They are disabled/reset when connection state transitions to `IDLE` state(meeting ends)
+   
  **Not to be confused with:**
 
 - **BlueJeans WebRTC Embed SDK**: This is an alternate SDK that allows the end user to embed the entire BlueJeans WebRTC Client. As such, this SDK provides an entire user interface, meaning the end user has to write much less code. However, it is also much less customizable. See https://bluejeans.github.io/webrtc-embed-sdk/docs/index.html
