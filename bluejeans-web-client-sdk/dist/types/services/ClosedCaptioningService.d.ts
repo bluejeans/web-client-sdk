@@ -1,8 +1,9 @@
+import BaseStore from '../utils/BaseContainer';
 import { ClosedCaptioningState } from "../sdk-objects";
 import { SDKLogger } from "../logger";
 import Analytics from './Analytics';
 import { StartCCResponse, StopCCResponse } from '../types/ClosedCaptioningService';
-export declare class ClosedCaptioningService {
+export declare class ClosedCaptioningService extends BaseStore {
     private sdkLogger;
     private analytics;
     constructor(sdkLogger: SDKLogger, analytics: Analytics);

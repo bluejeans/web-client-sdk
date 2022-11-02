@@ -1,10 +1,11 @@
+import BaseStore from '../utils/BaseContainer';
 import SubscribableEvent from 'subscribableevent';
 import { SDKLogger } from "../logger";
 import { ChatMessage } from '../sdk-objects';
 export declare class PublicChatStoreEvents {
     readonly newMessage: SubscribableEvent<(message: ChatMessage) => void>;
 }
-export declare class PublicChatService {
+export declare class PublicChatService extends BaseStore {
     private sdkLogger;
     events: PublicChatStoreEvents;
     constructor(sdkLogger: SDKLogger);

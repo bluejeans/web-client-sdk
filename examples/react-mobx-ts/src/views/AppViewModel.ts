@@ -20,9 +20,24 @@ export default class AppViewModel {
         this.appManager = managers.appManager;
         this.webrtcSDK = managers.webrtcSDK;
 
-        reaction(() => this.webrtcSDK.meetingService.closedCaptioningService.closedCaptioningState, (closedCaptioningState:ClosedCaptioningState) => {
+        reaction(() => this.webrtcSDK.meetingService.closedCaptioningService?.closedCaptioningState, (closedCaptioningState:ClosedCaptioningState) => {
             this.setLoadingMessageState(closedCaptioningState);
         })
+    }
+
+    @computed get renderMeetingView(){
+        switch (this.webrtcSDK.meetingService.connectionState) {
+            case ConnectionState.CONNECTED:
+            case ConnectionState.RECONNECTING:
+            case ConnectionState.IDLE:
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    @computed get isMeetingConnected(): boolean {
+        return this.webrtcSDK.meetingService.connectionState === ConnectionState.CONNECTED;
     }
 
     @computed get appState() : AppState {
@@ -38,7 +53,7 @@ export default class AppViewModel {
     }
 
     @computed get videoMessage () : string {
-        if (this.webrtcSDK.meetingService.contentService.receivingContentShare) {
+        if (this.webrtcSDK.meetingService.contentService?.receivingContentShare) {
             return ""
         } else if (this.webrtcSDK.meetingService.connectionState == ConnectionState.CONNECTING) {
             return "Connecting...";
@@ -56,7 +71,7 @@ export default class AppViewModel {
     }
 
     @computed get showRemoteContent () : boolean {
-        return this.webrtcSDK.meetingService.contentService.receivingContentShare
+        return this.webrtcSDK.meetingService.connectionState == ConnectionState.CONNECTED &&  this.webrtcSDK.meetingService.contentService?.receivingContentShare
     }
 
     attachLocalVideo(videoElement: HTMLVideoElement) {
@@ -73,7 +88,7 @@ export default class AppViewModel {
 
 
   @computed get showCaptionText() : boolean {
-    return this.webrtcSDK.meetingService.closedCaptioningService.isClosedCaptioningAvailable  && this.captionText?.length > 0;
+    return this.webrtcSDK.meetingService.closedCaptioningService?.isClosedCaptioningAvailable  && this.captionText?.length > 0;
 }
 
   @action private setLoadingMessageState(closedCaptioningState) : void {
@@ -89,11 +104,11 @@ export default class AppViewModel {
 
     @computed get captionText(): string {
         let messageToUI;
-        if ((this.webrtcSDK.meetingService.closedCaptioningService.closedCaptioningState === ClosedCaptioningState.CONNECTING) && !this.hasLoadingTranscriptShown) {
+        if ((this.webrtcSDK.meetingService.closedCaptioningService?.closedCaptioningState === ClosedCaptioningState.CONNECTING) && !this.hasLoadingTranscriptShown) {
             return messageToUI = "loading";
         } else {
             // Trimming the string to the max length, which we can display in the screen.
-            messageToUI = this.webrtcSDK.meetingService.closedCaptioningService.closedCaptionText;
+            messageToUI = this.webrtcSDK.meetingService.closedCaptioningService?.closedCaptionText;
             return messageToUI?.length > CC_DISPLAY_CHAR_LIMIT ? `${messageToUI.slice(0, CC_DISPLAY_CHAR_LIMIT)}...` : messageToUI
         }
     }

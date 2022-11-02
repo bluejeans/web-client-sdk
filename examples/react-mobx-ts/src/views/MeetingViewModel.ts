@@ -9,14 +9,20 @@ export interface WaitingRoomParticipant {
     id: string;
     name: string;
 }
-
-
-
+export interface ErrorResponse {
+    /** Appropiate error if available */
+    error?: object;
+    /** Appropiate code to uniquely identify the response*/
+    code: any;
+    /** Appropiate reason if available */
+    reason?: string;
+  }
+  
 export default class MeetingViewModel {
 
-    private appManager : AppManager;
-    private webrtcSDK : BJNWebClientSDK;
-    private chatUIManager : ChatUIManager;
+    private appManager: AppManager;
+    private webrtcSDK: BJNWebClientSDK;
+    private chatUIManager: ChatUIManager;
     @observable emailId: string = "";
     @observable comments: string = "";
     @observable showLogUpload: boolean = false;
@@ -25,34 +31,34 @@ export default class MeetingViewModel {
     @observable logUploadStatus: string = "";
 
 
-    constructor(managers : Managers) {
+    constructor(managers: Managers) {
         this.appManager = managers.appManager;
         this.webrtcSDK = managers.webrtcSDK;
         this.chatUIManager = managers.chatUIManager;
     }
 
-    @computed get joinName() : string {
-        return (this.webrtcSDK.meetingService.participantService.selfParticipant && this.webrtcSDK.meetingService.participantService.selfParticipant.name) ? 
+    @computed get joinName(): string {
+        return (this.webrtcSDK.meetingService.participantService?.selfParticipant && this.webrtcSDK.meetingService.participantService.selfParticipant.name) ?
             this.webrtcSDK.meetingService.participantService.selfParticipant.name : "Guest";
     }
-    @action.bound setEmailId(email : string) : void {
+    @action.bound setEmailId(email: string): void {
         this.emailId = email;
-      }
-
-    @action.bound setComments(comments : string) : void {
-        this.comments = comments;
-      }
-    
-    @action.bound setShowLogUpload() : void {
-        this.showLogUpload = !this.showLogUpload;
-      }  
-
-    @computed get participantsCount() : number {
-        return this.webrtcSDK.meetingService.participantService.participants ? this.webrtcSDK.meetingService.participantService.participants.length : 1;
     }
 
-    @computed get participants() : Participant[] {        
-        return this.webrtcSDK.meetingService.participantService.participants;
+    @action.bound setComments(comments: string): void {
+        this.comments = comments;
+    }
+
+    @action.bound setShowLogUpload(): void {
+        this.showLogUpload = !this.showLogUpload;
+    }
+
+    @computed get participantsCount(): number {
+        return this.webrtcSDK.meetingService.participantService?.participants ? this.webrtcSDK.meetingService.participantService.participants.length : 1;
+    }
+
+    @computed get participants(): Participant[] {
+        return this.webrtcSDK.meetingService.participantService?.participants;
     }
 
     @computed get WrParticipants(): WaitingRoomParticipant[]  {
@@ -71,13 +77,13 @@ export default class MeetingViewModel {
         return this.webrtcSDK.meetingService.participantService?.selfParticipant?.isModerator && this.webrtcSDK.meetingService.moderatorWaitingRoomService?.isWaitingRoomCapable;
     }
 
-    @computed get sharingScreen() : boolean {
-        return this.webrtcSDK.meetingService.contentService.contentShareState === ContentShareState.STARTED;
+    @computed get sharingScreen(): boolean {
+        return this.webrtcSDK.meetingService.contentService?.contentShareState === ContentShareState.STARTED;
     }
 
-    @computed get meetingStatus() : string {
-        let meetingStatus : string = ""
-        switch(this.webrtcSDK.meetingService.connectionState) {
+    @computed get meetingStatus(): string {
+        let meetingStatus: string = ""
+        switch (this.webrtcSDK.meetingService.connectionState) {
             case ConnectionState.CONNECTING:
                 meetingStatus = "Connecting to Meeting";
                 break;
@@ -94,21 +100,21 @@ export default class MeetingViewModel {
         return meetingStatus;
     }
 
-    @computed get contentStatus() : string {
-        return this.webrtcSDK.meetingService.contentService.contentShareState == ContentShareState.STARTED ? "Content sharing" : 
-            (this.webrtcSDK.meetingService.contentService.receivingContentShare ? "Receiving" : "Not Receiving");
+    @computed get contentStatus(): string {
+        return this.webrtcSDK.meetingService.contentService?.contentShareState == ContentShareState.STARTED ? "Content sharing" :
+            (this.webrtcSDK.meetingService.contentService?.receivingContentShare ? "Receiving" : "Not Receiving");
     }
 
-    @computed get audioStatus() : string {
+    @computed get audioStatus(): string {
         return this.webrtcSDK.meetingService.audioMuted ? "UnMute Audio" : "Mute Audio"
     }
 
-    @computed get videoStatus() : string {
+    @computed get videoStatus(): string {
         return this.webrtcSDK.meetingService.videoMuted ? "UnMute Video" : "Mute Video"
     }
 
-    @computed get sharingStatus() : string {
-        return this.webrtcSDK.meetingService.contentService.contentShareState == ContentShareState.STARTED ? "Stop sharing" : "Start sharing"
+    @computed get sharingStatus(): string {
+        return this.webrtcSDK.meetingService.contentService?.contentShareState == ContentShareState.STARTED ? "Stop sharing" : "Start sharing"
     }
 
 
@@ -142,79 +148,95 @@ export default class MeetingViewModel {
         }
     }
 
-    @computed get availableCameras() : AudioVideoDevice[] {
+    @computed get availableCameras(): AudioVideoDevice[] {
         return this.webrtcSDK.videoDeviceService.availableCameras
     }
 
-    @computed get availableMicrophones() : AudioVideoDevice[] {
+    @computed get availableMicrophones(): AudioVideoDevice[] {
         return this.webrtcSDK.audioDeviceService.availableMicrophones
     }
 
-    @computed get availableSpeakers() : AudioVideoDevice[] {
+    @computed get availableSpeakers(): AudioVideoDevice[] {
         return this.webrtcSDK.audioDeviceService.availableSpeakers
     }
 
-    @computed get selectedCamera() : AudioVideoDevice {
+    @computed get selectedCamera(): AudioVideoDevice {
         return this.webrtcSDK.videoDeviceService.selectedCamera
     }
 
-    @computed get selectedMicrophone() : AudioVideoDevice {
+    @computed get selectedMicrophone(): AudioVideoDevice {
         return this.webrtcSDK.audioDeviceService.selectedMicrophone
     }
 
-    @computed get selectedSpeaker() : AudioVideoDevice {
+    @computed get selectedSpeaker(): AudioVideoDevice {
         return this.webrtcSDK.audioDeviceService.selectedSpeaker
     }
 
-    @computed get isDisconnected() : boolean {
+    @computed get isDisconnected(): boolean {
         return (this.webrtcSDK.meetingService.connectionState === ConnectionState.IDLE);
     }
 
-    @computed get isScreenShareSupported() : boolean {
-        return this.webrtcSDK.meetingService.contentService.isContentShareSupported;
+    @computed get isScreenShareSupported(): boolean {
+        return this.webrtcSDK.meetingService.contentService?.isContentShareSupported;
     }
 
-    @computed get leaveBtnText() : string {
+    @computed get leaveBtnText(): string {
         return this.isDisconnected ? "Home Page" : "Leave Meeting";
     }
 
-    @computed get leaveBtnTitle() : string {
+    @computed get leaveBtnTitle(): string {
         return this.isDisconnected ? "To reload and land on meeting join screen" : "To leave the call";
     }
 
-    @action.bound setJoinName(event) : void {
+    @action.bound setJoinName(event): void {
         let joinName = event.target.value;
-        if(joinName) {
+        if (joinName) {
             this.webrtcSDK.meetingService.setName(joinName);
         }
     }
 
-    @action.bound toggleVideoState() : void {
+    @action.bound toggleVideoState(): void {
         this.webrtcSDK.meetingService.setVideoMuted(!this.webrtcSDK.meetingService.videoMuted)
     }
 
-    @action.bound toggleAudioState() : void {
+    @action.bound toggleAudioState(): void {
         this.webrtcSDK.meetingService.setAudioMuted(!this.webrtcSDK.meetingService.audioMuted)
     }
-    @action.bound toggleWaitingRoom() : void {
-        this.webrtcSDK.meetingService.moderatorWaitingRoomService.setWaitingRoomEnabled(!this.isWaitingRoomEnabled).then().catch();
+
+    @action.bound toggleWaitingRoom(): void {
+        this.webrtcSDK.meetingService.moderatorWaitingRoomService.setWaitingRoomEnabled(!this.isWaitingRoomEnabled).then().catch((err) => {
+            this.appManager.setErrorFlag(true);
+            this.appManager.setErrorMessage(err)
+        });
     }
 
-    @action.bound admitParticipant(participant) : void {
-        this.webrtcSDK.meetingService.moderatorWaitingRoomService.admitParticipant(participant);
+    @action.bound admitParticipant(participant): void {
+        this.webrtcSDK.meetingService.moderatorWaitingRoomService.admitParticipant(participant).then().catch((err) => {
+            this.appManager.setErrorFlag(true);
+            this.appManager.setErrorMessage(err)
+        });;
     }
-    @action.bound denyParticipant(participant) : void {
-        this.webrtcSDK.meetingService.moderatorWaitingRoomService.denyParticipant(participant);
+    @action.bound denyParticipant(participant): void {
+        this.webrtcSDK.meetingService.moderatorWaitingRoomService.denyParticipant(participant).then().catch((err)=>{
+            this.appManager.setErrorFlag(true);
+            this.appManager.setErrorMessage(err)
+        });;
     }
-    @action.bound admitAll() : void {
-        this.webrtcSDK.meetingService.moderatorWaitingRoomService.admitAll();
+    @action.bound admitAll(): void {
+        this.webrtcSDK.meetingService.moderatorWaitingRoomService.admitAll().then().catch((err)=>{
+            this.appManager.setErrorFlag(true);
+            this.appManager.setErrorMessage(err)
+        });;
     }
-    @action.bound denyAll() : void {
-        this.webrtcSDK.meetingService.moderatorWaitingRoomService.denyAll();
+    @action.bound denyAll(): void {
+        this.webrtcSDK.meetingService.moderatorWaitingRoomService.denyAll().then().catch((err)=>{
+            this.appManager.setErrorFlag(true);
+            this.appManager.setErrorMessage(err)
+        });;
     }
 
-    @action.bound toggleScreenShare() : void {
-        if(this.webrtcSDK.meetingService.contentService.contentShareState == ContentShareState.STARTED ) {
+    @action.bound toggleScreenShare(): void {
+        if (this.webrtcSDK.meetingService.contentService.contentShareState == ContentShareState.STARTED) {
             this.webrtcSDK.meetingService.contentService.stopContentShare();
         } else {
             this.webrtcSDK.meetingService.contentService.startContentShare();
@@ -238,8 +260,8 @@ export default class MeetingViewModel {
         this.webrtcSDK.audioDeviceService.selectSpeaker(device)
     }
 
-    @action.bound onLeaveMeetingBtnClick() : void {
-        if(this.isDisconnected) {
+    @action.bound onLeaveMeetingBtnClick(): void {
+        if (this.isDisconnected) {
             this.appManager.redirectToHomePage();
         } else {
             this.appManager.setSelfTriggeredLeaveMeeting(true);
@@ -247,65 +269,70 @@ export default class MeetingViewModel {
         }
     }
 
-    @action.bound rejoin() : void {
+    @action.bound rejoin(): void {
         this.appManager.setSelfTriggeredLeaveMeeting(true);
         this.appManager.rejoin();
     }
     @action.bound uploadLogs(): void {
         if (this.emailId.match(emailRegex)) {
-          this.showLogUploadStatus = true;
-          this.logUploadStatus = "In Progress...";
-          this.webrtcSDK.loggingService
-            .uploadLog(this.comments, this.emailId)
-            .then(
-              action(() => {
-                this.logUploadStatus = "Success";
-                this.hideLogUploadStatus();
-              })
-            )
-            .catch(
-              action((err) => {
-                this.logUploadStatus = "Failed with Error: " + err;
-                this.hideLogUploadStatus();
-              })
-            );
-          this.invalidEmail = false;
+            this.showLogUploadStatus = true;
+            this.logUploadStatus = "In Progress...";
+            this.webrtcSDK.loggingService
+                .uploadLog(this.comments, this.emailId)
+                .then(
+                    action(() => {
+                        this.logUploadStatus = "Success";
+                        this.hideLogUploadStatus();
+                    })
+                )
+                .catch(
+                    action((err) => {
+                        this.logUploadStatus = "Failed with Error: " + err;
+                        this.hideLogUploadStatus();
+                    })
+                );
+            this.invalidEmail = false;
         } else {
-          this.invalidEmail = true;
+            this.invalidEmail = true;
         }
-      }
-    
-      @action.bound hideLogUploadStatus(): void {
-        let timeoutID = window.setTimeout(
-          action(() => {
-            this.showLogUploadStatus = false;
-            this.logUploadStatus = "";
-            window.clearTimeout(timeoutID);
-          }),
-          8000
-        );
-      }
-
-    @computed get unreadMessageCount() : number {
-      return (this.chatUIManager.unreadPrivateMessagesCount + this.chatUIManager.unreadPublicMessagesCount);
     }
-    
-    @computed get showChatPanel() : boolean {
+
+    @action.bound hideLogUploadStatus(): void {
+        let timeoutID = window.setTimeout(
+            action(() => {
+                this.showLogUploadStatus = false;
+                this.logUploadStatus = "";
+                window.clearTimeout(timeoutID);
+            }),
+            8000
+        );
+    }
+
+    @computed get unreadMessageCount(): number {
+        return (this.chatUIManager.unreadPrivateMessagesCount + this.chatUIManager.unreadPublicMessagesCount);
+    }
+
+    @computed get showChatPanel(): boolean {
         return this.appManager.showChatPanel;
     }
 
-    @action setShowChatPanel(value : boolean) {
+    @action setShowChatPanel(value: boolean) {
         this.appManager.setShowChatPanel(value);
     }
 
-    @computed get showWaitingRoom() : boolean {
+    @computed get showWaitingRoom(): boolean {
         return this.appManager.showWaitingRoom;
     }
-    
-    @action setWaitingRoom(value : boolean) {
-        this.appManager.setWaitingRoom(value);
+
+    @computed get getErrorMessage(): ErrorResponse {
+        return this.appManager.errorMessage;
     }
 
+    @computed get getErrorFlag(): boolean {
+        return this.appManager.isError;
+    }
 
-
+    @action setWaitingRoom(value: boolean) {
+        this.appManager.setWaitingRoom(value);
+    }
 }

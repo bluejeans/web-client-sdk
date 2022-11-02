@@ -1,7 +1,8 @@
+import BaseStore from '../utils/BaseContainer';
 import { SDKLogger } from "../logger";
 import { Participant, Error } from "../sdk-objects";
 import { MeetingService } from "./MeetingService";
-export declare class ModeratorControlsService {
+export declare class ModeratorControlsService extends BaseStore {
     private sdkLogger;
     private meetingService;
     private participantService;

@@ -19,8 +19,7 @@ initializeBJN = function() {
 	webrtcSDK.meetingService.observe("videoState", updateRemoteVideoMask)
 	webrtcSDK.meetingService.observe("audioMuted", updateAudioMuteButton)
 	webrtcSDK.meetingService.observe("videoMuted", updateVideoMuteButton)
-	webrtcSDK.meetingService.participantService.observe("participants", updateRoster)
-	webrtcSDK.meetingService.contentService.observe("receivingContentShare", updateContentShare)
+	webrtcSDK.meetingService.observe("connectionState", observeInMeetingChanges)
 	webrtcSDK.audioDeviceService.observe("availableMicrophones", updateMicrophoneList)
 	webrtcSDK.audioDeviceService.observe("availableSpeakers", updateSpeakerList)
 	webrtcSDK.videoDeviceService.observe("availableCameras", updateCameraList)
@@ -68,7 +67,7 @@ function updateCameraList() {
 }
 
 function updateSelectedMicrophone() {
-	$('#audioIn').val(webrtcSDK.audioDeviceService.selectedMicrophone.id)
+	$('#audioIn').val(webrtcSDK.audioDeviceService.selectedMicrophone?.id)
 }
 
 function updateSelectedSpeaker() {
@@ -76,7 +75,14 @@ function updateSelectedSpeaker() {
 }
 
 function updateSelectedCamera() {
-	$('#videoIn').val(webrtcSDK.videoDeviceService.selectedCamera.id)		
+	$('#videoIn').val(webrtcSDK.videoDeviceService.selectedCamera?.id)
+}
+
+function observeInMeetingChanges() {
+	if(webrtcSDK.meetingService.connectionState === "CONNECTED") {
+		webrtcSDK.meetingService.participantService.observe("participants", updateRoster)
+		webrtcSDK.meetingService.contentService.observe("receivingContentShare", updateContentShare)
+	}
 }
 
 function updateRemoteVideoMask(){

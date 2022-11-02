@@ -1,8 +1,4 @@
-export interface WrResponse {
-    error?: object;
-    code: any;
-    reason?: string;
-}
+import { AsyncAPIResponse } from "../sdk-objects";
 export interface AdmitAllWrResponse {
     error?: object;
     code: AdmitAllWrResponseCode;
@@ -12,7 +8,7 @@ export declare enum AdmitAllWrResponseCode {
     WR_ADMIT_ALL_FAILURE = "WR_ADMIT_ALL_FAILURE",
     WR_ALREADY_DISABLED = "WR_ALREADY_DISABLED"
 }
-export interface DenyAllWrResponse extends WrResponse {
+export interface DenyAllWrResponse extends AsyncAPIResponse {
     code: DenyAllWrResponseCode;
 }
 export declare enum DenyAllWrResponseCode {
@@ -24,7 +20,7 @@ export interface ApiResponse {
     ok: boolean;
     status: string;
 }
-export interface AdmitParticipantWrResponse extends WrResponse {
+export interface AdmitParticipantWrResponse extends AsyncAPIResponse {
     code: AdmitParticipantWrResponseCode;
 }
 export declare enum AdmitParticipantWrResponseCode {
@@ -32,7 +28,7 @@ export declare enum AdmitParticipantWrResponseCode {
     WR_ADMIT_PARTICIPANT_FAILURE = "WR_ADMIT_PARTICIPANT_FAILURE",
     WR_ALREADY_DISABLED = "WR_ALREADY_DISABLED"
 }
-export interface DenyParticipantWrResponse extends WrResponse {
+export interface DenyParticipantWrResponse extends AsyncAPIResponse {
     code: DenyParticipantWrResponseCode;
 }
 export declare enum DenyParticipantWrResponseCode {
@@ -40,7 +36,7 @@ export declare enum DenyParticipantWrResponseCode {
     WR_DENY_PARTICIPANT_FAILURE = "WR_DENY_PARTICIPANT_FAILURE",
     WR_DISABLED = "WR_DISABLED"
 }
-export interface DemoteParticipantWrResponse extends WrResponse {
+export interface DemoteParticipantWrResponse extends AsyncAPIResponse {
     code: DemoteParticipantWrResponseCode;
 }
 export declare enum DemoteParticipantWrResponseCode {
@@ -49,7 +45,7 @@ export declare enum DemoteParticipantWrResponseCode {
     WR_DISABLED = "WR_DISABLED",
     WR_DEMOTE_MODERATOR_FAILURE = "WR_DEMOTE_MODERATOR_FAILURE"
 }
-export interface ToggleWaitingRoomResponse extends WrResponse {
+export interface ToggleWaitingRoomResponse extends AsyncAPIResponse {
     code: ToggleWaitingRoomResponseCode;
 }
 export declare enum ToggleWaitingRoomResponseCode {

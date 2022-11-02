@@ -1,3 +1,4 @@
+import BaseStore from '../utils/BaseContainer';
 import SubscribableEvent from 'subscribableevent';
 import { SDKLogger } from "../logger";
 import { Participant } from "../sdk-objects";
@@ -6,7 +7,7 @@ import { ChatMessage } from '../sdk-objects';
 export declare class PrivateChatStoreEvents {
     readonly newMessage: SubscribableEvent<(message: ChatMessage) => void>;
 }
-export declare class PrivateChatService {
+export declare class PrivateChatService extends BaseStore {
     private sdkLogger;
     private participantService;
     events: PrivateChatStoreEvents;

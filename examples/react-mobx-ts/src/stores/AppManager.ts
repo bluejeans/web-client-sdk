@@ -2,7 +2,8 @@ import { computed, action, observable, reaction } from "mobx";
 import {
   BJNWebClientSDK,
   ConnectionState,
-  ErrorInfo
+  ErrorInfo,
+  Error
 } from "@bluejeans/web-client-sdk";
 
 export enum AppState {
@@ -18,6 +19,15 @@ export interface JoinProps {
   joinName: string;
 }
 
+export interface ErrorResponse {
+  /** Appropiate error if available */
+  error?: object;
+  /** Appropiate code to uniquely identify the response*/
+  code: any;
+  /** Appropiate reason if available */
+  reason?: string;
+}
+
 export default class AppManager {
   private webrtcSDK: BJNWebClientSDK;
 
@@ -30,6 +40,8 @@ export default class AppManager {
   @observable showChatPanel: boolean = false;
   @observable disconnectedAfterMeeting :boolean = false;
   @observable showWaitingRoom: boolean = false;
+  @observable errorMessage:ErrorResponse;
+  @observable isError: boolean = false;
 
 
 
@@ -178,7 +190,7 @@ export default class AppManager {
     this.setJoinProps({
       meetingID: this.joinProps.meetingID,
       passcode: this.joinProps.passcode,
-      joinName: this.webrtcSDK.meetingService.participantService.selfParticipant.name,
+      joinName: this.webrtcSDK.meetingService.participantService?.selfParticipant.name,
     });
     
     return this.webrtcSDK.meetingService.endMeeting();
@@ -189,9 +201,15 @@ export default class AppManager {
   }
 
   @action subscribeToNewChatMessages(){
-    this.webrtcSDK.meetingService.privateChatService.events.newMessage.subscribe((message)=>{console.log("[chat] private message",message)})
-    this.webrtcSDK.meetingService.publicChatService.events.newMessage.subscribe((message)=>{console.log("[chat] public message",message)})
+    this.webrtcSDK.meetingService.privateChatService?.events.newMessage.subscribe((message)=>{console.log("[chat] private message",message)})
+    this.webrtcSDK.meetingService.publicChatService?.events.newMessage.subscribe((message)=>{console.log("[chat] public message",message)})
   }
 
+  @action setErrorMessage(value : ErrorResponse): void {
+    this.errorMessage = value;
+  }
+  @action setErrorFlag(flag : boolean): void {
+    this.isError = flag;
+  }
 
 }

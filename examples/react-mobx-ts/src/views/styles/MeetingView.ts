@@ -259,7 +259,7 @@ export const BadgeLabel=styled.div`
 
 `
 
-export const WrRosterOptions = styled.div`
+export const RosterOptions = styled.div`
   background-color: #fff;
   text-align: center;
   padding: 8px 0px;
@@ -353,8 +353,8 @@ export const WrHeading = styled.div`
 `
 
 export const WrParticipantControl = styled.div`
-    width: 24px;
-    height: 24px;
+    width: 64px;
+    height: 34px;
     position: absolute;
     left: 300px;
     display: inline-block;
@@ -409,8 +409,42 @@ export const WrApprovedAll= styled.button`
     border-radius: 8px;
     border: none
 `
-;
-export const CheckBox= styled.input`
-    width: 20px;
-    height: 20px;
+export const LabelToggle = styled.label`
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+`;
+export const SwitchToggle = styled.div`
+    position: relative;
+    width: 33px;
+    height: 14px;
+    background: #b3b3b3;
+    border-radius: 32px;
+    padding: 4px;
+    transition: 300ms all;
+
+    &:before {
+        transition: 300ms all;
+        content: "";
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border-radius: 35px;
+        top: 50%;
+        left: 4px;
+        background: white;
+        transform: translate(0, -50%);
+    }
 `
+export const InputToggle = styled.input`
+    opacity: 0;
+    position: absolute;
+
+    &:checked + ${SwitchToggle} {
+    background: green;
+
+    &:before {
+      transform: translate(18px, -50%);
+    }
+`;

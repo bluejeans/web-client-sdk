@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file
 
+## Version 1.4.0
+### Added
+ - 720p Video Capture support
+
+### Updated
+- **BREAKING** [InMeeting services](https://docs.bluejeans.com/Web_Client_SDK/Architecture.htm) will be active only when connenction state transitions to `CONNECTED` state.
+   - These services are initialised conditionally based on connection state.
+   - They are disabled/reset when connection state transitions to `IDLE` state(meeting ends)
+
 ## Version 1.3.0
 
 ### Added

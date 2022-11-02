@@ -10,7 +10,9 @@ export declare enum AnalyticsEvents {
     wrParticipantDemoted = "wrParticipantDemoted",
     wrRequestDenied = "wrRequestDenied",
     wrRequestApproved = "wrRequestApproved",
-    wrLandedOnWaitingRoom = "wrLandedOnWaitingRoom"
+    wrLandedOnWaitingRoom = "wrLandedOnWaitingRoom",
+    max720pVideoCapture = "max720pVideoCapture",
+    switchMaxVideoResolutionFailed = "switchMaxVideoResolutionFailed"
 }
 export default class Analytics {
     private tracked;

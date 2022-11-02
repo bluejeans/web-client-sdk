@@ -134,3 +134,31 @@ export interface LoggerIntf {
     flushLocalStorageLogs?(): void;
     addLogsToLocalStorage?(): void;
 }
+export interface AsyncAPIResponse {
+    error?: object;
+    reason?: string;
+    code: string;
+}
+export declare enum SetMaxVideoSendResolutionFailureReason {
+    ERROR_SETPARAMETERS_FAILED = "ERROR_SETPARAMETERS_FAILED",
+    ERROR_RESOLUTION_SWITCH_NOT_ALLOWED = "ERROR_RESOLUTION_SWITCH_NOT_ALLOWED",
+    ERROR_VIDEO_SENDER_UNAVAILABLE = "ERROR_VIDEO_SENDER_UNAVAILABLE"
+}
+export interface SetMaxVideoSendResolutionFailure {
+    code: SetMaxVideoSendResolutionFailureReason;
+    message: string;
+    error?: object;
+}
+export declare enum SetMaxVideoSendResolutionStatus {
+    SUCCESSFUL = "SUCCESSFUL",
+    ERROR_OUT_OF_MEETING = "ERROR_OUT_OF_MEETING",
+    ERROR_SET_MAX_RESOLUTION_FAILED = "ERROR_SET_MAX_RESOLUTION_FAILED",
+    ERROR_INCORRECT_INPUT = "ERROR_INCORRECT_INPUT"
+}
+export interface SetMaxVideoSendResolutionResponse extends AsyncAPIResponse {
+    code: SetMaxVideoSendResolutionStatus;
+}
+export declare enum MaxVideoQuality {
+    "360p" = 360,
+    "720p" = 720
+}

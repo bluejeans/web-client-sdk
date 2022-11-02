@@ -1,6 +1,7 @@
 import { Participant } from "../sdk-objects";
+import BaseStore from '../utils/BaseContainer';
 import { SDKLogger } from "../logger";
-export declare class ParticipantService {
+export declare class ParticipantService extends BaseStore {
     private sdkLogger;
     constructor(sdkLogger: SDKLogger);
     get participants(): Participant[];

@@ -1,4 +1,5 @@
-import { VideoLayout, VideoState, ConnectionState, MeetingInformation, BlueJeansSDKInitParams, RecordingState } from '../sdk-objects';
+import Container from '../utils/Container';
+import { VideoLayout, VideoState, ConnectionState, MeetingInformation, BlueJeansSDKInitParams, RecordingState, SetMaxVideoSendResolutionResponse, MaxVideoQuality } from '../sdk-objects';
 import { PermissionService } from "./PermissionService";
 import { ParticipantService } from "./ParticipantService";
 import { ContentShareService } from './ContentShareService';
@@ -10,7 +11,7 @@ import { ModeratorControlsService } from "./ModeratorControlsService";
 import { ClosedCaptioningService } from "./ClosedCaptioningService";
 import { ModeratorWaitingRoomService } from "./ModeratorWaitingRoomService";
 export declare const ZINC_MODE_ATTRIBUTE = "data-bjn-zinc-mode";
-export declare class MeetingService {
+export declare class MeetingService extends Container {
     private permissionService;
     private _streamHelper;
     private environments;
@@ -37,6 +38,8 @@ export declare class MeetingService {
     private showVideoDebugStats;
     private maxNumberOfStreams;
     constructor(permissionService: PermissionService, analytics: Analytics, sdkLogger: SDKLogger, initParams: BlueJeansSDKInitParams);
+    private setUpInMeetingService;
+    private resetInMeetingService;
     private handleAutoPlayforMediaNodes;
     private setConnectionState;
     private handleMobileBrowsersBg;
@@ -70,8 +73,10 @@ export declare class MeetingService {
     get showVideoLayout(): boolean;
     endMeeting(): Promise<any>;
     observe(property: keyof MeetingService, callback: () => void): void;
-    private onMeetingJoined;
+    get maxVideoSendResolution(): MaxVideoQuality;
     get recordingState(): RecordingState;
     private trackWRParticipantApproved;
     private trackWRParticipantDenied;
+    dispose(): void;
+    setMaxVideoSendResolution(resolution: MaxVideoQuality): Promise<SetMaxVideoSendResolutionResponse>;
 }

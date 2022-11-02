@@ -46,7 +46,7 @@ export default class SampleApp extends Component<Props> {
                 return <WaitingRoom managers={ this.props.managers }/>
             case AppState.IN_MEETING:
             case AppState.POST_MEETING:
-                return <MeetingView  managers={ this.props.managers } />
+                return this.viewModel.renderMeetingView && <MeetingView  managers={ this.props.managers } />
         }
     }
     render() {
@@ -60,7 +60,7 @@ export default class SampleApp extends Component<Props> {
                         <video ref={this.localVideoElement}></video>
                     </LocalVideoHolder>   
                     <CaptionTextContainer>
-                        <CaptionTextSpan>{this.viewModel.captionText}</CaptionTextSpan>
+                       {this.viewModel.isMeetingConnected && <CaptionTextSpan>{this.viewModel.captionText}</CaptionTextSpan>} 
                     </CaptionTextContainer>                                   
                 </VideoHolder>
                 <SharedScreenHolder show={ this.viewModel.showRemoteContent }>  

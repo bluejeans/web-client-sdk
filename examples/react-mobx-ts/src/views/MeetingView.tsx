@@ -3,7 +3,7 @@ import { observer } from "mobx-react";
 import Managers from "../stores/Managers";
 import MeetingViewModel from "./MeetingViewModel";
 import AppViewModel from './AppViewModel';
-
+import ErrorMessageComponent from './ErrorMessages/ErrorMessageComponent';
 import {
   MeetingControlContainer,
   MeetingDetailsTable,
@@ -35,7 +35,7 @@ import {
   UploadLogButtonDisabled,
   VideoIconRemote,
   AudioIconRemote,
-  WrRosterOptions,
+  RosterOptions,
   WaitingRoomList,
   WaitingRoomSelected,
   RosterList,
@@ -49,8 +49,9 @@ import {
   WrApprovedAll,
   WrRejectAll,
   WrParticipentList,
-  CheckBox
-  
+  InputToggle,
+  SwitchToggle,
+  LabelToggle
 } from "./styles/MeetingView";
 import { Participant } from "@bluejeans/web-client-sdk";
 import { BsFillChatDotsFill } from "react-icons/bs";
@@ -321,18 +322,27 @@ export default class MeetingView extends Component<Props> {
             </>
           )}
         </MeetingRoster>
+        {this.viewModel.getErrorFlag && (
+          <ErrorMessageComponent
+            message={this.viewModel?.getErrorMessage?.code}
+            managers={this.props.managers}
+          />
+        )}
         <MeetingRoster>
-          <WrRosterOptions>
+          <RosterOptions>
             {this.renderRosterOption()}
             {this.renderWaitingRoomOption()}
-          </WrRosterOptions>
+          </RosterOptions>
           {this.viewModel.showWaitingRoom ? (
             <>
               <WrParticipentList>
                 <WaitingRoomListItem>
                   <WrHeading>Waiting Room</WrHeading>
                   <WrParticipantControl>
-                  <CheckBox type="checkbox" checked={this.viewModel.isWaitingRoomEnabled} onChange={this.viewModel.toggleWaitingRoom}/>
+                    <LabelToggle>
+                      <InputToggle type="checkbox" checked={this.viewModel.isWaitingRoomEnabled} onChange={this.viewModel.toggleWaitingRoom}/>
+                      <SwitchToggle />
+                    </LabelToggle>
                   </WrParticipantControl>
                 </WaitingRoomListItem>
                 {this.renderWrParticipantOption()}
@@ -416,7 +426,7 @@ export default class MeetingView extends Component<Props> {
     let participants = this.viewModel.participants;
     return (
       <>
-        {participants.map((participant, n) => {
+        {participants?.map((participant, n) => {
           {
             return this.renderParticipant(participant, n);
           }
@@ -500,6 +510,7 @@ export default class MeetingView extends Component<Props> {
       </>
     );
   }
+
 
   renderWrParticipant(participant, n): JSX.Element {
     const participantName = participant.name;
