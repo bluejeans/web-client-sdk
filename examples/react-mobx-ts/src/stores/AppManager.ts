@@ -42,7 +42,140 @@ export default class AppManager {
   @observable showWaitingRoom: boolean = false;
   @observable errorMessage:ErrorResponse;
   @observable isError: boolean = false;
-
+  @observable customDivDummy = [
+    {
+      "participantGuid": "seamguid_3604c88d-9a16-46c7-ba1b-ffecdd726ec4",
+      "resolution": {
+        "height": 360,
+        "width": 640
+      },
+      "metaData": {
+        fps: 30
+      },
+      name: "AK1"
+    },
+    {
+      "participantGuid": "seamguid_3604c88d-9a16-46c7-ba1b-ffecdd726ec4",
+      "resolution": {
+        "height": 360,
+        "width": 640
+      },
+      "metaData": {
+        fps: 30
+      },
+      name: "AK2"
+    }, 
+    {
+      "participantGuid": "seamguid_3604c88d-9a16-46c7-ba1b-ffecdd726ec4",
+      "resolution": {
+        "height": 360,
+        "width": 640
+      },
+      "metaData": {
+        fps: 30
+      },
+      name: "AK3"
+    },
+    {
+      "participantGuid": "seamguid_3604c88d-9a16-46c7-ba1b-ffecdd726ec4",
+      "resolution": {
+        "height": 360,
+        "width": 640
+      },
+      "metaData": {
+        fps: 30
+      },
+      name: "AK4"
+    },
+    {
+      "participantGuid": "seamguid_3604c88d-9a16-46c7-ba1b-ffecdd726ec4",
+      "resolution": {
+        "height": 360,
+        "width": 640
+      },
+      "metaData": {
+        fps: 30
+      },
+      name: "AK5"
+    },
+    {
+      "participantGuid": "seamguid_3604c88d-9a16-46c7-ba1b-ffecdd726ec4",
+      "resolution": {
+        "height": 360,
+        "width": 640
+      },
+      "metaData": {
+        fps: 30
+      },
+      name: "AK6"
+    },
+    {
+      "participantGuid": "seamguid_3604c88d-9a16-46c7-ba1b-ffecdd726ec4",
+      "resolution": {
+        "height": 360,
+        "width": 640
+      },
+      "metaData": {
+        fps: 30
+      },
+      name: "AK7"
+    },
+    {
+      "participantGuid": "seamguid_3604c88d-9a16-46c7-ba1b-ffecdd726ec4",
+      "resolution": {
+        "height": 360,
+        "width": 640
+      },
+      "metaData": {
+        fps: 30
+      },
+      name: "AK8"
+    },
+    {
+      "participantGuid": "seamguid_3604c88d-9a16-46c7-ba1b-ffecdd726ec4",
+      "resolution": {
+        "height": 360,
+        "width": 640
+      },
+      "metaData": {
+        fps: 30
+      },
+      name: "AK9"
+    },
+    {
+      "participantGuid": "seamguid_3604c88d-9a16-46c7-ba1b-ffecdd726ec4",
+      "resolution": {
+        "height": 360,
+        "width": 640
+      },
+      "metaData": {
+        fps: 30
+      },
+      name: "AK10"
+    },
+    {
+      "participantGuid": "seamguid_3604c88d-9a16-46c7-ba1b-ffecdd726ec4",
+      "resolution": {
+        "height": 360,
+        "width": 640
+      },
+      "metaData": {
+        fps: 30
+      },
+      name: "AK11"
+    },
+    {
+      "participantGuid": "seamguid_3604c88d-9a16-46c7-ba1b-ffecdd726ec4",
+      "resolution": {
+        "height": 360,
+        "width": 640
+      },
+      "metaData": {
+        fps: 30
+      },
+      name: "AK12"
+    }
+]
 
 
   constructor(webrtcSDK: BJNWebClientSDK) {
@@ -210,6 +343,9 @@ export default class AppManager {
   }
   @action setErrorFlag(flag : boolean): void {
     this.isError = flag;
+  }
+  get customDivGetter(){
+    return this.customDivDummy;
   }
 
 }

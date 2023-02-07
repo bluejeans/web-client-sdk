@@ -1,8 +1,5 @@
 console.log("(example.js): BJN WebRTC Example");
 
-navigator.mediaDevices._getUserMedia = navigator.mediaDevices.getUserMedia 
-navigator.mediaDevices.getUserMedia = function(constraints) { console.log(constraints); return navigator.mediaDevices._getUserMedia.apply(null, arguments) }
-
 var webrtcSDK = null;
 
 initializeBJN = function() {

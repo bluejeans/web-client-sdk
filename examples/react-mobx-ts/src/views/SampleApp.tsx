@@ -6,9 +6,11 @@ import { AppState } from '../stores/AppManager';
 import PreMeetingView from './PreMeetingView';
 import WaitingRoom from './WaitingRoom'
 import MeetingView from "./MeetingView"
+import MeetingViewModel from "./MeetingViewModel"
 import JoiningView from "./JoiningView"
 import AppViewModel from './AppViewModel';
-import { LocalVideoHolder, SharedScreenHolder,  RemoteContentHolder, VideoHolder, VideoMessage, BuildInfo, Container, CaptionTextContainer, CaptionTextSpan } from "./styles/Common";
+import CustomLayout from './CustomLayout/CustomLayout'
+import { LocalVideoHolder, SharedScreenHolder,  RemoteContentHolder, VideoHolder, VideoMessage, BuildInfo, Container, CaptionTextContainer, CaptionTextSpan, RightContainer } from "./styles/Common";
 
 declare const
     __SDK_PACKAGE_VERSION__: string
@@ -21,6 +23,7 @@ interface Props {
 export default class SampleApp extends Component<Props> {
 
     private viewModel : AppViewModel;
+    private meetingViewModel : MeetingViewModel;
 
     private remoteVideoElement = React.createRef<HTMLDivElement>();
     private localVideoElement = React.createRef<HTMLVideoElement>();
@@ -29,6 +32,8 @@ export default class SampleApp extends Component<Props> {
     constructor(props: Props) {
         super(props);
         this.viewModel = new AppViewModel(props.managers);
+        this.meetingViewModel = new MeetingViewModel(props.managers);
+
         console.log(`version : webrtc SDK ${__SDK_PACKAGE_VERSION__} `);
     }
 
@@ -36,6 +41,20 @@ export default class SampleApp extends Component<Props> {
         this.viewModel.attachRemoteVideo(this.remoteVideoElement.current)
         this.viewModel.attachLocalVideo(this.localVideoElement.current)
         this.viewModel.attachRemoteContent(this.remoteContentElement.current)
+    }
+
+    componentDidUpdate(prevProps: Readonly<Props>, prevState: Readonly<{}>, snapshot?: any): void {
+        /**
+         * In CUSTOM view, we remove the container containing remote videos and self view from sample app.
+         * Hence, on change of layout from CUSTOM to any BJN layout, we need to re-render their container
+         * followed by the remote videos and self view.
+         * On rejoin/promotion from the waiting room since we reset the selected video layout,
+         * therefore, we are relying on connection state change to check if we should re-render again.
+         */
+        if (this.viewModel.isLayoutTransitionFromCUSTOMToBJN || this.viewModel.renderMeetingView) {
+            this.viewModel.attachRemoteVideo(this.remoteVideoElement.current)
+            this.viewModel.attachLocalVideo(this.localVideoElement.current)
+        }
     }
 
     @computed private get viewToShow() : JSX.Element {
@@ -50,24 +69,28 @@ export default class SampleApp extends Component<Props> {
         }
     }
     render() {
-
         return (
             <Container>
+                <RightContainer>
+                    <LocalVideoHolder show={ this.viewModel.showMeetingVideo}>
+                        <video ref={this.localVideoElement}></video>
+                    </LocalVideoHolder> 
+                    <CaptionTextContainer>
+                       {this.viewModel.isMeetingConnected && <CaptionTextSpan>{this.viewModel.captionText}</CaptionTextSpan>} 
+                    </CaptionTextContainer> 
+            {this.meetingViewModel.isCustomVideoLayout ?
                 <VideoHolder show={ this.viewModel.showMeetingVideo }>
                     <VideoMessage>{ this.viewModel.videoMessage }</VideoMessage>
                     <div className= "remoteVideo" ref={this.remoteVideoElement}></div>
-                    <LocalVideoHolder>
-                        <video ref={this.localVideoElement}></video>
-                    </LocalVideoHolder>   
-                    <CaptionTextContainer>
-                       {this.viewModel.isMeetingConnected && <CaptionTextSpan>{this.viewModel.captionText}</CaptionTextSpan>} 
-                    </CaptionTextContainer>                                   
-                </VideoHolder>
+                </VideoHolder> : 
+                <CustomLayout managers={ this.props.managers } />
+                }
                 <SharedScreenHolder show={ this.viewModel.showRemoteContent }>  
                     <RemoteContentHolder show= { this.viewModel.showRemoteContent }>
                         <video ref={this.remoteContentElement}></video>
                     </RemoteContentHolder>                                   
                 </SharedScreenHolder>
+                </RightContainer>
                 { this.viewToShow }
                 <BuildInfo>{`version : webrtc SDK - ${__SDK_PACKAGE_VERSION__} `}</BuildInfo>
             </Container>

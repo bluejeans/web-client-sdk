@@ -48,15 +48,17 @@ import {
   WrHeading,
   WrApprovedAll,
   WrRejectAll,
-  WrParticipentList,
+  WrParticipantList,
   InputToggle,
   SwitchToggle,
-  LabelToggle
+  LabelToggle,
+  PinnedParticipantController
 } from "./styles/MeetingView";
-import { Participant } from "@bluejeans/web-client-sdk";
-import { BsFillChatDotsFill } from "react-icons/bs";
+import { Participant, VideoLayout } from "@bluejeans/web-client-sdk";
+import { BsFillChatDotsFill, BsPinAngle } from "react-icons/bs";
 import { MdExpandLess, MdExpandMore } from "react-icons/md";
 import ChatPanel from "./Chat/ChatPanel";
+import CustomLayoutManager from "../stores/CustomLayoutManager";
 
 interface Props {
   managers: Managers;
@@ -66,6 +68,7 @@ interface Props {
 export default class MeetingView extends Component<Props> {
   private viewModel: MeetingViewModel;
   private appViewModel: AppViewModel;
+  private customLayoutManager: CustomLayoutManager;
 
   constructor(props: Props) {
     super(props);
@@ -335,7 +338,7 @@ export default class MeetingView extends Component<Props> {
           </RosterOptions>
           {this.viewModel.showWaitingRoom ? (
             <>
-              <WrParticipentList>
+              <WrParticipantList>
                 <WaitingRoomListItem>
                   <WrHeading>Waiting Room</WrHeading>
                   <WrParticipantControl>
@@ -366,7 +369,7 @@ export default class MeetingView extends Component<Props> {
                     </WrRejectAll>
                   </WaitingRoomListItem>
                 ) : null}
-              </WrParticipentList>
+              </WrParticipantList>
             </>
           ) : (
             <ParticipantList>{this.renderRoster()}</ParticipantList>
@@ -471,6 +474,18 @@ export default class MeetingView extends Component<Props> {
                 : true
             }
           />
+        )}
+        {this.viewModel.isCustomVideoLayout ? null : this.viewModel.isPinnedParticipantChecked(participant) ? (
+          <PinnedParticipantController
+            isEnabled={
+              this.viewModel.pinnedParticipantGuid === participant.participantGuid
+            }
+            onClick={() =>
+              this.viewModel.setPinnedParticipant(participant.participantGuid)
+            }
+          ></PinnedParticipantController>
+        ) : (
+          <PinnedParticipantController isDisabled={true}></PinnedParticipantController>
         )}
       </ParticipantListItem>
     );

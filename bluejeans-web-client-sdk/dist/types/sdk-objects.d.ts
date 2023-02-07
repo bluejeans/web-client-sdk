@@ -2,7 +2,8 @@ export declare enum VideoLayout {
     SPEAKER = "SPEAKER",
     PEOPLE = "PEOPLE",
     GALLERY = "GALLERY",
-    FILMSTRIP = "FILMSTRIP"
+    FILMSTRIP = "FILMSTRIP",
+    CUSTOM = "CUSTOM"
 }
 export declare enum LoggingMode {
     DEBUG = "DEBUG",
@@ -51,6 +52,7 @@ export interface Participant {
     isAudioMuted: boolean;
     isSharing: boolean;
     participantGuid: string;
+    callQuality: CallQuality;
 }
 export interface AudioVideoDevice {
     id: string;
@@ -108,6 +110,15 @@ export interface BlueJeansSDKInitParams {
     customizationParams?: CustomizationParams;
     saveLogsToLocalStorage?: boolean;
     playIVRs?: boolean;
+    appMetaData?: AppMetaData;
+}
+export interface AppMetaData {
+    appName: string;
+    integratorAppVersion?: string;
+    deviceVendor?: string;
+    deviceModel?: string;
+    deviceName?: string;
+    appPartner?: string;
 }
 export declare enum ClosedCaptioningState {
     CONNECTING = "Connecting",
@@ -161,4 +172,11 @@ export interface SetMaxVideoSendResolutionResponse extends AsyncAPIResponse {
 export declare enum MaxVideoQuality {
     "360p" = 360,
     "720p" = 720
+}
+export declare enum CallQuality {
+    one = 1,
+    two = 2,
+    three = 3,
+    four = 4,
+    five = 5
 }

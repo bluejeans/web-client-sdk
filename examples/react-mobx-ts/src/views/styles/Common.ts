@@ -36,13 +36,25 @@ export const LogUploadMsg = styled.p`
     font-size: 14px;
     text-align: center;
 `
-export const VideoHolder = styled<any, any>("div")`
-    width: 53%;
-    padding-top: 29.75%; // 9/16 * 60%
+export const RightContainer = styled.div`
     position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    margin-top: 20px;
+
+    @media only screen and (max-width: 1100px) {
+    width: 100%;
+    position:relative;
+    }
+`
+export const VideoHolder = styled<any, any>("div")`
+    width: 100%;
+    padding-top: 57.75%; // 9/16 * 60%
+    position: relative;
     display: ${props => props.show ? "inline-block" : "none"};
     top: 0px;
-    right: 20px;
+    right: 0px;
     background-color: black;
 
     .remoteVideo {
@@ -79,12 +91,10 @@ export const VideoHolder = styled<any, any>("div")`
 `
 
 export const SharedScreenHolder = styled<any, any>("div")`
-    width: 53%;
+    width: 100%;
     padding-top: 0.75%; // 9/16 * 60%
-    position: absolute;
+    position: relative;
     display: ${props => props.show ? "inline-block" : "none"};
-    top: 437px;
-    right: 20px;
     background-color: rgb(149, 216, 252);
 
     .video {
@@ -101,25 +111,9 @@ export const SharedScreenHolder = styled<any, any>("div")`
         width: 100vw;
         height: 43vh;
         right: 0px;
-        top: 426px;
         padding-top:00px;
         position:relative;
     }    
-    @media(min-height: 300px) and (max-height: 700px) and (max-width: 1100px) {
-        top: 300px;        
-    }
-        
-    @media only screen and (max-width: 768px) {
-        width: 100vw;
-        height: 43vh;
-        right: 0px;
-        top: 426px;
-        padding-top:00px;
-        position:relative;
-    }
-    @media only screen and (min-width: 1400px) {
-       top: 515px;
-    }
 `
 export const VideoMessage = styled<any,any>("div")`
     width: 100%;
@@ -131,8 +125,9 @@ export const VideoMessage = styled<any,any>("div")`
     z-index: 3;
 `;
 
-export const LocalVideoHolder = styled.div`
+export const LocalVideoHolder = styled<any, any>("div")`
     position: absolute;
+    display: ${props => props.show ? "inline-block" : "none"};
     top: 0;
     right: 0;
     width: 20%;
@@ -210,14 +205,14 @@ export const Container = styled.div`
     display: grid;
     width: 100%;
     height: 100%;
-    grid-template-rows: 1fr 1fr 2fr;
+    grid-template-rows: auto;
     grid-gap: 10px;
 }
     @media only screen and (max-width: 768px) {
         display: grid;
         width: 100%;
         height: 100%;
-        grid-template-rows: 1fr 1fr 2fr; 
+        grid-template-rows: auto; 
         grid-gap: 10px;
     }
 `

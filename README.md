@@ -25,13 +25,11 @@ The design of the SDK emphasizes **simplicity**. Developers can quickly integrat
 - Video tile background customization options
 - Moderator Controls
 - Waiting Room Support
+- 720p Video Capture
 
 ## New Features
-- 720p Video Capture
-- **BREAKING CHANGE (v1.4.0)** : [InMeeting services](https://docs.bluejeans.com/Web_Client_SDK/Architecture.htm) will be active only when connenction state transitions to `CONNECTED` state.
-   - These services are initialised conditionally based on connection state.
-   - They are disabled/reset when connection state transitions to `IDLE` state(meeting ends)
-   
+- Individual stream control, create custom layouts, and request specific remote video streams
+
  **Not to be confused with:**
 
 - **BlueJeans WebRTC Embed SDK**: This is an alternate SDK that allows the end user to embed the entire BlueJeans WebRTC Client. As such, this SDK provides an entire user interface, meaning the end user has to write much less code. However, it is also much less customizable. See https://bluejeans.github.io/webrtc-embed-sdk/docs/index.html
@@ -80,4 +78,4 @@ Copyright © 2022 BlueJeans Network. All usage of the SDK is subject to the Deve
 
 ## Legal Requirements
 
-Use of this SDK is subject to our [Terms & Conditions](https://www.bluejeans.com/legal/terms-of-service) and [Privacy Policy](https://www.bluejeans.com/privacy-policy).
+Use of this SDK is subject to our [Terms & Conditions](https://www.bluejeans.com/legal/terms-of-service) and [Privacy Policy](https://www.bluejeans.com/privacy-policy)

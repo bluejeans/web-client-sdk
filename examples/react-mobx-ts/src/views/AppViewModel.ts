@@ -1,4 +1,4 @@
-import { action, computed, observable, reaction } from "mobx";
+import { action, computed, observable, reaction, observe } from "mobx";
 import Managers from "../stores/Managers";
 import AppManager, { AppState } from "../stores/AppManager";
 import { BJNWebClientSDK, ConnectionState, VideoState, VideoLayout } from '@bluejeans/web-client-sdk';
@@ -14,7 +14,7 @@ export default class AppViewModel {
     private appManager : AppManager;
     private webrtcSDK : BJNWebClientSDK;
     @observable private hasLoadingTranscriptShown : boolean;
-
+    isLayoutTransitionFromCUSTOMToBJN: boolean = false;
 
     constructor(managers : Managers) {
         this.appManager = managers.appManager;
@@ -23,6 +23,15 @@ export default class AppViewModel {
         reaction(() => this.webrtcSDK.meetingService.closedCaptioningService?.closedCaptioningState, (closedCaptioningState:ClosedCaptioningState) => {
             this.setLoadingMessageState(closedCaptioningState);
         })
+
+        observe(this.webrtcSDK.meetingService, "videoLayout", (change) => {
+            if(change.oldValue === VideoLayout.CUSTOM && change.newValue) {
+                this.isLayoutTransitionFromCUSTOMToBJN = true;
+            } else {
+                this.isLayoutTransitionFromCUSTOMToBJN = false
+            }
+        });
+
     }
 
     @computed get renderMeetingView(){

@@ -9,6 +9,9 @@ let video_off_remote = require("../../../assets/icons/video_off_remote.svg").def
 let audio_off_remote = require("../../../assets/icons/audio_off_remote.svg").default;
 let moderator_badge = require("../../../assets/icons/moderator_star.svg").default;
 let share = require("../../../assets/icons/share.svg").default;
+let pin_initial = require("../../../assets/icons/pin_initial.svg").default;
+let pin_enable = require("../../../assets/icons/pin_enable.svg").default;
+let pin_gray = require("../../../assets/icons/pin_gray.svg").default;
 
 export const MeetingControlContainer = styled<any, any>("div")`
     width: 400px;
@@ -20,23 +23,13 @@ export const MeetingControlContainer = styled<any, any>("div")`
         flex-direction: column;
         justify-self: center;
         margin: auto;
-        margin-top: ${props => props.show ? props.chatShow ? "-22vh" : "14vh" : "55vh"}; 
     } 
-    @media(max-height: 750px) {
-        margin-top: ${props => props.show ? props.chatShow ? "0vh" : "16vh" : "3vh"}; 
-    }
-
-    @media(min-height: 300px) and (max-width: 1100px) {
-        margin-top: ${props => props.show ? props.chatShow ? "0vh" : "16vh" : "50vh"}; 
-    }
-
     @media only screen and (max-width: 768px) {
         display: flex;
         flex-direction: column;
         justify-self: center;
         width: auto;
         margin: 0px;
-        margin-top: ${props => props.show ? props.chatShow ? "0vh"  : "4vh" : "55vh"}; 
     }
 `
 
@@ -173,7 +166,7 @@ export const SharingBadge = styled.div`
     width: 24px;
     height: 24px;
     position: absolute;
-    left: 250px;
+    left: 210px;
     display: inline-block;
     vertical-align: middle;
     background: url(${share}) no-repeat center;   
@@ -194,16 +187,27 @@ export const AudioIcon = styled<any,any>("div")`
     width: 24px;
     height: 24px;
     position: absolute;
-    left: 350px;
+    left: 300px;
     display: inline-block;
     vertical-align: middle;
     background: url(${props => props.isMuted ? audio_off : audio_on}) no-repeat center;
+`
+export const PinnedParticipantController = styled<any,any>("div")`
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 350px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url(${props => props.isEnabled ? pin_enable : props =>props.isDisabled ? pin_gray : pin_initial}) no-repeat center;
+    cursor: pointer;
+
 `
 export const AudioIconRemote = styled<any,any>("div")`
     width: 24px;
     height: 24px;
     position: absolute;
-    left: 350px;
+    left: 300px;
     display: inline-block;
     vertical-align: middle;
     background: url(${props => props.isMuted ? audio_off_remote : audio_on}) no-repeat center;
@@ -213,7 +217,7 @@ export const VideoIcon = styled<any,any>("div")`
     width: 24px;
     height: 24px;
     position: absolute;
-    left: 300px;
+    left: 250px;
     display: inline-block;
     vertical-align: middle;
     background: url(${props => props.isMuted ? video_off : video_on}) no-repeat center;
@@ -222,7 +226,7 @@ export const VideoIconRemote = styled<any,any>("div")`
     width: 24px;
     height: 24px;
     position: absolute;
-    left: 300px;
+    left: 250px;
     display: inline-block;
     vertical-align: middle;
     background: url(${props => props.isMuted ? video_off_remote : video_on}) no-repeat center;
@@ -277,7 +281,7 @@ export const RosterList = styled.button`
   outline:none;
   border:none
 `
-export const WrParticipentList = styled.div`
+export const WrParticipantList = styled.div`
     width: 100%;
     height: 100%;
     overflow-y: auto;

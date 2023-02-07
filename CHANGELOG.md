@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file
 
+## Version 1.5.0
+### Added
+ - Individual Stream Control
+    - New service `VideoStreamService` is added to `MeetingService`
+    - Create custom layouts, request specific streams of video & render these using the VideoStreamService.
 ## Version 1.4.0
 ### Added
  - 720p Video Capture support

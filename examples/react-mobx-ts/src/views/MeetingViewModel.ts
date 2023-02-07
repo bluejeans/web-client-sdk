@@ -3,6 +3,7 @@ import Managers from "../stores/Managers";
 import AppManager from "../stores/AppManager";
 import { AudioVideoDevice, BJNWebClientSDK, ConnectionState, VideoLayout, Participant, ContentShareState, Error } from '@bluejeans/web-client-sdk';
 import ChatUIManager from "../stores/ChatUIManager";
+import CustomLayoutManager from "../stores/CustomLayoutManager";
 import { emailRegex } from "../Utils/Constants";
 
 export interface WaitingRoomParticipant {
@@ -23,6 +24,7 @@ export default class MeetingViewModel {
     private appManager: AppManager;
     private webrtcSDK: BJNWebClientSDK;
     private chatUIManager: ChatUIManager;
+    private customLayoutManager: CustomLayoutManager;
     @observable emailId: string = "";
     @observable comments: string = "";
     @observable showLogUpload: boolean = false;
@@ -30,11 +32,11 @@ export default class MeetingViewModel {
     @observable showLogUploadStatus: boolean = false;
     @observable logUploadStatus: string = "";
 
-
     constructor(managers: Managers) {
         this.appManager = managers.appManager;
         this.webrtcSDK = managers.webrtcSDK;
         this.chatUIManager = managers.chatUIManager;
+        this.customLayoutManager = managers.customLayoutManager
     }
 
     @computed get joinName(): string {
@@ -130,7 +132,7 @@ export default class MeetingViewModel {
     }
 
     get availableVideoLayouts(): { id: VideoLayout, name: string }[] {
-        return [VideoLayout.SPEAKER, VideoLayout.PEOPLE, VideoLayout.GALLERY, VideoLayout.FILMSTRIP].map(videoLayout => {
+        return [VideoLayout.SPEAKER, VideoLayout.PEOPLE, VideoLayout.GALLERY, VideoLayout.FILMSTRIP, VideoLayout.CUSTOM].map(videoLayout => {
             return { id: videoLayout, name: this.videoLayoutName(videoLayout) }
         })
     }
@@ -145,6 +147,8 @@ export default class MeetingViewModel {
                 return "Gallery View"
             case VideoLayout.FILMSTRIP:
                 return "Filmstrip View"
+            case VideoLayout.CUSTOM:
+                return "Custom View"    
         }
     }
 
@@ -261,6 +265,7 @@ export default class MeetingViewModel {
     }
 
     @action.bound onLeaveMeetingBtnClick(): void {
+        this.customLayoutManager.setPinnedParticipant(null);
         if (this.isDisconnected) {
             this.appManager.redirectToHomePage();
         } else {
@@ -334,5 +339,27 @@ export default class MeetingViewModel {
 
     @action setWaitingRoom(value: boolean) {
         this.appManager.setWaitingRoom(value);
+    }
+
+    @computed get pinnedParticipantGuid(){
+        if(!this.participants.some((participant) => participant.participantGuid === this.customLayoutManager.pinnedParticipantGuid)){
+            return null;
+        }
+        return this.customLayoutManager.pinnedParticipantGuid
+    }
+    @action isPinnedParticipantChecked(participant: Participant) {
+        const secondModeratorParticipantGuid = this.participants.find((participant) => (!participant.isSelf && participant.isModerator))?.participantGuid;
+        if ((secondModeratorParticipantGuid === this.pinnedParticipantGuid) && secondModeratorParticipantGuid === participant.participantGuid) {
+            return true;
+        }
+        return !(participant.isSelf || (secondModeratorParticipantGuid === participant.participantGuid) ||
+            (this.pinnedParticipantGuid &&
+                this.pinnedParticipantGuid != participant.participantGuid))
+    }
+    @computed get isCustomVideoLayout(){
+        return this.videoLayout.id !== VideoLayout.CUSTOM 
+    }
+    @action setPinnedParticipant(participantGuid){
+        return this.customLayoutManager.setPinnedParticipant(participantGuid)
     }
 }
