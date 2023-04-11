@@ -1,11 +1,11 @@
 # Changelog
+All notable changes to this project will be documented in this file
+
 ## Version 1.6.0
 ### Added
  - Introduced ConnectionMode: `ScreenShareOnly` or `Default`
     - in `ScreenShareOnly` mode there is no audio or video functionality, user can share their screen and receive shared screens
  - supports up to 25 video streams arranged 5x5 in gallery mode
-
-All notable changes to this project will be documented in this file
 
 ## Version 1.5.0
 ### Added
