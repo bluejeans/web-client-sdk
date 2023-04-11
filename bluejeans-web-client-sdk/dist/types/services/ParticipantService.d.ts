@@ -6,6 +6,7 @@ export declare class ParticipantService extends BaseStore {
     constructor(sdkLogger: SDKLogger);
     get participants(): Participant[];
     get selfParticipant(): Participant | null;
+    private getParticipantByGuid;
     observe(property: keyof ParticipantService, callback: () => void): void;
     get spotlightedParticipant(): Participant | null;
     get activeSpeaker(): Participant | null;

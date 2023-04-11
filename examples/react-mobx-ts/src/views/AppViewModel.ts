@@ -1,7 +1,7 @@
 import { action, computed, observable, reaction, observe } from "mobx";
 import Managers from "../stores/Managers";
 import AppManager, { AppState } from "../stores/AppManager";
-import { BJNWebClientSDK, ConnectionState, VideoState, VideoLayout } from '@bluejeans/web-client-sdk';
+import { BJNWebClientSDK, ConnectionState, VideoState, VideoLayout, ConnectionMode } from '@bluejeans/web-client-sdk';
 
 const CC_DISPLAY_CHAR_LIMIT : number = 250;
 export enum ClosedCaptioningState {
@@ -122,4 +122,7 @@ export default class AppViewModel {
         }
     }
 
+    @computed get screenShareOnly() {
+        return this.webrtcSDK.meetingService.connectionMode === ConnectionMode.ScreenShareOnly
+    }
 }

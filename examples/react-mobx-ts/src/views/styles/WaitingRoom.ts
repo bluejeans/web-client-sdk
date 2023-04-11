@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { TextBox } from './Common';
+import { Button } from './Common';
 
 export const WaitingContainer = styled.div`
     position: absolute;
@@ -12,23 +12,10 @@ export const WaitingContainer = styled.div`
     align-items: center;
     width: 100%;
     height: 100%;
-    background: rgb(149, 216, 252);
     color:white;
     font-size: 50px;
 `
 
-export const Button = styled.button`
-    width: 180px;
-    display: block;
-    padding: 4px;
-    margin: 8px auto;
-    border-radius: 4px;
-    background: black;
-    color: white;
-    font-size: 14px;
-    font-weight: bolder;
-    cursor: pointer;
-`
 export const PreviewHolder = styled.div`
     /* position: absolute; */
     position: relative;
@@ -36,8 +23,8 @@ export const PreviewHolder = styled.div`
     height: 50%;
     bottom: 10%;
     right:3%;
-    `;
-
+    margin-bottom: 20px;
+`;
 
 export const ToggleButton = styled(Button)`
 /* position: absolute; */

@@ -32,7 +32,7 @@ export default class WaitingRoom extends Component<Props> {
                     <ToggleButton onClick={this.waitingRoomViewModel.toggleAudio.bind(this.waitingRoomViewModel)}>{this.waitingRoomViewModel.isAudioMuted?"Unmute Audio":"Mute Audio"}</ToggleButton>
                 </PreviewHolder>
                 <div>
-                    You are in waiting Room
+                    You are in the waiting room
                 </div>
             </WaitingContainer>
         );

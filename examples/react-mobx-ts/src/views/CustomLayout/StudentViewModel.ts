@@ -7,6 +7,7 @@ export default class StudentViewModel {
 
     private webrtcSDK : BJNWebClientSDK;
     private customLayoutManager : CustomLayoutManager
+    @observable backgroundColor = this.randomBackgroundColorPicker(false)
 
     constructor(managers : Managers) {
         this.customLayoutManager = managers.customLayoutManager
@@ -26,6 +27,10 @@ export default class StudentViewModel {
         return this.customLayoutManager.getInitials(participant)
     }
 
+    @action updateBackgroundColor(random: boolean): void {
+        this.backgroundColor = this.randomBackgroundColorPicker(random)
+    }
+
     getRandomColor() {
         var letters = '0123456789ABCDEF';
         var color = '#';
@@ -35,7 +40,7 @@ export default class StudentViewModel {
         return color;
       }
 
-    @action randomBackgroundColorPicker(random:boolean){         
+    @action randomBackgroundColorPicker(random:boolean){
         return random ? `linear-gradient(to bottom,${this.getRandomColor()},${this.getRandomColor()})`: "linear-gradient(to bottom,#a5a5a5,#f3f3f3a8)";
     }
 }

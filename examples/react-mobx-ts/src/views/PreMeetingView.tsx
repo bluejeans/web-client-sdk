@@ -5,6 +5,7 @@ import { ViewContainer, GreetingsHeader, GreetingsSubHeader, MeetingInfoContaine
     UIOptionsContainer, UIOptions, OptionsHeader, OptionsData, CheckBox, BGOptionContainer, BGColorTextLabel, BGColorTextBox, BGColorHint,
     IFramePropsContainer, IFrameLabel, IFrameProps, PropsSpecs, PropsHint, ErrorMessage } from './styles/PreMeeting';
 import PreMeetingViewModel from './PreMeetingViewModel';
+import { InputToggle, LabelToggle, SwitchToggle } from './styles/MeetingView';
 
 interface Props {
     managers: Managers
@@ -22,22 +23,24 @@ export default class PreMeetingView extends Component<Props> {
     }
 
     render() {
+        const vm = this.viewmodel
         return (
             <ViewContainer>
                 <GreetingsHeader>Welcome!</GreetingsHeader>
                 <GreetingsSubHeader>Sample for BlueJeans WebRTC SDK</GreetingsSubHeader>
                 <MeetingInfoContainer>
-                    <ErrorMessage>{ this.viewmodel.meetingJoinError }</ErrorMessage>
-                    {this.viewmodel.showReloadMessage && <ErrorMessage>Please check if camera and mic are available for use, provide permission and reload to join a meeting.</ErrorMessage>}
-                    <br />
-                    <MeetingID placeholder={ "Meeting ID" } value={ this.viewmodel.meetingID } onChange={ this.viewmodel.setMeetingId }/>
-                    <br />
-                    <Passcode placeholder={ "Passcode(Optional)" } value={ this.viewmodel.passcode } onChange={ this.viewmodel.setPasscode }/>
-                    <br />
-                    <JoinName placeholder={ "Name" } value={ this.viewmodel.joinName } onChange={ this.viewmodel.setJoinName }/>
-                    <br />
+                    <ErrorMessage>{ vm.meetingJoinError }</ErrorMessage>
+                    {vm.showReloadMessage && <ErrorMessage>Please check if camera and mic are available for use, provide permission and reload to join a meeting.</ErrorMessage>}
+                    <MeetingID placeholder={ "Meeting ID" } value={ vm.meetingID } onChange={ vm.setMeetingId }/>
+                    <Passcode placeholder={ "Passcode(Optional)" } value={ vm.passcode } onChange={ vm.setPasscode }/>
+                    <JoinName placeholder={ "Name" } value={ vm.joinName } onChange={ vm.setJoinName }/>
+                    <LabelToggle>
+                        Join with screen sharing only
+                        <InputToggle type="checkbox" checked={vm.joinScreenSharingOnly} onChange={vm.toggleScreenSharingOnly}/>
+                        <SwitchToggle />
+                    </LabelToggle>
+                    <JoinButton onClick={ vm.joinMeeting } disabled = {vm.isJoinBtnDisabled}>Join Meeting</JoinButton>
                 </MeetingInfoContainer>
-                <JoinButton onClick={ this.viewmodel.joinMeeting } disabled = {this.viewmodel.isJoinBtnDisabled} isDisabled = {this.viewmodel.isJoinBtnDisabled}>Join Meeting</JoinButton>
             </ViewContainer>
         )
     }

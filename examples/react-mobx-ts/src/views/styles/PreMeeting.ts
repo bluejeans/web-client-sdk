@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { TextBox } from './Common';
+import { TextBox, Button } from './Common';
 
 export const ViewContainer = styled.div`
     margin: auto;
@@ -9,18 +9,22 @@ export const ViewContainer = styled.div`
 export const GreetingsHeader = styled.div`
     font-size: 36px;
     margin: 8px;
+    color: white;
 `
 
 export const GreetingsSubHeader = styled.div`
     font-size: 24px;
     margin: 16px;
-    font-family: cursive;
+    color: white;
 `
 
 export const MeetingInfoContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     width: fit-content;
     margin: auto;
-    display: inline-block;
+    align-items: center;
 `
 
 export const MeetingID = styled(TextBox)`
@@ -32,17 +36,8 @@ export const Passcode = styled(TextBox)`
 export const JoinName = styled(TextBox)`
 `
 
-export const JoinButton = styled<any,any>("button")`
-    width: 232px;
-    display: block;
-    margin: 36px auto;
-    padding: 8px;
-    border-radius: 4px;
-    background: ${props => props.isDisabled ? "rgba(0,0,0,0.3)" : "black"};
-    color: white;
-    font-size: 18px;
-    font-weight: bolder;
-    cursor: ${props => props.isDisabled ? "default" : "pointer"};
+export const JoinButton = styled<any,any>(Button)`
+    width: 220px;
 `
 
 export const UIOptionsContainer = styled.table`

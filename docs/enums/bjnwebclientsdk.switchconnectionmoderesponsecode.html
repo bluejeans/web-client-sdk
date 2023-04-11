@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>AttachParticipantToViewResponseCode | @bluejeans/web-client-sdk</title>
+	<title>SwitchConnectionModeResponseCode | @bluejeans/web-client-sdk</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -59,7 +59,7 @@
 					<a href="../modules/bjnwebclientsdk.html">BJNWebClientSDK</a>
 				</li>
 				<li>
-					<a href="bjnwebclientsdk.attachparticipanttoviewresponsecode.html">AttachParticipantToViewResponseCode</a>
+					<a href="bjnwebclientsdk.switchconnectionmoderesponsecode.html">SwitchConnectionModeResponseCode</a>
 				</li>
 			</ul>
 		</div>
@@ -119,17 +119,16 @@
 			</nav>
 		</div>
 		<div class="col-7 offset-3 col-content">
-			<h1>Enumeration AttachParticipantToViewResponseCode</h1>
+			<h1>Enumeration SwitchConnectionModeResponseCode</h1>
 			<section class="tsd-panel-group tsd-index-group">
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
 							<h3>Enumeration members</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="bjnwebclientsdk.attachparticipanttoviewresponsecode.html#not_using_custom_layouts" class="tsd-kind-icon">NOT_<wbr>USING_<wbr>CUSTOM_<wbr>LAYOUTS</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="bjnwebclientsdk.attachparticipanttoviewresponsecode.html#no_participant_with_id" class="tsd-kind-icon">NO_<wbr>PARTICIPANT_<wbr>WITH_<wbr>ID</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="bjnwebclientsdk.attachparticipanttoviewresponsecode.html#no_stream_for_participant_id" class="tsd-kind-icon">NO_<wbr>STREAM_<wbr>FOR_<wbr>PARTICIPANT_<wbr>ID</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="bjnwebclientsdk.attachparticipanttoviewresponsecode.html#unknown" class="tsd-kind-icon">UNKNOWN</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="bjnwebclientsdk.switchconnectionmoderesponsecode.html#error_out_of_meeting" class="tsd-kind-icon">ERROR_<wbr>OUT_<wbr>OF_<wbr>MEETING</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="bjnwebclientsdk.switchconnectionmoderesponsecode.html#switch_connection_mode_failure" class="tsd-kind-icon">SWITCH_<wbr>CONNECTION_<wbr>MODE_<wbr>FAILURE</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="bjnwebclientsdk.switchconnectionmoderesponsecode.html#switch_connection_mode_success" class="tsd-kind-icon">SWITCH_<wbr>CONNECTION_<wbr>MODE_<wbr>SUCCESS</a></li>
 							</ul>
 						</section>
 					</div>
@@ -138,62 +137,47 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Enumeration members</h2>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="not_using_custom_layouts" class="tsd-anchor"></a>
-					<h3>NOT_<wbr>USING_<wbr>CUSTOM_<wbr>LAYOUTS</h3>
-					<div class="tsd-signature tsd-kind-icon">NOT_<wbr>USING_<wbr>CUSTOM_<wbr>LAYOUTS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;NOT_USING_CUSTOM_LAYOUTS&quot;</span></div>
+					<a name="error_out_of_meeting" class="tsd-anchor"></a>
+					<h3>ERROR_<wbr>OUT_<wbr>OF_<wbr>MEETING</h3>
+					<div class="tsd-signature tsd-kind-icon">ERROR_<wbr>OUT_<wbr>OF_<wbr>MEETING<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;ERROR_OUT_OF_MEETING&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/VideoStreamService.ts:86</li>
+							<li>Defined in sdk-objects.ts:538</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
 						<div class="lead">
-							<p>Custom Layout should be selected beforehand to be able call attachParticipantToView()</p>
+							<p>Need to be in the call to invoke this API</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="no_participant_with_id" class="tsd-anchor"></a>
-					<h3>NO_<wbr>PARTICIPANT_<wbr>WITH_<wbr>ID</h3>
-					<div class="tsd-signature tsd-kind-icon">NO_<wbr>PARTICIPANT_<wbr>WITH_<wbr>ID<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;NO_PARTICIPANT_WITH_ID&quot;</span></div>
+					<a name="switch_connection_mode_failure" class="tsd-anchor"></a>
+					<h3>SWITCH_<wbr>CONNECTION_<wbr>MODE_<wbr>FAILURE</h3>
+					<div class="tsd-signature tsd-kind-icon">SWITCH_<wbr>CONNECTION_<wbr>MODE_<wbr>FAILURE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;SWITCH_CONNECTION_MODE_FAILURE&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/VideoStreamService.ts:84</li>
+							<li>Defined in sdk-objects.ts:536</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
 						<div class="lead">
-							<p>No Participant was found for the provided participant GUID</p>
+							<p>ConnectionMode change failed</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="no_stream_for_participant_id" class="tsd-anchor"></a>
-					<h3>NO_<wbr>STREAM_<wbr>FOR_<wbr>PARTICIPANT_<wbr>ID</h3>
-					<div class="tsd-signature tsd-kind-icon">NO_<wbr>STREAM_<wbr>FOR_<wbr>PARTICIPANT_<wbr>ID<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;NO_STREAM_FOR_PARTICIPANT_ID&quot;</span></div>
+					<a name="switch_connection_mode_success" class="tsd-anchor"></a>
+					<h3>SWITCH_<wbr>CONNECTION_<wbr>MODE_<wbr>SUCCESS</h3>
+					<div class="tsd-signature tsd-kind-icon">SWITCH_<wbr>CONNECTION_<wbr>MODE_<wbr>SUCCESS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;SWITCH_CONNECTION_MODE_SUCCESS&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in types/VideoStreamService.ts:82</li>
+							<li>Defined in sdk-objects.ts:534</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
 						<div class="lead">
-							<p>No Stream was found for the provided participant GUID</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="unknown" class="tsd-anchor"></a>
-					<h3>UNKNOWN</h3>
-					<div class="tsd-signature tsd-kind-icon">UNKNOWN<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;UNKNOWN&quot;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in types/VideoStreamService.ts:88</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
-						<div class="lead">
-							<p>For more information on the unknown error, please refer to the error message</p>
+							<p>ConnectionMode change was successful</p>
 						</div>
 					</div>
 				</section>
@@ -206,19 +190,16 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-enum tsd-parent-kind-module root">
-						<a href="bjnwebclientsdk.attachparticipanttoviewresponsecode.html" class="tsd-kind-icon">Attach<wbr>Participant<wbr>ToView<wbr>Response<wbr>Code</a>
+						<a href="bjnwebclientsdk.switchconnectionmoderesponsecode.html" class="tsd-kind-icon">Switch<wbr>Connection<wbr>Mode<wbr>Response<wbr>Code</a>
 						<ul>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="bjnwebclientsdk.attachparticipanttoviewresponsecode.html#not_using_custom_layouts" class="tsd-kind-icon">NOT_<wbr>USING_<wbr>CUSTOM_<wbr>LAYOUTS</a>
+								<a href="bjnwebclientsdk.switchconnectionmoderesponsecode.html#error_out_of_meeting" class="tsd-kind-icon">ERROR_<wbr>OUT_<wbr>OF_<wbr>MEETING</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="bjnwebclientsdk.attachparticipanttoviewresponsecode.html#no_participant_with_id" class="tsd-kind-icon">NO_<wbr>PARTICIPANT_<wbr>WITH_<wbr>ID</a>
+								<a href="bjnwebclientsdk.switchconnectionmoderesponsecode.html#switch_connection_mode_failure" class="tsd-kind-icon">SWITCH_<wbr>CONNECTION_<wbr>MODE_<wbr>FAILURE</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="bjnwebclientsdk.attachparticipanttoviewresponsecode.html#no_stream_for_participant_id" class="tsd-kind-icon">NO_<wbr>STREAM_<wbr>FOR_<wbr>PARTICIPANT_<wbr>ID</a>
-							</li>
-							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="bjnwebclientsdk.attachparticipanttoviewresponsecode.html#unknown" class="tsd-kind-icon">UNKNOWN</a>
+								<a href="bjnwebclientsdk.switchconnectionmoderesponsecode.html#switch_connection_mode_success" class="tsd-kind-icon">SWITCH_<wbr>CONNECTION_<wbr>MODE_<wbr>SUCCESS</a>
 							</li>
 						</ul>
 					</li>

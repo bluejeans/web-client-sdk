@@ -4,7 +4,7 @@ declare global {
         parseInt: any;
     }
 }
-declare class EnvironmentFacet {
+export declare class EnvironmentFacet {
     id: string;
     name: string;
     suggestedVersion: any;

@@ -154,6 +154,8 @@
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="services_meetingservice.meetingservice.html#audiomuted" class="tsd-kind-icon">audio<wbr>Muted</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="services_meetingservice.meetingservice.html#connectionmode" class="tsd-kind-icon">connection<wbr>Mode</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="services_meetingservice.meetingservice.html#gallerylayoutconfiguration" class="tsd-kind-icon">gallery<wbr>Layout<wbr>Configuration</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="services_meetingservice.meetingservice.html#ismultistreamsupported" class="tsd-kind-icon">is<wbr>Multi<wbr>Stream<wbr>Supported</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="services_meetingservice.meetingservice.html#maxvideosendresolution" class="tsd-kind-icon">max<wbr>Video<wbr>Send<wbr>Resolution</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="services_meetingservice.meetingservice.html#meetinginformation" class="tsd-kind-icon">meeting<wbr>Information</a></li>
@@ -174,11 +176,13 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_meetingservice.meetingservice.html#joinmeeting" class="tsd-kind-icon">join<wbr>Meeting</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_meetingservice.meetingservice.html#observe" class="tsd-kind-icon">observe</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_meetingservice.meetingservice.html#setaudiomuted" class="tsd-kind-icon">set<wbr>Audio<wbr>Muted</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_meetingservice.meetingservice.html#setgallerylayoutconfiguration" class="tsd-kind-icon">set<wbr>Gallery<wbr>Layout<wbr>Configuration</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_meetingservice.meetingservice.html#setmaxvideosendresolution" class="tsd-kind-icon">set<wbr>Max<wbr>Video<wbr>Send<wbr>Resolution</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_meetingservice.meetingservice.html#setname" class="tsd-kind-icon">set<wbr>Name</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_meetingservice.meetingservice.html#setselfvideopreviewenabled" class="tsd-kind-icon">set<wbr>Self<wbr>Video<wbr>Preview<wbr>Enabled</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_meetingservice.meetingservice.html#setvideolayout" class="tsd-kind-icon">set<wbr>Video<wbr>Layout</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_meetingservice.meetingservice.html#setvideomuted" class="tsd-kind-icon">set<wbr>Video<wbr>Muted</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="services_meetingservice.meetingservice.html#switchconnectionmode" class="tsd-kind-icon">switch<wbr>Connection<wbr>Mode</a></li>
 							</ul>
 						</section>
 					</div>
@@ -192,7 +196,7 @@
 					<div class="tsd-signature tsd-kind-icon">closed<wbr>Captioning<wbr>Service<span class="tsd-signature-symbol">:</span> <a href="services_closedcaptioningservice.closedcaptioningservice.html" class="tsd-signature-type">ClosedCaptioningService</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in services/MeetingService.ts:46</li>
+							<li>Defined in services/MeetingService.ts:47</li>
 						</ul>
 					</aside>
 				</section>
@@ -202,7 +206,7 @@
 					<div class="tsd-signature tsd-kind-icon">connection<wbr>State<span class="tsd-signature-symbol">:</span> <a href="../enums/bjnwebclientsdk.connectionstate.html" class="tsd-signature-type">ConnectionState</a><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in services/MeetingService.ts:54</li>
+							<li>Defined in services/MeetingService.ts:55</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography tsd-comment-shorttext">
@@ -218,7 +222,7 @@
 					<div class="tsd-signature tsd-kind-icon">content<wbr>Service<span class="tsd-signature-symbol">:</span> <a href="services_contentshareservice.contentshareservice.html" class="tsd-signature-type">ContentShareService</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in services/MeetingService.ts:42</li>
+							<li>Defined in services/MeetingService.ts:43</li>
 						</ul>
 					</aside>
 				</section>
@@ -228,7 +232,7 @@
 					<div class="tsd-signature tsd-kind-icon">moderator<wbr>Controls<wbr>Service<span class="tsd-signature-symbol">:</span> <a href="services_moderatorcontrolsservice.moderatorcontrolsservice.html" class="tsd-signature-type">ModeratorControlsService</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in services/MeetingService.ts:45</li>
+							<li>Defined in services/MeetingService.ts:46</li>
 						</ul>
 					</aside>
 				</section>
@@ -238,7 +242,7 @@
 					<div class="tsd-signature tsd-kind-icon">moderator<wbr>Waiting<wbr>Room<wbr>Service<span class="tsd-signature-symbol">:</span> <a href="services_moderatorwaitingroomservice.moderatorwaitingroomservice.html" class="tsd-signature-type">ModeratorWaitingRoomService</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in services/MeetingService.ts:47</li>
+							<li>Defined in services/MeetingService.ts:48</li>
 						</ul>
 					</aside>
 				</section>
@@ -248,7 +252,7 @@
 					<div class="tsd-signature tsd-kind-icon">participant<wbr>Service<span class="tsd-signature-symbol">:</span> <a href="services_participantservice.participantservice.html" class="tsd-signature-type">ParticipantService</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in services/MeetingService.ts:41</li>
+							<li>Defined in services/MeetingService.ts:42</li>
 						</ul>
 					</aside>
 				</section>
@@ -258,7 +262,7 @@
 					<div class="tsd-signature tsd-kind-icon">private<wbr>Chat<wbr>Service<span class="tsd-signature-symbol">:</span> <a href="services_privatechatservice.privatechatservice.html" class="tsd-signature-type">PrivateChatService</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in services/MeetingService.ts:44</li>
+							<li>Defined in services/MeetingService.ts:45</li>
 						</ul>
 					</aside>
 				</section>
@@ -268,7 +272,7 @@
 					<div class="tsd-signature tsd-kind-icon">public<wbr>Chat<wbr>Service<span class="tsd-signature-symbol">:</span> <a href="services_publicchatservice.publicchatservice.html" class="tsd-signature-type">PublicChatService</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in services/MeetingService.ts:43</li>
+							<li>Defined in services/MeetingService.ts:44</li>
 						</ul>
 					</aside>
 				</section>
@@ -278,7 +282,7 @@
 					<div class="tsd-signature tsd-kind-icon">video<wbr>Stream<wbr>Service<span class="tsd-signature-symbol">:</span> <a href="services_videostreamservice.videostreamservice.html" class="tsd-signature-type">VideoStreamService</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in services/MeetingService.ts:48</li>
+							<li>Defined in services/MeetingService.ts:49</li>
 						</ul>
 					</aside>
 				</section>
@@ -295,7 +299,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in services/MeetingService.ts:626</li>
+									<li>Defined in services/MeetingService.ts:715</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
@@ -309,6 +313,50 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="connectionmode" class="tsd-anchor"></a>
+					<h3>connection<wbr>Mode</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> connectionMode<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/bjnwebclientsdk.connectionmode.html" class="tsd-signature-type">ConnectionMode</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in services/MeetingService.ts:1002</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+								<div class="lead">
+									<p>connectionMode provides the connectionMode currently set for the meeting</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../enums/bjnwebclientsdk.connectionmode.html" class="tsd-signature-type">ConnectionMode</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="gallerylayoutconfiguration" class="tsd-anchor"></a>
+					<h3>gallery<wbr>Layout<wbr>Configuration</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> galleryLayoutConfiguration<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/bjnwebclientsdk.gallerylayoutconfiguration.html" class="tsd-signature-type">GalleryLayoutConfiguration</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in services/MeetingService.ts:464</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+								<div class="lead">
+									<p>The galleryLayoutConfiguration provides information about the current video configuration for the gallery layout (3x3, 5x5).</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../enums/bjnwebclientsdk.gallerylayoutconfiguration.html" class="tsd-signature-type">GalleryLayoutConfiguration</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="ismultistreamsupported" class="tsd-anchor"></a>
 					<h3>is<wbr>Multi<wbr>Stream<wbr>Supported</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
@@ -318,7 +366,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in services/MeetingService.ts:716</li>
+									<li>Defined in services/MeetingService.ts:809</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
@@ -341,7 +389,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in services/MeetingService.ts:865</li>
+									<li>Defined in services/MeetingService.ts:980</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
@@ -364,7 +412,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in services/MeetingService.ts:811</li>
+									<li>Defined in services/MeetingService.ts:912</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
@@ -387,7 +435,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in services/MeetingService.ts:872</li>
+									<li>Defined in services/MeetingService.ts:987</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
@@ -409,7 +457,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in services/MeetingService.ts:472</li>
+									<li>Defined in services/MeetingService.ts:501</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
@@ -432,7 +480,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in services/MeetingService.ts:785</li>
+									<li>Defined in services/MeetingService.ts:886</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
@@ -456,7 +504,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in services/MeetingService.ts:640</li>
+									<li>Defined in services/MeetingService.ts:729</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
@@ -479,7 +527,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in services/MeetingService.ts:602</li>
+									<li>Defined in services/MeetingService.ts:691</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
@@ -505,7 +553,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in services/MeetingService.ts:327</li>
+									<li>Defined in services/MeetingService.ts:336</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
@@ -536,7 +584,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in services/MeetingService.ts:464</li>
+									<li>Defined in services/MeetingService.ts:493</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
@@ -567,7 +615,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in services/MeetingService.ts:335</li>
+									<li>Defined in services/MeetingService.ts:344</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
@@ -598,7 +646,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in services/MeetingService.ts:831</li>
+									<li>Defined in services/MeetingService.ts:942</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
@@ -614,13 +662,13 @@
 					<a name="joinmeeting" class="tsd-anchor"></a>
 					<h3>join<wbr>Meeting</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">join<wbr>Meeting<span class="tsd-signature-symbol">(</span>meetingID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, passcode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, displayName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">join<wbr>Meeting<span class="tsd-signature-symbol">(</span>meetingID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, passcode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, displayName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, connectionMode<span class="tsd-signature-symbol">?: </span><a href="../enums/bjnwebclientsdk.connectionmode.html" class="tsd-signature-type">ConnectionMode</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in services/MeetingService.ts:508</li>
+									<li>Defined in services/MeetingService.ts:593</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
@@ -648,6 +696,12 @@
 										<p>The participant would join the meeting with this name</p>
 									</div>
 								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> connectionMode: <a href="../enums/bjnwebclientsdk.connectionmode.html" class="tsd-signature-type">ConnectionMode</a></h5>
+									<div class="tsd-comment tsd-typography tsd-comment-text">
+										<p>the desired connection mode - <code>Default</code> or <code>ScreenShareOnly</code>.</p>
+									</div>
+								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>Promise which resolves when meeting join is successful
@@ -666,7 +720,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in services/MeetingService.ts:850</li>
+									<li>Defined in services/MeetingService.ts:965</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
@@ -725,7 +779,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in services/MeetingService.ts:763</li>
+									<li>Defined in services/MeetingService.ts:860</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
@@ -748,6 +802,34 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setgallerylayoutconfiguration" class="tsd-anchor"></a>
+					<h3>set<wbr>Gallery<wbr>Layout<wbr>Configuration</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Gallery<wbr>Layout<wbr>Configuration<span class="tsd-signature-symbol">(</span>galleryLayoutConfiguration<span class="tsd-signature-symbol">: </span><a href="../enums/bjnwebclientsdk.gallerylayoutconfiguration.html" class="tsd-signature-type">GalleryLayoutConfiguration</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in services/MeetingService.ts:1091</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+								<div class="lead">
+									<p>The gallery layout configuration can be changed from 3x3 to 5x5 or from 5x5 to 3x3.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>galleryLayoutConfiguration: <a href="../enums/bjnwebclientsdk.gallerylayoutconfiguration.html" class="tsd-signature-type">GalleryLayoutConfiguration</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="setmaxvideosendresolution" class="tsd-anchor"></a>
 					<h3>set<wbr>Max<wbr>Video<wbr>Send<wbr>Resolution</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -757,7 +839,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in services/MeetingService.ts:909</li>
+									<li>Defined in services/MeetingService.ts:1031</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
@@ -789,7 +871,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in services/MeetingService.ts:725</li>
+									<li>Defined in services/MeetingService.ts:818</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
@@ -820,7 +902,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in services/MeetingService.ts:481</li>
+									<li>Defined in services/MeetingService.ts:510</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
@@ -852,7 +934,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in services/MeetingService.ts:670</li>
+									<li>Defined in services/MeetingService.ts:759</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
@@ -887,7 +969,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in services/MeetingService.ts:738</li>
+									<li>Defined in services/MeetingService.ts:831</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
@@ -909,8 +991,40 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="switchconnectionmode" class="tsd-anchor"></a>
+					<h3>switch<wbr>Connection<wbr>Mode</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">switch<wbr>Connection<wbr>Mode<span class="tsd-signature-symbol">(</span>connectionMode<span class="tsd-signature-symbol">: </span><a href="../enums/bjnwebclientsdk.connectionmode.html" class="tsd-signature-type">ConnectionMode</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/bjnwebclientsdk.switchconnectionmoderesponse.html" class="tsd-signature-type">SwitchConnectionModeResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in services/MeetingService.ts:534</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
+								<div class="lead">
+									<p>switchConnectionMode, used to change the connectionMode of the meeting based on the passed param,
+									connectionMode. This should be called in-meeting to change connectionMode for a meeting.</p>
+								</div>
+								</div><div class="tsd-comment tsd-typography tsd-comment-text">
+								<p>Self audio &amp; video is always muted in ScreenShareOnly mode. Upon switching connectionMode from
+								ScreenShareOnly to Default, self video will remain muted, however audio will get unmuted.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>connectionMode: <a href="../enums/bjnwebclientsdk.connectionmode.html" class="tsd-signature-type">ConnectionMode</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/bjnwebclientsdk.switchconnectionmoderesponse.html" class="tsd-signature-type">SwitchConnectionModeResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
 			</section>
-			<!--{&quot;options&quot;:&quot;/home/svc-build/jenkins2/workspace/WMC_WebRTCDeveloperSDK_1.5.0&quot;,&quot;tsconfig&quot;:&quot;/home/svc-build/jenkins2/workspace/WMC_WebRTCDeveloperSDK_1.5.0&quot;,&quot;entryPoints&quot;:[&quot;./src/BJNWebClientSDK.ts&quot;,&quot;./src/services/&quot;],&quot;exclude&quot;:[&quot;src/services/Analytics.ts&quot;],&quot;externalPattern&quot;:[&quot;**/node_modules/**&quot;],&quot;excludeExternals&quot;:false,&quot;excludeNotDocumented&quot;:false,&quot;excludeInternal&quot;:true,&quot;excludePrivate&quot;:true,&quot;excludeProtected&quot;:false,&quot;disableSources&quot;:false,&quot;disableAliases&quot;:false,&quot;includes&quot;:&quot;&quot;,&quot;media&quot;:&quot;&quot;,&quot;watch&quot;:false,&quot;preserveWatchOutput&quot;:false,&quot;emit&quot;:false,&quot;out&quot;:&quot;&quot;,&quot;json&quot;:&quot;&quot;,&quot;pretty&quot;:true,&quot;theme&quot;:&quot;./node_modules/typedoc-neo-theme/bin/default&quot;,&quot;highlightTheme&quot;:&quot;light-plus&quot;,&quot;name&quot;:&quot;&quot;,&quot;includeVersion&quot;:false,&quot;excludeTags&quot;:[],&quot;readme&quot;:&quot;&quot;,&quot;defaultCategory&quot;:&quot;Other&quot;,&quot;categoryOrder&quot;:[],&quot;categorizeByGroup&quot;:true,&quot;gitRevision&quot;:&quot;&quot;,&quot;gitRemote&quot;:&quot;origin&quot;,&quot;gaID&quot;:&quot;&quot;,&quot;gaSite&quot;:&quot;auto&quot;,&quot;hideGenerator&quot;:false,&quot;toc&quot;:[],&quot;disableOutputCheck&quot;:false,&quot;help&quot;:false,&quot;version&quot;:false,&quot;showConfig&quot;:false,&quot;plugin&quot;:[],&quot;logger&quot;:&quot;console&quot;,&quot;logLevel&quot;:1,&quot;listInvalidSymbolLinks&quot;:false}-->
+			<!--{&quot;options&quot;:&quot;/home/svc-build/jenkins2/workspace/WMC_WebRTCDeveloperSDK_1.6.0&quot;,&quot;tsconfig&quot;:&quot;/home/svc-build/jenkins2/workspace/WMC_WebRTCDeveloperSDK_1.6.0&quot;,&quot;entryPoints&quot;:[&quot;./src/BJNWebClientSDK.ts&quot;,&quot;./src/services/&quot;],&quot;exclude&quot;:[&quot;src/services/Analytics.ts&quot;],&quot;externalPattern&quot;:[&quot;**/node_modules/**&quot;],&quot;excludeExternals&quot;:false,&quot;excludeNotDocumented&quot;:false,&quot;excludeInternal&quot;:true,&quot;excludePrivate&quot;:true,&quot;excludeProtected&quot;:false,&quot;disableSources&quot;:false,&quot;disableAliases&quot;:false,&quot;includes&quot;:&quot;&quot;,&quot;media&quot;:&quot;&quot;,&quot;watch&quot;:false,&quot;preserveWatchOutput&quot;:false,&quot;emit&quot;:false,&quot;out&quot;:&quot;&quot;,&quot;json&quot;:&quot;&quot;,&quot;pretty&quot;:true,&quot;theme&quot;:&quot;./node_modules/typedoc-neo-theme/bin/default&quot;,&quot;highlightTheme&quot;:&quot;light-plus&quot;,&quot;name&quot;:&quot;&quot;,&quot;includeVersion&quot;:false,&quot;excludeTags&quot;:[],&quot;readme&quot;:&quot;&quot;,&quot;defaultCategory&quot;:&quot;Other&quot;,&quot;categoryOrder&quot;:[],&quot;categorizeByGroup&quot;:true,&quot;gitRevision&quot;:&quot;&quot;,&quot;gitRemote&quot;:&quot;origin&quot;,&quot;gaID&quot;:&quot;&quot;,&quot;gaSite&quot;:&quot;auto&quot;,&quot;hideGenerator&quot;:false,&quot;toc&quot;:[],&quot;disableOutputCheck&quot;:false,&quot;help&quot;:false,&quot;version&quot;:false,&quot;showConfig&quot;:false,&quot;plugin&quot;:[],&quot;logger&quot;:&quot;console&quot;,&quot;logLevel&quot;:1,&quot;listInvalidSymbolLinks&quot;:false}-->
 		</div>
 		<div class="col-2 col-menu secondary-menu">
 			<nav class="tsd-navigation secondary menu-sticky">
@@ -949,6 +1063,12 @@
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="services_meetingservice.meetingservice.html#audiomuted" class="tsd-kind-icon">audio<wbr>Muted</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="services_meetingservice.meetingservice.html#connectionmode" class="tsd-kind-icon">connection<wbr>Mode</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="services_meetingservice.meetingservice.html#gallerylayoutconfiguration" class="tsd-kind-icon">gallery<wbr>Layout<wbr>Configuration</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="services_meetingservice.meetingservice.html#ismultistreamsupported" class="tsd-kind-icon">is<wbr>Multi<wbr>Stream<wbr>Supported</a>
@@ -996,6 +1116,9 @@
 								<a href="services_meetingservice.meetingservice.html#setaudiomuted" class="tsd-kind-icon">set<wbr>Audio<wbr>Muted</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_meetingservice.meetingservice.html#setgallerylayoutconfiguration" class="tsd-kind-icon">set<wbr>Gallery<wbr>Layout<wbr>Configuration</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="services_meetingservice.meetingservice.html#setmaxvideosendresolution" class="tsd-kind-icon">set<wbr>Max<wbr>Video<wbr>Send<wbr>Resolution</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
@@ -1009,6 +1132,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="services_meetingservice.meetingservice.html#setvideomuted" class="tsd-kind-icon">set<wbr>Video<wbr>Muted</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="services_meetingservice.meetingservice.html#switchconnectionmode" class="tsd-kind-icon">switch<wbr>Connection<wbr>Mode</a>
 							</li>
 						</ul>
 					</li>

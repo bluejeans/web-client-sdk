@@ -1,7 +1,7 @@
 import { action, computed, observable } from "mobx";
 import Managers from "../stores/Managers";
 import AppManager from "../stores/AppManager";
-import { AudioVideoDevice, BJNWebClientSDK, ConnectionState, VideoLayout, Participant, ContentShareState, Error } from '@bluejeans/web-client-sdk';
+import { AudioVideoDevice, BJNWebClientSDK, ConnectionState, VideoLayout, Participant, ContentShareState, ConnectionMode } from '@bluejeans/web-client-sdk';
 import ChatUIManager from "../stores/ChatUIManager";
 import CustomLayoutManager from "../stores/CustomLayoutManager";
 import { emailRegex } from "../Utils/Constants";
@@ -18,7 +18,7 @@ export interface ErrorResponse {
     /** Appropiate reason if available */
     reason?: string;
   }
-  
+
 export default class MeetingViewModel {
 
     private appManager: AppManager;
@@ -124,6 +124,13 @@ export default class MeetingViewModel {
         return { id: this.webrtcSDK.meetingService.videoLayout, name: this.videoLayoutName(this.webrtcSDK.meetingService.videoLayout) }
     }
 
+    @computed get connectionMode(): { id: ConnectionMode; name: string } {
+      return {
+        id: this.webrtcSDK.meetingService.connectionMode,
+        name: this.webrtcSDK.meetingService.connectionMode as string,
+      }
+    }
+
     @computed get isSpeakerSelectionAllowed(): boolean {
         return this.webrtcSDK.audioDeviceService.isSpeakerSelectionAllowed;
     }
@@ -132,14 +139,21 @@ export default class MeetingViewModel {
     }
 
     get availableVideoLayouts(): { id: VideoLayout, name: string }[] {
-        return [VideoLayout.SPEAKER, VideoLayout.PEOPLE, VideoLayout.GALLERY, VideoLayout.FILMSTRIP, VideoLayout.CUSTOM].map(videoLayout => {
-            return { id: videoLayout, name: this.videoLayoutName(videoLayout) }
-        })
+        return Object.keys(VideoLayout).map(key => (
+          { id: key as VideoLayout, name: this.videoLayoutName(VideoLayout[key]) }
+        ))
+    }
+
+    get availableConnectionModes(): { id: ConnectionMode; name: string }[] {
+      return Object.keys(ConnectionMode).map(key => (
+        { id: key as ConnectionMode, name: ConnectionMode[key] }
+      ))
     }
 
     private videoLayoutName(videoLayout: VideoLayout): string {
         switch (videoLayout) {
             case VideoLayout.SPEAKER:
+            default:
                 return "Speaker View"
             case VideoLayout.PEOPLE:
                 return "People View"
@@ -148,7 +162,7 @@ export default class MeetingViewModel {
             case VideoLayout.FILMSTRIP:
                 return "Filmstrip View"
             case VideoLayout.CUSTOM:
-                return "Custom View"    
+                return "Custom View"
         }
     }
 
@@ -251,6 +265,9 @@ export default class MeetingViewModel {
         this.webrtcSDK.meetingService.setVideoLayout(layout.id)
     }
 
+    @action.bound setConnectionMode(mode: { id: ConnectionMode; name: string }) {
+      this.webrtcSDK.meetingService.switchConnectionMode(mode.id)
+    }
 
     @action.bound selectCamera(device: AudioVideoDevice) {
         this.webrtcSDK.videoDeviceService.selectCamera(device)
@@ -357,7 +374,7 @@ export default class MeetingViewModel {
                 this.pinnedParticipantGuid != participant.participantGuid))
     }
     @computed get isCustomVideoLayout(){
-        return this.videoLayout.id !== VideoLayout.CUSTOM 
+        return this.videoLayout.id !== VideoLayout.CUSTOM
     }
     @action setPinnedParticipant(participantGuid){
         return this.customLayoutManager.setPinnedParticipant(participantGuid)

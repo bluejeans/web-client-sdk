@@ -1,5 +1,5 @@
 import Container from '../utils/Container';
-import { VideoLayout, VideoState, ConnectionState, MeetingInformation, BlueJeansSDKInitParams, RecordingState, SetMaxVideoSendResolutionResponse, MaxVideoQuality } from '../sdk-objects';
+import { VideoLayout, VideoState, ConnectionState, MeetingInformation, BlueJeansSDKInitParams, RecordingState, SetMaxVideoSendResolutionResponse, MaxVideoQuality, GalleryLayoutConfiguration, ConnectionMode, SwitchConnectionModeResponse } from '../sdk-objects';
 import { PermissionService } from "./PermissionService";
 import { ParticipantService } from "./ParticipantService";
 import { ContentShareService } from './ContentShareService';
@@ -40,6 +40,7 @@ export declare class MeetingService extends Container {
     private showVideoDebugStats;
     private maxNumberOfStreams;
     private customLayout;
+    private currentConnectionMode;
     constructor(permissionService: PermissionService, analytics: Analytics, sdkLogger: SDKLogger, initParams: BlueJeansSDKInitParams);
     private setUpInMeetingService;
     private resetInMeetingService;
@@ -58,11 +59,15 @@ export declare class MeetingService extends Container {
     resetTempAudioVideoStates(): void;
     private disconnectMedia;
     private setShowVideoDebugStats;
+    get galleryLayoutConfiguration(): GalleryLayoutConfiguration;
+    private setMaxNumberOfStreams;
     attachRemoteContent(videoElement: HTMLElement): void;
     get selfVideoPreviewEnabled(): boolean;
     setSelfVideoPreviewEnabled(enable: boolean): void;
     private addSpeakerPlayerNodes;
-    joinMeeting(meetingID: string, passcode: string | undefined, displayName: string): Promise<void>;
+    switchConnectionMode(connectionMode: ConnectionMode): Promise<SwitchConnectionModeResponse>;
+    private requestAllPermissionsBasedOnConnectionMode;
+    joinMeeting(meetingID: string, passcode: string | undefined, displayName: string, connectionMode?: ConnectionMode): Promise<void>;
     private getVersionString;
     private getAppMetaData;
     private getClientInfo;
@@ -81,8 +86,10 @@ export declare class MeetingService extends Container {
     observe(property: keyof MeetingService, callback: () => void): void;
     get maxVideoSendResolution(): MaxVideoQuality;
     get recordingState(): RecordingState;
+    get connectionMode(): ConnectionMode;
     private trackWRParticipantApproved;
     private trackWRParticipantDenied;
     dispose(): void;
     setMaxVideoSendResolution(resolution: MaxVideoQuality): Promise<SetMaxVideoSendResolutionResponse>;
+    setGalleryLayoutConfiguration(galleryLayoutConfiguration: GalleryLayoutConfiguration): void;
 }

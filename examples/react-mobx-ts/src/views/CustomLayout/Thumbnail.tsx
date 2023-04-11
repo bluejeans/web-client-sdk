@@ -35,6 +35,9 @@ class Thumbnail extends React.Component<Props> {
         if (this.shouldRenderParticipant(prevProps)) {
             this.viewModel.renderParticipants(participant.participantGuid, this.divElement)
         }
+        if (this.props.random !== prevProps.random) {
+            this.viewModel.updateBackgroundColor(this.props.random)
+        }
     }
 
     /**
@@ -52,10 +55,10 @@ class Thumbnail extends React.Component<Props> {
 
 
     renderAudioTile() {
-        let background = this.viewModel.randomBackgroundColorPicker(this.props.random)
-        let { participantGuid, name } = this.props.participant
+        const background = this.viewModel.backgroundColor
+        const { participantGuid, name } = this.props.participant
         return (
-                <AudioContainer key={participantGuid}  background={background} isDominantSpeaker={false} displayBorder={false}>
+                <AudioContainer key={participantGuid} background={background} isDominantSpeaker={false} displayBorder={false}>
                     <ParticipantInitials isParticipantOnMainStage={false} {...this.props}> {this.viewModel.initials(this.props.participant)}</ParticipantInitials>
                     <StreamInformation isShowCallQuality={true} isDominantSpeaker={false}  isParticipantOnMainStage={false} >
                             <EndpointName>{name}</EndpointName>
@@ -64,7 +67,7 @@ class Thumbnail extends React.Component<Props> {
     }
 
     getResolution(streams){
-        if(streams?.resolution){ 
+        if(streams?.resolution){
             return `${streams?.resolution.width}x${streams?.resolution.height}`
         }else{
 
@@ -88,7 +91,8 @@ class Thumbnail extends React.Component<Props> {
         )
     }
     renderStudent(){
-        if(!this.props.participant?.isVideoMuted){
+        const streams = this.viewModel.videoStreamsMap?.get(this.props.participant.participantGuid)
+        if(!this.props.participant?.isVideoMuted && streams){
             return this.renderVideoTile()
         }
         else{

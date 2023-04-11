@@ -1,10 +1,31 @@
 import styled from 'styled-components';
 
+export const buttonColor = '#4674AD'
+export const hoveredButtonColor = '#4B7DBA'
+export const disabledButtonColor = '#385E8C'
+export const unselectedButtonColor = '#CFCFD1'
+export const backgroundColor = '#2A5994' // see also index.js
+
+export const Button = styled<any,any>("button")`
+    width: 180px;
+    display: block;
+    margin: 8px auto;
+    border-radius: 4px;
+    background-color: ${buttonColor};
+    color: white;
+    border: 0;
+    height: 30px;
+    cursor: ${props => props.disabled ? "default" : "pointer"};
+    opacity: ${props => props.disabled ? "0.5" : "1"};
+    :hover {
+        background-color: ${props => props.disabled ? disabledButtonColor : hoveredButtonColor };
+    }
+`
+
 export const TextBox = styled.input`
     width: 200px;
-    margin: 8px;
     padding: 8px;
-    border-radius: 4px;    
+    border-radius: 4px;
 `
 export const TextBoxEmail = styled.input`
     width: 200px;
@@ -64,7 +85,7 @@ export const VideoHolder = styled<any, any>("div")`
         width: 100%;
         height: 100%;
         background-color: black;
-        
+
         .video {
             position: absolute;
             top: 0;
@@ -113,16 +134,27 @@ export const SharedScreenHolder = styled<any, any>("div")`
         right: 0px;
         padding-top:00px;
         position:relative;
-    }    
+    }
 `
 export const VideoMessage = styled<any,any>("div")`
     width: 100%;
     text-align: center;
     font-size: 20px;
     top: 45%;
-    color: white;   
+    color: white;
     position: absolute;
     z-index: 3;
+`;
+
+export const NoContentShared = styled<any,any>("div")`
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    position: relative;
+    top: 100px;
+    @media only screen and (max-width: 1100px) {
+        top: 0;
+    }
 `;
 
 export const LocalVideoHolder = styled<any, any>("div")`
@@ -132,25 +164,6 @@ export const LocalVideoHolder = styled<any, any>("div")`
     right: 0;
     width: 20%;
     padding-top: 11.25%; // 9/16 * .20
-    z-index: 2;
-
-    video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: black;
-    }
-`;
-
-export const RemoteContentHolder = styled<any, any>("div")`
-    position: relative;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding-top: 64.5%; // 9/16 * .40
-    display: ${props => props.show ? "inline-block" : "none"};
     z-index: 2;
 
     video {
@@ -187,7 +200,7 @@ export const BuildInfo = styled.div`
     left: 50%;
     transform: translateX(-50%);
     font-size: 14px;
-    color: rgb(149, 216, 252);
+    color: black;
 
     @media only screen and (max-width: 1100px) {
         position: initial;
@@ -212,7 +225,7 @@ export const Container = styled.div`
         display: grid;
         width: 100%;
         height: 100%;
-        grid-template-rows: auto; 
+        grid-template-rows: auto;
         grid-gap: 10px;
     }
 `
@@ -230,5 +243,5 @@ export const CaptionTextContainer:any = styled.div`
 export const CaptionTextSpan:any = styled.span`
     background-color: black;
     color: white;
-    font-size: 16px;    
+    font-size: 16px;
 `

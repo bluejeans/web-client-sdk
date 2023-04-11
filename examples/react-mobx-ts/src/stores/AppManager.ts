@@ -3,7 +3,9 @@ import {
   BJNWebClientSDK,
   ConnectionState,
   ErrorInfo,
-  Error
+  Error,
+  ConnectionMode
+
 } from "@bluejeans/web-client-sdk";
 
 export enum AppState {
@@ -17,6 +19,7 @@ export interface JoinProps {
   meetingID: string;
   passcode: string;
   joinName: string;
+  connectionMode?: ConnectionMode
 }
 
 export interface ErrorResponse {
@@ -64,7 +67,7 @@ export default class AppManager {
         fps: 30
       },
       name: "AK2"
-    }, 
+    },
     {
       "participantGuid": "seamguid_3604c88d-9a16-46c7-ba1b-ffecdd726ec4",
       "resolution": {
@@ -188,7 +191,7 @@ export default class AppManager {
         this.disconnectedAfterMeeting = true;
       }
     });
-    
+
   }
 
 
@@ -210,7 +213,7 @@ export default class AppManager {
       !this.isJoiningMeeting
     ) {
       return AppState.PRE_MEETING;
-    } 
+    }
     else {
       return AppState.IN_MEETING;
     }
@@ -256,6 +259,7 @@ export default class AppManager {
       let meetingID: string = "";
       let passcode: string = "";
       let joinName: string = "";
+      let connectionMode = ConnectionMode.Default
       let queryList: string[] = query.slice(1).split("&");
       for (let i = 0; i < queryList.length; i++) {
         let queryElem: string = queryList[i];
@@ -265,6 +269,8 @@ export default class AppManager {
           passcode = queryElem.slice(queryElem.indexOf("passcode=") + 9);
         } else if (queryElem.indexOf("joinName=") > -1) {
           joinName = queryElem.slice(queryElem.indexOf("joinName=") + 9);
+        } else if (queryElem.indexOf("connectionMode=") > -1) {
+          connectionMode = queryElem.slice(queryElem.indexOf("connectionMode=") + 15) as ConnectionMode;
         }
       }
       window.history.replaceState(
@@ -274,9 +280,10 @@ export default class AppManager {
       );
       if (meetingID) {
         this.joinMeeting({
-          meetingID: meetingID,
-          passcode: passcode,
-          joinName: joinName,
+          meetingID,
+          passcode,
+          joinName,
+          connectionMode
         });
       }
     }
@@ -288,9 +295,10 @@ export default class AppManager {
       meetingID: props.meetingID,
       passcode: props.passcode,
       joinName: props.joinName,
+      connectionMode: props.connectionMode
     });
     this.webrtcSDK.meetingService
-      .joinMeeting(props.meetingID, props.passcode, props.joinName)
+      .joinMeeting(props.meetingID, props.passcode, props.joinName, props.connectionMode)
       .then(
         () => {
           this.setJoiningMeeting(true);
@@ -311,11 +319,12 @@ export default class AppManager {
 
   @action.bound rejoin(): void {
     this.redirectToHomePage()
-    const { meetingID, passcode, joinName } = this.joinProps;
+    const { meetingID, passcode, joinName, connectionMode } = this.joinProps;
     this.joinMeeting({
       meetingID: meetingID,
       passcode: passcode,
       joinName: joinName,
+      connectionMode: connectionMode
     });
   }
 
@@ -324,8 +333,9 @@ export default class AppManager {
       meetingID: this.joinProps.meetingID,
       passcode: this.joinProps.passcode,
       joinName: this.webrtcSDK.meetingService.participantService?.selfParticipant.name,
+      connectionMode: this.webrtcSDK.meetingService.connectionMode
     });
-    
+
     return this.webrtcSDK.meetingService.endMeeting();
   }
 

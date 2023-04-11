@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { TextBox, TextBoxEmail, TextArea, ErrorMsg, LogUploadMsg} from './Common';
+import { TextBox, TextBoxEmail, TextArea, ErrorMsg, LogUploadMsg, Button, hoveredButtonColor, disabledButtonColor, unselectedButtonColor, buttonColor} from './Common';
 
 let video_on = require("../../../assets/icons/video_on_1.svg").default;
 let video_off = require("../../../assets/icons/video_off_1.svg").default;
@@ -15,7 +15,7 @@ let pin_gray = require("../../../assets/icons/pin_gray.svg").default;
 
 export const MeetingControlContainer = styled<any, any>("div")`
     width: 400px;
-    margin-top: 80px;
+    margin-top: 10px;
     margin-left: 30px;
 
     @media(max-width: 1100px) {
@@ -23,7 +23,7 @@ export const MeetingControlContainer = styled<any, any>("div")`
         flex-direction: column;
         justify-self: center;
         margin: auto;
-    } 
+    }
     @media only screen and (max-width: 768px) {
         display: flex;
         flex-direction: column;
@@ -34,11 +34,11 @@ export const MeetingControlContainer = styled<any, any>("div")`
 `
 
 export const MeetingDetailsTable = styled.table`
-    
+color: white
 `
 
 export const MeetingDetailsTableBody = styled.tbody`
-    
+
 `
 
 export const MeetingDetailsTableRow = styled.tr`
@@ -52,41 +52,7 @@ export const MeetingDetailsTableContent = styled.div`
     width: 180px;
 `
 
-export const MeetingControlButton = styled.button`
-    width: 180px;
-    display: block;
-    padding: 4px;
-    margin: 8px auto;
-    border-radius: 4px;
-    background: black;
-    color: white;
-    font-size: 14px;
-    font-weight: bolder;
-    cursor: pointer;
-`
-export const UploadLogButton = styled.button`
-    width: 180px;
-    display: block;
-    padding: 4px;
-    margin: 8px auto;
-    border-radius: 4px;
-    background: black;
-    color: white;
-    font-size: 14px;
-    font-weight: bolder;
-    cursor: pointer;
-`
-export const UploadLogButtonDisabled = styled.button`
-    width: 180px;
-    display: block;
-    padding: 4px;
-    margin: 8px auto;
-    border-radius: 4px;
-    background: gray;
-    color: white;
-    font-size: 14px;
-    font-weight: bolder;
-    cursor: pointer;
+export const MeetingControlButton = styled<any,any>(Button)`
 `
 
 export const MeetingDeviceDropdown = styled.select`
@@ -98,6 +64,7 @@ export const MeetingDeviceDropdown = styled.select`
     background: white;
     color: black;
     font-size: 14px;
+    opacity: ${props => props.disabled ? "0.5" : "1"}
 `
 
 export const LeaveControlButton = styled(MeetingControlButton)`
@@ -108,6 +75,7 @@ export const LeaveControlButton = styled(MeetingControlButton)`
 `
 
 export const JoinName = styled(TextBox)`
+    margin: 8px;
     width: 160px;
 `
 export const EmailID = styled(TextBoxEmail)`
@@ -169,7 +137,7 @@ export const SharingBadge = styled.div`
     left: 210px;
     display: inline-block;
     vertical-align: middle;
-    background: url(${share}) no-repeat center;   
+    background: url(${share}) no-repeat center;
 `
 
 export const ParticipantName = styled.div`
@@ -199,7 +167,7 @@ export const PinnedParticipantController = styled<any,any>("div")`
     left: 350px;
     display: inline-block;
     vertical-align: middle;
-    background: url(${props => props.isEnabled ? pin_enable : props =>props.isDisabled ? pin_gray : pin_initial}) no-repeat center;
+    background: url(${props => props.isEnabled ? pin_enable : pin_initial}) no-repeat center;
     cursor: pointer;
 
 `
@@ -269,18 +237,6 @@ export const RosterOptions = styled.div`
   padding: 8px 0px;
 `
 
-export const RosterList = styled.button`
-  display : inline-block;
-  width:40%;
-  height:25px;
-  border-top-left-radius: 25px;
-  border-bottom-left-radius: 25px;
-  font-size: 13px;
-  background-color:#dcdcde;
-  color:gray;
-  outline:none;
-  border:none
-`
 export const WrParticipantList = styled.div`
     width: 100%;
     height: 100%;
@@ -288,43 +244,29 @@ export const WrParticipantList = styled.div`
     overflow-x: hidden;
     position: relative;
 `
-export const WaitingRoomList = styled.button`
-  display : inline-block;
-  width:40%;
-  height:25px;
-  border-top-right-radius: 25px;
-  border-bottom-right-radius: 25px;
-  font-size: 13px;
-  background-color:#dcdcde;
-  color:gray;
-  outline:none;
-  border: none;
+
+const Option = styled<any,any>(Button)`
+    display : inline-block;
+    width:40%;
+    height:25px;
+    border-radius: 0;
+    font-size: 13px;
 `
 
-export const RosterSelected = styled.button`
-  display : inline-block;
-  width:40%;
-  height:25px;
+export const RosterOption = styled<any,any>(Option)`
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
-  font-size: 13px;
-  background-color:#33a6e8;
-  color:white;
-  outline:none;
-  border:none
+  background-color: ${(props) => props.selected ? buttonColor : unselectedButtonColor }
 `
 
-export const WaitingRoomSelected = styled.button`
-  display : inline-block;
-  width:40%;
-  height:25px;
+export const WaitingRoomOption = styled<any,any>(Option)`
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
-  font-size: 13px;
-  background-color:#33a6e8;
-  color:white;
-  outline:none;
-  border: none;
+  opacity: 1;
+  background-color: ${(props) => props.selected ? buttonColor : unselectedButtonColor }
+  :hover {
+    background-color: ${props => props.disabled ? unselectedButtonColor : hoveredButtonColor };
+  }
 `
 
 export const WaitingRoomListItem= styled<any,any>("div")`
@@ -372,7 +314,7 @@ export const WrRejectParticipant = styled.button`
     display: inline-block;
     vertical-align: middle;
     background-color: rgb(86, 98, 113);
-    color: white; 
+    color: white;
     border-radius: 8px;
     border: none;
 `
@@ -397,7 +339,7 @@ export const WrRejectAll = styled.button`
     display: inline-block;
     vertical-align: middle;
     background-color: rgb(86, 98, 113);
-    color: white; 
+    color: white;
     border-radius: 8px;
     border: none;
 `
@@ -415,9 +357,11 @@ export const WrApprovedAll= styled.button`
 `
 export const LabelToggle = styled.label`
     display: flex;
+    font-size: 13px;
     align-items: center;
     gap: 10px;
     cursor: pointer;
+    color: white;
 `;
 export const SwitchToggle = styled.div`
     position: relative;
@@ -446,9 +390,9 @@ export const InputToggle = styled.input`
     position: absolute;
 
     &:checked + ${SwitchToggle} {
-    background: green;
-
-    &:before {
-      transform: translate(18px, -50%);
+        background: green;
+        &:before {
+            transform: translate(18px, -50%);
+        }
     }
 `;

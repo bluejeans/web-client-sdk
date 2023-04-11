@@ -96,7 +96,7 @@ export default class CustomLayoutManager {
         let indexOfFirstModerator = arrWithoutSelfParticipant?.findIndex(i => i.isModerator)
         let arrWithoutFirstModAndSelfParticipant = arrWithoutSelfParticipant?.filter((v,i)=> i != indexOfFirstModerator)//.map(obj => Object.assign({}, obj))
        //      participantGuid: obj.participantGuid, name: obj.name })) // in-place array modification, removing index of first mod
-       arrWithoutFirstModAndSelfParticipant.sort((a, b) => a.name.localeCompare(b.name));
+       arrWithoutFirstModAndSelfParticipant.sort((a, b) => a.name?.localeCompare(b.name));
         if(this.pinnedParticipant){
             return arrWithoutFirstModAndSelfParticipant.filter(item=> item.participantGuid !== this.pinnedParticipant.participantGuid)// remove pinned participant
         }

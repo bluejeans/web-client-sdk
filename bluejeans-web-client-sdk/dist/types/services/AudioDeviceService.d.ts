@@ -1,13 +1,15 @@
 import { AudioVideoDevice } from '../sdk-objects';
 import { SDKLogger } from "../logger";
+import { MeetingService } from "./MeetingService";
 export declare class AudioDeviceService {
     private browserType;
     private osType;
     private sdkLogger;
-    constructor(sdkLogger: SDKLogger);
-    get availableMicrophones(): AudioVideoDevice[];
+    private meetingService;
+    constructor(sdkLogger: SDKLogger, meetingService: MeetingService);
+    get availableMicrophones(): AudioVideoDevice[] | null;
     get selectedMicrophone(): AudioVideoDevice | null;
-    get availableSpeakers(): AudioVideoDevice[];
+    get availableSpeakers(): AudioVideoDevice[] | null;
     get selectedSpeaker(): AudioVideoDevice | null;
     get isSpeakerSelectionAllowed(): boolean;
     get isMicrophoneSelectionAllowed(): boolean;

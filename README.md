@@ -26,18 +26,20 @@ The design of the SDK emphasizes **simplicity**. Developers can quickly integrat
 - Moderator Controls
 - Waiting Room Support
 - 720p Video Capture
+- Individual stream control: create custom layouts, and request specific remote video streams
 
 ## New Features
-- Individual stream control, create custom layouts, and request specific remote video streams
+- ConnectionMode: ScreenShareOnly or Default
+- Support for 25 video streams i.e., 5x5 gallery view
 
  **Not to be confused with:**
 
 - **BlueJeans WebRTC Embed SDK**: This is an alternate SDK that allows the end user to embed the entire BlueJeans WebRTC Client. As such, this SDK provides an entire user interface, meaning the end user has to write much less code. However, it is also much less customizable. See https://bluejeans.github.io/webrtc-embed-sdk/docs/index.html
 
-## Developer Portal 
+## Developer Portal
 Detailed documentation of SDK at our [developer portal](https://docs.bluejeans.com/Web_Client_SDK/Overview.htm)
 
-## SDK API Documentation 
+## SDK API Documentation
 Detailed documentation of SDK functions is available [here](https://bluejeans.github.io/web-client-sdk)
 
 ## How does it work?

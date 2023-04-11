@@ -1,19 +1,21 @@
 export declare enum AnalyticsEvents {
-    jsError = "jsError",
-    joinedMeeting = "joinedMeeting",
-    closedCaptioning = "closedCaptioning",
-    wrEnabledInMeeting = "wrEnabledInMeeting",
-    wrParticipantApproved = "wrParticipantApproved",
-    wrParticipantDenied = "wrParticipantDenied",
-    wrApprovedAll = "wrApprovedAll",
-    wrDeniedAll = "wrDeniedAll",
-    wrParticipantDemoted = "wrParticipantDemoted",
-    wrRequestDenied = "wrRequestDenied",
-    wrRequestApproved = "wrRequestApproved",
-    wrLandedOnWaitingRoom = "wrLandedOnWaitingRoom",
-    max720pVideoCapture = "max720pVideoCapture",
-    switchMaxVideoResolutionFailed = "switchMaxVideoResolutionFailed",
-    meetingVideoLayoutChanged = "meetingVideoLayoutChanged"
+    jsError = 0,
+    joinedMeeting = 1,
+    closedCaptioning = 2,
+    wrEnabledInMeeting = 3,
+    wrParticipantApproved = 4,
+    wrParticipantDenied = 5,
+    wrApprovedAll = 6,
+    wrDeniedAll = 7,
+    wrParticipantDemoted = 8,
+    wrRequestDenied = 9,
+    wrRequestApproved = 10,
+    wrLandedOnWaitingRoom = 11,
+    max720pVideoCapture = 12,
+    switchMaxVideoResolutionFailed = 13,
+    meetingVideoLayoutChanged = 14,
+    galleryLayoutConfigChanged = 15,
+    connectionModeChanged = 16
 }
 export default class Analytics {
     private tracked;
@@ -29,7 +31,7 @@ export default class Analytics {
     private get disableMixpanelTracking();
     private _track;
     private removePIIInfo;
-    track(eventName: string, eventProperties?: any): void;
-    trackOnce(eventName: string, eventProperties?: any): void;
+    track(eventName: AnalyticsEvents, eventProperties?: any): void;
+    trackOnce(eventName: AnalyticsEvents, eventProperties?: any): void;
     addPersistent(property: any): void;
 }

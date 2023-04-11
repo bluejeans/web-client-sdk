@@ -15,11 +15,11 @@ interface State {
   randomColur : boolean;
 }
 
-@observer 
+@observer
 class CustomLayout extends React.Component<Props,State> {
   obj: { name: string; }[];
   private customLayoutViewModel : CustomLayoutViewModel;
-  
+
   constructor(props: Props) {
     super(props);
     this.customLayoutViewModel = new CustomLayoutViewModel(props.managers);
@@ -53,7 +53,7 @@ class CustomLayout extends React.Component<Props,State> {
             );
           }
         )}
-        <Random onClick={this.setRandomColour}>Randomise</Random>
+        <Random onClick={this.setRandomColour}>{ this.state.randomColur && '✓' }Randomize</Random>
       </CustomContainerDiv>
     );
   }

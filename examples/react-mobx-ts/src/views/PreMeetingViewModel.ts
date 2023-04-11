@@ -1,6 +1,6 @@
 import { observable, action, computed } from "mobx";
 import Managers from "../stores/Managers";
-import { BJNWebClientSDK } from '@bluejeans/web-client-sdk';
+import { BJNWebClientSDK, ConnectionMode } from '@bluejeans/web-client-sdk';
 import AppManager from "../stores/AppManager";
 
 export default class PreMeetingViewModel {
@@ -10,6 +10,7 @@ export default class PreMeetingViewModel {
     @observable meetingID : string = "";
     @observable passcode : string = "";
     @observable joinName : string = "";
+    @observable joinScreenSharingOnly : boolean = false;
 
     constructor(managers : Managers) {
         this.webrtcSDK = managers.webrtcSDK;
@@ -44,7 +45,16 @@ export default class PreMeetingViewModel {
     }
 
     @action.bound joinMeeting() : void {
-        this.appManager.joinMeeting({meetingID: this.meetingID, passcode: this.passcode, joinName: this.joinName});
+        this.appManager.joinMeeting({
+            meetingID: this.meetingID,
+            passcode: this.passcode,
+            joinName: this.joinName,
+            connectionMode: this.joinScreenSharingOnly ? ConnectionMode.ScreenShareOnly : ConnectionMode.Default
+        });
+    }
+
+    @action.bound toggleScreenSharingOnly() : void {
+        this.joinScreenSharingOnly = !this.joinScreenSharingOnly
     }
 
 

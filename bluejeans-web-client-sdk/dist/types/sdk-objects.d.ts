@@ -1,3 +1,4 @@
+import { ErrorInfo } from "./ErrorHandler";
 export declare enum VideoLayout {
     SPEAKER = "SPEAKER",
     PEOPLE = "PEOPLE",
@@ -111,6 +112,7 @@ export interface BlueJeansSDKInitParams {
     saveLogsToLocalStorage?: boolean;
     playIVRs?: boolean;
     appMetaData?: AppMetaData;
+    galleryLayoutConfiguration?: GalleryLayoutConfiguration;
 }
 export interface AppMetaData {
     appName: string;
@@ -179,4 +181,21 @@ export declare enum CallQuality {
     three = 3,
     four = 4,
     five = 5
+}
+export declare enum GalleryLayoutConfiguration {
+    fiveByFive = 25,
+    threeByThree = 9
+}
+export declare enum ConnectionMode {
+    Default = "Default",
+    ScreenShareOnly = "ScreenShareOnly"
+}
+export declare enum SwitchConnectionModeResponseCode {
+    SWITCH_CONNECTION_MODE_SUCCESS = "SWITCH_CONNECTION_MODE_SUCCESS",
+    SWITCH_CONNECTION_MODE_FAILURE = "SWITCH_CONNECTION_MODE_FAILURE",
+    ERROR_OUT_OF_MEETING = "ERROR_OUT_OF_MEETING"
+}
+export interface SwitchConnectionModeResponse extends AsyncAPIResponse {
+    error?: ErrorInfo;
+    code: SwitchConnectionModeResponseCode;
 }
