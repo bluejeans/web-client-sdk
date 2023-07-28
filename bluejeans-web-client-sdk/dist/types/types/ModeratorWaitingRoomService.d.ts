@@ -1,4 +1,4 @@
-import { AsyncAPIResponse } from "../sdk-objects";
+import { AsyncAPIResponse } from '../sdk-objects';
 export interface AdmitAllWrResponse {
     error?: object;
     code: AdmitAllWrResponseCode;

@@ -1,0 +1,1684 @@
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+
+/*!
+ *
+ * Copyright 2009-2017 Kris Kowal under the terms of the MIT
+ * license found at https://github.com/kriskowal/q/blob/v1/LICENSE
+ *
+ * With parts by Tyler Close
+ * Copyright 2007-2009 Tyler Close under the terms of the MIT X license found
+ * at http://www.opensource.org/licenses/mit-license.html
+ * Forked at ref_send.js version: 2009-05-11
+ *
+ * With parts by Mark Miller
+ * Copyright (C) 2011 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+
+/*!
+ * The buffer module from node.js, for the browser.
+ *
+ * @author   Feross Aboukhadijeh <https://feross.org>
+ * @license  MIT
+ */
+
+/*!
+ * URI.js - Mutating URLs
+ *
+ * Version: 1.19.11
+ *
+ * Author: Rodney Rehm
+ * Web: http://medialize.github.io/URI.js/
+ *
+ * Licensed under
+ *   MIT License http://www.opensource.org/licenses/mit-license
+ *
+ */
+
+/*!
+ * URI.js - Mutating URLs
+ * IPv6 Support
+ *
+ * Version: 1.19.11
+ *
+ * Author: Rodney Rehm
+ * Web: http://medialize.github.io/URI.js/
+ *
+ * Licensed under
+ *   MIT License http://www.opensource.org/licenses/mit-license
+ *
+ */
+
+/*!
+ * URI.js - Mutating URLs
+ * Second Level Domain (SLD) Support
+ *
+ * Version: 1.19.11
+ *
+ * Author: Rodney Rehm
+ * Web: http://medialize.github.io/URI.js/
+ *
+ * Licensed under
+ *   MIT License http://www.opensource.org/licenses/mit-license
+ *
+ */
+
+/*!
+ * URI.js - Mutating URLs
+ * URI Template Support - http://tools.ietf.org/html/rfc6570
+ *
+ * Version: 1.19.11
+ *
+ * Author: Rodney Rehm
+ * Web: http://medialize.github.io/URI.js/
+ *
+ * Licensed under
+ *   MIT License http://www.opensource.org/licenses/mit-license
+ *
+ */
+
+/*! *****************************************************************************
+    Copyright (c) Microsoft Corporation.
+
+    Permission to use, copy, modify, and/or distribute this software for any
+    purpose with or without fee is hereby granted.
+
+    THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+    REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+    AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+    INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+    LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+    OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+    PERFORMANCE OF THIS SOFTWARE.
+    ***************************************************************************** */
+
+/*! *****************************************************************************
+Copyright (C) Microsoft. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+
+/*! ../../../Lib/TypedJSONUtils */
+
+/*! ../../../common/Lib/logger */
+
+/*! ../../../common/stores/ScreenShareStatus */
+
+/*! ../../../common/stores/VideoStreamInterfaces */
+
+/*! ../../../common/stores/VirtualBackgroundAndBlurStore */
+
+/*! ../../../common/util/BrowserDetails */
+
+/*! ../../../common/util/Constants */
+
+/*! ../../../common/util/utils */
+
+/*! ../../../stores/WaitingRoomStore */
+
+/*! ../../common/Lib/BaseEvents */
+
+/*! ../../common/Lib/DeviceHelpers */
+
+/*! ../../common/Lib/InitializerHelper */
+
+/*! ../../common/Lib/MobXUtils */
+
+/*! ../../common/Lib/logger */
+
+/*! ../../common/Lib/typeutils */
+
+/*! ../../common/services/EventService */
+
+/*! ../../common/services/MeetingService */
+
+/*! ../../common/services/NetworkService */
+
+/*! ../../common/stores/AVDevice */
+
+/*! ../../common/stores/AVDeviceStore */
+
+/*! ../../common/stores/AnalyticsStore */
+
+/*! ../../common/stores/AssistanceStore */
+
+/*! ../../common/stores/BaseStore */
+
+/*! ../../common/stores/BreakoutSessionStore */
+
+/*! ../../common/stores/CallConnectionStore */
+
+/*! ../../common/stores/ChatStore */
+
+/*! ../../common/stores/ClientControlledLayoutOrderingStore */
+
+/*! ../../common/stores/ClientRosterPropertiesStore */
+
+/*! ../../common/stores/ClosedCaptioningStore */
+
+/*! ../../common/stores/CollabBoardStore */
+
+/*! ../../common/stores/ConsentPersistentStore */
+
+/*! ../../common/stores/ConsentStore */
+
+/*! ../../common/stores/Container */
+
+/*! ../../common/stores/DataAssetManagementStore */
+
+/*! ../../common/stores/DataExchangeStore */
+
+/*! ../../common/stores/DominantSpeakerStore */
+
+/*! ../../common/stores/FbLiveStore */
+
+/*! ../../common/stores/FileSharingStore */
+
+/*! ../../common/stores/GracefulDegradationStore */
+
+/*! ../../common/stores/ImageCaptureStore */
+
+/*! ../../common/stores/ImagePersistentStore */
+
+/*! ../../common/stores/InMeetingMicrophoneLevelStore */
+
+/*! ../../common/stores/IndividualStreamControlStore */
+
+/*! ../../common/stores/JoinModeStore */
+
+/*! ../../common/stores/LiveMeetingStateStore */
+
+/*! ../../common/stores/LocalPinningStore */
+
+/*! ../../common/stores/LowerThirdStore */
+
+/*! ../../common/stores/MeetingAssistantStore */
+
+/*! ../../common/stores/MeetingJoinStore */
+
+/*! ../../common/stores/MeetingReactionsStore */
+
+/*! ../../common/stores/MeetingSessionStore */
+
+/*! ../../common/stores/MeetingSettingStore */
+
+/*! ../../common/stores/MeetingTransferStore */
+
+/*! ../../common/stores/ModeratorControlStore */
+
+/*! ../../common/stores/ModeratorEscalationStore */
+
+/*! ../../common/stores/MuteControlStore */
+
+/*! ../../common/stores/MuteStore */
+
+/*! ../../common/stores/OpenBreakoutStore */
+
+/*! ../../common/stores/PSTNStore */
+
+/*! ../../common/stores/PersistentDAMStore */
+
+/*! ../../common/stores/PictureInPictureStore */
+
+/*! ../../common/stores/PollingStore */
+
+/*! ../../common/stores/PrivateChatStore */
+
+/*! ../../common/stores/RaiseHandStore */
+
+/*! ../../common/stores/RecentSpeakerStore */
+
+/*! ../../common/stores/RecordingStore */
+
+/*! ../../common/stores/RoomPairingStore */
+
+/*! ../../common/stores/RosterStore */
+
+/*! ../../common/stores/ScreenShareStatus */
+
+/*! ../../common/stores/SecureMeetingStore */
+
+/*! ../../common/stores/SequinAudioVideoParticipantStore */
+
+/*! ../../common/stores/SequinVideoParticipantStore */
+
+/*! ../../common/stores/ServerLayoutStore */
+
+/*! ../../common/stores/SmsStore */
+
+/*! ../../common/stores/SpotLightStore */
+
+/*! ../../common/stores/StreamDetailsStore */
+
+/*! ../../common/stores/StreamEnablementStore */
+
+/*! ../../common/stores/TokenExchangeStore */
+
+/*! ../../common/stores/UserAuthStore */
+
+/*! ../../common/stores/VideoAbsenceStore */
+
+/*! ../../common/stores/VideoShareStore */
+
+/*! ../../common/stores/VideoStreamInterfaces */
+
+/*! ../../common/stores/VirtualBackgroundAndBlurStore */
+
+/*! ../../common/stores/WaitingRoomStore */
+
+/*! ../../common/stores/WriteBackStore */
+
+/*! ../../common/util/BrowserDetails */
+
+/*! ../../common/util/Constants */
+
+/*! ../../common/util/utils */
+
+/*! ../Lib/BaseEvents */
+
+/*! ../Lib/InitializerHelper */
+
+/*! ../Lib/LocalStorageUtil */
+
+/*! ../Lib/MobXUtils */
+
+/*! ../Lib/Retrier */
+
+/*! ../Lib/Socket */
+
+/*! ../Lib/TypedJSONUtils */
+
+/*! ../Lib/VideoStreamConstraints */
+
+/*! ../Lib/VideoStreamInfo */
+
+/*! ../Lib/logger */
+
+/*! ../Lib/typeutils */
+
+/*! ../SequinAudio */
+
+/*! ../SequinVideo */
+
+/*! ../common/Lib/LocalStorageUtil */
+
+/*! ../common/Lib/MobXUtils */
+
+/*! ../common/Lib/logger */
+
+/*! ../common/Lib/typeutils */
+
+/*! ../common/constants/MediaAnalyticsEvents */
+
+/*! ../common/services/EventService */
+
+/*! ../common/services/EventServiceMessages/Receive/MeetingAssetMessage */
+
+/*! ../common/services/MeetingService */
+
+/*! ../common/services/NetworkService */
+
+/*! ../common/stores/AVDevice */
+
+/*! ../common/stores/AVDeviceStore */
+
+/*! ../common/stores/AnalyticsStore */
+
+/*! ../common/stores/AssistanceStore */
+
+/*! ../common/stores/BaseStore */
+
+/*! ../common/stores/BreakoutSessionStore */
+
+/*! ../common/stores/CallConnectionStore */
+
+/*! ../common/stores/ChatMessage */
+
+/*! ../common/stores/ChatStore */
+
+/*! ../common/stores/ClientRosterPropertiesStore */
+
+/*! ../common/stores/ClosedCaptioningStore */
+
+/*! ../common/stores/CollabBoardStore */
+
+/*! ../common/stores/ConsentPersistentStore */
+
+/*! ../common/stores/ConsentStore */
+
+/*! ../common/stores/Container */
+
+/*! ../common/stores/DataAssetManagementStore */
+
+/*! ../common/stores/DataExchangeStore */
+
+/*! ../common/stores/DominantSpeakerStore */
+
+/*! ../common/stores/FbLiveStore */
+
+/*! ../common/stores/FeedbackStore */
+
+/*! ../common/stores/FileSharingStore */
+
+/*! ../common/stores/GracefulDegradationStore */
+
+/*! ../common/stores/ImageCaptureStore */
+
+/*! ../common/stores/ImagePersistentStore */
+
+/*! ../common/stores/InMeetingMicrophoneLevelStore */
+
+/*! ../common/stores/IndividualStreamControlStore */
+
+/*! ../common/stores/JoinModeStore */
+
+/*! ../common/stores/LiveMeetingStateStore */
+
+/*! ../common/stores/LocalPinningStore */
+
+/*! ../common/stores/LowerThirdStore */
+
+/*! ../common/stores/MeetingAssistantStore */
+
+/*! ../common/stores/MeetingConnectionStateStore */
+
+/*! ../common/stores/MeetingJoinStore */
+
+/*! ../common/stores/MeetingReactionsStore */
+
+/*! ../common/stores/MeetingSessionStore */
+
+/*! ../common/stores/MeetingSettingStore */
+
+/*! ../common/stores/MeetingTransferStore */
+
+/*! ../common/stores/ModeratorControlStore */
+
+/*! ../common/stores/ModeratorEscalationStore */
+
+/*! ../common/stores/MuteControlStore */
+
+/*! ../common/stores/MuteStore */
+
+/*! ../common/stores/OpenBreakoutStore */
+
+/*! ../common/stores/PSTNStore */
+
+/*! ../common/stores/PersistentDAMStore */
+
+/*! ../common/stores/PictureInPictureStore */
+
+/*! ../common/stores/PollingStore */
+
+/*! ../common/stores/PrivateChatStore */
+
+/*! ../common/stores/RaiseHandStore */
+
+/*! ../common/stores/RecordingStore */
+
+/*! ../common/stores/RoomPairingStore */
+
+/*! ../common/stores/RosterStore */
+
+/*! ../common/stores/ScreenShareStatus */
+
+/*! ../common/stores/SecureMeetingStore */
+
+/*! ../common/stores/ServerLayoutStore */
+
+/*! ../common/stores/SmsStore */
+
+/*! ../common/stores/SpotLightStore */
+
+/*! ../common/stores/StreamDetailsStore */
+
+/*! ../common/stores/TokenExchangeStore */
+
+/*! ../common/stores/UserAuthStore */
+
+/*! ../common/stores/VideoAbsenceStore */
+
+/*! ../common/stores/VideoShareStore */
+
+/*! ../common/stores/VideoStreamInterfaces */
+
+/*! ../common/stores/VirtualBackgroundAndBlurStore */
+
+/*! ../common/stores/WaitingRoomStore */
+
+/*! ../common/stores/WriteBackStore */
+
+/*! ../common/util/BrowserDetails */
+
+/*! ../common/util/Constants */
+
+/*! ../common/util/utils */
+
+/*! ../constants/FileShareControlsAtrributeDefaults */
+
+/*! ../constants/MediaAnalyticsEvents */
+
+/*! ../external/BrowserDetector */
+
+/*! ../images/audio-off.svg */
+
+/*! ../images/audio-on.svg */
+
+/*! ../images/mod-audio-off.svg */
+
+/*! ../images/network-alert-icon.svg */
+
+/*! ../images/phone-audio.svg */
+
+/*! ../layouts/styles/StylesConstants */
+
+/*! ../services/EventServiceMessages/Receive/BosModeratorBroadcastMessage */
+
+/*! ../services/EventServiceMessages/Receive/ChatMessageMessage */
+
+/*! ../services/EventServiceMessages/Receive/ChatPinnedMessage */
+
+/*! ../services/EventServiceMessages/Receive/ChatScrollbackMessage */
+
+/*! ../services/EventServiceMessages/Receive/DeleteChatHistory */
+
+/*! ../services/EventServiceMessages/Receive/DeleteChatHistoryOnReconnect */
+
+/*! ../services/EventServiceMessages/Receive/DialoutStatusMessage */
+
+/*! ../services/EventServiceMessages/Receive/DominantSpeakerUpdateMessage */
+
+/*! ../services/EventServiceMessages/Receive/GuidAssignedMessage */
+
+/*! ../services/EventServiceMessages/Receive/IncomingPrivateChatMessage */
+
+/*! ../services/EventServiceMessages/Receive/LiveMeetingUpdateMessage */
+
+/*! ../services/EventServiceMessages/Receive/MeetingAssetMessage */
+
+/*! ../services/EventServiceMessages/Receive/MeetingDisconnectUpdateMessage */
+
+/*! ../services/EventServiceMessages/Receive/MeetingTransferMessage */
+
+/*! ../services/EventServiceMessages/Receive/MoveMeetingMessages */
+
+/*! ../services/EventServiceMessages/Receive/OpenBreakoutMessage */
+
+/*! ../services/EventServiceMessages/Receive/PollingMessage */
+
+/*! ../services/EventServiceMessages/Receive/ReactionNotificationMessage */
+
+/*! ../services/EventServiceMessages/Receive/RosterUpdateMessage */
+
+/*! ../services/EventServiceMessages/Receive/WaitingRoomMessages */
+
+/*! ../services/WebRTC/RTCManager */
+
+/*! ../stores/BaseStore */
+
+/*! ../stores/JoinModeStore */
+
+/*! ../stores/MediaSourceStore */
+
+/*! ../stores/MeetingConnectionStateStore */
+
+/*! ../stores/MeetingTransferStore */
+
+/*! ../stores/Participant */
+
+/*! ../stores/PermissionStore */
+
+/*! ../stores/PreMeetingStore */
+
+/*! ../stores/ServerLayoutStore */
+
+/*! ../util/BrowserDetails */
+
+/*! ../util/BrowserDetector */
+
+/*! ../util/Constants */
+
+/*! ../util/MeetingJoinHelper */
+
+/*! ../util/utils */
+
+/*! ../webrtc/styles/Common */
+
+/*! ./../../common/stores/CallConnectionStore */
+
+/*! ./../Lib/RosterConverter */
+
+/*! ./../common/stores/ClientControlledLayoutOrderingStore */
+
+/*! ./../common/stores/SequinAudioVideoParticipantStore */
+
+/*! ./AVDevice */
+
+/*! ./AudioStreamStore */
+
+/*! ./BaseStore */
+
+/*! ./BreakoutSessionStore */
+
+/*! ./BrowserDetails */
+
+/*! ./BrowserDetector */
+
+/*! ./BrowserIndexDbStore */
+
+/*! ./CallConnectionStore */
+
+/*! ./CaptureActivationStore */
+
+/*! ./ChatMessage */
+
+/*! ./ChatMessageMessage */
+
+/*! ./CommonUtil */
+
+/*! ./Constants */
+
+/*! ./DataExchangeStore */
+
+/*! ./DummyMediaStore */
+
+/*! ./EventServiceMessages/Receive/GuidAssignedMessage */
+
+/*! ./ImageCaptureStore */
+
+/*! ./JoinModeStore */
+
+/*! ./LayoutHelper */
+
+/*! ./LogUploadStore */
+
+/*! ./MediaSource */
+
+/*! ./MediaStore */
+
+/*! ./MediaStreamEnablement */
+
+/*! ./MeetingAssetResourceMessage */
+
+/*! ./MeetingSessionStore */
+
+/*! ./MeetingTransferStore */
+
+/*! ./MultiVideoLayoutViewModel */
+
+/*! ./SequinActivePresenceViewModel */
+
+/*! ./SequinAudioViewModel */
+
+/*! ./SequinConstantPresenceViewModel */
+
+/*! ./SequinContinuousPresenceViewModel */
+
+/*! ./SequinFilmstripLayoutViewModel */
+
+/*! ./SequinVideoViewModel */
+
+/*! ./ServerLayoutStore */
+
+/*! ./StylesConstants */
+
+/*! ./VideoStreamConstraints */
+
+/*! ./VideoStreamInfo */
+
+/*! ./VideoStreamsManager */
+
+/*! ./VideoViewStore */
+
+/*! ./WaitingRoomStore */
+
+/*! ./images/qualityIcon/network-excellent-contrast.svg */
+
+/*! ./images/qualityIcon/network-excellent.svg */
+
+/*! ./images/qualityIcon/network-good-contrast.svg */
+
+/*! ./images/qualityIcon/network-good.svg */
+
+/*! ./images/qualityIcon/network-normal-contrast.svg */
+
+/*! ./images/qualityIcon/network-normal.svg */
+
+/*! ./images/qualityIcon/network-poor-contrast.svg */
+
+/*! ./images/qualityIcon/network-poor.svg */
+
+/*! ./layouts/SequinActivePresenceLayout */
+
+/*! ./layouts/SequinConstantPresenceLayout */
+
+/*! ./layouts/SequinContinuousPresenceLayout */
+
+/*! ./layouts/SequinFilmstripLayout */
+
+/*! ./logger */
+
+/*! ./stores/AudioStreamStore */
+
+/*! ./stores/CaptureActivationStore */
+
+/*! ./stores/CurrentMeetingStore */
+
+/*! ./stores/MediaStore */
+
+/*! ./stores/PermissionStore */
+
+/*! ./stores/RTPMediaStatusStore */
+
+/*! ./stores/ScreenShareStore */
+
+/*! ./stores/VideoViewStore */
+
+/*! ./stores/mainStore */
+
+/*! ./styles/ActivePresenceStyles */
+
+/*! ./styles/ConstantPresenceStyles */
+
+/*! ./styles/ContinuousPresenceStyles */
+
+/*! ./styles/FilmstripLayoutStyles */
+
+/*! ./styles/MultiVideoLayoutStyles */
+
+/*! ./styles/SequinVideoStyles */
+
+/*! ./typeutils */
+
+/*! ./videoStreamConfigs/ConstantPresence5x5VideoStreamConfig */
+
+/*! ./videoStreamConfigs/ConstantPresenceVideoStreamConfig */
+
+/*! ./videoStreamConfigs/ContinuousPresenceVideoStreamConfig */
+
+/*! ./videoStreamConfigs/CurrentSpeakerVideoStreamConfig */
+
+/*! ./videoStreamConfigs/FilmStripVideoStreamConfig */
+
+/*! @bluejeans/bjn-core-webrtc */
+
+/*! @bluejeans/bjn-webrtc-sdk */
+
+/*! @bluejeans/bluejeans-api-client */
+
+/*! BrowserDetector */
+
+/*! For license information please see webrtcSdk.js.LICENSE.txt */
+
+/*! apisauce */
+
+/*! axios */
+
+/*! encrypt-storage */
+
+/*! event-pubsub */
+
+/*! exports provided: BrowserDetector, default */
+
+/*! https://mths.be/punycode v1.4.0 by @mathias */
+
+/*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
+
+/*! lil-uuid - v0.1 - MIT License - https://github.com/lil-js/uuid */
+
+/*! lodash */
+
+/*! mobx */
+
+/*! mobx-react */
+
+/*! no static exports found */
+
+/*! platform/constants/PlatformAttributes */
+
+/*! platform/stores/CurrentMeetingStore */
+
+/*! platform/stores/IndividualStreamControlFacade */
+
+/*! platform/stores/MediaSource */
+
+/*! platform/stores/PlatformConstants */
+
+/*! platform/stores/ProxyStore */
+
+/*! platform/stores/RTPMediaStatusStore */
+
+/*! platform/stores/ScreenShareStore */
+
+/*! platform/stores/VideoViewStore */
+
+/*! pubnub */
+
+/*! q */
+
+/*! react */
+
+/*! reflect-metadata */
+
+/*! safe-buffer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
+
+/*! styled-components */
+
+/*! subscribableevent */
+
+/*! typedjson */
+
+/*! uuid/v1 */
+
+/*! winston */
+
+/*!********************!*\
+  !*** external "q" ***!
+  \********************/
+
+/*!*********************!*\
+  !*** ./src/main.ts ***!
+  \*********************/
+
+/*!***********************!*\
+  !*** external "mobx" ***!
+  \***********************/
+
+/*!************************!*\
+  !*** external "axios" ***!
+  \************************/
+
+/*!************************!*\
+  !*** external "react" ***!
+  \************************/
+
+/*!*************************!*\
+  !*** external "lodash" ***!
+  \*************************/
+
+/*!*************************!*\
+  !*** external "pubnub" ***!
+  \*************************/
+
+/*!**************************!*\
+  !*** ./src/Constants.ts ***!
+  \**************************/
+
+/*!**************************!*\
+  !*** external "uuid/v1" ***!
+  \**************************/
+
+/*!**************************!*\
+  !*** external "winston" ***!
+  \**************************/
+
+/*!***************************!*\
+  !*** external "apisauce" ***!
+  \***************************/
+
+/*!****************************!*\
+  !*** external "typedjson" ***!
+  \****************************/
+
+/*!*****************************!*\
+  !*** ./src/SequinAudio.tsx ***!
+  \*****************************/
+
+/*!*****************************!*\
+  !*** ./src/SequinVideo.tsx ***!
+  \*****************************/
+
+/*!*****************************!*\
+  !*** external "mobx-react" ***!
+  \*****************************/
+
+/*!*******************************!*\
+  !*** external "event-pubsub" ***!
+  \*******************************/
+
+/*!*********************************!*\
+  !*** ./src/images/audio-on.svg ***!
+  \*********************************/
+
+/*!**********************************!*\
+  !*** ./src/MultiVideoLayout.tsx ***!
+  \**********************************/
+
+/*!**********************************!*\
+  !*** ./src/images/audio-off.svg ***!
+  \**********************************/
+
+/*!**********************************!*\
+  !*** external "encrypt-storage" ***!
+  \**********************************/
+
+/*!***********************************!*\
+  !*** ./src/layouts/CommonUtil.ts ***!
+  \***********************************/
+
+/*!***********************************!*\
+  !*** external "reflect-metadata" ***!
+  \***********************************/
+
+/*!************************************!*\
+  !*** ./src/VideoStreamsManager.ts ***!
+  \************************************/
+
+/*!************************************!*\
+  !*** ./src/images/phone-audio.svg ***!
+  \************************************/
+
+/*!************************************!*\
+  !*** external "styled-components" ***!
+  \************************************/
+
+/*!************************************!*\
+  !*** external "subscribableevent" ***!
+  \************************************/
+
+/*!*************************************!*\
+  !*** ./src/SequinAudioViewModel.ts ***!
+  \*************************************/
+
+/*!*************************************!*\
+  !*** ./src/SequinVideoViewModel.ts ***!
+  \*************************************/
+
+/*!*************************************!*\
+  !*** ./src/webrtc/styles/Common.ts ***!
+  \*************************************/
+
+/*!**************************************!*\
+  !*** ./src/images/mod-audio-off.svg ***!
+  \**************************************/
+
+/*!*****************************************!*\
+  !*** ./src/styles/SequinVideoStyles.ts ***!
+  \*****************************************/
+
+/*!******************************************!*\
+  !*** ./src/MultiVideoLayoutViewModel.ts ***!
+  \******************************************/
+
+/*!*******************************************!*\
+  !*** ./src/images/network-alert-icon.svg ***!
+  \*******************************************/
+
+/*!********************************************!*\
+  !*** ./src/layouts/styles/LayoutHelper.ts ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** external "@bluejeans/bjn-webrtc-sdk" ***!
+  \********************************************/
+
+/*!*********************************************!*\
+  !*** external "@bluejeans/bjn-core-webrtc" ***!
+  \*********************************************/
+
+/*!**********************************************!*\
+  !*** ./src/styles/MultiVideoLayoutStyles.ts ***!
+  \**********************************************/
+
+/*!***********************************************!*\
+  !*** ./src/layouts/SequinFilmstripLayout.tsx ***!
+  \***********************************************/
+
+/*!***********************************************!*\
+  !*** ./src/layouts/styles/StylesConstants.ts ***!
+  \***********************************************/
+
+/*!*************************************************!*\
+  !*** ./src/images/qualityIcon/network-good.svg ***!
+  \*************************************************/
+
+/*!*************************************************!*\
+  !*** ./src/images/qualityIcon/network-poor.svg ***!
+  \*************************************************/
+
+/*!**************************************************!*\
+  !*** external "@bluejeans/bluejeans-api-client" ***!
+  \**************************************************/
+
+/*!***************************************************!*\
+  !*** ./src/images/qualityIcon/network-normal.svg ***!
+  \***************************************************/
+
+/*!***************************************************!*\
+  !*** ./src/videoStreamConfigs/VideoStreamInfo.ts ***!
+  \***************************************************/
+
+/*!****************************************************!*\
+  !*** ./src/layouts/SequinActivePresenceLayout.tsx ***!
+  \****************************************************/
+
+/*!****************************************************!*\
+  !*** ./src/layouts/styles/ActivePresenceStyles.ts ***!
+  \****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./src/layouts/styles/FilmstripLayoutStyles.ts ***!
+  \*****************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/images/qualityIcon/network-excellent.svg ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/layouts/SequinActivePresenceViewModel.ts ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/layouts/SequinConstantPresenceLayout.tsx ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./src/layouts/styles/ConstantPresenceStyles.ts ***!
+  \******************************************************/
+
+/*!*******************************************************!*\
+  !*** ./src/layouts/SequinFilmstripLayoutViewModel.ts ***!
+  \*******************************************************/
+
+/*!********************************************************!*\
+  !*** ./src/layouts/SequinConstantPresenceViewModel.ts ***!
+  \********************************************************/
+
+/*!********************************************************!*\
+  !*** ./src/layouts/SequinContinuousPresenceLayout.tsx ***!
+  \********************************************************/
+
+/*!********************************************************!*\
+  !*** ./src/layouts/styles/ContinuousPresenceStyles.ts ***!
+  \********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./src/images/qualityIcon/network-good-contrast.svg ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./src/images/qualityIcon/network-poor-contrast.svg ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./src/layouts/SequinContinuousPresenceViewModel.ts ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./src/videoStreamConfigs/VideoStreamConstraints.ts ***!
+  \**********************************************************/
+
+/*!************************************************************!*\
+  !*** ./src/images/qualityIcon/network-normal-contrast.svg ***!
+  \************************************************************/
+
+/*!**************************************************************!*\
+  !*** ./src/videoStreamConfigs/FilmStripVideoStreamConfig.ts ***!
+  \**************************************************************/
+
+/*!***************************************************************!*\
+  !*** ./src/images/qualityIcon/network-excellent-contrast.svg ***!
+  \***************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./src/videoStreamConfigs/CurrentSpeakerVideoStreamConfig.ts ***!
+  \*******************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ./src/videoStreamConfigs/ConstantPresenceVideoStreamConfig.ts ***!
+  \*********************************************************************/
+
+/*!***********************************************************************!*\
+  !*** ./src/videoStreamConfigs/ContinuousPresenceVideoStreamConfig.ts ***!
+  \***********************************************************************/
+
+/*!************************************************************************!*\
+  !*** ./src/videoStreamConfigs/ConstantPresence5x5VideoStreamConfig.ts ***!
+  \************************************************************************/
+
+/*!**************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/webrtc/bjn-core.ts ***!
+  \**************************************************************************************************/
+
+/*!****************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/Lib/Socket.ts ***!
+  \****************************************************************************************************/
+
+/*!****************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/Lib/logger.ts ***!
+  \****************************************************************************************************/
+
+/*!****************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/util/utils.ts ***!
+  \****************************************************************************************************/
+
+/*!*****************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/Lib/Retrier.ts ***!
+  \*****************************************************************************************************/
+
+/*!*******************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/Lib/MobXUtils.ts ***!
+  \*******************************************************************************************************/
+
+/*!*******************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/Lib/typeutils.ts ***!
+  \*******************************************************************************************************/
+
+/*!********************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/Lib/BaseEvents.ts ***!
+  \********************************************************************************************************/
+
+/*!********************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/util/Constants.ts ***!
+  \********************************************************************************************************/
+
+/*!*********************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/AVDevice.ts ***!
+  \*********************************************************************************************************/
+
+/*!*********************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/SmsStore.ts ***!
+  \*********************************************************************************************************/
+
+/*!**********************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/BaseStore.ts ***!
+  \**********************************************************************************************************/
+
+/*!**********************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/ChatStore.ts ***!
+  \**********************************************************************************************************/
+
+/*!**********************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/Container.ts ***!
+  \**********************************************************************************************************/
+
+/*!**********************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/MuteStore.ts ***!
+  \**********************************************************************************************************/
+
+/*!**********************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/PSTNStore.ts ***!
+  \**********************************************************************************************************/
+
+/*!**********************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/webrtc/stores/mainStore.ts ***!
+  \**********************************************************************************************************/
+
+/*!***********************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/Lib/DeviceHelpers.ts ***!
+  \***********************************************************************************************************/
+
+/*!***********************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/webrtc/stores/MediaStore.ts ***!
+  \***********************************************************************************************************/
+
+/*!***********************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/webrtc/stores/ProxyStore.ts ***!
+  \***********************************************************************************************************/
+
+/*!************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/Lib/TypedJSONUtils.ts ***!
+  \************************************************************************************************************/
+
+/*!************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/ChatMessage.ts ***!
+  \************************************************************************************************************/
+
+/*!************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/FbLiveStore.ts ***!
+  \************************************************************************************************************/
+
+/*!************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/Participant.ts ***!
+  \************************************************************************************************************/
+
+/*!************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/RosterStore.ts ***!
+  \************************************************************************************************************/
+
+/*!************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/webrtc/stores/MediaSource.ts ***!
+  \************************************************************************************************************/
+
+/*!*************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/Lib/RosterConverter.ts ***!
+  \*************************************************************************************************************/
+
+/*!*************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/Lib/VideoStreamInfo.ts ***!
+  \*************************************************************************************************************/
+
+/*!*************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/ConsentStore.ts ***!
+  \*************************************************************************************************************/
+
+/*!*************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/PollingStore.ts ***!
+  \*************************************************************************************************************/
+
+/*!*************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/util/BrowserDetails.ts ***!
+  \*************************************************************************************************************/
+
+/*!**************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/Lib/LocalStorageUtil.ts ***!
+  \**************************************************************************************************************/
+
+/*!**************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/AVDeviceStore.ts ***!
+  \**************************************************************************************************************/
+
+/*!**************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/FeedbackStore.ts ***!
+  \**************************************************************************************************************/
+
+/*!**************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/JoinModeStore.ts ***!
+  \**************************************************************************************************************/
+
+/*!**************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/UserAuthStore.ts ***!
+  \**************************************************************************************************************/
+
+/*!**************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/util/BrowserDetector.js ***!
+  \**************************************************************************************************************/
+
+/*!***************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/Lib/InitializerHelper.ts ***!
+  \***************************************************************************************************************/
+
+/*!***************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/services/EventService.ts ***!
+  \***************************************************************************************************************/
+
+/*!***************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/AnalyticsStore.ts ***!
+  \***************************************************************************************************************/
+
+/*!***************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/RaiseHandStore.ts ***!
+  \***************************************************************************************************************/
+
+/*!***************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/RecordingStore.ts ***!
+  \***************************************************************************************************************/
+
+/*!***************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/SpotLightStore.ts ***!
+  \***************************************************************************************************************/
+
+/*!***************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/WriteBackStore.ts ***!
+  \***************************************************************************************************************/
+
+/*!***************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/webrtc/stores/LogUploadStore.ts ***!
+  \***************************************************************************************************************/
+
+/*!***************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/webrtc/stores/VideoViewStore.ts ***!
+  \***************************************************************************************************************/
+
+/*!****************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/AssistanceStore.ts ***!
+  \****************************************************************************************************************/
+
+/*!****************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/LowerThirdStore.ts ***!
+  \****************************************************************************************************************/
+
+/*!****************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/PreMeetingStore.ts ***!
+  \****************************************************************************************************************/
+
+/*!****************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/VideoShareStore.ts ***!
+  \****************************************************************************************************************/
+
+/*!****************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/util/MeetingJoinHelper.ts ***!
+  \****************************************************************************************************************/
+
+/*!****************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/webrtc/stores/DummyMediaStore.ts ***!
+  \****************************************************************************************************************/
+
+/*!****************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/webrtc/stores/PermissionStore.ts ***!
+  \****************************************************************************************************************/
+
+/*!*****************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/services/MeetingService.ts ***!
+  \*****************************************************************************************************************/
+
+/*!*****************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/services/NetworkService.ts ***!
+  \*****************************************************************************************************************/
+
+/*!*****************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/CollabBoardStore.ts ***!
+  \*****************************************************************************************************************/
+
+/*!*****************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/FileSharingStore.ts ***!
+  \*****************************************************************************************************************/
+
+/*!*****************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/MeetingJoinStore.ts ***!
+  \*****************************************************************************************************************/
+
+/*!*****************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/MuteControlStore.ts ***!
+  \*****************************************************************************************************************/
+
+/*!*****************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/PrivateChatStore.ts ***!
+  \*****************************************************************************************************************/
+
+/*!*****************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/RoomPairingStore.ts ***!
+  \*****************************************************************************************************************/
+
+/*!*****************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/WaitingRoomStore.ts ***!
+  \*****************************************************************************************************************/
+
+/*!*****************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/webrtc/stores/AudioStreamStore.ts ***!
+  \*****************************************************************************************************************/
+
+/*!*****************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/webrtc/stores/MediaSourceStore.ts ***!
+  \*****************************************************************************************************************/
+
+/*!*****************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/webrtc/stores/ScreenShareStore.ts ***!
+  \*****************************************************************************************************************/
+
+/*!******************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/DataExchangeStore.ts ***!
+  \******************************************************************************************************************/
+
+/*!******************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/ImageCaptureStore.ts ***!
+  \******************************************************************************************************************/
+
+/*!******************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/LocalPinningStore.ts ***!
+  \******************************************************************************************************************/
+
+/*!******************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/OpenBreakoutStore.ts ***!
+  \******************************************************************************************************************/
+
+/*!******************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/ScreenShareStatus.ts ***!
+  \******************************************************************************************************************/
+
+/*!******************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/ServerLayoutStore.ts ***!
+  \******************************************************************************************************************/
+
+/*!******************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/VideoAbsenceStore.ts ***!
+  \******************************************************************************************************************/
+
+/*!******************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/webrtc/external/BrowserDetector.js ***!
+  \******************************************************************************************************************/
+
+/*!******************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/webrtc/stores/PlatformConstants.ts ***!
+  \******************************************************************************************************************/
+
+/*!*******************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/PersistentDAMStore.ts ***!
+  \*******************************************************************************************************************/
+
+/*!*******************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/RecentSpeakerStore.ts ***!
+  \*******************************************************************************************************************/
+
+/*!*******************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/SecureMeetingStore.ts ***!
+  \*******************************************************************************************************************/
+
+/*!*******************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/StreamDetailsStore.ts ***!
+  \*******************************************************************************************************************/
+
+/*!*******************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/TokenExchangeStore.ts ***!
+  \*******************************************************************************************************************/
+
+/*!********************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/Lib/VideoStreamConstraints.ts ***!
+  \********************************************************************************************************************/
+
+/*!********************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/BrowserIndexDbStore.ts ***!
+  \********************************************************************************************************************/
+
+/*!********************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/CallConnectionStore.ts ***!
+  \********************************************************************************************************************/
+
+/*!********************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/MeetingSessionStore.ts ***!
+  \********************************************************************************************************************/
+
+/*!********************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/MeetingSettingStore.ts ***!
+  \********************************************************************************************************************/
+
+/*!********************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/webrtc/services/WebRTC/RTCManager.ts ***!
+  \********************************************************************************************************************/
+
+/*!********************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/webrtc/stores/CurrentMeetingStore.ts ***!
+  \********************************************************************************************************************/
+
+/*!********************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/webrtc/stores/RTPMediaStatusStore.ts ***!
+  \********************************************************************************************************************/
+
+/*!*********************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/BreakoutSessionStore.ts ***!
+  \*********************************************************************************************************************/
+
+/*!*********************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/DominantSpeakerStore.ts ***!
+  \*********************************************************************************************************************/
+
+/*!*********************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/ImagePersistentStore.ts ***!
+  \*********************************************************************************************************************/
+
+/*!*********************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/MeetingTransferStore.ts ***!
+  \*********************************************************************************************************************/
+
+/*!**********************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/ClosedCaptioningStore.ts ***!
+  \**********************************************************************************************************************/
+
+/*!**********************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/LiveMeetingStateStore.ts ***!
+  \**********************************************************************************************************************/
+
+/*!**********************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/MediaStreamEnablement.ts ***!
+  \**********************************************************************************************************************/
+
+/*!**********************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/MeetingAssistantStore.ts ***!
+  \**********************************************************************************************************************/
+
+/*!**********************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/MeetingReactionsStore.ts ***!
+  \**********************************************************************************************************************/
+
+/*!**********************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/ModeratorControlStore.ts ***!
+  \**********************************************************************************************************************/
+
+/*!**********************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/PictureInPictureStore.ts ***!
+  \**********************************************************************************************************************/
+
+/*!**********************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/StreamEnablementStore.ts ***!
+  \**********************************************************************************************************************/
+
+/*!**********************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/VideoStreamInterfaces.ts ***!
+  \**********************************************************************************************************************/
+
+/*!**********************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/webrtc/constants/PlatformAttributes.ts ***!
+  \**********************************************************************************************************************/
+
+/*!***********************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/ConsentPersistentStore.ts ***!
+  \***********************************************************************************************************************/
+
+/*!***********************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/webrtc/stores/CaptureActivationStore.ts ***!
+  \***********************************************************************************************************************/
+
+/*!************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/constants/MediaAnalyticsEvents.ts ***!
+  \************************************************************************************************************************/
+
+/*!*************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/DataAssetManagementStore.ts ***!
+  \*************************************************************************************************************************/
+
+/*!*************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/GracefulDegradationStore.ts ***!
+  \*************************************************************************************************************************/
+
+/*!*************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/ModeratorEscalationStore.ts ***!
+  \*************************************************************************************************************************/
+
+/*!****************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/ClientRosterPropertiesStore.ts ***!
+  \****************************************************************************************************************************/
+
+/*!****************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/MeetingAssetResourceMessage.ts ***!
+  \****************************************************************************************************************************/
+
+/*!****************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/MeetingConnectionStateStore.ts ***!
+  \****************************************************************************************************************************/
+
+/*!****************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/SequinVideoParticipantStore.ts ***!
+  \****************************************************************************************************************************/
+
+/*!*****************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/IndividualStreamControlStore.ts ***!
+  \*****************************************************************************************************************************/
+
+/*!******************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/InMeetingMicrophoneLevelStore.ts ***!
+  \******************************************************************************************************************************/
+
+/*!******************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/VirtualBackgroundAndBlurStore.ts ***!
+  \******************************************************************************************************************************/
+
+/*!******************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/webrtc/stores/IndividualStreamControlFacade.ts ***!
+  \******************************************************************************************************************************/
+
+/*!*********************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/SequinAudioVideoParticipantStore.ts ***!
+  \*********************************************************************************************************************************/
+
+/*!************************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/stores/ClientControlledLayoutOrderingStore.ts ***!
+  \************************************************************************************************************************************/
+
+/*!**************************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/constants/FileShareControlsAtrributeDefaults.ts ***!
+  \**************************************************************************************************************************************/
+
+/*!**********************************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/services/EventServiceMessages/Receive/PollingMessage.ts ***!
+  \**********************************************************************************************************************************************/
+
+/*!*************************************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/services/EventServiceMessages/Receive/ChatPinnedMessage.ts ***!
+  \*************************************************************************************************************************************************/
+
+/*!*************************************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/services/EventServiceMessages/Receive/DeleteChatHistory.ts ***!
+  \*************************************************************************************************************************************************/
+
+/*!**************************************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/services/EventServiceMessages/Receive/ChatMessageMessage.ts ***!
+  \**************************************************************************************************************************************************/
+
+/*!***************************************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/services/EventServiceMessages/Receive/GuidAssignedMessage.ts ***!
+  \***************************************************************************************************************************************************/
+
+/*!***************************************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/services/EventServiceMessages/Receive/MeetingAssetMessage.ts ***!
+  \***************************************************************************************************************************************************/
+
+/*!***************************************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/services/EventServiceMessages/Receive/MoveMeetingMessages.ts ***!
+  \***************************************************************************************************************************************************/
+
+/*!***************************************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/services/EventServiceMessages/Receive/OpenBreakoutMessage.ts ***!
+  \***************************************************************************************************************************************************/
+
+/*!***************************************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/services/EventServiceMessages/Receive/RosterUpdateMessage.ts ***!
+  \***************************************************************************************************************************************************/
+
+/*!***************************************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/services/EventServiceMessages/Receive/WaitingRoomMessages.ts ***!
+  \***************************************************************************************************************************************************/
+
+/*!****************************************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/services/EventServiceMessages/Receive/DialoutStatusMessage.ts ***!
+  \****************************************************************************************************************************************************/
+
+/*!*****************************************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/services/EventServiceMessages/Receive/ChatScrollbackMessage.ts ***!
+  \*****************************************************************************************************************************************************/
+
+/*!******************************************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/services/EventServiceMessages/Receive/MeetingTransferMessage.ts ***!
+  \******************************************************************************************************************************************************/
+
+/*!********************************************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/services/EventServiceMessages/Receive/LiveMeetingUpdateMessage.ts ***!
+  \********************************************************************************************************************************************************/
+
+/*!**********************************************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/services/EventServiceMessages/Receive/IncomingPrivateChatMessage.ts ***!
+  \**********************************************************************************************************************************************************/
+
+/*!***********************************************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/services/EventServiceMessages/Receive/ReactionNotificationMessage.ts ***!
+  \***********************************************************************************************************************************************************/
+
+/*!************************************************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/services/EventServiceMessages/Receive/BosModeratorBroadcastMessage.ts ***!
+  \************************************************************************************************************************************************************/
+
+/*!************************************************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/services/EventServiceMessages/Receive/DeleteChatHistoryOnReconnect.ts ***!
+  \************************************************************************************************************************************************************/
+
+/*!************************************************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/services/EventServiceMessages/Receive/DominantSpeakerUpdateMessage.ts ***!
+  \************************************************************************************************************************************************************/
+
+/*!**************************************************************************************************************************************************************!*\
+  !*** /home/denimuser/jenkins2/workspace/ed-BlueLinux-WMC_bjn-core_0.95.0/src/common/services/EventServiceMessages/Receive/MeetingDisconnectUpdateMessage.ts ***!
+  \**************************************************************************************************************************************************************/
+
+/**
+ * @license
+ * Lodash <https://lodash.com/>
+ * Copyright OpenJS Foundation and other contributors <https://openjsf.org/>
+ * Released under MIT license <https://lodash.com/license>
+ * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+ * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+ */
+
+/** @license React v0.13.6
+ * scheduler.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v16.8.0
+ * react-dom.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v16.8.0
+ * react.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+//! moment.js
+
+//! moment.js locale configuration

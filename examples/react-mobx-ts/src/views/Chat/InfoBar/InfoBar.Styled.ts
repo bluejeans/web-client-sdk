@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const InfoBarMain = styled.div`
   display: flex;
@@ -9,8 +9,7 @@ export const InfoBarMain = styled.div`
   border-radius: 4px 4px 0 0;
   height: 40px;
   width: 100%;
-`;
-
+`
 
 export const LeftInnerContainer = styled.div`
   flex: 0.8;
@@ -27,11 +26,11 @@ export const LeftInnerContainer = styled.div`
     font-weight: 700;
     font-size: 20px;
   }
-`;
+`
 
 export const RightInnerContainer = styled.div`
   display: flex;
   flex: 0.2;
   justify-content: flex-end;
   margin-right: 5%;
-`;
+`

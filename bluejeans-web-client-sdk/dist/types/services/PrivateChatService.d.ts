@@ -1,7 +1,7 @@
 import BaseStore from '../utils/BaseContainer';
 import SubscribableEvent from 'subscribableevent';
-import { SDKLogger } from "../logger";
-import { Participant } from "../sdk-objects";
+import { SDKLogger } from '../logger';
+import { Participant } from '../sdk-objects';
 import { ParticipantService } from './ParticipantService';
 import { ChatMessage } from '../sdk-objects';
 export declare class PrivateChatStoreEvents {

@@ -1,5 +1,5 @@
-import { SDKLogger } from "../logger";
-import { Error, Participant } from "../sdk-objects";
+import { SDKLogger } from '../logger';
+import { Error, Participant } from '../sdk-objects';
 import { WaitingRoomParticipant } from '../types/ModeratorWaitingRoomService';
 import { AdmitAllWrResponse, AdmitParticipantWrResponse, DenyParticipantWrResponse, DenyAllWrResponse, DemoteParticipantWrResponse, ToggleWaitingRoomResponse } from '../types/ModeratorWaitingRoomService';
 import SubscribableEvent from 'subscribableevent';

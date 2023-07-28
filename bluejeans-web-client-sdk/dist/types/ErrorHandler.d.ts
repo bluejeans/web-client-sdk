@@ -1,4 +1,4 @@
-import { JoinError, PermissionError } from './sdk-objects';
+import { JoinError, PermissionError, MeetingError } from './sdk-objects';
 export interface ErrorInfo {
     code: JoinError | PermissionError;
     reason: string;

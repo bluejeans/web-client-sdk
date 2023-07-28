@@ -1,6 +1,6 @@
-import { Participant } from "../sdk-objects";
+import { Participant } from '../sdk-objects';
 import BaseStore from '../utils/BaseContainer';
-import { SDKLogger } from "../logger";
+import { SDKLogger } from '../logger';
 export declare class ParticipantService extends BaseStore {
     private sdkLogger;
     constructor(sdkLogger: SDKLogger);

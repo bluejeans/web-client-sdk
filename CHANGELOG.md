@@ -1,37 +1,57 @@
 # Changelog
+
 All notable changes to this project will be documented in this file
 
-## Version 1.6.0
-### Added
- - Introduced ConnectionMode: `ScreenShareOnly` or `Default`
-    - in `ScreenShareOnly` mode there is no audio or video functionality, user can share their screen and receive shared screens
- - supports up to 25 video streams arranged 5x5 in gallery mode
-
-## Version 1.5.0
-### Added
- - Individual Stream Control
-    - New service `VideoStreamService` is added to `MeetingService`
-    - Create custom layouts, request specific streams of video & render these using the VideoStreamService.
-## Version 1.4.0
-### Added
- - 720p Video Capture support
+## Version 1.7.0
 
 ### Updated
+
+- **BREAKING** Moved connectionMode from being a direct param of joinMeeting function to the OptionalJoinProps interface.
+
+### Added
+
+- Support for sending meta data for the participant during meeting join (External ID)
+- Custom Video Source - allows developers to send a custom source as video. This capability facilitates the integration of diverse mediaStreams, such as pre-recorded clips, 3D renders and many more, expanding the potential for video customization.
+
+## Version 1.6.0
+
+### Added
+
+- Introduced ConnectionMode: `ScreenShareOnly` or `Default`
+  - in `ScreenShareOnly` mode there is no audio or video functionality, user can share their screen and receive shared screens
+- supports up to 25 video streams arranged 5x5 in gallery mode
+
+## Version 1.5.0
+
+### Added
+
+- Individual Stream Control
+  - New service `VideoStreamService` is added to `MeetingService`
+  - Create custom layouts, request specific streams of video & render these using the VideoStreamService.
+
+## Version 1.4.0
+
+### Added
+
+- 720p Video Capture support
+
+### Updated
+
 - **BREAKING** [InMeeting services](https://docs.bluejeans.com/Web_Client_SDK/Architecture.htm) will be active only when connenction state transitions to `CONNECTED` state.
-   - These services are initialised conditionally based on connection state.
-   - They are disabled/reset when connection state transitions to `IDLE` state(meeting ends)
+  - These services are initialised conditionally based on connection state.
+  - They are disabled/reset when connection state transitions to `IDLE` state(meeting ends)
 
 ## Version 1.3.0
 
 ### Added
 
 - Support for Waiting Room
+
 ## Version 1.2.0
 
 ### Added
 
 - ClosedCaptioningService
-
 
 ## Version 1.1.0
 
@@ -44,7 +64,6 @@ All notable changes to this project will be documented in this file
   - End meeting for all immediately or after a certain delay
   - Spotlight a video participant
 
-
 ### Removed
 
 - **BREAKING** Removed Connection state `DISCONNECTED` from MeetingService
@@ -53,7 +72,9 @@ All notable changes to this project will be documented in this file
 ## Version 1.0.1
 
 ### Fixed
+
 - Meetings not working on Chrome v100 (and some Chrome Dev, Beta and Canary instances due to [Force Chrome major version to 100](https://developer.chrome.com/blog/force-major-version-to-100/))
+
 ## Version 1.0.0
 
 ### Added

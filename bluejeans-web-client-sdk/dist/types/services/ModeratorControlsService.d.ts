@@ -1,7 +1,7 @@
 import BaseStore from '../utils/BaseContainer';
-import { SDKLogger } from "../logger";
-import { Participant, Error } from "../sdk-objects";
-import { MeetingService } from "./MeetingService";
+import { SDKLogger } from '../logger';
+import { Participant, Error } from '../sdk-objects';
+import { MeetingService } from './MeetingService';
 export declare enum AudioVideo {
     audio = "audio",
     video = "video"

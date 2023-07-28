@@ -1,6 +1,6 @@
 import BaseStore from '../utils/BaseContainer';
-import { ContentShareState } from "../sdk-objects";
-import { SDKLogger } from "../logger";
+import { ContentShareState } from '../sdk-objects';
+import { SDKLogger } from '../logger';
 export declare class ContentShareService extends BaseStore {
     private sdkLogger;
     constructor(sdkLogger: SDKLogger);

@@ -59,6 +59,7 @@ export declare enum FeatureConstants {
     SAFARI_SCREEN_SHARE = "safari_screen_share",
     BROWSER_AUTOMATIC_CC = "browser_automatic_cc",
     WEB_CLIENT_SDK_CDL = "web_client_sdk_cdl",
-    WEB_CLIENT_SDK_FIREFOX_MULTISTREAM_SUPPORT = "web_client_sdk_firefox_multistream_support"
+    WEB_CLIENT_SDK_FIREFOX_MULTISTREAM_SUPPORT = "web_client_sdk_firefox_multistream_support",
+    DISPLAY_PROFILE_PIC = "browser_display_profile_pic"
 }
 export declare const ivrResourceBasePath = "https://swdl.bluejeans.com/websdk/web-client-sdk/assets/media";

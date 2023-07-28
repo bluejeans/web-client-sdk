@@ -1,5 +1,5 @@
-import { SDKLogger } from "./logger";
-import AutoplayHandler from "./utils/AutoplayHandler";
+import { SDKLogger } from './logger';
+import AutoplayHandler from './utils/AutoplayHandler';
 export declare const STREAM_TYPE_ATTRIBUTE = "data-bjn-stream-type";
 export declare class StreamHelper {
     selfVideoPreview: boolean;

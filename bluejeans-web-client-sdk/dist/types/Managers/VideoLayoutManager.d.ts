@@ -1,5 +1,5 @@
-import { AutoplayHandler, VideoLayoutManagerIntf } from "@bluejeans/sequin-layouts";
-import { MeetingService } from "../services/MeetingService";
+import { AutoplayHandler, VideoLayoutManagerIntf } from '@bluejeans/sequin-layouts';
+import { MeetingService } from '../services/MeetingService';
 import { MaxVideoQuality } from '../sdk-objects';
 export declare class VideoLayoutManager implements VideoLayoutManagerIntf {
     sequinAudioVideoParticipantStore: SequinAudioVideoParticipantStore;

@@ -1,6 +1,6 @@
 import { AudioVideoDevice } from '../sdk-objects';
-import { SDKLogger } from "../logger";
-import { MeetingService } from "./MeetingService";
+import { SDKLogger } from '../logger';
+import { MeetingService } from './MeetingService';
 export declare class AudioDeviceService {
     private browserType;
     private osType;

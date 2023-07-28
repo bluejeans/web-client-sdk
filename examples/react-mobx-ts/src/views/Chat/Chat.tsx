@@ -1,28 +1,27 @@
-import React from "react";
-import InfoBar from "./InfoBar/InfoBar";
-import Input from "./Input/Input";
-import Messages from "./Messages/Messages";
-import { observer } from "mobx-react";
-import { Container } from "./Chat.Styled";
-import Managers from "../../stores/Managers";
-import ChatViewModel from "./ChatViewModel"
+import React from 'react'
+import InfoBar from './InfoBar/InfoBar'
+import Input from './Input/Input'
+import Messages from './Messages/Messages'
+import { observer } from 'mobx-react'
+import { Container } from './Chat.Styled'
+import Managers from '../../stores/Managers'
+import ChatViewModel from './ChatViewModel'
 
 interface Props {
-  managers : Managers;
+  managers: Managers
 }
 
 @observer
 class Chat extends React.Component<Props> {
-
-  private chatViewModel : ChatViewModel;
+  private chatViewModel: ChatViewModel
 
   constructor(props: Props) {
-    super(props);
-    this.chatViewModel = new ChatViewModel(props.managers.chatUIManager);
+    super(props)
+    this.chatViewModel = new ChatViewModel(props.managers.chatUIManager)
   }
 
   componentDidMount() {
-    this.chatViewModel.clearChatCount();
+    this.chatViewModel.clearChatCount()
   }
 
   render() {
@@ -34,8 +33,8 @@ class Chat extends React.Component<Props> {
           <Input managers={this.props.managers} />
         </Container>
       </>
-    );
+    )
   }
 }
 
-export default Chat;
+export default Chat

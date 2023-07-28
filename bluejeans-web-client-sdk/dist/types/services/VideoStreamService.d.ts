@@ -1,5 +1,5 @@
 import { VideoStreamConfigurationResult, VideoStreamConfiguration, videoStream, DetachParticipantStreamResult, AttachParticipantToViewResult, VideoStreamStyle } from '../types/VideoStreamService';
-import BaseStore from "../utils/BaseContainer";
+import BaseStore from '../utils/BaseContainer';
 export declare class VideoStreamService extends BaseStore {
     private sdkLogger;
     private videoLayout;

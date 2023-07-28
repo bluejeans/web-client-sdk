@@ -1,4 +1,4 @@
-import { MobXReactor } from "../utils/MobXUtils";
+import { MobXReactor } from '../utils/MobXUtils';
 export default class BaseStore {
     reactor: MobXReactor;
     constructor();

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const InputContainer: any = styled.div`
   display: flex;
@@ -23,4 +23,4 @@ export const InputContainer: any = styled.div`
     border: none;
     width: 20%;
   }
-`;
+`

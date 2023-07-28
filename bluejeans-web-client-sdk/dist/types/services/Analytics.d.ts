@@ -15,7 +15,8 @@ export declare enum AnalyticsEvents {
     switchMaxVideoResolutionFailed = 13,
     meetingVideoLayoutChanged = 14,
     galleryLayoutConfigChanged = 15,
-    connectionModeChanged = 16
+    connectionModeChanged = 16,
+    videoSourceChanged = 17
 }
 export default class Analytics {
     private tracked;

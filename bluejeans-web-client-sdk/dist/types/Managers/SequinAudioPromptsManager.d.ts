@@ -1,7 +1,7 @@
 import BaseStore from '../utils/BaseContainer';
-import { MeetingService } from "../services/MeetingService";
-import AutoPlayHandler from "../utils/AutoplayHandler";
-import { SDKLogger } from "../logger";
+import { MeetingService } from '../services/MeetingService';
+import AutoPlayHandler from '../utils/AutoplayHandler';
+import { SDKLogger } from '../logger';
 import { BlueJeansSDKInitParams } from '../sdk-objects';
 export declare enum AudioPromptFileNames {
     RECORDING_IS_ON = "recording_is_on",

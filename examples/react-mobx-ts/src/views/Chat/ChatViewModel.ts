@@ -1,14 +1,12 @@
-import ChatUIManager from "../../stores/ChatUIManager";
+import ChatUIManager from '../../stores/ChatUIManager'
 export default class ChatViewModel {
+  private chatUIManager: ChatUIManager
 
-    private chatUIManager : ChatUIManager;
+  constructor(chatUIManager: ChatUIManager) {
+    this.chatUIManager = chatUIManager
+  }
 
-    constructor(chatUIManager : ChatUIManager) {
-        this.chatUIManager = chatUIManager;
-    }
-
-    clearChatCount() : void {
-        this.chatUIManager.clearChatCount();
-    }
-
+  clearChatCount(): void {
+    this.chatUIManager.clearChatCount()
+  }
 }

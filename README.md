@@ -26,20 +26,25 @@ The design of the SDK emphasizes **simplicity**. Developers can quickly integrat
 - Moderator Controls
 - Waiting Room Support
 - 720p Video Capture
-- Individual stream control: create custom layouts, and request specific remote video streams
-
-## New Features
+- Individual stream control, create custom layouts, and request specific remote video streams
 - ConnectionMode: ScreenShareOnly or Default
 - Support for 25 video streams i.e., 5x5 gallery view
 
- **Not to be confused with:**
+## New Features
+
+- Suport for Custom Video Source
+- Support for sending meta data for the participant during meeting join (External ID)
+
+  **Not to be confused with:**
 
 - **BlueJeans WebRTC Embed SDK**: This is an alternate SDK that allows the end user to embed the entire BlueJeans WebRTC Client. As such, this SDK provides an entire user interface, meaning the end user has to write much less code. However, it is also much less customizable. See https://bluejeans.github.io/webrtc-embed-sdk/docs/index.html
 
 ## Developer Portal
+
 Detailed documentation of SDK at our [developer portal](https://docs.bluejeans.com/Web_Client_SDK/Overview.htm)
 
 ## SDK API Documentation
+
 Detailed documentation of SDK functions is available [here](https://bluejeans.github.io/web-client-sdk)
 
 ## How does it work?
@@ -57,14 +62,13 @@ As a pre requisite to using the BlueJeans Web Client SDK to join meetings, you n
 
 Integrate the SDK by using the following guidelines at our [developer portal](https://docs.bluejeans.com/Web_Client_SDK/Overview.htm) and use SDK APIs to join a meeting with the meeting ID generated.
 
-
 ## A note on development environment
 
 The Web Client SDK makes use of WebRTC APIs exposed by the browsers to get streams from Camera and Microphone. Due to security concerns, most browsers do not expose the WebRTC APIs in an http page. We recommend you use https while developing locally as well. Most modern build tools like webpack (through webpack dev server) support https out of the box.
 
 ## SDK Sample Application
 
-We have bundled two sample apps in  [this repo](https://github.com/bluejeans/web-client-sdk). One for package manager and another for Vanilla Js setup. It showcases the integration of BlueJeans SDK for permission flow and joins the flow. They have got a basic UI functionality.
+We have bundled two sample apps in [this repo](https://github.com/bluejeans/web-client-sdk). One for package manager and another for Vanilla Js setup. It showcases the integration of BlueJeans SDK for permission flow and joins the flow. They have got a basic UI functionality.
 
 ## Tracking & Analytics
 
@@ -76,7 +80,7 @@ The BJNWebClientSDK is closed source and proprietary. As a result, we cannot acc
 
 ## License
 
-Copyright © 2022 BlueJeans Network. All usage of the SDK is subject to the Developer Agreement that can be found in [our repository](https://github.com/bluejeans/web-client-sdk) as License file. Download the agreement and send an email to api-sdk@bluejeans.com with a signed version of this agreement. Before any commercial or public facing usage of this SDK.
+Copyright © 2023 BlueJeans Network. All usage of the SDK is subject to the Developer Agreement that can be found in [our repository](https://github.com/bluejeans/web-client-sdk) as License file. Download the agreement and send an email to api-sdk@bluejeans.com with a signed version of this agreement. Before any commercial or public facing usage of this SDK.
 
 ## Legal Requirements
 

@@ -1,4 +1,4 @@
-import { ErrorInfo } from "./ErrorHandler";
+import { ErrorInfo } from './ErrorHandler';
 export declare enum VideoLayout {
     SPEAKER = "SPEAKER",
     PEOPLE = "PEOPLE",
@@ -58,6 +58,30 @@ export interface Participant {
 export interface AudioVideoDevice {
     id: string;
     name: string;
+}
+export declare enum MeetingJoinError {
+    GENERIC_ERROR = "GenericError",
+    FORCE_MODERATOR_LOGIN_ENABLED = "ForceModeratorLoginEnabled",
+    MEETING_LOCKED = "MeetingLocked",
+    WAITING_ROOM = "WaitingRoom",
+    WAITING_ROOM_PAIRING = "WaitingRoomPairing",
+    FRAUD_ERROR = "FDSError",
+    MEETING_DISABLED = "MeetingDisabled",
+    PARTICIPANTS_LIMIT_REACHED = "MaxParticipantsLimitReached",
+    NO_NETWORK = "NoNetwork",
+    TECHNICAL_ERROR = "TechnicalError",
+    INVALID_MEETING_ID_OR_PASSCODE = "InvalidMeetingIDOrPasscode",
+    SURGE_PROTECTION = "SurgeProtection",
+    LOGIN_REQUIRED_FOR_INVITE_ONLY_MEETING = "loginRequiredForInviteOnlyMeeting",
+    LOGIN_REQUIRED_FOR_ENTERPRISE_ONLY_MEETING = "loginRequiredForEnterpriseOnlyMeeting",
+    USER_NOT_IN_LIST_FOR_INVITE_ONLY_MEETING = "userNotInListForInviteOnlyMeeting",
+    USER_NOT_IN_LIST_FOR_ENTERPRISE_ONLY_MEETING = "userNotInListForEnterpriseOnlyMeeting",
+    INVALID_PASSCODE_FOR_INVITEE_ONLY_MEETING = "invalidPasscodeForInviteeOnlyMeeting",
+    INVALID_PASSCODE_FOR_ENTERPRISE_ONLY_MEETING = "invalidPasscodeForEnterpriseOnlyMeeting"
+}
+export interface MeetingError {
+    errorCode: MeetingJoinError;
+    errorData: any;
 }
 export declare enum JoinError {
     NetworkError = "NetworkError",
@@ -172,8 +196,8 @@ export interface SetMaxVideoSendResolutionResponse extends AsyncAPIResponse {
     code: SetMaxVideoSendResolutionStatus;
 }
 export declare enum MaxVideoQuality {
-    "360p" = 360,
-    "720p" = 720
+    '360p' = 360,
+    '720p' = 720
 }
 export declare enum CallQuality {
     one = 1,
@@ -198,4 +222,8 @@ export declare enum SwitchConnectionModeResponseCode {
 export interface SwitchConnectionModeResponse extends AsyncAPIResponse {
     error?: ErrorInfo;
     code: SwitchConnectionModeResponseCode;
+}
+export interface OptionalJoinProps {
+    connectionMode?: ConnectionMode;
+    eid?: string;
 }

@@ -1,7 +1,7 @@
 import { SDKLogger } from '../logger';
-import { AudioVideoDevice } from "../sdk-objects";
+import { AudioVideoDevice } from '../sdk-objects';
 import Environments from '../utils/Environments';
-import { MeetingService } from "./MeetingService";
+import { MeetingService } from './MeetingService';
 export declare class VideoDeviceService {
     private sdkLogger;
     private environments;

@@ -1,4 +1,4 @@
-import { OSTypes, OSNames, BrowserNames, BrowserTypes, DeviceTypes } from "./Constants";
+import { OSTypes, OSNames, BrowserNames, BrowserTypes, DeviceTypes } from './Constants';
 declare global {
     interface Window {
         parseInt: any;

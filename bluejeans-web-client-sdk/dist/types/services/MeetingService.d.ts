@@ -1,16 +1,16 @@
 import Container from '../utils/Container';
-import { VideoLayout, VideoState, ConnectionState, MeetingInformation, BlueJeansSDKInitParams, RecordingState, SetMaxVideoSendResolutionResponse, MaxVideoQuality, GalleryLayoutConfiguration, ConnectionMode, SwitchConnectionModeResponse } from '../sdk-objects';
-import { PermissionService } from "./PermissionService";
-import { ParticipantService } from "./ParticipantService";
+import { VideoLayout, VideoState, ConnectionState, MeetingInformation, BlueJeansSDKInitParams, RecordingState, SetMaxVideoSendResolutionResponse, MaxVideoQuality, GalleryLayoutConfiguration, ConnectionMode, SwitchConnectionModeResponse, OptionalJoinProps } from '../sdk-objects';
+import { PermissionService } from './PermissionService';
+import { ParticipantService } from './ParticipantService';
 import { ContentShareService } from './ContentShareService';
 import Analytics from './Analytics';
-import { SDKLogger } from "../logger";
+import { SDKLogger } from '../logger';
 import { PublicChatService } from './PublicChatService';
 import { PrivateChatService } from './PrivateChatService';
-import { ModeratorControlsService } from "./ModeratorControlsService";
-import { ClosedCaptioningService } from "./ClosedCaptioningService";
+import { ModeratorControlsService } from './ModeratorControlsService';
+import { ClosedCaptioningService } from './ClosedCaptioningService';
 import { VideoStreamService } from './VideoStreamService';
-import { ModeratorWaitingRoomService } from "./ModeratorWaitingRoomService";
+import { ModeratorWaitingRoomService } from './ModeratorWaitingRoomService';
 export declare const ZINC_MODE_ATTRIBUTE = "data-bjn-zinc-mode";
 export declare class MeetingService extends Container {
     private permissionService;
@@ -67,7 +67,7 @@ export declare class MeetingService extends Container {
     private addSpeakerPlayerNodes;
     switchConnectionMode(connectionMode: ConnectionMode): Promise<SwitchConnectionModeResponse>;
     private requestAllPermissionsBasedOnConnectionMode;
-    joinMeeting(meetingID: string, passcode: string | undefined, displayName: string, connectionMode?: ConnectionMode): Promise<void>;
+    joinMeeting(meetingID: string, passcode: string | undefined, displayName: string, optionalJoinProps?: OptionalJoinProps): Promise<void>;
     private getVersionString;
     private getAppMetaData;
     private getClientInfo;

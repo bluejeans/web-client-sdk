@@ -1,16 +1,14 @@
-import { computed, action, observable } from "mobx";
-import ChatUIManager, { PRIVATECHATVIEW } from "../../../stores/ChatUIManager";
+import { computed, action, observable } from 'mobx'
+import ChatUIManager, { PRIVATECHATVIEW } from '../../../stores/ChatUIManager'
 
 export default class PrivateChatComponentViewModel {
+  private chatUIManager: ChatUIManager
 
-    private chatUIManager : ChatUIManager;
+  constructor(chatUIManager: ChatUIManager) {
+    this.chatUIManager = chatUIManager
+  }
 
-    constructor(chatUIManager: ChatUIManager) {
-        this.chatUIManager = chatUIManager;
-    }
-
-    @computed get privateChatViewToShow() : PRIVATECHATVIEW {
-        return this.chatUIManager.privateChatViewToShow;
-    }
-
+  @computed get privateChatViewToShow(): PRIVATECHATVIEW {
+    return this.chatUIManager.privateChatViewToShow
+  }
 }

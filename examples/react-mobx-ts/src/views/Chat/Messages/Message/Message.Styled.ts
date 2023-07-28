@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const SentTextRight = styled.div`
   display: flex;
@@ -10,7 +10,7 @@ export const SentTextRight = styled.div`
   margin-bottom: -13px;
   padding-right: 10px;
   justify-content: flex-end;
-`;
+`
 
 export const MessageContainer = styled.div`
   display: flex;
@@ -18,7 +18,7 @@ export const MessageContainer = styled.div`
   padding: 0 5%;
   margin-top: 3px;
   justify-content: flex-end;
-`;
+`
 
 export const MessageBoxBlue = styled.div`
   background: #c22525;
@@ -41,7 +41,7 @@ export const MessageBoxBlue = styled.div`
     font-size: 0.8em;
     word-wrap: break-word;
   }
-`;
+`
 
 export const SendText = styled.div`
   display: flex;
@@ -52,7 +52,7 @@ export const SendText = styled.div`
   margin-left: 22px;
   margin-bottom: -13px;
   padding-left: 10px;
-`;
+`
 
 export const MessageContainerRight = styled.div`
   display: flex;
@@ -60,7 +60,7 @@ export const MessageContainerRight = styled.div`
   padding: 0 5%;
   margin-top: 3px;
   justify-content: flex-start;
-`;
+`
 
 export const MessageBoxGray = styled.div`
   background: #c22525;
@@ -84,4 +84,4 @@ export const MessageBoxGray = styled.div`
     word-wrap: break-word;
     color: #353535;
   }
-`;
+`

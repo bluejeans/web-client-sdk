@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { observer } from "mobx-react";
-import Managers from "../stores/Managers";
-import MeetingViewModel from "./MeetingViewModel";
-import AppViewModel from './AppViewModel';
-import ErrorMessageComponent from './ErrorMessages/ErrorMessageComponent';
+import React, { Component } from 'react'
+import { observer } from 'mobx-react'
+import Managers from '../stores/Managers'
+import MeetingViewModel from './MeetingViewModel'
+import AppViewModel from './AppViewModel'
+import ErrorMessageComponent from './ErrorMessages/ErrorMessageComponent'
 import {
   MeetingControlContainer,
   MeetingDetailsTable,
@@ -15,8 +15,6 @@ import {
   JoinName,
   LeaveControlButton,
   MeetingDeviceDropdown,
-  MeetingRoster,
-  RosterHeader,
   ParticipantList,
   ParticipantListItem,
   ModeratorBadge,
@@ -33,9 +31,6 @@ import {
   LogUploadMessage,
   VideoIconRemote,
   AudioIconRemote,
-  RosterOptions,
-  WaitingRoomOption,
-  RosterOption,
   WaitingRoomListItem,
   WrParticipantName,
   WrParticipantControl,
@@ -48,39 +43,39 @@ import {
   InputToggle,
   SwitchToggle,
   LabelToggle,
-  PinnedParticipantController
-} from "./styles/MeetingView";
-import { Participant, VideoLayout } from "@bluejeans/web-client-sdk";
-import { BsFillChatDotsFill, BsPinAngle } from "react-icons/bs";
-import { MdExpandLess, MdExpandMore } from "react-icons/md";
-import ChatPanel from "./Chat/ChatPanel";
-import CustomLayoutManager from "../stores/CustomLayoutManager";
+  PinnedParticipantController,
+} from './styles/MeetingView'
+import { Participant } from '@bluejeans/web-client-sdk'
+import { BsFillChatDotsFill } from 'react-icons/bs'
+import ChatPanel from './Chat/ChatPanel'
+import ExpandingPanel from './Common/ExpandingPanel'
+import ToggleSwitch from './Common/ToggleSwitch'
+import CustomVideoPanel from './CustomVideoPanel'
 
 interface Props {
-  managers: Managers;
+  managers: Managers
 }
 
 @observer
 export default class MeetingView extends Component<Props> {
-  private viewModel: MeetingViewModel;
-  private appViewModel: AppViewModel;
-  private customLayoutManager: CustomLayoutManager;
+  private viewModel: MeetingViewModel
+  private appViewModel: AppViewModel
 
   constructor(props: Props) {
-    super(props);
-    this.viewModel = new MeetingViewModel(props.managers);
-    this.appViewModel = new AppViewModel(props.managers);
+    super(props)
+    this.viewModel = new MeetingViewModel(props.managers)
+    this.appViewModel = new AppViewModel(props.managers)
   }
 
   private get colonSeparator(): JSX.Element {
-    return <MeetingDetailsTableData>:</MeetingDetailsTableData>;
+    return <MeetingDetailsTableData>:</MeetingDetailsTableData>
   }
 
   render() {
     const speakerSelectionUnsupportedText =
-      "Speaker selection is not supported on this browser. Please select the speaker from system settings/preferences.";
+      'Speaker selection is not supported on this browser. Please select the speaker from system settings/preferences.'
     const MicrophoneSelectionUnsupportedText =
-      "Microphone selection is not supported on this browser.";
+      'Microphone selection is not supported on this browser.'
     const vm = this.viewModel
     const appVm = this.appViewModel
 
@@ -95,11 +90,9 @@ export default class MeetingView extends Component<Props> {
           <BadgeLabel>
             <BsFillChatDotsFill
               onClick={() => vm.setShowChatPanel(true)}
-              style={{ fontSize: "30px", color: "white" }}
+              style={{ fontSize: '30px', color: 'white' }}
             />
-            {vm.unreadMessageCount > 0 && (
-              <span>{vm.unreadMessageCount}</span>
-            )}
+            {vm.unreadMessageCount > 0 && <span>{vm.unreadMessageCount}</span>}
           </BadgeLabel>
         )}
         <MeetingDetailsTable>
@@ -110,10 +103,7 @@ export default class MeetingView extends Component<Props> {
               </MeetingDetailsTableData>
               {this.colonSeparator}
               <MeetingDetailsTableData>
-                <JoinName
-                  value={vm.joinName}
-                  onChange={vm.setJoinName}
-                />
+                <JoinName value={vm.joinName} onChange={vm.setJoinName} />
               </MeetingDetailsTableData>
             </MeetingDetailsTableRow>
             <MeetingDetailsTableRow>
@@ -163,7 +153,8 @@ export default class MeetingView extends Component<Props> {
               <MeetingDetailsTableData>
                 <MeetingControlButton
                   onClick={vm.toggleAudioState}
-                  disabled={appVm.screenShareOnly}>
+                  disabled={appVm.screenShareOnly}
+                >
                   {vm.audioStatus}
                 </MeetingControlButton>
               </MeetingDetailsTableData>
@@ -178,7 +169,8 @@ export default class MeetingView extends Component<Props> {
               <MeetingDetailsTableData>
                 <MeetingControlButton
                   onClick={vm.toggleVideoState}
-                  disabled={appVm.screenShareOnly}>
+                  disabled={appVm.screenShareOnly}
+                >
                   {vm.videoStatus}
                 </MeetingControlButton>
               </MeetingDetailsTableData>
@@ -192,9 +184,7 @@ export default class MeetingView extends Component<Props> {
                 </MeetingDetailsTableData>
                 {this.colonSeparator}
                 <MeetingDetailsTableData>
-                  <MeetingControlButton
-                    onClick={vm.toggleScreenShare}
-                  >
+                  <MeetingControlButton onClick={vm.toggleScreenShare}>
                     {vm.sharingStatus}
                   </MeetingControlButton>
                 </MeetingDetailsTableData>
@@ -209,10 +199,10 @@ export default class MeetingView extends Component<Props> {
                 {this.makeDropdown(
                   vm.videoLayout,
                   vm.availableVideoLayouts,
-                  "id",
-                  "name",
+                  'id',
+                  'name',
                   vm.setVideoLayout,
-                  appVm.screenShareOnly
+                  appVm.screenShareOnly,
                 )}
               </MeetingDetailsTableData>
             </MeetingDetailsTableRow>
@@ -225,10 +215,10 @@ export default class MeetingView extends Component<Props> {
                 {this.makeDropdown(
                   vm.selectedCamera,
                   vm.availableCameras,
-                  "id",
-                  "name",
+                  'id',
+                  'name',
                   vm.selectCamera,
-                  appVm.screenShareOnly
+                  appVm.screenShareOnly,
                 )}
               </MeetingDetailsTableData>
             </MeetingDetailsTableRow>
@@ -244,10 +234,10 @@ export default class MeetingView extends Component<Props> {
                   this.makeDropdown(
                     vm.selectedMicrophone,
                     vm.availableMicrophones,
-                    "id",
-                    "name",
+                    'id',
+                    'name',
                     vm.selectMicrophone,
-                    appVm.screenShareOnly
+                    appVm.screenShareOnly,
                   )
                 ) : (
                   <MicrophoneLabel title={MicrophoneSelectionUnsupportedText}>
@@ -266,10 +256,10 @@ export default class MeetingView extends Component<Props> {
                   this.makeDropdown(
                     vm.selectedSpeaker,
                     vm.availableSpeakers,
-                    "id",
-                    "name",
+                    'id',
+                    'name',
                     vm.selectSpeaker,
-                    appVm.screenShareOnly
+                    appVm.screenShareOnly,
                   )
                 ) : (
                   <SpeakerLabel title={speakerSelectionUnsupportedText}>
@@ -280,7 +270,9 @@ export default class MeetingView extends Component<Props> {
             </MeetingDetailsTableRow>
             <MeetingDetailsTableRow>
               <MeetingDetailsTableData>
-                <MeetingDetailsTableContent>Connection mode</MeetingDetailsTableContent>
+                <MeetingDetailsTableContent>
+                  Connection mode
+                </MeetingDetailsTableContent>
               </MeetingDetailsTableData>
               {this.colonSeparator}
               <MeetingDetailsTableData>
@@ -288,76 +280,70 @@ export default class MeetingView extends Component<Props> {
                   vm.connectionMode,
                   vm.availableConnectionModes,
                   'id',
-                  "name",
-                  vm.setConnectionMode
+                  'name',
+                  vm.setConnectionMode,
                 )}
               </MeetingDetailsTableData>
             </MeetingDetailsTableRow>
-            <MeetingDetailsTableRow></MeetingDetailsTableRow>
           </MeetingDetailsTableBody>
         </MeetingDetailsTable>
-        <MeetingRoster>
-          <RosterHeader onClick={vm.setShowLogUpload}>
-            {" "}
-            Upload Logs{" "}
-            {!vm.showLogUpload ? (
-              <MdExpandMore />
-            ) : (
-              <MdExpandLess />
-            )}
-          </RosterHeader>
-          {vm.showLogUpload && (
+        { !appVm.screenShareOnly && <CustomVideoPanel managers={this.props.managers} /> }
+        <ExpandingPanel title='Upload Logs'>
+          {
             <>
               {!vm.showLogUploadStatus ? (
                 <>
                   <EmailID
                     value={vm.emailId}
-                    placeholder="Email Id"
-                    onChange={({ target: { value } }) =>
-                    vm.setEmailId(value)
-                    }
+                    placeholder='Email Id'
+                    onChange={({ target: { value } }) => vm.setEmailId(value)}
                   />
                   {vm.invalidEmail && (
                     <ErrorMessage>Please enter a valid email Id</ErrorMessage>
                   )}
                   <TextAreaComment
-                    placeholder="Comments"
+                    placeholder='Comments'
                     value={vm.comments}
-                    onChange={({ target: { value } }) =>
-                    vm.setComments(value)
-                    }
+                    onChange={({ target: { value } }) => vm.setComments(value)}
                   ></TextAreaComment>
                 </>
               ) : (
-                <LogUploadMessage>
-                  {vm.logUploadStatus}
-                </LogUploadMessage>
+                <LogUploadMessage>{vm.logUploadStatus}</LogUploadMessage>
               )}
-              <MeetingControlButton onClick={vm.uploadLogs} disabled={vm.showLogUploadStatus}>
+              <MeetingControlButton
+                onClick={vm.uploadLogs}
+                disabled={vm.showLogUploadStatus}
+              >
                 Upload
               </MeetingControlButton>
             </>
-          )}
-        </MeetingRoster>
+          }
+        </ExpandingPanel>
+
         {vm.getErrorFlag && (
           <ErrorMessageComponent
             message={vm?.getErrorMessage?.code}
             managers={this.props.managers}
           />
         )}
-        <MeetingRoster>
-          <RosterOptions>
-            {this.renderRosterOption()}
-            {this.renderWaitingRoomOption()}
-          </RosterOptions>
-          {vm.showWaitingRoom ? (
-            <>
+        <ExpandingPanel title='Roster'>
+          <ToggleSwitch
+            firstLabel='Roster'
+            secondLabel='Waiting room'
+            selected={this.viewModel.showWaitingRoom ? 1 : 0}
+            onChange={(index) => this.viewModel.setWaitingRoom(index === 1)}
+          >
+            {vm.showWaitingRoom ? (
               <WrParticipantList>
                 <WaitingRoomListItem>
                   <WrHeading>Waiting Room</WrHeading>
                   <WrParticipantControl>
                     <LabelToggle>
-                      <InputToggle type="checkbox" checked={vm.isWaitingRoomEnabled} onChange={vm.toggleWaitingRoom}/>
+                      <InputToggle
+                        type='checkbox'
+                        checked={vm.isWaitingRoomEnabled}
+                        onChange={vm.toggleWaitingRoom}
+                      />
                       <SwitchToggle />
                     </LabelToggle>
                   </WrParticipantControl>
@@ -367,28 +353,26 @@ export default class MeetingView extends Component<Props> {
                   <WaitingRoomListItem>
                     <WrApprovedAll
                       onClick={() => {
-                        vm.admitAll();
+                        vm.admitAll()
                       }}
                     >
-                      {" "}
                       ADMIT ALL
                     </WrApprovedAll>
                     <WrRejectAll
                       onClick={() => {
-                        vm.denyAll();
+                        vm.denyAll()
                       }}
                     >
-                      {" "}
                       DENY ALL
                     </WrRejectAll>
                   </WaitingRoomListItem>
                 ) : null}
               </WrParticipantList>
-            </>
-          ) : (
-            <ParticipantList>{this.renderRoster()}</ParticipantList>
-          )}
-        </MeetingRoster>
+            ) : (
+              <ParticipantList>{this.renderRoster()}</ParticipantList>
+            )}
+          </ToggleSwitch>
+        </ExpandingPanel>
         <LeaveControlButton
           onClick={vm.onLeaveMeetingBtnClick}
           title={vm.leaveBtnTitle}
@@ -399,13 +383,13 @@ export default class MeetingView extends Component<Props> {
         {vm.isDisconnected && (
           <LeaveControlButton
             onClick={vm.rejoin}
-            title={"To leave the call, reload and rejoin the same meeting"}
+            title={'To leave the call, reload and rejoin the same meeting'}
           >
             ReJoin Meeting
           </LeaveControlButton>
         )}
       </MeetingControlContainer>
-    );
+    )
   }
 
   makeDropdown<T>(
@@ -414,50 +398,48 @@ export default class MeetingView extends Component<Props> {
     idProp: keyof T,
     displayProp: keyof T,
     onSelect: (T) => void,
-    disabled: boolean = false
+    disabled: boolean = false,
   ): JSX.Element {
     const doSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
-      const newValue = items.find(
-        (item) => item[idProp] + "" == e.target.value
-      );
-      onSelect(newValue);
-    };
+      const newValue = items.find((item) => item[idProp] + '' == e.target.value)
+      onSelect(newValue)
+    }
     return selectedItem ? (
       <MeetingDeviceDropdown
-        value={selectedItem[idProp] + ""}
+        value={selectedItem[idProp] + ''}
         onChange={doSelect}
         disabled={disabled}
       >
         {items?.map((item) => {
           return (
-            <option key={item[idProp] + ""} value={item[idProp] + ""}>
-              {item[displayProp] + ""}
+            <option key={item[idProp] + ''} value={item[idProp] + ''}>
+              {item[displayProp] + ''}
             </option>
-          );
+          )
         })}
       </MeetingDeviceDropdown>
     ) : (
       <></>
-    );
+    )
   }
 
   renderRoster(): JSX.Element {
-    let participants = this.viewModel.participants;
+    let participants = this.viewModel.participants
     return (
       <>
         {participants?.map((participant, n) => {
           {
-            return this.renderParticipant(participant, n);
+            return this.renderParticipant(participant, n)
           }
         })}
       </>
-    );
+    )
   }
 
   renderParticipant(participant: Participant, n): JSX.Element {
     const participantName =
-      participant.name + `${participant.isSelf ? "(me)" : ""}`;
-    const localRemoteData = JSON.parse(JSON.stringify(participant));
+      participant.name + `${participant.isSelf ? '(me)' : ''}`
+    const localRemoteData = JSON.parse(JSON.stringify(participant))
     return (
       <ParticipantListItem index={n.toString()} key={n.toString()}>
         {participant.isModerator && <ModeratorBadge />}
@@ -491,67 +473,66 @@ export default class MeetingView extends Component<Props> {
             }
           />
         )}
-        {this.viewModel.isCustomVideoLayout ? null : this.viewModel.isPinnedParticipantChecked(participant) ? (
+        {this.viewModel
+          .isCustomVideoLayout ? null : this.viewModel.isPinnedParticipantChecked(
+            participant,
+          ) ? (
           <PinnedParticipantController
             isEnabled={
-              this.viewModel.pinnedParticipantGuid === participant.participantGuid
+              this.viewModel.pinnedParticipantGuid ===
+              participant.participantGuid
             }
             onClick={() =>
               this.viewModel.setPinnedParticipant(participant.participantGuid)
             }
           ></PinnedParticipantController>
         ) : (
-          <PinnedParticipantController disabled={true}></PinnedParticipantController>
+          <PinnedParticipantController
+            disabled={true}
+          ></PinnedParticipantController>
         )}
       </ParticipantListItem>
-    );
-  }
-  renderRosterOption(): JSX.Element {
-    return (
-      <RosterOption
-        onClick={() => this.viewModel.setWaitingRoom(false)}
-        selected={!this.viewModel.showWaitingRoom}
-      >
-        Roster
-      </RosterOption>
-  )}
-
-  renderWaitingRoomOption(): JSX.Element {
-    return (
-      <WaitingRoomOption
-        disabled={!this.viewModel.isWaitingRoomCapable}
-        selected={this.viewModel.showWaitingRoom}
-        onClick={() => this.viewModel.setWaitingRoom(true)}
-      >
-        Waiting Room
-      </WaitingRoomOption>
     )
   }
+
   renderWrParticipantOption(): JSX.Element {
-    let WrParticipants = this.viewModel.WrParticipants;
+    let WrParticipants = this.viewModel.WrParticipants
     return (
       <>
         {WrParticipants?.map((participant, n) => {
           {
-            return this.renderWrParticipant(participant, n);
+            return this.renderWrParticipant(participant, n)
           }
         })}
       </>
-    );
+    )
   }
 
-
   renderWrParticipant(participant, n): JSX.Element {
-    const participantName = participant.name;
+    const participantName = participant.name
     return (
       <WaitingRoomListItem index={n.toString()} key={n.toString()}>
         {participant.isModerator && <ModeratorBadge />}
         <WrParticipantName title={participantName}>
           {participantName}
         </WrParticipantName>
-        <WrApprovedParticipant onClick={()=>{this.viewModel.admitParticipant(participant)}}> ADMIT </WrApprovedParticipant>
-        <WrRejectParticipant onClick={()=>{this.viewModel.denyParticipant(participant)}}> DENY </WrRejectParticipant>
+        <WrApprovedParticipant
+          onClick={() => {
+            this.viewModel.admitParticipant(participant)
+          }}
+        >
+          {' '}
+          ADMIT{' '}
+        </WrApprovedParticipant>
+        <WrRejectParticipant
+          onClick={() => {
+            this.viewModel.denyParticipant(participant)
+          }}
+        >
+          {' '}
+          DENY{' '}
+        </WrRejectParticipant>
       </WaitingRoomListItem>
-    );
+    )
   }
 }

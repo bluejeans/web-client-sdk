@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const OuterContainer = styled.div`
   display: flex;
@@ -7,9 +7,9 @@ export const OuterContainer = styled.div`
   height: 70vh;
   background-color: #1a1a1d;
   @media (min-width: 320px) and (max-width: 480px) {
-    width:100%;
+    width: 100%;
   }
-`;
+`
 
 export const Container = styled.div`
   display: flex;
@@ -26,4 +26,4 @@ export const Container = styled.div`
   @media (min-width: 480px) and (max-width: 1200px) {
     width: 100%;
   }
-`;
+`

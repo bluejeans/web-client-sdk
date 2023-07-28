@@ -1,5 +1,5 @@
-import { SDKLogger } from "../logger";
-import { AutoplayHandler as AutoplayHandlerIntf } from "@bluejeans/sequin-layouts";
+import { SDKLogger } from '../logger';
+import { AutoplayHandler as AutoplayHandlerIntf } from '@bluejeans/sequin-layouts';
 export default class AutoplayHandler implements AutoplayHandlerIntf {
     private browserType;
     autoPlayResolved: boolean;
