@@ -1,5 +1,7 @@
 # BlueJeans Web Client SDK
 
+![npm (scoped)](https://img.shields.io/npm/v/%40bluejeans/web-client-sdk?link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2F%40bluejeans%2Fweb-client-sdk)
+
 The BlueJeans Web Client Software Development Kit (SDK) enables embedding BlueJeans Video and Audio capabilities into web apps. BJNWebClientSDK is a single object that encapsulates all the API’s related to establishing a BlueJeans Video and Audio connection.
 
 The design of the SDK emphasizes **simplicity**. Developers can quickly integrate BlueJeans video into their applications.
