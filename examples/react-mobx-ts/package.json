@@ -33,7 +33,7 @@
         "source-map-loader": "4.0.1",
         "ts-loader": "9.4.3",
         "typescript": "^5.0.4",
-        "typescript-plugin-styled-components": "^2.0.0",
+        "typescript-plugin-styled-components": "^3.0.0",
         "webpack": "5.84.1",
         "webpack-cli": "^5.1.1",
         "webpack-dev-server": "^4.15.0"
